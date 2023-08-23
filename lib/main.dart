@@ -1,5 +1,7 @@
 import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
+import 'package:doctor_management_system/features/onboarding_view/presentation/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(const DoctorManagementSystem());
@@ -9,10 +11,16 @@ class DoctorManagementSystem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: HomeView(),
-      ),
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return  const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: Scaffold(
+            body: OnboardingView(),
+          ),
+        );
+      },
+
     );
   }
 }
