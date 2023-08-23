@@ -86,7 +86,7 @@ class LoginBody extends StatelessWidget {
                       border: const OutlineInputBorder(
                         borderSide:BorderSide(color: Color(0xffDFDFDF))
                       ),
-                      hintText: "كلمة السر",
+                      hintText: "ادخل رقم الهوية",
                       hintStyle: GoogleFonts.cairo(
                         fontSize: 14,
                         color: const Color(0xffA3A3A3)
@@ -97,7 +97,7 @@ class LoginBody extends StatelessWidget {
                 SizedBox(height: 2.h,),
                 Row(
                   children: [
-                    Text("ادخل كلمة السر",
+                    Text("كلمة السر",
                       style: GoogleFonts.cairo(
                           fontWeight: FontWeight.w600,
                           fontSize: 14,
@@ -115,7 +115,7 @@ class LoginBody extends StatelessWidget {
                           border: const OutlineInputBorder(
                               borderSide:BorderSide(color: Color(0xffDFDFDF))
                           ),
-                          hintText: "ادخل رقم الهوية",
+                          hintText: "ادخل كلمة السر",
                           hintStyle: GoogleFonts.cairo(
                               fontSize: 14,
                               color: const Color(0xffA3A3A3)
