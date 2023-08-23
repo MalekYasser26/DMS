@@ -67,7 +67,7 @@ class LoginBody extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 3.h,),
+                SizedBox(height: 5.h,),
                 Row(
                   children: [
                     Text("رقم الهوية",
@@ -78,23 +78,25 @@ class LoginBody extends StatelessWidget {
                       ),)
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0,bottom: 8),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      isDense: true,
-                      border: const OutlineInputBorder(
-                        borderSide:BorderSide(color: Color(0xffDFDFDF))
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 8.0,bottom: 8),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        isDense: true,
+                        border: const OutlineInputBorder(
+                          borderSide:BorderSide(color: Color(0xffDFDFDF))
+                        ),
+                        hintText: "ادخل رقم الهوية",
+                        hintStyle: GoogleFonts.cairo(
+                          fontSize: 14,
+                          color: const Color(0xffA3A3A3)
+                        )
                       ),
-                      hintText: "ادخل رقم الهوية",
-                      hintStyle: GoogleFonts.cairo(
-                        fontSize: 14,
-                        color: const Color(0xffA3A3A3)
-                      )
                     ),
                   ),
                 ),
-                SizedBox(height: 2.h,),
                 Row(
                   children: [
                     Text("كلمة السر",
@@ -106,9 +108,9 @@ class LoginBody extends StatelessWidget {
                   ],
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 1,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 8.0,bottom: 8),
+                    padding: const EdgeInsets.only(top: 2.0,bottom: 8),
                     child: TextFormField(
                       decoration: InputDecoration(
                         isDense:true,
@@ -124,7 +126,7 @@ class LoginBody extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 8.h,),
+                SizedBox(height:10.h,),
                 Container(
                   height: 7.h,
                   width: double.infinity,

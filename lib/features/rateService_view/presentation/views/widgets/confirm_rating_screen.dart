@@ -31,39 +31,17 @@ class ConfirmView extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 40.0),
                     child: Row(
                       children: [
-                        Text("شكرا على استخدامك لنا , نتمنى لك\n               الشفاء العاجل",
+                        Text("شكرا على تقييمك لنا , نتمنى لك الشفاء\n                           العاجل",
                           style: GoogleFonts.cairo(
                               textStyle: const TextStyle(
                                   fontSize: 16,
-                                color: Color(0xff8F8E94)
+                                  color: Color(0xff8F8E94)
                               )
                           ),),
                       ],
                     ),
                   ),
                   SizedBox(height:8.h),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>const DetailsView() ,));
-                    },
-                    child: Container(
-                      height: 7.h,
-                      width: double.infinity,
-                      decoration: const BoxDecoration(
-                          color: Color(0xff159BAD)
-                      ),
-                      child: Center(
-                        child: Text("عرض تفاصيل الحجز",
-                          style: GoogleFonts.cairo(
-                              textStyle: const TextStyle(
-                                  color: Color(0xffFFFFFF),
-                                  fontSize: 16
-                              )
-                          ),),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height:2.h),
                   GestureDetector(
                     onTap: (){
 
@@ -109,7 +87,7 @@ class ConfirmView extends StatelessWidget {
                     ],
                   )
 
-              ],),
+                ],),
             ),
           ),
         ),
