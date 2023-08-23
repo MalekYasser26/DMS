@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/features/login_view/presentation/views/widgets/login_view_body.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -6,7 +7,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: Text("Login View")),
+      body:LoginBody(),
     );
   }
 }
