@@ -1,4 +1,5 @@
 import 'package:doctor_management_system/core/RepeatedWidgets/ButtonWidget.dart';
+import 'package:doctor_management_system/core/RepeatedWidgets/dropMenu.dart';
 import 'package:doctor_management_system/core/utils/Colors.dart';
 import 'package:doctor_management_system/core/utils/Constants.dart';
 import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
@@ -16,8 +17,6 @@ class RateSeviceView extends StatefulWidget {
 }
 
 class _RateSeviceViewState extends State<RateSeviceView> {
-  String dropdownValue1 = clinicName.first ;
-
   final BasicController = TextEditingController();
 
   @override
@@ -74,39 +73,7 @@ class _RateSeviceViewState extends State<RateSeviceView> {
                 SizedBox(height: 2.h),
                 Text("اختر العيادة المراد تقييمها" , style: GoogleFonts.cairo(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 2.1.h),),
                 SizedBox(height: 1.h),
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.shade300)
-                  ),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton(
-                      icon: Padding(
-                          padding:  EdgeInsets.all(2.w),
-                          child : Icon(Icons.keyboard_arrow_down,size: 35,weight: 5,color: Colors.grey.shade400,)
-                      ),
-                      isExpanded: true,
-                      alignment: Alignment.center,
-                      value: dropdownValue1,
-                      items: clinicName.map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Row(
-                            children: [
-                              SizedBox(width : 1.w),
-                              Icon(Icons.location_on_outlined,color: Colors.grey.shade400),
-                              SizedBox(width: 2.w,),
-                              Text(value,style: GoogleFonts.cairo(color: Colors.grey),),
-                            ],
-                          ),
-                        );
-                      }).toList(),
-                      onChanged: (value) {
-                        setState(() {
-                          dropdownValue1 = value!;
-                        });
-                      }, ),
-                  ),
-                ),
+                DropMenu(dropList: clinicName,iconDrop: Icons.location_on_outlined),
                 SizedBox(height: 2.h),
                 Container(
               color: AppColors.lightBlue.withOpacity(0.1),
