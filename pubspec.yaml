@@ -39,6 +39,7 @@ dependencies:
   sizer: ^2.0.15
   google_fonts: ^5.1.0
   flutter_rating_bar: ^4.0.1
+  dotted_border: ^2.0.0+3
 
 dev_dependencies:
   flutter_test:
