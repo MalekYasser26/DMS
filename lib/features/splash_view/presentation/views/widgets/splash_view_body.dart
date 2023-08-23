@@ -22,11 +22,11 @@ class _SplashViewBodyState extends State<SplashViewBody> with TickerProviderStat
         vsync: this,
         duration: const Duration(seconds: 5));
 
-    slidingAnimationRtoL = Tween<Offset>(begin:const Offset(1,0),end:const Offset(7,0))
+    slidingAnimationRtoL = Tween<Offset>(begin:const Offset(-10,0),end:const Offset(0,0))
         .animate(animationController);
     animationController.forward();
 
-    slidingAnimationLtoR = Tween<Offset>(begin:const Offset(-1,0),end:const Offset(5,0))
+    slidingAnimationLtoR = Tween<Offset>(begin:const Offset(10,0),end:const Offset(0,0))
         .animate(animationController);
     animationController.forward();
 
