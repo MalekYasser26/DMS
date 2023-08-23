@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/features/onboarding_view/presentation/views/onboarding_view.dart';
 import 'package:doctor_management_system/features/splash_view/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -15,7 +16,7 @@ class DoctorManagementSystem extends StatelessWidget {
         return  const MaterialApp(
           debugShowCheckedModeBanner: false,
           home: Scaffold(
-            body: SplashView(),
+            body: OnboardingView(),
           ),
         );
       },

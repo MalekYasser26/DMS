@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
 import 'package:doctor_management_system/features/onboarding_view/presentation/models/onboarding_model.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -43,6 +44,10 @@ class _AutoScrollViewState extends State<AutoScrollView> {
           widget.currentIndex = index;
 
         });
+        if (index ==2 ){
+          Future.delayed(Duration(milliseconds: 1500),() => Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView() ,)) ,);
+
+        }
       },
       itemBuilder: (context,index){
         return Stack(
@@ -51,6 +56,7 @@ class _AutoScrollViewState extends State<AutoScrollView> {
           [
             Image.asset(
               boardingItems[index].image,fit:BoxFit.fill ,width: double.infinity.w,),
+
           ],
         );
       },

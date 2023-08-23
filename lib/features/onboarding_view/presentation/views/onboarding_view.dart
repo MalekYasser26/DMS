@@ -32,8 +32,8 @@ class _OnboardingViewState extends State<OnboardingView> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: 6.h,),
-                  Text("تقدم العيادة العديد \nمن التخصصات في كثير من المجالاتا",
-                      style: GoogleFonts.cairo(color: Colors.white,fontSize: 5.h,fontWeight: FontWeight.bold),textDirection: TextDirection.ltr,textAlign: TextAlign.center),
+                  Text("تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
+                      style: GoogleFonts.cairo(color: Colors.white,fontSize: 4.h,fontWeight: FontWeight.bold),textDirection: TextDirection.ltr,textAlign: TextAlign.center),
                   SizedBox(height: 12.5.h,),
                   const Spacer(),
                   Padding(
@@ -46,7 +46,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                             InkWell(
                               onTap: () {
                                 print(currentIndex);
-                                pageController.previousPage(duration: Duration(milliseconds: 1000),
+                                pageController.nextPage(duration: Duration(milliseconds: 1000),
                                     curve: Curves.ease);
                               },
                               child: CircleAvatar(
@@ -63,7 +63,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                                ),
                               onTap: () {
                                 print(currentIndex);
-                                pageController.nextPage(duration: Duration(milliseconds: 1000), curve: Curves.ease);
+                                pageController.previousPage(duration: Duration(milliseconds: 1000), curve: Curves.ease);
                               },
                             ),
 
