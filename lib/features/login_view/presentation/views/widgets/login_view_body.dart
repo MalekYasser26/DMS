@@ -11,6 +11,7 @@ class LoginBody extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: SafeArea(
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           body: Padding(
             padding: const EdgeInsets.all(18.0),
             child: Column(
@@ -81,10 +82,11 @@ class LoginBody extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 8.0,bottom: 8),
                   child: TextFormField(
                     decoration: InputDecoration(
+                      isDense: true,
                       border: const OutlineInputBorder(
                         borderSide:BorderSide(color: Color(0xffDFDFDF))
                       ),
-                      hintText: "ادخل رقم الهوية",
+                      hintText: "كلمة السر",
                       hintStyle: GoogleFonts.cairo(
                         fontSize: 14,
                         color: const Color(0xffA3A3A3)
@@ -95,7 +97,7 @@ class LoginBody extends StatelessWidget {
                 SizedBox(height: 2.h,),
                 Row(
                   children: [
-                    Text("رقم الهوية",
+                    Text("ادخل كلمة السر",
                       style: GoogleFonts.cairo(
                           fontWeight: FontWeight.w600,
                           fontSize: 14,
@@ -103,18 +105,22 @@ class LoginBody extends StatelessWidget {
                       ),)
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0,bottom: 8),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(
-                            borderSide:BorderSide(color: Color(0xffDFDFDF))
-                        ),
-                        hintText: "ادخل رقم الهوية",
-                        hintStyle: GoogleFonts.cairo(
-                            fontSize: 14,
-                            color: const Color(0xffA3A3A3)
-                        )
+                Expanded(
+                  flex: 3,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 8.0,bottom: 8),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        isDense:true,
+                          border: const OutlineInputBorder(
+                              borderSide:BorderSide(color: Color(0xffDFDFDF))
+                          ),
+                          hintText: "ادخل رقم الهوية",
+                          hintStyle: GoogleFonts.cairo(
+                              fontSize: 14,
+                              color: const Color(0xffA3A3A3)
+                          )
+                      ),
                     ),
                   ),
                 ),
