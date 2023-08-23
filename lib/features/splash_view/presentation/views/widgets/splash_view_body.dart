@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/features/onboarding_view/presentation/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -22,14 +23,17 @@ class _SplashViewBodyState extends State<SplashViewBody> with TickerProviderStat
         vsync: this,
         duration: const Duration(seconds: 5));
 
-    slidingAnimationRtoL = Tween<Offset>(begin:const Offset(-10,0),end:const Offset(0,0))
+    slidingAnimationRtoL = Tween<Offset>(begin:const Offset(10,0),end:const Offset(1,0))
         .animate(animationController);
     animationController.forward();
 
-    slidingAnimationLtoR = Tween<Offset>(begin:const Offset(10,0),end:const Offset(0,0))
+    slidingAnimationLtoR = Tween<Offset>(begin:const Offset(-10,0),end:const Offset(-.8,0))
         .animate(animationController);
     animationController.forward();
 
+    Future.delayed(const Duration(milliseconds:4300 ),
+          () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>const OnboardingView() ,)),
+    );
 
   }
 
@@ -55,7 +59,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with TickerProviderStat
                             style: GoogleFonts.poppins(
                                 textStyle: const TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 24,
+                                    fontSize: 20,
                                     color: Colors.white
                                 )
                             ),
