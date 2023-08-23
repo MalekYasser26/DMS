@@ -139,7 +139,7 @@ class LoginBody extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("ليس لديك؟",
+            Text("ليس لديك حساب؟",
               style:GoogleFonts.cairo(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
