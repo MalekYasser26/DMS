@@ -16,7 +16,7 @@ class DoctorManagementSystem extends StatelessWidget {
         return  const MaterialApp(
           debugShowCheckedModeBanner: false,
           home: Scaffold(
-            body: OnboardingView(),
+            body: SplashView(),
           ),
         );
       },

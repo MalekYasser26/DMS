@@ -31,13 +31,18 @@ class _SplashViewBodyState extends State<SplashViewBody> with TickerProviderStat
         .animate(animationController);
     animationController.forward();
 
-    Future.delayed(const Duration(milliseconds:4300 ),
+    Future.delayed(const Duration(seconds:7 ),
           () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>const OnboardingView() ,)),
     );
 
   }
 
   @override
+  void dispose(){
+    animationController.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: const Color(0xff159BAD),
