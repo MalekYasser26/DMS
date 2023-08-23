@@ -1,7 +1,8 @@
+import 'package:doctor_management_system/core/RepeatedWidgets/BoxWidget.dart';
 import 'package:doctor_management_system/core/RepeatedWidgets/ButtonWidget.dart';
 import 'package:doctor_management_system/core/utils/Colors.dart';
 import 'package:doctor_management_system/core/utils/assets.dart';
-import 'package:doctor_management_system/features/booking_view/presentation/views/booking_view.dart';
+import 'package:doctor_management_system/features/booking_view/presentation/views/booking_view1.dart';
 import 'package:doctor_management_system/features/login_view/presentation/views/login_view.dart';
 import 'package:doctor_management_system/features/queueWait_view/presentation/views/queueWait_view.dart';
 import 'package:doctor_management_system/features/rateService_view/presentation/views/rateService_view.dart';
@@ -36,39 +37,18 @@ class HomeView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                          child: InkWell(
-                            onTap: () => Navigator.push(context, MaterialPageRoute(builder:(context) => QueueWaitView(), )),
-
-                            child: Container(
-                              child: Center(child: Text("قائمة الانتظار",style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.8.h),)),
-                              height: 15.h,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.white),
-                                color: Colors.transparent
-                              ),
-                            ),
-                          ),
+                          child:BoxWidget(text: "قائمة الانتظار", height: 15.h, fontSize: 2.8.h, borderColor: Colors.white, textColor: Colors.white, route: (context) => QueueWaitView())
                         ),
                         SizedBox(width : 4.w),
                         Expanded(
-                          child: InkWell(
-                            onTap: () => Navigator.push(context, MaterialPageRoute(builder:(context) => RateSeviceView(), )),
-                            child: Container(
-                              child: Center(child: Text("تقييم الخدمة",style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.8.h),)),
-                              height: 15.h,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.white),
-                                color: Colors.transparent
-                              ),
-                            ),
-                          ),
+                            child:BoxWidget(text: "تقييم الخدمة", height: 15.h, fontSize: 2.8.h, borderColor: Colors.white, textColor: Colors.white, route: (context) => RateSeviceView())
                         ),
                       ],
                     ),
                     SizedBox(height: 2.h,),
                     BasicButton(route: (context) => LoginView(), color: AppColors.lightBlue, Textcolor: Colors.white, TextSt: "تسجيل الدخول", borderColor: Colors.transparent,textSize: 2.h),
                     SizedBox(height: 2.h,),
-                    BasicButton(route: (context) => BookingView(), color:Colors.white , Textcolor: AppColors.lightBlue, TextSt: "حجز سريع", borderColor: Colors.transparent,textSize: 2.h),
+                    BasicButton(route: (context) => BookingView1(), color:Colors.white , Textcolor: AppColors.lightBlue, TextSt: "حجز سريع", borderColor: Colors.transparent,textSize: 2.h),
 
 
                   ],
