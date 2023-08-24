@@ -70,11 +70,11 @@ class _BookingView1State extends State<BookingView1> {
                         RichText( text:TextSpan(
                             children: [
                               TextSpan(text: "قمت بملئ بياناتك بالفعل؟ ",style: GoogleFonts.cairo(
-                                  color: Colors.black,fontSize: 2.5.h)),
+                                  color: Colors.black,fontSize: 2.h)),
                               TextSpan(
-                                recognizer: TapGestureRecognizer()..onTap = () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView(),)) ,
+                                  recognizer: TapGestureRecognizer()..onTap = () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView(),)) ,
                                   text: "تخطي",style: GoogleFonts.cairo(
-                                  color: AppColors.lightBlue,fontSize: 2.5.h,fontWeight: FontWeight.bold)
+                                  color: AppColors.lightBlue,fontSize: 2.h,fontWeight: FontWeight.bold)
                               ),
 
                             ]

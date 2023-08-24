@@ -23,3 +23,19 @@ List<String> timeStamps = [
   "12:00 PM",
   "01:00 PM",
 ];
+List<String>gender = [
+  "ذكر",
+  "أنثى"
+];
+List<bool> absentPresent=[
+  true ,
+  false,
+  false,
+  true,
+];
+List<String>Names=[
+  "احمد خالد حسن",
+  "خلود رجب السيد",
+  "مصطفى سعد",
+  "رهف اسماعيل",
+];

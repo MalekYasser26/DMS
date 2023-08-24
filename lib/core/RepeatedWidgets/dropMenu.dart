@@ -3,9 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class DropMenu extends StatefulWidget {
-   DropMenu({Key? key,required this.dropList,required this.iconDrop,this.dir=TextDirection.rtl}) : super(key: key);
+   DropMenu({Key? key,required this.dropList,this.iconDrop=null,this.dir=TextDirection.rtl}) : super(key: key);
   List<String> dropList  ;
-  IconData iconDrop ;
+  IconData ?iconDrop ;
   TextDirection dir ;
   @override
   State<DropMenu> createState() => _DropMenuState();
@@ -43,7 +43,7 @@ class _DropMenuState extends State<DropMenu> {
                 child: Row(
                   children: [
                     SizedBox(width : 1.w),
-                    Icon(widget.iconDrop,color: Colors.grey.shade400),
+                   widget.iconDrop !=null ? Icon(widget.iconDrop,color: Colors.grey.shade400) :Text("",style: TextStyle(color: Colors.transparent)) ,
                     SizedBox(width: 2.w,),
                     Text(value,style: GoogleFonts.cairo(color: Colors.grey),textDirection:widget.dir),
                   ],
