@@ -13,14 +13,14 @@ class AbsentPresent extends StatelessWidget {
         color: AppColors.golden.withOpacity(0.3)
       ),
       height: 4.h,
-      width: 6.h,
+      width: 8.h,
       child: Center(child: Text("حاضر",style: GoogleFonts.cairo(color: AppColors.golden,fontSize: 2.3.h))),
     ) :  Container(
       decoration: BoxDecoration(
           color: AppColors.red.withOpacity(0.3)
       ),
       height: 4.h,
-      width: 6.h,
+      width: 8.h,
       child: Center(child: Text("غائب",style: GoogleFonts.cairo(color: AppColors.red,fontSize: 2.3.h))),
     );
   }

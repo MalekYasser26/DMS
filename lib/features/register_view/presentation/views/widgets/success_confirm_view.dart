@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
 import 'package:doctor_management_system/features/register_view/presentation/views/widgets/confirm_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,19 +28,18 @@ class ConfirmView extends StatelessWidget {
                           )
                       ),),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 40.0),
-                    child: Row(
-                      children: [
-                        Text("شكرا على استخدامك لنا , نتمنى لك\n               الشفاء العاجل",
-                          style: GoogleFonts.cairo(
-                              textStyle: const TextStyle(
-                                  fontSize: 16,
-                                color: Color(0xff8F8E94)
-                              )
-                          ),),
-                      ],
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("شكرا على استخدامك لنا , نتمنى لك\nالشفاء العاجل",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.cairo(
+                            textStyle: const TextStyle(
+                                fontSize: 16,
+                              color: Color(0xff8F8E94)
+                            )
+                        ),),
+                    ],
                   ),
                   SizedBox(height:8.h),
                   GestureDetector(
@@ -66,7 +66,7 @@ class ConfirmView extends StatelessWidget {
                   SizedBox(height:2.h),
                   GestureDetector(
                     onTap: (){
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView(),));
                     },
                     child: Container(
                       height: 7.h,

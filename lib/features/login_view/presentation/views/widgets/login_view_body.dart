@@ -1,3 +1,5 @@
+import 'package:doctor_management_system/features/booking_view/presentation/views/booking_view1.dart';
+import 'package:doctor_management_system/features/dates_view/presentation/views/myDates_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -20,6 +22,7 @@ class LoginBody extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: (){
+                        Navigator.pop(context);
                       },
                       child: Container(
                         height: 4.h,
@@ -127,20 +130,23 @@ class LoginBody extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height:10.h,),
-                Container(
-                  height: 7.h,
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                    color: Color(0xff159BAD)
-                  ),
-                  child: Center(
-                    child: Text("تسجيل الدخول",
-                    style: GoogleFonts.cairo(
-                      textStyle: const TextStyle(
-                        color: Color(0xffFFFFFF),
-                        fontSize: 16
-                      )
-                    ),),
+                InkWell(
+                  onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => MyDatesView(),)),
+                  child: Container(
+                    height: 7.h,
+                    width: double.infinity,
+                    decoration: const BoxDecoration(
+                      color: Color(0xff159BAD)
+                    ),
+                    child: Center(
+                      child: Text("تسجيل الدخول",
+                      style: GoogleFonts.cairo(
+                        textStyle: const TextStyle(
+                          color: Color(0xffFFFFFF),
+                          fontSize: 16
+                        )
+                      ),),
+                    ),
                   ),
                 ),
                 const Spacer(),
@@ -155,7 +161,7 @@ class LoginBody extends StatelessWidget {
               ),),
             GestureDetector(
               onTap: (){
-
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BookingView1(),));
               },
               child: Text("سجل الان",
                 style:GoogleFonts.cairo(

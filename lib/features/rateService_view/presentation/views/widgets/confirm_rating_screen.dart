@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/features/register_view/presentation/views/widgets/confirm_view.dart';
+import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -31,7 +31,8 @@ class ConfirmRatingView extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 40.0),
                     child: Row(
                       children: [
-                        Text("شكرا على تقييمك لنا , نتمنى لك الشفاء\n                           العاجل",
+                        Text("شكرا على تقييمك لنا , نتمنى لك الشفاء\nالعاجل",
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.cairo(
                               textStyle: const TextStyle(
                                   fontSize: 16,
@@ -44,7 +45,7 @@ class ConfirmRatingView extends StatelessWidget {
                   SizedBox(height:8.h),
                   GestureDetector(
                     onTap: (){
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView(),));
                     },
                     child: Container(
                       height: 7.h,

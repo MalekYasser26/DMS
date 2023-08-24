@@ -1,3 +1,5 @@
+import 'package:doctor_management_system/features/dates_view/presentation/views/myDates_view.dart';
+import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -197,7 +199,7 @@ class DetailsView extends StatelessWidget {
                   SizedBox(height:2.h),
                   GestureDetector(
                     onTap: (){
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MyDatesView(),));
                     },
                     child: Container(
                       height: 7.h,
@@ -219,7 +221,7 @@ class DetailsView extends StatelessWidget {
                   SizedBox(height:2.h),
                   GestureDetector(
                     onTap: (){
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView(),));
                     },
                     child: Container(
                       height: 7.h,
