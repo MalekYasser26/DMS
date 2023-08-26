@@ -150,6 +150,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                     ),
                     Expanded(
                       child: TabBarView(
+                        physics: BouncingScrollPhysics(),
                         children: [
                           Column(
                             mainAxisSize: MainAxisSize.min,
@@ -188,10 +189,10 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                                 child: ListView.separated(
                                     physics: ClampingScrollPhysics(),
                                     itemBuilder: (context, index) =>
-                                        ExtraNotesWidget(date: "21 Aug, Mon - 09:20 am", note: diagnosis[index]),
+                                        ExtraNotesWidget(date: "21 Aug, Mon - 09:20 am", note: notes[index]),
                                     separatorBuilder: (context, index) => SizedBox(height: 1.h),
 
-                                    itemCount: 4),
+                                    itemCount: notes.length),
                               )
 
                             ],
