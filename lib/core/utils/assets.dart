@@ -7,6 +7,7 @@ class AssetsData{
   static const drug1='assets/images/drug1.png';
   static const drug2='assets/images/drug2.png';
   static const drug3='assets/images/drug3.png';
+  static const uploadPhoto='assets/images/uploadPhoto.png';
 
 }
 
