@@ -1,3 +1,5 @@
+import 'package:doctor_management_system/core/RepeatedWidgets/ButtonWidget.dart';
+import 'package:doctor_management_system/core/RepeatedWidgets/FunctionButton.dart';
 import 'package:doctor_management_system/core/utils/Constants.dart';
 import 'package:doctor_management_system/core/utils/assets.dart';
 import 'package:doctor_management_system/features/patient_details_view/presentation/views/widgets/ExtraNotesWidget.dart';
@@ -193,8 +195,12 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                                     separatorBuilder: (context, index) => SizedBox(height: 1.h),
 
                                     itemCount: notes.length),
-                              )
-
+                              ),
+                              NoteAlertDialogButton(
+                                  color: AppColors.lightBlue,
+                                  Textcolor: Colors.white,
+                                  TextSt: "اضافة ملاحظة",
+                                  borderColor: Colors.transparent)
                             ],
                           ),
 

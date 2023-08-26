@@ -46,9 +46,9 @@ class HomeView extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 2.h,),
-                    BasicButton(route: (context) => LoginView(), color: AppColors.lightBlue, Textcolor: Colors.white, TextSt: "تسجيل الدخول", borderColor: Colors.transparent,textSize: 2.h),
+                    BasicButtonRoute(route: (context) => LoginView(), color: AppColors.lightBlue, Textcolor: Colors.white, TextSt: "تسجيل الدخول", borderColor: Colors.transparent,textSize: 2.h),
                     SizedBox(height: 2.h,),
-                    BasicButton(route: (context) => BookingView1(), color:Colors.white , Textcolor: AppColors.lightBlue, TextSt: "حجز سريع", borderColor: Colors.transparent,textSize: 2.h),
+                    BasicButtonRoute(route: (context) => BookingView1(), color:Colors.white , Textcolor: AppColors.lightBlue, TextSt: "حجز سريع", borderColor: Colors.transparent,textSize: 2.h),
 
 
                   ],

@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 
-class BasicButton extends StatelessWidget {
+class BasicButtonRoute extends StatelessWidget {
   final WidgetBuilder route;
   final  Color color  ;
   final  Color Textcolor  ;
   final  String TextSt  ;
   final  Color borderColor  ;
   final double textSize ;
-  BasicButton({Key? key, required this.route,required this.color,required this.Textcolor,required this.TextSt,required this.borderColor,this.textSize=14}) : super(key: key);
+  BasicButtonRoute({Key? key, required this.route,required this.color,required this.Textcolor,required this.TextSt,required this.borderColor,this.textSize=14}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
