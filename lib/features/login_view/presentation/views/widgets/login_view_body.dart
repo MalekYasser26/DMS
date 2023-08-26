@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/core/RepeatedWidgets/BasicTextFF.dart';
 import 'package:doctor_management_system/features/booking_view/presentation/views/booking_view1.dart';
 import 'package:doctor_management_system/features/dates_view/presentation/views/myDates_view.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class LoginBody extends StatelessWidget {
           resizeToAvoidBottomInset: false,
           body: Padding(
             padding: const EdgeInsets.all(18.0),
-            child: Column(
+            child: ListView(
               children: [
                 Row(
                   children: [
@@ -71,67 +72,11 @@ class LoginBody extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 5.h,),
-                Row(
-                  children: [
-                    Text("رقم الهوية",
-                      style: GoogleFonts.cairo(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14,
-                          color: const Color(0xff1E1E1E)
-                      ),)
-                  ],
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 8.0,bottom: 8),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        isDense: true,
-                        border: const OutlineInputBorder(
-                          borderSide:BorderSide(color: Color(0xffDFDFDF))
-                        ),
-                        hintText: "ادخل رقم الهوية",
-                        hintStyle: GoogleFonts.cairo(
-                          fontSize: 14,
-                          color: const Color(0xffA3A3A3)
-                        )
-                      ),
-                    ),
-                  ),
-                ),
-                Row(
-                  children: [
-                    Text("كلمة السر",
-                      style: GoogleFonts.cairo(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14,
-                          color: const Color(0xff1E1E1E)
-                      ),)
-                  ],
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 2.0,bottom: 8),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        isDense:true,
-                          border: const OutlineInputBorder(
-                              borderSide:BorderSide(color: Color(0xffDFDFDF))
-                          ),
-                          hintText: "ادخل كلمة السر",
-                          hintStyle: GoogleFonts.cairo(
-                              fontSize: 14,
-                              color: const Color(0xffA3A3A3)
-                          )
-                      ),
-                    ),
-                  ),
-                ),
+                BasicTextFF(fftext: "رقم الهوية"),
+                BasicTextFF(fftext: "كلمة السر"),
                 SizedBox(height:10.h,),
                 InkWell(
-                  onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => MyDatesView(),)),
+                  onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => const MyDatesView(),)),
                   child: Container(
                     height: 7.h,
                     width: double.infinity,
@@ -149,7 +94,7 @@ class LoginBody extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Spacer(),
+                SizedBox(height: 30.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -161,7 +106,7 @@ class LoginBody extends StatelessWidget {
               ),),
             GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => BookingView1(),));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const BookingView1(),));
               },
               child: Text("سجل الان",
                 style:GoogleFonts.cairo(
@@ -180,3 +125,22 @@ class LoginBody extends StatelessWidget {
     );
   }
 }
+// Expanded(
+// flex: 1,
+// child: Padding(
+// padding: const EdgeInsets.only(top: 2.0,bottom: 8),
+// child: TextFormField(
+// decoration: InputDecoration(
+// isDense:true,
+// border: const OutlineInputBorder(
+// borderSide:BorderSide(color: Color(0xffDFDFDF))
+// ),
+// hintText: "ادخل كلمة السر",
+// hintStyle: GoogleFonts.cairo(
+// fontSize: 14,
+// color: const Color(0xffA3A3A3)
+// )
+// ),
+// ),
+// ),
+// ),
