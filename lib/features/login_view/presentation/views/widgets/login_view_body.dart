@@ -1,6 +1,8 @@
 import 'package:doctor_management_system/core/RepeatedWidgets/BasicTextFF.dart';
+import 'package:doctor_management_system/features/booking_view/presentation/views/PatientDetails.dart';
 import 'package:doctor_management_system/features/booking_view/presentation/views/booking_view1.dart';
 import 'package:doctor_management_system/features/dates_view/presentation/views/myDates_view.dart';
+import 'package:doctor_management_system/features/patient_details_view/presentation/views/patientDetailsView.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -76,7 +78,7 @@ class LoginBody extends StatelessWidget {
                 BasicTextFF(fftext: "كلمة السر"),
                 SizedBox(height:10.h,),
                 InkWell(
-                  onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => const MyDatesView(),)),
+                  onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => const PatientDetailsView(),)),
                   child: Container(
                     height: 7.h,
                     width: double.infinity,
