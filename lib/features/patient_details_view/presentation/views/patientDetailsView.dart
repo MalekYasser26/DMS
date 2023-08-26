@@ -1,6 +1,8 @@
 import 'package:doctor_management_system/core/utils/Constants.dart';
 import 'package:doctor_management_system/core/utils/assets.dart';
+import 'package:doctor_management_system/features/patient_details_view/presentation/views/widgets/ExtraNotesWidget.dart';
 import 'package:doctor_management_system/features/patient_details_view/presentation/views/widgets/MedicalHistoryWidget.dart';
+import 'package:doctor_management_system/features/patient_details_view/presentation/views/widgets/drugWidget.dart';
 import 'package:doctor_management_system/features/patient_details_view/presentation/views/widgets/medicalBox.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -171,10 +173,10 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                                 child: ListView.separated(
                                     physics: ClampingScrollPhysics(),
                                     itemBuilder: (context, index) =>
-                                       Text("1"),
+                                    DrugWidget(imagePath: drugImgs[index], text: "${doses[index]}", drugs: "${drugs[index]}",manyTimes: "${timesADay[index]}"),
                                     separatorBuilder: (context, index) => SizedBox(height: 1.h),
 
-                                    itemCount: 5),
+                                    itemCount: drugs.length),
                               )
 
                             ],
@@ -186,10 +188,10 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                                 child: ListView.separated(
                                     physics: ClampingScrollPhysics(),
                                     itemBuilder: (context, index) =>
-                                       Text("1"),
+                                        ExtraNotesWidget(date: "21 Aug, Mon - 09:20 am", note: diagnosis[index]),
                                     separatorBuilder: (context, index) => SizedBox(height: 1.h),
 
-                                    itemCount: 5),
+                                    itemCount: 4),
                               )
 
                             ],
