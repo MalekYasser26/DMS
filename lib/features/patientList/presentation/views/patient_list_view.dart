@@ -1,8 +1,14 @@
 import 'package:doctor_management_system/core/utils/Colors.dart';
+import 'package:doctor_management_system/core/utils/Constants.dart';
+import 'package:doctor_management_system/features/dates_view/presentation/views/AbsentPresent.dart';
+import 'package:doctor_management_system/features/patient_details_view/presentation/views/patientDetailsView.dart';
+import 'package:doctor_management_system/features/patient_details_view/presentation/views/widgets/NoteAlertDialog.dart';
 import 'package:doctor_management_system/features/results/presentation/views/results_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../../rateService_view/presentation/views/widgets/confirm_rating_screen.dart';
 
 class PatientListView extends StatefulWidget {
   const PatientListView({Key? key}) : super(key: key);
@@ -217,6 +223,7 @@ class _PatientListViewState extends State<PatientListView> {
                   Padding(
                     padding: const EdgeInsets.only(right:20),
                     child: Row(
+
                       children: [
                         Text("الاسم",
                           style: GoogleFonts.cairo(
@@ -225,9 +232,10 @@ class _PatientListViewState extends State<PatientListView> {
                                   color: Color(0xff404040)
                               )
                           ),),
-                        SizedBox(width: 23.w,),
+                        Spacer(),
+                        SizedBox(width: 16.w,),
                         GestureDetector(
-                          onTap: (){},
+                            onTap: (){},
                             child: Image.asset("assets/images/list.png",height: 3.h,)),
                         Padding(
                           padding: const EdgeInsets.only(right: 6.0),
@@ -239,11 +247,10 @@ class _PatientListViewState extends State<PatientListView> {
                                 )
                             ),),
                         ),
-                        SizedBox(width: 14.w,),
+                        const Spacer(),
                         GestureDetector(
                             onTap: (){},
                             child: Image.asset("assets/images/list.png",height: 3.h,)),
-                        const Spacer(),
                         InkWell(
                             radius: 30,
                             borderRadius: BorderRadius.circular(13),
@@ -253,13 +260,14 @@ class _PatientListViewState extends State<PatientListView> {
                                 height: 3.h,
                                 child: const Icon(Icons.keyboard_arrow_right,size: 20,))),
                         InkWell(
-                          radius: 30,
-                         borderRadius: BorderRadius.circular(13),
-                          onTap: (){},
+                            radius: 30,
+                            borderRadius: BorderRadius.circular(13),
+                            onTap: (){},
                             child: SizedBox(
-                              width: 3.h,
+                                width: 3.h,
                                 height: 3.h,
                                 child: const Icon(Icons.keyboard_arrow_left,size: 20,))),
+
 
 
 
@@ -268,226 +276,401 @@ class _PatientListViewState extends State<PatientListView> {
                   ),
 
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Radio(
-                          visualDensity: const VisualDensity(horizontal: -4),
-                          activeColor: KPrimaryColor,
-                          value: 1,
-                          groupValue: selectedRadio,
-                          onChanged: (value){
-                            setState(() {
-                              selectedRadio=value;
-                            });
-                          }
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Radio(
+                                  visualDensity: const VisualDensity(horizontal: -4),
+                                  activeColor: KPrimaryColor,
+                                  value: 1,
+                                  groupValue: selectedRadio,
+                                  onChanged: (value){
+                                    setState(() {
+                                      selectedRadio=value;
+                                    });
+                                  }
+                              ),
+                              Text("احمد خالد اسماعيل",
+                                style: GoogleFonts.cairo(
+                                    textStyle:  TextStyle(
+                                        fontSize: 2.h
+                                    ),
+                                    color:Colors.black,
+                                    fontWeight: selectedRadio ==1 ? FontWeight.w500 : FontWeight.w400
+                                ),),
+                              SizedBox(width: 2.w,),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                  visualDensity: const VisualDensity(horizontal: -4),
+                                  activeColor: KPrimaryColor,
+                                  value: 2,
+                                  groupValue: selectedRadio,
+                                  onChanged: (value){
+                                    setState(() {
+                                      selectedRadio=value;
+                                    });
+                                  }
+                              ),
+                              Text("يسرا السيد عبد اللطيف",
+                                style: GoogleFonts.cairo(
+                                    textStyle:  TextStyle(
+                                        fontSize: 2.h
+                                    ),
+
+                                    color:Colors.black,
+                                    fontWeight: selectedRadio ==2 ? FontWeight.w500 : FontWeight.w400
+                                ),),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                  visualDensity: const VisualDensity(horizontal: -4),
+                                  activeColor: KPrimaryColor,
+                                  value: 3,
+                                  groupValue: selectedRadio,
+                                  onChanged: (value){
+                                    setState(() {
+                                      selectedRadio=value;
+                                    });
+                                  }
+                              ),
+                              Text("هبة الله اشرف",
+                                style: GoogleFonts.cairo(
+                                    textStyle:  TextStyle(
+                                        fontSize: 2.h
+                                    ),
+
+                                    color:Colors.black,
+                                    fontWeight: selectedRadio ==3 ? FontWeight.w500 : FontWeight.w400
+                                ),),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                  visualDensity: const VisualDensity(horizontal: -4),
+                                  activeColor: KPrimaryColor,
+                                  value: 4,
+                                  groupValue: selectedRadio,
+                                  onChanged: (value){
+                                    setState(() {
+                                      selectedRadio=value;
+                                    });
+                                  }
+                              ),
+                              Text("مجدى خالد احمد",
+                                style: GoogleFonts.cairo(
+                                    textStyle:  TextStyle(
+                                        fontSize: 2.h
+                                    ),
+
+                                    color:Colors.black,
+                                    fontWeight: selectedRadio ==4 ? FontWeight.w500 : FontWeight.w400
+                                ),),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                  visualDensity: const VisualDensity(horizontal: -4),
+                                  activeColor: KPrimaryColor,
+                                  value: 5,
+                                  groupValue: selectedRadio,
+                                  onChanged: (value){
+                                    setState(() {
+                                      selectedRadio=value;
+                                    });
+                                  }
+                              ),
+                              Text("علي كامل",
+                                style: GoogleFonts.cairo(
+                                    textStyle:  TextStyle(
+                                        fontSize: 2.h
+                                    ),
+
+                                    color:Colors.black,
+                                    fontWeight: selectedRadio ==5 ? FontWeight.w500 : FontWeight.w400
+                                ),),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                  visualDensity: const VisualDensity(horizontal: -4),
+                                  activeColor: KPrimaryColor,
+                                  value: 6,
+                                  groupValue: selectedRadio,
+                                  onChanged: (value){
+                                    setState(() {
+                                      selectedRadio=value;
+                                    });
+                                  }
+                              ),
+                              Text("يوسف علي",
+                                style: GoogleFonts.cairo(
+                                    textStyle:  TextStyle(
+                                        fontSize: 2.h
+                                    ),
+
+                                    color:Colors.black,
+                                    fontWeight: selectedRadio ==6 ? FontWeight.w500 : FontWeight.w400
+                                ),),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                  visualDensity: const VisualDensity(horizontal: -4),
+                                  activeColor: KPrimaryColor,
+                                  value: 7,
+                                  groupValue: selectedRadio,
+                                  onChanged: (value){
+                                    setState(() {
+                                      selectedRadio=value;
+                                    });
+                                  }
+                              ),
+                              Text("زياد ياسر",
+                                style: GoogleFonts.cairo(
+                                    textStyle:  TextStyle(
+                                        fontSize: 2.h
+                                    ),
+
+                                    color:Colors.black,
+                                    fontWeight: selectedRadio ==7 ? FontWeight.w500 : FontWeight.w400
+                                ),),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                  visualDensity: const VisualDensity(horizontal: -4),
+                                  activeColor: KPrimaryColor,
+                                  value: 8,
+                                  groupValue: selectedRadio,
+                                  onChanged: (value){
+                                    setState(() {
+                                      selectedRadio=value;
+                                    });
+                                  }
+                              ),
+                              Text("محمد عبدالعزيز",
+                                style: GoogleFonts.cairo(
+                                    textStyle:  TextStyle(
+                                        fontSize: 2.h
+                                    ),
+
+                                    color:Colors.black,
+                                    fontWeight: selectedRadio ==8 ? FontWeight.w500 : FontWeight.w400
+                                ),),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                  visualDensity: const VisualDensity(horizontal: -4),
+                                  activeColor: KPrimaryColor,
+                                  value: 9,
+                                  groupValue: selectedRadio,
+                                  onChanged: (value){
+                                    setState(() {
+                                      selectedRadio=value;
+                                    });
+                                  }
+                              ),
+                              Text("كريم اشرف",
+                                style: GoogleFonts.cairo(
+                                    textStyle:  TextStyle(
+                                        fontSize: 2.h
+                                    ),
+
+                                    color:Colors.black,
+                                    fontWeight: selectedRadio ==9 ? FontWeight.w500 : FontWeight.w400
+                                ),),
+                            ],
+                          ),
+                        ],
                       ),
-                      Text("احمد خالد اسماعيل",
-                        style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                fontSize: 16
+                      Expanded(
+                        child: ListView.separated(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                            itemBuilder: (context, index) => Padding(
+                              padding:  EdgeInsets.only(top: 1.h),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: AbsentPresent(
+                                        isAbsent: absentPresent[index], h: 4.h, w: 1.h),
+                                  ),
+                                  Spacer(),
+                                  Expanded(child: InkWell(
+                                    onTap: () {},
+                                    child: Directionality(
+                                      textDirection: TextDirection.rtl,
+                                      child: PopupMenuButton<String>(
+                                        itemBuilder: (BuildContext context) {
+                                          return <PopupMenuItem<String>>[
+                                             PopupMenuItem<String>(
+                                              value: 'item1',
+                                              child: Text('رؤية التفاصيل',style: GoogleFonts.cairo()),
+                                            ),
+                                             PopupMenuItem<String>(
+                                              value: 'item2',
+                                              child: Text('رؤية الملاحظات',style: GoogleFonts.cairo()),
+                                            ),
+                                             PopupMenuItem<String>(
+                                              value: 'item3',
+                                              child: Text('اضافة ملاحظة',style: GoogleFonts.cairo(),),
+                                            ),
+                                             PopupMenuItem<String>(
+                                              value: 'item4',
+                                              child: Text('انهاء وقت المريض',style: GoogleFonts.cairo(),),
+                                            ),
+
+                                          ];
+                                        },
+                                        onSelected: (String value) {
+                                          if (value == 'item1') {
+                                            Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 0),));
+                                          } else if (value == 'item2') {
+                                            Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 2),));
+                                          } else if (value=='item3'){
+                                            showAlertDialog(context); // Call the function to show the alert dialog
+
+                                          }
+                                        },
+                                        child: Image.asset('assets/images/threedots.png'),
+                                      ),
+                                    ),
+                                  )
+
+
+                                  )
+                                ],
+                              ),
                             ),
-                            color:Colors.black,
-                            fontWeight: selectedRadio ==1 ? FontWeight.w500 : FontWeight.w400
-                        ),),
+                            separatorBuilder: (context, index) => SizedBox(height: 1.h),
+                            itemCount:absentPresent.length ),
+                      ),
+
                     ],
                   ),
 
-                  Row(
-                    children: [
-                      Radio(
-                          visualDensity: const VisualDensity(horizontal: -4),
-                          activeColor: KPrimaryColor,
-                          value: 2,
-                          groupValue: selectedRadio,
-                          onChanged: (value){
-                            setState(() {
-                              selectedRadio=value;
-                            });
-                          }
-                      ),
-                      Text("يسرا السيد عبد اللطيف",
-                        style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                fontSize: 16
-                            ),
-                            color:Colors.black,
-                            fontWeight: selectedRadio ==2 ? FontWeight.w500 : FontWeight.w400
-                        ),),
-                    ],
-                  ),
 
-                  Row(
-                    children: [
-                      Radio(
-                          visualDensity: const VisualDensity(horizontal: -4),
-                          activeColor: KPrimaryColor,
-                          value: 3,
-                          groupValue: selectedRadio,
-                          onChanged: (value){
-                            setState(() {
-                              selectedRadio=value;
-                            });
-                          }
-                      ),
-                      Text("هبة الله اشرف",
-                        style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                fontSize: 16
-                            ),
-                            color:Colors.black,
-                            fontWeight: selectedRadio ==3 ? FontWeight.w500 : FontWeight.w400
-                        ),),
-                    ],
-                  ),
-
-                  Row(
-                    children: [
-                      Radio(
-                          visualDensity: const VisualDensity(horizontal: -4),
-                          activeColor: KPrimaryColor,
-                          value: 4,
-                          groupValue: selectedRadio,
-                          onChanged: (value){
-                            setState(() {
-                              selectedRadio=value;
-                            });
-                          }
-                      ),
-                      Text("مجدى خالد احمد",
-                        style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                fontSize: 16
-                            ),
-                            color:Colors.black,
-                            fontWeight: selectedRadio ==4 ? FontWeight.w500 : FontWeight.w400
-                        ),),
-                    ],
-                  ),
-
-                  Row(
-                    children: [
-                      Radio(
-                          visualDensity: const VisualDensity(horizontal: -4),
-                          activeColor: KPrimaryColor,
-                          value: 5,
-                          groupValue: selectedRadio,
-                          onChanged: (value){
-                            setState(() {
-                              selectedRadio=value;
-                            });
-                          }
-                      ),
-                      Text("علي كامل",
-                        style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                fontSize: 16
-                            ),
-                            color:Colors.black,
-                            fontWeight: selectedRadio ==5 ? FontWeight.w500 : FontWeight.w400
-                        ),),
-                    ],
-                  ),
-
-                  Row(
-                    children: [
-                      Radio(
-                          visualDensity: const VisualDensity(horizontal: -4),
-                          activeColor: KPrimaryColor,
-                          value: 6,
-                          groupValue: selectedRadio,
-                          onChanged: (value){
-                            setState(() {
-                              selectedRadio=value;
-                            });
-                          }
-                      ),
-                      Text("يوسف علي",
-                        style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                fontSize: 16
-                            ),
-                            color:Colors.black,
-                            fontWeight: selectedRadio ==6 ? FontWeight.w500 : FontWeight.w400
-                        ),),
-                    ],
-                  ),
-
-                  Row(
-                    children: [
-                      Radio(
-                          visualDensity: const VisualDensity(horizontal: -4),
-                          activeColor: KPrimaryColor,
-                          value: 7,
-                          groupValue: selectedRadio,
-                          onChanged: (value){
-                            setState(() {
-                              selectedRadio=value;
-                            });
-                          }
-                      ),
-                      Text("زياد ياسر",
-                        style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                fontSize: 16
-                            ),
-                            color:Colors.black,
-                            fontWeight: selectedRadio ==7 ? FontWeight.w500 : FontWeight.w400
-                        ),),
-                    ],
-                  ),
-
-                  Row(
-                    children: [
-                      Radio(
-                          visualDensity: const VisualDensity(horizontal: -4),
-                          activeColor: KPrimaryColor,
-                          value: 8,
-                          groupValue: selectedRadio,
-                          onChanged: (value){
-                            setState(() {
-                              selectedRadio=value;
-                            });
-                          }
-                      ),
-                      Text("محمد عبدالعزيز",
-                        style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                fontSize: 16
-                            ),
-                            color:Colors.black,
-                            fontWeight: selectedRadio ==8 ? FontWeight.w500 : FontWeight.w400
-                        ),),
-                    ],
-                  ),
-
-                  Row(
-                    children: [
-                      Radio(
-                          visualDensity: const VisualDensity(horizontal: -4),
-                          activeColor: KPrimaryColor,
-                          value: 9,
-                          groupValue: selectedRadio,
-                          onChanged: (value){
-                            setState(() {
-                              selectedRadio=value;
-                            });
-                          }
-                      ),
-                      Text("كريم اشرف",
-                        style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                fontSize: 16
-                            ),
-                            color:Colors.black,
-                            fontWeight: selectedRadio ==9 ? FontWeight.w500 : FontWeight.w400
-                        ),),
-                    ],
-                  ),
                 ],
               ),
             ),
           ),
         ),
       ),
+    );
+  }
+
+  void showAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Directionality(
+          textDirection: TextDirection.rtl,
+          child: AlertDialog(
+            title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children:
+                [
+                  Text('اضافة ملاحظة',style: GoogleFonts.cairo(fontWeight: FontWeight.bold)),
+                  InkWell(
+                      onTap: () => Navigator.pop(context),
+                      child: Icon(Icons.close)),
+                ]),
+
+            content: SizedBox(
+              width: double.infinity,
+              height: 40.h,
+              child: Column(
+                children: [
+                  Divider(thickness: 1),
+                  SizedBox(height: 1.h,),
+                  Text("اضافة ملاحظة الى المريض “اسم المريض”",style: GoogleFonts.cairo(fontSize: 1.8.h)),
+                  SizedBox(height: 1.h,),
+                  TextField(
+                    textAlignVertical: TextAlignVertical.top,
+                    textAlign: TextAlign.start,
+                    textDirection: TextDirection.rtl,
+                    onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
+                    decoration: InputDecoration(
+                      enabledBorder:  OutlineInputBorder(
+                        borderSide:  BorderSide(color: Colors.grey.shade300, ),
+                      ),
+                      contentPadding: EdgeInsets.only(bottom: 18.h,right: 2.h,top: 1.h),
+                      isDense: true,
+
+                      hintText: "اضف ملاحظاتك هنا",
+                      hintStyle: GoogleFonts.cairo(color:Colors.grey.shade600 ),
+                      alignLabelWithHint: true,
+
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+
+                  ),
+                  SizedBox(height: 2.h,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmRatingView(),)),
+                          child: Container(
+                            height: 5.h,
+                            decoration: BoxDecoration(
+                              color: AppColors.lightBlue,
+                            ),
+                            child: Center(
+                              child: Text(
+                                "اضافة",
+                                style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 1.w,),
+                      Expanded(
+                        child: InkWell(
+                          onTap: () => Navigator.pop(context),
+                          child: Container(
+                            height: 5.h,
+                            decoration: BoxDecoration(
+                              color:Colors.grey.shade400,
+                            ),
+                            child: Center(
+                              child: Text(
+                                "الغاء",
+                                style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  )
+
+                ],
+
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

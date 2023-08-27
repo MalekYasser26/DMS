@@ -26,7 +26,7 @@ class NoteAlertDialogButton extends StatefulWidget {
 
 class _NoteAlertDialogButtonState extends State<NoteAlertDialogButton> {
   // Function to show the alert dialog
-  void _showAlertDialog(BuildContext context) {
+  void showAlertDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -129,7 +129,7 @@ class _NoteAlertDialogButtonState extends State<NoteAlertDialogButton> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        _showAlertDialog(context); // Call the function to show the alert dialog
+        showAlertDialog(context); // Call the function to show the alert dialog
       },
       child: Container(
         height: 5.h,

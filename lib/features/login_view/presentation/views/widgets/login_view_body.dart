@@ -78,7 +78,7 @@ class LoginBody extends StatelessWidget {
                 BasicTextFF(fftext: "كلمة السر"),
                 SizedBox(height:10.h,),
                 InkWell(
-                  onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => const PatientDetailsView(),)),
+                  onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) =>  PatientDetailsView(),)),
                   child: Container(
                     height: 7.h,
                     width: double.infinity,

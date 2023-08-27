@@ -4,16 +4,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class AbsentPresent extends StatelessWidget {
-   AbsentPresent({Key? key , required this.isAbsent}) : super(key: key);
+   AbsentPresent({Key? key , required this.isAbsent ,  required this.h , required this.w}) : super(key: key);
   bool isAbsent;
+  var h , w  ;
   @override
   Widget build(BuildContext context) {
     return isAbsent ? Container(
       decoration: BoxDecoration(
         color: AppColors.golden.withOpacity(0.3)
       ),
-      height: 4.h,
-      width: 8.h,
+      height: h,
+      width: w,
       child: Center(child: Text("حاضر",style: GoogleFonts.cairo(color: AppColors.golden,fontSize: 2.3.h))),
     ) :  Container(
       decoration: BoxDecoration(
