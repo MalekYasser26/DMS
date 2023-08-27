@@ -28,6 +28,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
         length: 3,
         initialIndex: widget.initialIndex,
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: Colors.white,
           body: SafeArea(
               child: Padding(

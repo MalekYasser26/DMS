@@ -3,6 +3,7 @@ import 'package:doctor_management_system/core/RepeatedWidgets/ButtonWidget.dart'
 import 'package:doctor_management_system/core/utils/Colors.dart';
 import 'package:doctor_management_system/core/utils/assets.dart';
 import 'package:doctor_management_system/features/booking_view/presentation/views/booking_view1.dart';
+import 'package:doctor_management_system/features/doctor_login/presentation/views/doctor_login_view.dart';
 import 'package:doctor_management_system/features/login_view/presentation/views/login_view.dart';
 import 'package:doctor_management_system/features/queueWait_view/presentation/views/queueWait_view.dart';
 import 'package:doctor_management_system/features/rateService_view/presentation/views/rateService_view.dart';
@@ -46,7 +47,7 @@ class HomeView extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 2.h,),
-                    BasicButtonRoute(route: (context) => LoginView(), color: AppColors.lightBlue, Textcolor: Colors.white, TextSt: "تسجيل الدخول", borderColor: Colors.transparent,textSize: 2.h),
+                    BasicButtonRoute(route: (context) => DoctorLoginScreen(), color: AppColors.lightBlue, Textcolor: Colors.white, TextSt: "تسجيل الدخول", borderColor: Colors.transparent,textSize: 2.h),
                     SizedBox(height: 2.h,),
                     BasicButtonRoute(route: (context) => BookingView1(), color:Colors.white , Textcolor: AppColors.lightBlue, TextSt: "حجز سريع", borderColor: Colors.transparent,textSize: 2.h),
 

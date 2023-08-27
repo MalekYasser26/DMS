@@ -9,13 +9,17 @@ class MedicalBoxInfo extends StatelessWidget {
   bool isBP ;
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height ;
+    var width = MediaQuery.of(context).size.width ;
+    var size = MediaQuery.of(context).size ;
+
     return Container(
       padding: EdgeInsets.only(left :2.w),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade400)
       ),
-      height: 11.h,
-      width: 14.h,
+      height: height*0.12,
+      width: width*0.28,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +28,7 @@ class MedicalBoxInfo extends StatelessWidget {
           Row(
 
             children: [
-              Text("$category",style: GoogleFonts.cairo(color: Colors.grey,fontSize:1.8.h )),
+              Text("$category",style: GoogleFonts.cairo(color: Colors.grey,fontSize:0.017*height )),
               isBP ==false ?Icon(Icons.arrow_drop_down,color: AppColors.green,) : Text(""),
               isBP ==false ?Text("$extraST",style: GoogleFonts.cairo(color: AppColors.green,fontSize: 1.5.h),) : Text("")
             ],
