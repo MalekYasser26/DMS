@@ -46,77 +46,79 @@ class _NoteAlertDialogButtonState extends State<NoteAlertDialogButton> {
           content: SizedBox(
               width: double.infinity,
               height: 40.h,
-              child: Column(
-                children: [
-                  Divider(thickness: 1),
-                  SizedBox(height: 1.h,),
-                  Text("اضافة ملاحظة الى المريض “اسم المريض”",style: GoogleFonts.cairo(fontSize: 1.8.h)),
-                  SizedBox(height: 1.h,),
-                  TextField(
-                    textAlignVertical: TextAlignVertical.top,
-                    textAlign: TextAlign.start,
-                    textDirection: TextDirection.rtl,
-                    onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
-                    decoration: InputDecoration(
-                      enabledBorder:  OutlineInputBorder(
-                        borderSide:  BorderSide(color: Colors.grey.shade300, ),
-                      ),
-                      contentPadding: EdgeInsets.only(bottom: 18.h,right: 2.h,top: 1.h),
-                      isDense: true,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Divider(thickness: 1),
+                    SizedBox(height: 1.h,),
+                    Text("اضافة ملاحظة الى المريض “اسم المريض”",style: GoogleFonts.cairo(fontSize: 1.8.h)),
+                    SizedBox(height: 1.h,),
+                    TextField(
+                      textAlignVertical: TextAlignVertical.top,
+                      textAlign: TextAlign.start,
+                      textDirection: TextDirection.rtl,
+                      onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
+                      decoration: InputDecoration(
+                        enabledBorder:  OutlineInputBorder(
+                          borderSide:  BorderSide(color: Colors.grey.shade300, ),
+                        ),
+                        contentPadding: EdgeInsets.only(bottom: 18.h,right: 2.h,top: 1.h),
+                        isDense: true,
 
-                      hintText: "اضف ملاحظاتك هنا",
-                      hintStyle: GoogleFonts.cairo(color:Colors.grey.shade600 ),
-                      alignLabelWithHint: true,
+                        hintText: "اضف ملاحظاتك هنا",
+                        hintStyle: GoogleFonts.cairo(color:Colors.grey.shade600 ),
+                        alignLabelWithHint: true,
+
+                      ),
+                      keyboardType: TextInputType.emailAddress,
 
                     ),
-                    keyboardType: TextInputType.emailAddress,
-
-                  ),
-                  SizedBox(height: 2.h,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: InkWell(
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmRatingView(),)),
-                          child: Container(
-                            height: 5.h,
-                            decoration: BoxDecoration(
-                              color: AppColors.lightBlue,
-                            ),
-                            child: Center(
-                              child: Text(
-                                "اضافة",
-                                style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                    SizedBox(height: 2.h,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: InkWell(
+                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmRatingView(),)),
+                            child: Container(
+                              height: 5.h,
+                              decoration: BoxDecoration(
+                                color: AppColors.lightBlue,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "اضافة",
+                                  style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(width: 1.w,),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () => Navigator.pop(context),
-                          child: Container(
-                            height: 5.h,
-                            decoration: BoxDecoration(
-                              color:Colors.grey.shade400,
-                            ),
-                            child: Center(
-                              child: Text(
-                                "الغاء",
-                                style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                        SizedBox(width: 1.w,),
+                        Expanded(
+                          child: InkWell(
+                            onTap: () => Navigator.pop(context),
+                            child: Container(
+                              height: 5.h,
+                              decoration: BoxDecoration(
+                                color:Colors.grey.shade400,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "الغاء",
+                                  style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
 
-                    ],
-                  )
+                      ],
+                    )
 
-                ],
+                  ],
 
+                ),
               ),
             ),
           ),
