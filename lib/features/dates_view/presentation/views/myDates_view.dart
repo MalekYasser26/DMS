@@ -133,18 +133,18 @@ class _MyDatesViewState extends State<MyDatesView> {
                     child: TabBarView(
                       children: [
                         Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            Expanded(
-                              child:
-                              Padding(
-                                padding:  EdgeInsets.only(top: 1.h),
-                                child: ListView.separated(
-                                    physics: NeverScrollableScrollPhysics(),
-                                    itemBuilder: (context, index) => Text("suduh"),
-                                    separatorBuilder:(context, index) =>  SizedBox(height: 1.h,),
-                                    itemCount: 3),
-                              ),
-                            ),
+                            Flexible(
+                              child: ListView.separated(
+                                  physics: ClampingScrollPhysics(),
+                                  itemBuilder: (context, index) =>
+                                      AppointmentWidget(name: "${Names[index]}",address: "147 النزهة, ش المطار",
+                                          date: "21 Aug, Mon - 09:20 am",firstTime: "كشف",isAbsent: absentPresent[index],isNext: true),
+                                  separatorBuilder: (context, index) => SizedBox(height: 1.h),
+
+                                  itemCount: absentPresent.length),
+                            )
 
                           ],
                         ),
@@ -156,7 +156,7 @@ class _MyDatesViewState extends State<MyDatesView> {
                                   physics: ClampingScrollPhysics(),
                                   itemBuilder: (context, index) =>
                                       AppointmentWidget(name: "${Names[index]}",address: "147 النزهة, ش المطار",
-                                      date: "21 Aug, Mon - 09:20 am",firstTime: "كشف",isAbsent: absentPresent[index]),
+                                      date: "21 Aug, Mon - 09:20 am",firstTime: "كشف",isAbsent: absentPresent[index],isNext: false),
                                   separatorBuilder: (context, index) => SizedBox(height: 1.h),
 
                                   itemCount: absentPresent.length),

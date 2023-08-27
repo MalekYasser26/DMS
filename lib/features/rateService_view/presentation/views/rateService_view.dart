@@ -123,7 +123,7 @@ class _RateSeviceViewState extends State<RateSeviceView> {
                 Spacer(),
                 Padding(
                   padding:  EdgeInsets.symmetric(vertical: 1.h),
-                  child: BasicButton(route: (context) => ConfirmRatingView(),
+                  child: BasicButtonRoute(route: (context) => ConfirmRatingView(),
                       color: AppColors.lightBlue, Textcolor: Colors.white,
                       TextSt: "تأكيد", borderColor: Colors.transparent),
                 )

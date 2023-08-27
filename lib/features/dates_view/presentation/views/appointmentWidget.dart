@@ -5,9 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class AppointmentWidget extends StatelessWidget {
-   AppointmentWidget({Key? key,required this.name,required this.date, required this.address , required this.firstTime,required this.isAbsent}) : super(key: key);
+   AppointmentWidget({Key? key,required this.name,required this.date, required this.address , required this.firstTime,required this.isAbsent , required this.isNext}) : super(key: key);
   String name , date , address ,firstTime ;
   bool isAbsent ;
+  bool isNext ; 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +24,7 @@ class AppointmentWidget extends StatelessWidget {
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("$name",style: GoogleFonts.cairo(color: AppColors.blueNames,fontSize: 3.h)),
-                AbsentPresent(isAbsent: isAbsent,)
+               isNext ==true ? AbsentPresent(isAbsent: isAbsent,) : Text("")
               ],
             ),
             RichText( text:TextSpan(

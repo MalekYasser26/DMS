@@ -194,7 +194,7 @@ class _BookingView2State extends State<BookingView2> {
                   SizedBox(height: 3.h,),
 
                   SizedBox(height: 5.h,),
-                  BasicButton(
+                  BasicButtonRoute(
                       route: (context) => ConfirmView(),
                       color: AppColors.lightBlue,
                       Textcolor: Colors.white,

@@ -104,7 +104,7 @@ class _BookingView1State extends State<BookingView1> {
                 DropMenu(dropList: timeStamps,iconDrop: Icons.watch_later_outlined,dir: TextDirection.ltr),
                 Spacer(),
                 Padding(padding:  EdgeInsets.symmetric(vertical: 2.h),
-                  child: BasicButton(route:(context) => BookingView2(), color: AppColors.lightBlue, Textcolor: Colors.white, TextSt: "التالي", borderColor: Colors.transparent),
+                  child: BasicButtonRoute(route:(context) => BookingView2(), color: AppColors.lightBlue, Textcolor: Colors.white, TextSt: "التالي", borderColor: Colors.transparent),
                 )
 
               ],
