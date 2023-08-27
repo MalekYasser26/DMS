@@ -1,4 +1,5 @@
 import 'package:doctor_management_system/core/utils/Colors.dart';
+import 'package:doctor_management_system/features/patientList/presentation/views/patient_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -286,7 +287,7 @@ class _ResultsViewState extends State<ResultsView> {
           )
                , const Spacer(),
                 InkWell(
-                  //onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => const ClinicChoise(),)),
+                  onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => const PatientListView(),)),
                   child: Container(
                     height: 7.h,
                     width: double.infinity,
