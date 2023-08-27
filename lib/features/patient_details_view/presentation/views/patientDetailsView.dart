@@ -13,8 +13,8 @@ import 'package:sizer/sizer.dart';
 import '../../../../core/utils/Colors.dart';
 
 class PatientDetailsView extends StatefulWidget {
-  const PatientDetailsView({Key? key}) : super(key: key);
-
+   PatientDetailsView({Key? key, this.initialIndex = 0}) : super(key: key);
+final int initialIndex ;
   @override
   State<PatientDetailsView> createState() => _PatientDetailsViewState();
 }
@@ -26,7 +26,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
       textDirection: TextDirection.rtl,
       child: DefaultTabController(
         length: 3,
-        initialIndex: 1,
+        initialIndex: widget.initialIndex,
         child: Scaffold(
           backgroundColor: Colors.white,
           body: SafeArea(

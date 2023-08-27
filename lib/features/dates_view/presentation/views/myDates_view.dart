@@ -159,7 +159,7 @@ class _MyDatesViewState extends State<MyDatesView> {
                                       date: "21 Aug, Mon - 09:20 am",firstTime: "كشف",isAbsent: absentPresent[index],isNext: false),
                                   separatorBuilder: (context, index) => SizedBox(height: 1.h),
 
-                                  itemCount: absentPresent.length),
+                                  itemCount: Names.length),
                             )
 
                           ],

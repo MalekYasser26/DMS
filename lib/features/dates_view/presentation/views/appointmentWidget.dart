@@ -24,7 +24,7 @@ class AppointmentWidget extends StatelessWidget {
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("$name",style: GoogleFonts.cairo(color: AppColors.blueNames,fontSize: 3.h)),
-               isNext ==true ? AbsentPresent(isAbsent: isAbsent,) : Text("")
+               isNext ==true ? AbsentPresent(isAbsent: isAbsent,h: 4.h,w: 8.h,) : Text("")
               ],
             ),
             RichText( text:TextSpan(

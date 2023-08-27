@@ -34,6 +34,11 @@ List<bool> absentPresent=[
   false,
   false,
   true,
+  true,
+  true,
+  false,
+  false,
+  true,
 ];
 List<String>Names=[
   "احمد خالد حسن",
