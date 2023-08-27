@@ -55,9 +55,13 @@ class _PatientListViewState extends State<PatientListView> {
                               )
                             ],
                           ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Icon(Icons.arrow_back_ios, size: 16,),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: GestureDetector(
+                              onTap: (){
+                                Navigator.pop(context);
+                              },
+                                child: const Icon(Icons.arrow_back_ios, size: 16,)),
                           ),
                         ),
                       ),
