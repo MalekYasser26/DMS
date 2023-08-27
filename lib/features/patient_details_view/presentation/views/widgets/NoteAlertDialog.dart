@@ -45,7 +45,6 @@ class _NoteAlertDialogButtonState extends State<NoteAlertDialogButton> {
           
           content: SizedBox(
               width: double.infinity,
-              height: 40.h,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
