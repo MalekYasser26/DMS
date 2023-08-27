@@ -1,6 +1,7 @@
 import 'package:doctor_management_system/core/utils/Colors.dart';
 import 'package:doctor_management_system/core/utils/Constants.dart';
 import 'package:doctor_management_system/features/dates_view/presentation/views/AbsentPresent.dart';
+import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
 import 'package:doctor_management_system/features/patient_details_view/presentation/views/patientDetailsView.dart';
 import 'package:doctor_management_system/features/patient_details_view/presentation/views/widgets/NoteAlertDialog.dart';
 import 'package:doctor_management_system/features/results/presentation/views/results_view.dart';
@@ -627,7 +628,7 @@ class _PatientListViewState extends State<PatientListView> {
                     children: [
                       Expanded(
                         child: InkWell(
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmRatingView(),)),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmRatingView(route: (context) => HomeView(),),)),
                           child: Container(
                             height: 5.h,
                             decoration: BoxDecoration(

@@ -2,6 +2,7 @@ import 'package:doctor_management_system/core/RepeatedWidgets/ButtonWidget.dart'
 import 'package:doctor_management_system/core/RepeatedWidgets/dropMenu.dart';
 import 'package:doctor_management_system/core/utils/Colors.dart';
 import 'package:doctor_management_system/core/utils/Constants.dart';
+import 'package:doctor_management_system/features/dates_view/presentation/views/myDates_view.dart';
 import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
 import 'package:doctor_management_system/features/rateService_view/presentation/views/widgets/confirm_rating_screen.dart';
 import 'package:doctor_management_system/features/register_view/presentation/views/widgets/success_confirm_view.dart';
@@ -123,7 +124,7 @@ class _RateSeviceViewState extends State<RateSeviceView> {
                 Spacer(),
                 Padding(
                   padding:  EdgeInsets.symmetric(vertical: 1.h),
-                  child: BasicButtonRoute(route: (context) => ConfirmRatingView(),
+                  child: BasicButtonRoute(route: (context) => ConfirmRatingView(route:(context) => MyDatesView()),
                       color: AppColors.lightBlue, Textcolor: Colors.white,
                       TextSt: "تأكيد", borderColor: Colors.transparent),
                 )

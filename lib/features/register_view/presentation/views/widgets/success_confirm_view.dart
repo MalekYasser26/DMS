@@ -5,7 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class ConfirmView extends StatelessWidget {
-  const ConfirmView({Key? key}) : super(key: key);
+   ConfirmView({Key? key,required this.route}) : super(key: key);
+  final WidgetBuilder route ;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -66,7 +68,7 @@ class ConfirmView extends StatelessWidget {
                   SizedBox(height:2.h),
                   GestureDetector(
                     onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView(),));
+                    Navigator.push(context, MaterialPageRoute(builder: route,));
                     },
                     child: Container(
                       height: 7.h,

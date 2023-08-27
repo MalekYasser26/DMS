@@ -221,7 +221,7 @@ class DetailsView extends StatelessWidget {
                   SizedBox(height:2.h),
                   GestureDetector(
                     onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView(),));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MyDatesView(),));
                     },
                     child: Container(
                       height: 7.h,

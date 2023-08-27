@@ -3,6 +3,7 @@ import 'package:doctor_management_system/core/RepeatedWidgets/ButtonWidget.dart'
 import 'package:doctor_management_system/core/utils/Colors.dart';
 import 'package:doctor_management_system/core/utils/assets.dart';
 import 'package:doctor_management_system/features/booking_view/presentation/views/booking_view1.dart';
+import 'package:doctor_management_system/features/dates_view/presentation/views/myDates_view.dart';
 import 'package:doctor_management_system/features/doctor_login/presentation/views/doctor_login_view.dart';
 import 'package:doctor_management_system/features/login_view/presentation/views/login_view.dart';
 import 'package:doctor_management_system/features/queueWait_view/presentation/views/queueWait_view.dart';
@@ -38,16 +39,16 @@ class HomeView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                          child:BoxWidget(text: "قائمة الانتظار", height: 15.h, fontSize: 2.8.h, borderColor: Colors.white, textColor: Colors.white, route: (context) => QueueWaitView())
+                          child:BoxWidget(text: "قائمة الانتظار", height: 15.h, fontSize: 2.8.h, borderColor: Colors.white, textColor: Colors.white, route: (context) => LoginView(route: (context) => QueueWaitView()))
                         ),
                         SizedBox(width : 4.w),
                         Expanded(
-                            child:BoxWidget(text: "تقييم الخدمة", height: 15.h, fontSize: 2.8.h, borderColor: Colors.white, textColor: Colors.white, route: (context) => RateSeviceView())
+                            child:BoxWidget(text: "تقييم الخدمة", height: 15.h, fontSize: 2.8.h, borderColor: Colors.white, textColor: Colors.white, route: (context) => LoginView(route: (context) => RateSeviceView()))
                         ),
                       ],
                     ),
                     SizedBox(height: 2.h,),
-                    BasicButtonRoute(route: (context) => DoctorLoginScreen(), color: AppColors.lightBlue, Textcolor: Colors.white, TextSt: "تسجيل الدخول", borderColor: Colors.transparent,textSize: 2.h),
+                    BasicButtonRoute(route: (context) => LoginView(route: (context) => MyDatesView()), color: AppColors.lightBlue, Textcolor: Colors.white, TextSt: "تسجيل الدخول", borderColor: Colors.transparent,textSize: 2.h),
                     SizedBox(height: 2.h,),
                     BasicButtonRoute(route: (context) => BookingView1(), color:Colors.white , Textcolor: AppColors.lightBlue, TextSt: "حجز سريع", borderColor: Colors.transparent,textSize: 2.h),
 

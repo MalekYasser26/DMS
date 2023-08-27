@@ -1,4 +1,5 @@
 import 'package:doctor_management_system/core/utils/Colors.dart';
+import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
 import 'package:doctor_management_system/features/rateService_view/presentation/views/widgets/confirm_rating_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -78,7 +79,7 @@ class _NoteAlertDialogButtonState extends State<NoteAlertDialogButton> {
                       children: [
                         Expanded(
                           child: InkWell(
-                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmRatingView(),)),
+                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmRatingView(route: (context) => HomeView(),),)),
                             child: Container(
                               height: 5.h,
                               decoration: BoxDecoration(

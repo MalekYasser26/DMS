@@ -1,6 +1,7 @@
 import 'package:doctor_management_system/core/RepeatedWidgets/BasicTextFF.dart';
 import 'package:doctor_management_system/core/RepeatedWidgets/ButtonWidget.dart';
 import 'package:doctor_management_system/features/booking_view/presentation/views/PatientDetails.dart';
+import 'package:doctor_management_system/features/dates_view/presentation/views/myDates_view.dart';
 import 'package:doctor_management_system/features/rateService_view/presentation/views/widgets/confirm_rating_screen.dart';
 import 'package:doctor_management_system/features/register_view/presentation/views/widgets/success_confirm_view.dart';
 import 'package:flutter/gestures.dart';
@@ -78,7 +79,7 @@ class _BookingView2State extends State<BookingView2> {
                                 TextSpan(text: "قمت بملئ بياناتك بالفعل؟ ",style: GoogleFonts.cairo(
                                     color: Colors.black,fontSize: 2.h)),
                                 TextSpan(
-                                    recognizer: TapGestureRecognizer()..onTap = () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView(),)) ,
+                                    recognizer: TapGestureRecognizer()..onTap = () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView(route: (context) => MyDatesView()),)) ,
                                     text: "تخطي",style: GoogleFonts.cairo(
                                     color: AppColors.lightBlue,fontSize: 2.h,fontWeight: FontWeight.bold)
                                 ),
@@ -195,7 +196,7 @@ class _BookingView2State extends State<BookingView2> {
 
                   SizedBox(height: 5.h,),
                   BasicButtonRoute(
-                      route: (context) => ConfirmView(),
+                      route: (context) => ConfirmView(route: (context) => MyDatesView(),),
                       color: AppColors.lightBlue,
                       Textcolor: Colors.white,
                       TextSt: "حجز",

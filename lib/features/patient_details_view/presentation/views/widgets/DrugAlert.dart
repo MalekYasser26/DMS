@@ -1,5 +1,6 @@
 import 'package:doctor_management_system/core/RepeatedWidgets/UploadPhoto.dart';
 import 'package:doctor_management_system/core/utils/Colors.dart';
+import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
 import 'package:doctor_management_system/features/rateService_view/presentation/views/widgets/confirm_rating_screen.dart';
 import 'package:doctor_management_system/features/register_view/presentation/views/widgets/success_confirm_view.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +84,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                       children: [
                         Expanded(
                           child: InkWell(
-                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmView(),)),
+                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmView(route: (context) => HomeView(),),)),
                             child: Container(
                               height: 5.h,
                               decoration: BoxDecoration(

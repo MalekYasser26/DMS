@@ -39,38 +39,13 @@ class _MyDatesViewState extends State<MyDatesView> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InkWell(
-                        onTap: () => Navigator.pop(context),
-                        child: Container(
-                            height: 5.h,
-                            width: 5.h,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(.2),
-                                    blurRadius: 5.0,
-                                    spreadRadius: 1,
-                                    offset: const Offset(
-                                      2.0,
-                                      2.0,
-                                    ),
-                                  )
-                                ]
-                            ),
-                            child: Center(child: Padding(
-                              padding:  EdgeInsets.only(right: 2.w),
-                              child: Icon(Icons.arrow_back_ios,color: Colors.black,),
-                            ))),
-                      ),
                       SizedBox(width: 4.w,),
                       Column(
                         children: [
                           Row(
                             children: [
                               Text("مواعيدي",style: GoogleFonts.cairo(color: Colors.black,fontSize: 3.h,fontWeight: FontWeight.bold)),
-                              SizedBox(width: 10.w,),
-
+                              SizedBox(width: 20.w,),
                               InkWell(
                                 onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BookingView1(),)),
                                 child: Container(
@@ -143,7 +118,7 @@ class _MyDatesViewState extends State<MyDatesView> {
                                           date: "21 Aug, Mon - 09:20 am",firstTime: "كشف",isAbsent: absentPresent[index],isNext: true),
                                   separatorBuilder: (context, index) => SizedBox(height: 1.h),
 
-                                  itemCount: absentPresent.length),
+                                  itemCount: Names.length),
                             )
 
                           ],
