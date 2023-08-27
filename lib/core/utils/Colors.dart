@@ -8,3 +8,4 @@ class AppColors{
   static const Color red = Color(0xFFE4193D);
   static const Color blueNames = Color(0xFF3A4855);
 }
+const KPrimaryColor = Color(0xff159BAD);
