@@ -26,8 +26,13 @@ class _PatientListViewState extends State<PatientListView> {
   String? valueChoise;
 
   int? selectedRadio;
+  int? currIndex ;
   @override
   Widget build(BuildContext context) {
+    var Mheight = MediaQuery.of(context).size.height ;
+    var Mwidth = MediaQuery.of(context).size.width ;
+
+
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -276,295 +281,114 @@ class _PatientListViewState extends State<PatientListView> {
                     ),
                   ),
 
-                  Row(
+                 Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Radio(
-                                  visualDensity: const VisualDensity(horizontal: -4),
-                                  activeColor: KPrimaryColor,
-                                  value: 1,
-                                  groupValue: selectedRadio,
-                                  onChanged: (value){
-                                    setState(() {
-                                      selectedRadio=value;
-                                    });
-                                  }
-                              ),
-                              Text("احمد خالد اسماعيل",
-                                style: GoogleFonts.cairo(
-                                    textStyle:  TextStyle(
-                                        fontSize: 2.h
-                                    ),
-                                    color:Colors.black,
-                                    fontWeight: selectedRadio ==1 ? FontWeight.w500 : FontWeight.w400
-                                ),),
-                              SizedBox(width: 2.w,),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  visualDensity: const VisualDensity(horizontal: -4),
-                                  activeColor: KPrimaryColor,
-                                  value: 2,
-                                  groupValue: selectedRadio,
-                                  onChanged: (value){
-                                    setState(() {
-                                      selectedRadio=value;
-                                    });
-                                  }
-                              ),
-                              Text("يسرا السيد عبد اللطيف",
-                                style: GoogleFonts.cairo(
-                                    textStyle:  TextStyle(
-                                        fontSize: 2.h
-                                    ),
-
-                                    color:Colors.black,
-                                    fontWeight: selectedRadio ==2 ? FontWeight.w500 : FontWeight.w400
-                                ),),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  visualDensity: const VisualDensity(horizontal: -4),
-                                  activeColor: KPrimaryColor,
-                                  value: 3,
-                                  groupValue: selectedRadio,
-                                  onChanged: (value){
-                                    setState(() {
-                                      selectedRadio=value;
-                                    });
-                                  }
-                              ),
-                              Text("هبة الله اشرف",
-                                style: GoogleFonts.cairo(
-                                    textStyle:  TextStyle(
-                                        fontSize: 2.h
-                                    ),
-
-                                    color:Colors.black,
-                                    fontWeight: selectedRadio ==3 ? FontWeight.w500 : FontWeight.w400
-                                ),),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  visualDensity: const VisualDensity(horizontal: -4),
-                                  activeColor: KPrimaryColor,
-                                  value: 4,
-                                  groupValue: selectedRadio,
-                                  onChanged: (value){
-                                    setState(() {
-                                      selectedRadio=value;
-                                    });
-                                  }
-                              ),
-                              Text("مجدى خالد احمد",
-                                style: GoogleFonts.cairo(
-                                    textStyle:  TextStyle(
-                                        fontSize: 2.h
-                                    ),
-
-                                    color:Colors.black,
-                                    fontWeight: selectedRadio ==4 ? FontWeight.w500 : FontWeight.w400
-                                ),),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  visualDensity: const VisualDensity(horizontal: -4),
-                                  activeColor: KPrimaryColor,
-                                  value: 5,
-                                  groupValue: selectedRadio,
-                                  onChanged: (value){
-                                    setState(() {
-                                      selectedRadio=value;
-                                    });
-                                  }
-                              ),
-                              Text("علي كامل",
-                                style: GoogleFonts.cairo(
-                                    textStyle:  TextStyle(
-                                        fontSize: 2.h
-                                    ),
-
-                                    color:Colors.black,
-                                    fontWeight: selectedRadio ==5 ? FontWeight.w500 : FontWeight.w400
-                                ),),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  visualDensity: const VisualDensity(horizontal: -4),
-                                  activeColor: KPrimaryColor,
-                                  value: 6,
-                                  groupValue: selectedRadio,
-                                  onChanged: (value){
-                                    setState(() {
-                                      selectedRadio=value;
-                                    });
-                                  }
-                              ),
-                              Text("يوسف علي",
-                                style: GoogleFonts.cairo(
-                                    textStyle:  TextStyle(
-                                        fontSize: 2.h
-                                    ),
-
-                                    color:Colors.black,
-                                    fontWeight: selectedRadio ==6 ? FontWeight.w500 : FontWeight.w400
-                                ),),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  visualDensity: const VisualDensity(horizontal: -4),
-                                  activeColor: KPrimaryColor,
-                                  value: 7,
-                                  groupValue: selectedRadio,
-                                  onChanged: (value){
-                                    setState(() {
-                                      selectedRadio=value;
-                                    });
-                                  }
-                              ),
-                              Text("زياد ياسر",
-                                style: GoogleFonts.cairo(
-                                    textStyle:  TextStyle(
-                                        fontSize: 2.h
-                                    ),
-
-                                    color:Colors.black,
-                                    fontWeight: selectedRadio ==7 ? FontWeight.w500 : FontWeight.w400
-                                ),),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  visualDensity: const VisualDensity(horizontal: -4),
-                                  activeColor: KPrimaryColor,
-                                  value: 8,
-                                  groupValue: selectedRadio,
-                                  onChanged: (value){
-                                    setState(() {
-                                      selectedRadio=value;
-                                    });
-                                  }
-                              ),
-                              Text("محمد عبدالعزيز",
-                                style: GoogleFonts.cairo(
-                                    textStyle:  TextStyle(
-                                        fontSize: 2.h
-                                    ),
-
-                                    color:Colors.black,
-                                    fontWeight: selectedRadio ==8 ? FontWeight.w500 : FontWeight.w400
-                                ),),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  visualDensity: const VisualDensity(horizontal: -4),
-                                  activeColor: KPrimaryColor,
-                                  value: 9,
-                                  groupValue: selectedRadio,
-                                  onChanged: (value){
-                                    setState(() {
-                                      selectedRadio=value;
-                                    });
-                                  }
-                              ),
-                              Text("كريم اشرف",
-                                style: GoogleFonts.cairo(
-                                    textStyle:  TextStyle(
-                                        fontSize: 2.h
-                                    ),
-
-                                    color:Colors.black,
-                                    fontWeight: selectedRadio ==9 ? FontWeight.w500 : FontWeight.w400
-                                ),),
-                            ],
-                          ),
-                        ],
+                      Expanded(
+                        child: ListView.separated(
+                          shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              currIndex = index ;
+                              return Container(
+                                height: Mheight*0.07,
+                                color: selectedRadio == index ? AppColors.lightBlue.withOpacity(0.1) : Colors.transparent, // Set background color based on selection
+                                child: Row(
+                                children: [
+                                  Radio(
+                                      visualDensity: const VisualDensity(horizontal: -4),
+                                      activeColor: KPrimaryColor,
+                                      value: index,
+                                      groupValue: selectedRadio,
+                                      onChanged: (value){
+                                        setState(() {
+                                          selectedRadio=value;
+                                        });
+                                      }
+                                  ),
+                                  Text("${patientList[index]}",
+                                    style: GoogleFonts.cairo(
+                                        textStyle:  TextStyle(
+                                            fontSize: Mheight*0.019
+                                        ),
+                                        color:Colors.black,
+                                    ),),
+                                  SizedBox(width: 2.w,),
+                                ],
+                            ),
+                              );
+                            },
+                            separatorBuilder: (context, index) => SizedBox(width: 2.w,height:Mheight*0.019 ),
+                            itemCount: patientList.length),
                       ),
                       Expanded(
                         child: ListView.separated(
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
-                            itemBuilder: (context, index) => Padding(
-                              padding:  EdgeInsets.only(top: 1.h),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: AbsentPresent(
-                                        isAbsent: absentPresent[index], h: 4.h, w: 1.h),
-                                  ),
-                                  Spacer(),
-                                  Expanded(child: InkWell(
-                                    onTap: () {},
-                                    child: Directionality(
-                                      textDirection: TextDirection.rtl,
-                                      child: PopupMenuButton<String>(
-                                        itemBuilder: (BuildContext context) {
-                                          return <PopupMenuItem<String>>[
-                                             PopupMenuItem<String>(
-                                              value: 'item1',
-                                              child: Text('رؤية التفاصيل',style: GoogleFonts.cairo()),
-                                            ),
-                                             PopupMenuItem<String>(
-                                              value: 'item2',
-                                              child: Text('رؤية الملاحظات',style: GoogleFonts.cairo()),
-                                            ),
-                                             PopupMenuItem<String>(
-                                              value: 'item3',
-                                              child: Text('اضافة ملاحظة',style: GoogleFonts.cairo(),),
-                                            ),
-                                             PopupMenuItem<String>(
-                                              value: 'item4',
-                                              child: Text('انهاء وقت المريض',style: GoogleFonts.cairo(),),
-                                            ),
-
-                                          ];
-                                        },
-                                        onSelected: (String value) {
-                                          if (value == 'item1') {
-                                            Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 0),));
-                                          } else if (value == 'item2') {
-                                            Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 2),));
-                                          } else if (value=='item3'){
-                                            showAlertDialog(context); // Call the function to show the alert dialog
-
-                                          }
-                                        },
-                                        child: Image.asset('assets/images/threedots.png'),
-                                      ),
+                            itemBuilder: (context, index) => Container(
+                              height: Mheight*0.07,
+                              color: selectedRadio == index ? AppColors.lightBlue.withOpacity(0.1) : Colors.transparent, // Set background color based on selection
+                              child: Padding(
+                                padding:  EdgeInsets.only(top: 1.h),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: AbsentPresent(
+                                          isAbsent: absentPresent[index], h: 4.h, w: 1.h),
                                     ),
-                                  )
+                                    Spacer(),
+                                    Expanded(child: InkWell(
+                                      onTap: () {},
+                                      child: Directionality(
+                                        textDirection: TextDirection.rtl,
+                                        child: PopupMenuButton<String>(
+                                          itemBuilder: (BuildContext context) {
+                                            return <PopupMenuItem<String>>[
+                                               PopupMenuItem<String>(
+                                                value: 'item1',
+                                                child: Text('رؤية التفاصيل',style: GoogleFonts.cairo()),
+                                              ),
+                                               PopupMenuItem<String>(
+                                                value: 'item2',
+                                                child: Text('رؤية الملاحظات',style: GoogleFonts.cairo()),
+                                              ),
+                                               PopupMenuItem<String>(
+                                                value: 'item3',
+                                                child: Text('اضافة ملاحظة',style: GoogleFonts.cairo(),),
+                                              ),
+                                               PopupMenuItem<String>(
+                                                value: 'item4',
+                                                child: Text('انهاء وقت المريض',style: GoogleFonts.cairo(),),
+                                              ),
+
+                                            ];
+                                          },
+                                          onSelected: (String value) {
+                                            if (value == 'item1') {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 0),));
+                                            } else if (value == 'item2') {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 2),));
+                                            } else if (value=='item3'){
+                                              showAlertDialog(context); // Call the function to show the alert dialog
+
+                                            }
+                                          },
+                                          child: Image.asset('assets/images/threedots.png'),
+                                        ),
+                                      ),
+                                    )
 
 
-                                  )
-                                ],
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
-                            separatorBuilder: (context, index) => SizedBox(height: 1.h),
+                            separatorBuilder: (context, index) => SizedBox(height: Mheight*0.019),
                             itemCount:absentPresent.length ),
                       ),
 
                     ],
-                  ),
+                  )
 
 
                 ],
