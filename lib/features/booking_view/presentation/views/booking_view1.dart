@@ -2,6 +2,7 @@ import 'package:doctor_management_system/core/RepeatedWidgets/BoxWidget.dart';
 import 'package:doctor_management_system/core/RepeatedWidgets/ButtonWidget.dart';
 import 'package:doctor_management_system/core/utils/Colors.dart';
 import 'package:doctor_management_system/features/booking_view/presentation/views/booking_view2.dart';
+import 'package:doctor_management_system/features/dates_view/presentation/views/myDates_view.dart';
 import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
 import 'package:doctor_management_system/features/login_view/presentation/views/login_view.dart';
 import 'package:flutter/gestures.dart';
@@ -72,7 +73,7 @@ class _BookingView1State extends State<BookingView1> {
                               TextSpan(text: "قمت بملئ بياناتك بالفعل؟ ",style: GoogleFonts.cairo(
                                   color: Colors.black,fontSize: 2.h)),
                               TextSpan(
-                                  recognizer: TapGestureRecognizer()..onTap = () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView(),)) ,
+                                  recognizer: TapGestureRecognizer()..onTap = () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView(route: (context) => MyDatesView()),)) ,
                                   text: "تخطي",style: GoogleFonts.cairo(
                                   color: AppColors.lightBlue,fontSize: 2.h,fontWeight: FontWeight.bold)
                               ),

@@ -4,7 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class ConfirmRatingView extends StatelessWidget {
-  const ConfirmRatingView({Key? key}) : super(key: key);
+   ConfirmRatingView({Key? key,required this.route}) : super(key: key);
+  final WidgetBuilder route ;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
