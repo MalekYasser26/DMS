@@ -1,15 +1,9 @@
 import 'package:doctor_management_system/core/utils/Colors.dart';
 import 'package:doctor_management_system/core/utils/Constants.dart';
-import 'package:doctor_management_system/features/dates_view/presentation/views/AbsentPresent.dart';
-import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
-import 'package:doctor_management_system/features/patient_details_view/presentation/views/patientDetailsView.dart';
-import 'package:doctor_management_system/features/patient_details_view/presentation/views/widgets/NoteAlertDialog.dart';
 import 'package:doctor_management_system/features/results/presentation/views/results_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../../rateService_view/presentation/views/widgets/confirm_rating_screen.dart';
 
 class PatientListView extends StatefulWidget {
   const PatientListView({Key? key}) : super(key: key);
@@ -27,6 +21,9 @@ class _PatientListViewState extends State<PatientListView> {
 
   int? selectedRadio;
   int? currIndex ;
+
+  int currentIndex = 0;
+  String ? text;
   @override
   Widget build(BuildContext context) {
     var Mheight = MediaQuery.of(context).size.height ;
@@ -231,9 +228,8 @@ class _PatientListViewState extends State<PatientListView> {
                   ),
                   SizedBox(height: 3.h,),
                   Padding(
-                    padding: const EdgeInsets.only(right:20),
+                    padding: const EdgeInsets.only(right: 5.0),
                     child: Row(
-
                       children: [
                         Text("الاسم",
                           style: GoogleFonts.cairo(
@@ -242,14 +238,11 @@ class _PatientListViewState extends State<PatientListView> {
                                   color: Color(0xff404040)
                               )
                           ),),
-                        Spacer(),
-                        SizedBox(width: 16.w,),
-                        GestureDetector(
-                            onTap: (){},
-                            child: Image.asset("assets/images/list.png",height: 3.h,)),
+                          SizedBox(width:15.h,),
+                        Image.asset("assets/images/list.png",height: 3.h,),
                         Padding(
                           padding: const EdgeInsets.only(right: 6.0),
-                          child: Text("الحالة",
+                          child: Text(currentIndex==0?"الحالة":currentIndex==1?"التاريخ":currentIndex==2?"الحجز":"اول مره؟",
                             style: GoogleFonts.cairo(
                                 textStyle: const TextStyle(
                                     fontSize: 12,fontWeight: FontWeight.bold,
@@ -258,28 +251,47 @@ class _PatientListViewState extends State<PatientListView> {
                             ),),
                         ),
                         const Spacer(),
-                        GestureDetector(
-                            onTap: (){},
-                            child: Image.asset("assets/images/list.png",height: 3.h,)),
-                        InkWell(
-                            radius: 30,
-                            borderRadius: BorderRadius.circular(13),
-                            onTap: (){},
-                            child: SizedBox(
-                                width: 3.h,
-                                height: 3.h,
-                                child: const Icon(Icons.keyboard_arrow_right,size: 20,))),
-                        InkWell(
-                            radius: 30,
-                            borderRadius: BorderRadius.circular(13),
-                            onTap: (){},
-                            child: SizedBox(
-                                width: 3.h,
-                                height: 3.h,
-                                child: const Icon(Icons.keyboard_arrow_left,size: 20,))),
-
-
-
+                        Image.asset("assets/images/list.png",height: 3.h,),
+                        SizedBox(width:1.h,),
+                        SizedBox(
+                          height: 6.h,
+                          width: 6.w,
+                          child: MaterialButton(
+                            onPressed: () {
+                              setState(() {
+                                if (currentIndex >=1) {
+                                  currentIndex = currentIndex - 1;
+                                }
+                              });
+                            },
+                            shape: const CircleBorder(),
+                            color: const Color(0xffF5F7F9),
+                            child: const Padding(
+                              padding: EdgeInsets.all(3.0),
+                              child: Icon(Icons.arrow_back_ios_outlined,size: 13,),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width:1.h,),
+                        SizedBox(
+                          height: 6.h,
+                          width: 6.w,
+                          child: MaterialButton(
+                            onPressed: () {
+                              setState(() {
+                                if (currentIndex <=2) {
+                                  currentIndex = currentIndex + 1;
+                                }
+                              });
+                            },
+                            shape: const CircleBorder(),
+                            color: const Color(0xffF5F7F9),
+                            child: const Padding(
+                              padding: EdgeInsets.all(3.0),
+                              child: Icon(Icons.arrow_forward_ios,size: 13,),
+                            ),
+                          ),
+                        ),
 
                       ],
                     ),
@@ -324,76 +336,276 @@ class _PatientListViewState extends State<PatientListView> {
                             separatorBuilder: (context, index) => SizedBox(width: 2.w,height:Mheight*0.019 ),
                             itemCount: patientList.length),
                       ),
+                      SizedBox(width:2.w),
                       Expanded(
                         child: ListView.separated(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.vertical,
-                            itemBuilder: (context, index) => Container(
-                              height: Mheight*0.07,
-                              color: selectedRadio == index ? AppColors.lightBlue.withOpacity(0.1) : Colors.transparent, // Set background color based on selection
-                              child: Padding(
-                                padding:  EdgeInsets.only(top: 1.h),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: AbsentPresent(
-                                          isAbsent: absentPresent[index], h: 4.h, w: 1.h),
-                                    ),
-                                    Spacer(),
-                                    Expanded(child: InkWell(
-                                      onTap: () {},
-                                      child: Directionality(
-                                        textDirection: TextDirection.rtl,
-                                        child: PopupMenuButton<String>(
-                                          itemBuilder: (BuildContext context) {
-                                            return <PopupMenuItem<String>>[
-                                               PopupMenuItem<String>(
-                                                value: 'item1',
-                                                child: Text('رؤية التفاصيل',style: GoogleFonts.cairo()),
-                                              ),
-                                               PopupMenuItem<String>(
-                                                value: 'item2',
-                                                child: Text('رؤية الملاحظات',style: GoogleFonts.cairo()),
-                                              ),
-                                               PopupMenuItem<String>(
-                                                value: 'item3',
-                                                child: Text('اضافة ملاحظة',style: GoogleFonts.cairo(),),
-                                              ),
-                                               PopupMenuItem<String>(
-                                                value: 'item4',
-                                                child: Text('انهاء وقت المريض',style: GoogleFonts.cairo(),),
-                                              ),
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              currIndex = index ;
+                              return  Column(
+                                children: [
+                                  if (currentIndex == 0)
+                                   Column(
+                                     children: [
+                                       SizedBox(height: 3.h,),
+                                       Container(
+                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.orangeAccent.withOpacity(.2),
+                                       child: const Text("حاضر",style: TextStyle(color: Colors.orange),),),
+                                       SizedBox(height: 5.5.h,),
+                                       Container(
+                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.pink.withOpacity(.2),
+                                         child: const Text("غائب",style: TextStyle(color: Colors.pink),),),
+                                       SizedBox(height: 5.h,),
+                                       Container(
+                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.orangeAccent.withOpacity(.2),
+                                         child: const Text("حاضر",style: TextStyle(color: Colors.orange),),),
+                                       SizedBox(height: 5.h,),
+                                       Container(
+                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.orangeAccent.withOpacity(.2),
+                                         child: const Text("حاضر",style: TextStyle(color: Colors.orange),),),
+                                       SizedBox(height: 5.h,),
+                                       Container(
+                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.pink.withOpacity(.2),
+                                         child: const Text("غائب",style: TextStyle(color: Colors.pink),),),
+                                       SizedBox(height: 5.h,),
+                                       Container(
+                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.orangeAccent.withOpacity(.2),
+                                         child: const Text("حاضر",style: TextStyle(color: Colors.orange),),),
+                                       SizedBox(height: 5.h,),
+                                       Container(
+                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.pink.withOpacity(.2),
+                                         child: const Text("غائب",style: TextStyle(color: Colors.pink),),),
+                                       SizedBox(height: 5.h,),
+                                       Container(
+                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.orangeAccent.withOpacity(.2),
+                                         child: const Text("حاضر",style: TextStyle(color: Colors.orange),),),
+                                       SizedBox(height: 5.h,),
+                                       Container(
+                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.pink.withOpacity(.2),
+                                         child: const Text("غائب",style: TextStyle(color: Colors.pink),),),
 
-                                            ];
-                                          },
-                                          onSelected: (String value) {
-                                            if (value == 'item1') {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 0),));
-                                            } else if (value == 'item2') {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 2),));
-                                            } else if (value=='item3'){
-                                              showAlertDialog(context); // Call the function to show the alert dialog
+                                     ],
+                                   )
+                                  else if (currentIndex == 1)
+                                    Directionality(
+                                      textDirection: TextDirection.ltr,
+                                      child: Column(
+                                        children: [
+                                          SizedBox(height: 2.h,),
+                                          Text("21 Aug, Mon - 09:20 Am",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("21 Aug, Mon - 09:20 Am",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("21 Aug, Mon - 09:20 Am",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("21 Aug, Mon - 09:20 Am",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("21 Aug, Mon - 09:20 Am",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("21 Aug, Mon - 09:20 Am",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("21 Aug, Mon - 09:20 Am",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("21 Aug, Mon - 09:20 Am",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("21 Aug, Mon - 09:20 Am",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
 
-                                            }
-                                          },
-                                          child: Image.asset('assets/images/threedots.png'),
-                                        ),
+                                        ],
                                       ),
                                     )
+                                  else if (currentIndex == 2)
+                                      Column(
+                                        children: [
+                                          SizedBox(height: 2.h,),
+                                          Text("اونلاين",
+                                          style: GoogleFonts.cairo(
+                                            textStyle: const TextStyle(
+                                              fontWeight: FontWeight.w500,fontSize: 12
+                                            )
+                                          ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("اوفلاين",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("اوفلاين",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("اونلاين",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("اوفلاين",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("اونلاين",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("اوفلاين",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("اونلاين",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("اونلاين",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
 
+                                        ],
+                                      )
+                                    else
+                                      Column(
+                                        children: [
+                                          SizedBox(height: 2.h,),
+                                          Text("كشف",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("كشف",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("استشارة",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("استشارة",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("كشف",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("استشارة",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("كشف",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("استشارة",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
+                                          SizedBox(height: 6.h,),
+                                          Text("كشف",
+                                            style: GoogleFonts.cairo(
+                                                textStyle: const TextStyle(
+                                                    fontWeight: FontWeight.w500,fontSize: 12
+                                                )
+                                            ),),
 
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            separatorBuilder: (context, index) => SizedBox(height: Mheight*0.019),
-                            itemCount:absentPresent.length ),
+                                        ],
+                                      )
+                                ],
+                              );
+                            },
+                            separatorBuilder: (context, index) => SizedBox(width: 2.w,height:Mheight*0.019 ),
+                            itemCount: 1),
                       ),
+
 
                     ],
                   )
-
 
                 ],
               ),
@@ -404,102 +616,5 @@ class _PatientListViewState extends State<PatientListView> {
     );
   }
 
-  void showAlertDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Directionality(
-          textDirection: TextDirection.rtl,
-          child: AlertDialog(
-            title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:
-                [
-                  Text('اضافة ملاحظة',style: GoogleFonts.cairo(fontWeight: FontWeight.bold)),
-                  InkWell(
-                      onTap: () => Navigator.pop(context),
-                      child: Icon(Icons.close)),
-                ]),
 
-            content: SizedBox(
-              width: double.infinity,
-              height: 40.h,
-              child: Column(
-                children: [
-                  Divider(thickness: 1),
-                  SizedBox(height: 1.h,),
-                  Text("اضافة ملاحظة الى المريض “اسم المريض”",style: GoogleFonts.cairo(fontSize: 1.8.h)),
-                  SizedBox(height: 1.h,),
-                  TextField(
-                    textAlignVertical: TextAlignVertical.top,
-                    textAlign: TextAlign.start,
-                    textDirection: TextDirection.rtl,
-                    onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
-                    decoration: InputDecoration(
-                      enabledBorder:  OutlineInputBorder(
-                        borderSide:  BorderSide(color: Colors.grey.shade300, ),
-                      ),
-                      contentPadding: EdgeInsets.only(bottom: 18.h,right: 2.h,top: 1.h),
-                      isDense: true,
-
-                      hintText: "اضف ملاحظاتك هنا",
-                      hintStyle: GoogleFonts.cairo(color:Colors.grey.shade600 ),
-                      alignLabelWithHint: true,
-
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-
-                  ),
-                  SizedBox(height: 2.h,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: InkWell(
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmRatingView(route: (context) => HomeView(),),)),
-                          child: Container(
-                            height: 5.h,
-                            decoration: BoxDecoration(
-                              color: AppColors.lightBlue,
-                            ),
-                            child: Center(
-                              child: Text(
-                                "اضافة",
-                                style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 1.w,),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () => Navigator.pop(context),
-                          child: Container(
-                            height: 5.h,
-                            decoration: BoxDecoration(
-                              color:Colors.grey.shade400,
-                            ),
-                            child: Center(
-                              child: Text(
-                                "الغاء",
-                                style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-
-                    ],
-                  )
-
-                ],
-
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
 }
