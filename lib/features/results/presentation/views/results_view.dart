@@ -31,7 +31,7 @@ class _ResultsViewState extends State<ResultsView> {
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(15.0),
-            child: Column(
+            child: ListView(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 15.0),
@@ -289,7 +289,7 @@ class _ResultsViewState extends State<ResultsView> {
           ),
                 SizedBox(height: 3.h,),
                 TableCalendarWidget(),
-                Spacer(),
+                const Spacer(),
                 InkWell(
                   onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => const PatientListView(),)),
                   child: Container(
