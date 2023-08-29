@@ -1,5 +1,6 @@
 import 'package:doctor_management_system/core/utils/Colors.dart';
 import 'package:doctor_management_system/features/patientList/presentation/views/patient_list_view.dart';
+import 'package:doctor_management_system/features/results/presentation/widgets/TableCalendarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -26,6 +27,7 @@ class _ResultsViewState extends State<ResultsView> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(15.0),
@@ -271,8 +273,7 @@ class _ResultsViewState extends State<ResultsView> {
                   ),
                 ),
 
-           SizedBox(height: 4.h,),
-          TextFormField(
+            TextFormField(
             decoration: InputDecoration(
               border: const OutlineInputBorder(),
               hintText: "اختر التاريخ",
@@ -285,8 +286,10 @@ class _ResultsViewState extends State<ResultsView> {
               suffixIcon:  MaterialButton(onPressed:_showDatePicker ,
                 child:Image.asset("assets/images/calendar.png",height: 4.h,) ,)
             ),
-          )
-               , const Spacer(),
+          ),
+                SizedBox(height: 3.h,),
+                TableCalendarWidget(),
+                Spacer(),
                 InkWell(
                   onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => const PatientListView(),)),
                   child: Container(
@@ -306,6 +309,7 @@ class _ResultsViewState extends State<ResultsView> {
                     ),
                   ),
                 ),
+
               ],
             ),
           ),
