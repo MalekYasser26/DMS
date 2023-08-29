@@ -5,6 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../dates_view/presentation/views/AbsentPresent.dart';
+import '../../../home_view/presentation/views/home_view.dart';
+import '../../../patient_details_view/presentation/views/patientDetailsView.dart';
+import '../../../rateService_view/presentation/views/widgets/confirm_rating_screen.dart';
+
 class PatientListView extends StatefulWidget {
   const PatientListView({Key? key}) : super(key: key);
 
@@ -19,7 +24,7 @@ class _PatientListViewState extends State<PatientListView> {
   final list =["اليوم","غدا","تخصيص يوم"];
   String? valueChoise;
 
-  int? selectedRadio;
+  int? selectedRadio=0;
   int? currIndex ;
 
   int currentIndex = 0;
@@ -302,305 +307,311 @@ class _PatientListViewState extends State<PatientListView> {
                     children: [
                       Expanded(
                         child: ListView.separated(
-                          shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            physics: ClampingScrollPhysics(),
+                            shrinkWrap: true,
                             itemBuilder: (context, index) {
                               currIndex = index ;
                               return Container(
                                 height: Mheight*0.07,
                                 color: selectedRadio == index ? AppColors.lightBlue.withOpacity(0.1) : Colors.transparent, // Set background color based on selection
                                 child: Row(
-                                children: [
-                                  Radio(
-                                      visualDensity: const VisualDensity(horizontal: -4),
-                                      activeColor: KPrimaryColor,
-                                      value: index,
-                                      groupValue: selectedRadio,
-                                      onChanged: (value){
-                                        setState(() {
-                                          selectedRadio=value;
-                                        });
-                                      }
-                                  ),
-                                  Text("${patientList[index]}",
-                                    style: GoogleFonts.cairo(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Flexible(
+                                      child: selectedRadio != null && index < selectedRadio! ? IconButton(
+                                          onPressed: () {
+                                          },
+                                          icon: Icon(Icons.check_circle_outline_rounded,color: Colors.grey,)) :
+                                      Transform.scale(
+                                        scale : 1.1,
+                                        child: Checkbox(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(100),
+                                          ),
+                                          side: MaterialStateBorderSide.resolveWith(
+                                                (states) => BorderSide( color:selectedRadio == index? AppColors.green : Colors.grey),
+                                          ),
+                                          fillColor: MaterialStatePropertyAll(Colors.transparent),
+                                          checkColor:AppColors.green,
+                                          activeColor: KPrimaryColor,
+                                          value: selectedRadio == index,
+                                          onChanged: (value) {
+
+                                          },
+                                        ),
+                                      ) ,
+                                    ),
+                                    Text("${patientList[index]}",
+                                      style: GoogleFonts.cairo(
                                         textStyle:  TextStyle(
                                             fontSize: Mheight*0.019
                                         ),
                                         color:Colors.black,
-                                    ),),
-                                  SizedBox(width: 2.w,),
-                                ],
-                            ),
+                                      ),),
+                                    SizedBox(width: 2.w,),
+                                  ],
+                                ),
                               );
                             },
                             separatorBuilder: (context, index) => SizedBox(width: 2.w,height:Mheight*0.019 ),
                             itemCount: patientList.length),
                       ),
-                      SizedBox(width:2.w),
                       Expanded(
                         child: ListView.separated(
+                            physics: ClampingScrollPhysics(),
                             shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
                             itemBuilder: (context, index) {
                               currIndex = index ;
-                              return  Column(
-                                children: [
-                                  if (currentIndex == 0)
-                                   Column(
-                                     children: [
-                                       SizedBox(height: 3.h,),
-                                       Container(
-                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.orangeAccent.withOpacity(.2),
-                                       child: const Text("حاضر",style: TextStyle(color: Colors.orange),),),
-                                       SizedBox(height: 5.5.h,),
-                                       Container(
-                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.pink.withOpacity(.2),
-                                         child: const Text("غائب",style: TextStyle(color: Colors.pink),),),
-                                       SizedBox(height: 5.h,),
-                                       Container(
-                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.orangeAccent.withOpacity(.2),
-                                         child: const Text("حاضر",style: TextStyle(color: Colors.orange),),),
-                                       SizedBox(height: 5.h,),
-                                       Container(
-                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.orangeAccent.withOpacity(.2),
-                                         child: const Text("حاضر",style: TextStyle(color: Colors.orange),),),
-                                       SizedBox(height: 5.h,),
-                                       Container(
-                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.pink.withOpacity(.2),
-                                         child: const Text("غائب",style: TextStyle(color: Colors.pink),),),
-                                       SizedBox(height: 5.h,),
-                                       Container(
-                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.orangeAccent.withOpacity(.2),
-                                         child: const Text("حاضر",style: TextStyle(color: Colors.orange),),),
-                                       SizedBox(height: 5.h,),
-                                       Container(
-                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.pink.withOpacity(.2),
-                                         child: const Text("غائب",style: TextStyle(color: Colors.pink),),),
-                                       SizedBox(height: 5.h,),
-                                       Container(
-                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.orangeAccent.withOpacity(.2),
-                                         child: const Text("حاضر",style: TextStyle(color: Colors.orange),),),
-                                       SizedBox(height: 5.h,),
-                                       Container(
-                                         alignment: Alignment.center,height: 3.5.h,width: 13.w,color: Colors.pink.withOpacity(.2),
-                                         child: const Text("غائب",style: TextStyle(color: Colors.pink),),),
-
-                                     ],
-                                   )
-                                  else if (currentIndex == 1)
-                                    Directionality(
-                                      textDirection: TextDirection.ltr,
-                                      child: Column(
-                                        children: [
-                                          SizedBox(height: 2.h,),
-                                          Text("21 Aug, Mon - 09:20 Am",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("21 Aug, Mon - 09:20 Am",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("21 Aug, Mon - 09:20 Am",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("21 Aug, Mon - 09:20 Am",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("21 Aug, Mon - 09:20 Am",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("21 Aug, Mon - 09:20 Am",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("21 Aug, Mon - 09:20 Am",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("21 Aug, Mon - 09:20 Am",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("21 Aug, Mon - 09:20 Am",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-
-                                        ],
+                              return  currentIndex==0 ?
+                              Container(
+                                height: Mheight*0.07,
+                                color: selectedRadio == index ? AppColors.lightBlue.withOpacity(0.1) : Colors.transparent,
+                                child: Padding(
+                                  padding:  EdgeInsets.only(top: 1.h),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: AbsentPresent(
+                                            isAbsent: absentPresent[index], h: 4.h, w: 1.h),
                                       ),
-                                    )
-                                  else if (currentIndex == 2)
-                                      Column(
-                                        children: [
-                                          SizedBox(height: 2.h,),
-                                          Text("اونلاين",
-                                          style: GoogleFonts.cairo(
-                                            textStyle: const TextStyle(
-                                              fontWeight: FontWeight.w500,fontSize: 12
+                                      Spacer(),
+                                      Expanded(child: InkWell(
+                                        onTap: () {},
+                                        child: Directionality(
+                                          textDirection: TextDirection.rtl,
+                                          child: PopupMenuButton<String>(
+                                            itemBuilder: (BuildContext context) {
+                                              return <PopupMenuItem<String>>[
+                                                PopupMenuItem<String>(
+                                                  value: 'item1',
+                                                  child: Text('رؤية التفاصيل',style: GoogleFonts.cairo()),
+                                                ),
+                                                PopupMenuItem<String>(
+                                                  value: 'item2',
+                                                  child: Text('رؤية الملاحظات',style: GoogleFonts.cairo()),
+                                                ),
+                                                PopupMenuItem<String>(
+                                                  value: 'item3',
+                                                  child: Text('اضافة ملاحظة',style: GoogleFonts.cairo(),),
+                                                ),
+                                                if (index == selectedRadio)
+                                                  PopupMenuItem<String>(
+                                                    value: 'item4',
+                                                    child: Text('انهاء وقت المريض',style: GoogleFonts.cairo(),),
+                                                  )
+
+                                              ];
+                                            },
+                                            onSelected: (String value) {
+                                              if (value == 'item1') {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 0),));
+                                              } else if (value == 'item2') {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 2),));
+                                              } else if (value=='item3'){
+                                                showAlertDialog(context); // Call the function to show the alert dialog
+                                              }else if (value=='item4'){
+                                                selectedRadio = (selectedRadio!+1) ;
+                                                setState(() {
+                                                });
+
+                                              }
+                                            },
+                                            child: Image.asset('assets/images/threedots.png'),
+                                          ),
+                                        ),
+                                      )
+
+
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ) :
+                              currentIndex == 1 ?
+                              Container(
+                                height: Mheight*0.07,
+                                color: selectedRadio == index ? AppColors.lightBlue.withOpacity(0.1) : Colors.transparent,
+                                child: Directionality(
+                                    textDirection: TextDirection.ltr,
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding:  EdgeInsets.only(right: 2.w),
+                                          child: Text("21 Aug, Mon - 09:20 Am",
+                                             style: GoogleFonts.cairo(
+                                    textStyle:  TextStyle(
+                                    fontSize: Mheight*0.019
+                                    ),
+                                  color:Colors.black,
+                                ),),
+                                        ),
+
+                                      ],
+                                    ),
+                                  ),
+                              ) :
+                              currentIndex == 2?
+                              Container(
+                                height: Mheight*0.07,
+                                color: selectedRadio == index ? AppColors.lightBlue.withOpacity(0.1) : Colors.transparent,
+                                child: Directionality(
+                                  textDirection: TextDirection.rtl,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding:  EdgeInsets.only(right: 2.w),
+                                        child: Row(
+                                          children: [
+                                            Text(onlineOroffline[index],
+                                              style: GoogleFonts.cairo(
+                                                textStyle:  TextStyle(
+                                                    fontSize: Mheight*0.019
+                                                ),
+                                                color:Colors.black,
+                                              ),),
+                                             Spacer(),
+                                             Expanded(
+                                            child: InkWell(
+                                          onTap: () {},
+                                          child: Directionality(
+                                            textDirection: TextDirection.rtl,
+                                            child: PopupMenuButton<String>(
+                                              itemBuilder: (BuildContext context) {
+                                                return <PopupMenuItem<String>>[
+                                                  PopupMenuItem<String>(
+                                                    value: 'item1',
+                                                    child: Text('رؤية التفاصيل',style: GoogleFonts.cairo()),
+                                                  ),
+                                                  PopupMenuItem<String>(
+                                                    value: 'item2',
+                                                    child: Text('رؤية الملاحظات',style: GoogleFonts.cairo()),
+                                                  ),
+                                                  PopupMenuItem<String>(
+                                                    value: 'item3',
+                                                    child: Text('اضافة ملاحظة',style: GoogleFonts.cairo(),),
+                                                  ),
+                                                  if (index == selectedRadio)
+                                                    PopupMenuItem<String>(
+                                                      value: 'item4',
+                                                      child: Text('انهاء وقت المريض',style: GoogleFonts.cairo(),),
+                                                    )
+
+                                                ];
+                                              },
+                                              onSelected: (String value) {
+                                                if (value == 'item1') {
+                                                  Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 0),));
+                                                } else if (value == 'item2') {
+                                                  Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 2),));
+                                                } else if (value=='item3'){
+                                                  showAlertDialog(context); // Call the function to show the alert dialog
+                                                }else if (value=='item4'){
+                                                  selectedRadio = (selectedRadio!+1) ;
+                                                  setState(() {
+                                                  });
+
+                                                }
+                                              },
+                                              child: Image.asset('assets/images/threedots.png'),
+                                            ),
+                                          ),
+                                        )
+                                        )
+
+                                          ],
+                                        ),
+                                      ),
+
+                                    ],
+                                  ),
+                                ),
+                              ) :
+                              Container(
+                                height: Mheight*0.07,
+                                color: selectedRadio == index ? AppColors.lightBlue.withOpacity(0.1) : Colors.transparent,
+                                child: Directionality(
+                                  textDirection: TextDirection.rtl,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding:  EdgeInsets.only(right: 2.w),
+                                        child: Row(
+                                          children: [
+                                            Text(consultOrcheck[index],
+                                              style: GoogleFonts.cairo(
+                                                textStyle:  TextStyle(
+                                                    fontSize: Mheight*0.019
+                                                ),
+                                                color:Colors.black,
+                                              ),),
+                                            Spacer(),
+                                            Expanded(
+                                                child: InkWell(
+                                                  onTap: () {},
+                                                  child: Directionality(
+                                                    textDirection: TextDirection.rtl,
+                                                    child: PopupMenuButton<String>(
+                                                      itemBuilder: (BuildContext context) {
+                                                        return <PopupMenuItem<String>>[
+                                                          PopupMenuItem<String>(
+                                                            value: 'item1',
+                                                            child: Text('رؤية التفاصيل',style: GoogleFonts.cairo()),
+                                                          ),
+                                                          PopupMenuItem<String>(
+                                                            value: 'item2',
+                                                            child: Text('رؤية الملاحظات',style: GoogleFonts.cairo()),
+                                                          ),
+                                                          PopupMenuItem<String>(
+                                                            value: 'item3',
+                                                            child: Text('اضافة ملاحظة',style: GoogleFonts.cairo(),),
+                                                          ),
+                                                          if (index == selectedRadio)
+                                                            PopupMenuItem<String>(
+                                                              value: 'item4',
+                                                              child: Text('انهاء وقت المريض',style: GoogleFonts.cairo(),),
+                                                            )
+
+                                                        ];
+                                                      },
+                                                      onSelected: (String value) {
+                                                        if (value == 'item1') {
+                                                          Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 0),));
+                                                        } else if (value == 'item2') {
+                                                          Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 2),));
+                                                        } else if (value=='item3'){
+                                                          showAlertDialog(context); // Call the function to show the alert dialog
+                                                        }else if (value=='item4'){
+                                                          selectedRadio = (selectedRadio!+1) ;
+                                                          setState(() {
+                                                          });
+
+                                                        }
+                                                      },
+                                                      child: Image.asset('assets/images/threedots.png'),
+                                                    ),
+                                                  ),
+                                                )
                                             )
-                                          ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("اوفلاين",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("اوفلاين",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("اونلاين",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("اوفلاين",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("اونلاين",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("اوفلاين",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("اونلاين",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("اونلاين",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
 
-                                        ],
-                                      )
-                                    else
-                                      Column(
-                                        children: [
-                                          SizedBox(height: 2.h,),
-                                          Text("كشف",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("كشف",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("استشارة",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("استشارة",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("كشف",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("استشارة",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("كشف",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("استشارة",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
-                                          SizedBox(height: 6.h,),
-                                          Text("كشف",
-                                            style: GoogleFonts.cairo(
-                                                textStyle: const TextStyle(
-                                                    fontWeight: FontWeight.w500,fontSize: 12
-                                                )
-                                            ),),
+                                          ],
+                                        ),
+                                      ),
 
-                                        ],
-                                      )
-                                ],
-                              );
+                                    ],
+                                  ),
+                                ),
+                              ) ;
                             },
-                            separatorBuilder: (context, index) => SizedBox(width: 2.w,height:Mheight*0.019 ),
-                            itemCount: 1),
+                            separatorBuilder: (context, index) => SizedBox(height: Mheight*0.019),
+                            itemCount: absentPresent.length),
                       ),
 
 
@@ -618,3 +629,102 @@ class _PatientListViewState extends State<PatientListView> {
 
 
 }
+void showAlertDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Directionality(
+        textDirection: TextDirection.rtl,
+        child: AlertDialog(
+          title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children:
+              [
+                Text('اضافة ملاحظة',style: GoogleFonts.cairo(fontWeight: FontWeight.bold)),
+                InkWell(
+                    onTap: () => Navigator.pop(context),
+                    child: Icon(Icons.close)),
+              ]),
+
+          content: SizedBox(
+            width: double.infinity,
+            height: 40.h,
+            child: Column(
+              children: [
+                Divider(thickness: 1),
+                SizedBox(height: 1.h,),
+                Text("اضافة ملاحظة الى المريض “اسم المريض”",style: GoogleFonts.cairo(fontSize: 1.8.h)),
+                SizedBox(height: 1.h,),
+                TextField(
+                  textAlignVertical: TextAlignVertical.top,
+                  textAlign: TextAlign.start,
+                  textDirection: TextDirection.rtl,
+                  onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
+                  decoration: InputDecoration(
+                    enabledBorder:  OutlineInputBorder(
+                      borderSide:  BorderSide(color: Colors.grey.shade300, ),
+                    ),
+                    contentPadding: EdgeInsets.only(bottom: 18.h,right: 2.h,top: 1.h),
+                    isDense: true,
+
+                    hintText: "اضف ملاحظاتك هنا",
+                    hintStyle: GoogleFonts.cairo(color:Colors.grey.shade600 ),
+                    alignLabelWithHint: true,
+
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+
+                ),
+                SizedBox(height: 2.h,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: InkWell(
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmRatingView(route: (context) => HomeView(),),)),
+                        child: Container(
+                          height: 5.h,
+                          decoration: BoxDecoration(
+                            color: AppColors.lightBlue,
+                          ),
+                          child: Center(
+                            child: Text(
+                              "اضافة",
+                              style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 1.w,),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () => Navigator.pop(context),
+                        child: Container(
+                          height: 5.h,
+                          decoration: BoxDecoration(
+                            color:Colors.grey.shade400,
+                          ),
+                          child: Center(
+                            child: Text(
+                              "الغاء",
+                              style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  ],
+                )
+
+              ],
+
+            ),
+          ),
+        ),
+      );
+    },
+  );
+}
+

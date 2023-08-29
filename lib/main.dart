@@ -8,7 +8,7 @@ import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(const DoctorManagementSystem());
-}*
+}
 class DoctorManagementSystem extends StatelessWidget {
   const DoctorManagementSystem({Key? key}) : super(key: key);
 
