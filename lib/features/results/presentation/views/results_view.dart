@@ -289,7 +289,7 @@ class _ResultsViewState extends State<ResultsView> {
           ),
                 SizedBox(height: 3.h,),
                 TableCalendarWidget(),
-                const Spacer(),
+                SizedBox(height: MediaQuery.of(context).size.height*0.01,),
                 InkWell(
                   onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => const PatientListView(),)),
                   child: Container(
