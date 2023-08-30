@@ -104,6 +104,7 @@ List<String>onlineOroffline=[
   "اوفلاين",
   "اوفلاين",
   "اونلاين",
+  "اونلاين",
 ];
 List<String>consultOrcheck=[
   "كشف",

@@ -418,7 +418,7 @@ class _PatientListViewState extends State<PatientListView> {
 
                                               }
                                             },
-                                            child: Image.asset('assets/images/threedots.png'),
+                                            child: Image.asset('assets/images/threedots.png',height: Mheight*0.01),
                                           ),
                                         ),
                                       )
@@ -518,7 +518,7 @@ class _PatientListViewState extends State<PatientListView> {
 
                                                 }
                                               },
-                                              child: Image.asset('assets/images/threedots.png'),
+                                              child: Image.asset('assets/images/threedots.png',height: Mheight*0.01),
                                             ),
                                           ),
                                         )
@@ -595,7 +595,7 @@ class _PatientListViewState extends State<PatientListView> {
 
                                                         }
                                                       },
-                                                      child: Image.asset('assets/images/threedots.png'),
+                                                      child: Image.asset('assets/images/threedots.png',height: Mheight*0.01),
                                                     ),
                                                   ),
                                                 )
