@@ -296,7 +296,8 @@ class _ResultsViewState extends State<ResultsView> {
                       color: Color(0xffA3A3A3)
                   ),
               ),
-              suffixIcon:  MaterialButton(onPressed:_showDatePicker ,
+              suffixIcon:  MaterialButton(
+                onPressed:_showDatePicker ,
                 child:Image.asset("assets/images/calendar.png",height: 4.h,) ,)
             ),
           ),
