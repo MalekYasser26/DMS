@@ -21,7 +21,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with TickerProviderStat
     super.initState();
     animationController = AnimationController(
         vsync: this,
-        duration: const Duration(seconds: 5));
+        duration: const Duration(seconds: 2));
 
     slidingAnimationRtoL = Tween<Offset>(begin:const Offset(10,0),end:const Offset(1,0))
         .animate(animationController);
@@ -31,7 +31,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with TickerProviderStat
         .animate(animationController);
     animationController.forward();
 
-    Future.delayed(const Duration(seconds:7 ),
+    Future.delayed(const Duration(seconds:4 ),
           () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>const OnboardingView() ,)),
     );
 

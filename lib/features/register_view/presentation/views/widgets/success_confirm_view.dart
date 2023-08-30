@@ -5,9 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class ConfirmView extends StatelessWidget {
-   ConfirmView({Key? key,required this.route}) : super(key: key);
-  final WidgetBuilder route ;
-
+   ConfirmView({Key? key,required this.buttonroute2,required this.buttonroute1 , this.text = "تم الحجز بنجاح",this.subtext= "شكرا على استخدامك لنا , نتمنى لك\nالشفاء العاجل",this.buttonTxt= "عرض تفاصيل الحجز"}) : super(key: key);
+  final WidgetBuilder buttonroute2,buttonroute1;
+  String text,subtext,buttonTxt ;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,7 +23,7 @@ class ConfirmView extends StatelessWidget {
                   Image.asset("assets/images/confirm.png",width: 35.w,),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("تم الحجز بنجاح",
+                    child: Text(text,
                       style: GoogleFonts.cairo(
                           textStyle: const TextStyle(
                               fontSize: 18,fontWeight: FontWeight.bold
@@ -33,7 +33,7 @@ class ConfirmView extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("شكرا على استخدامك لنا , نتمنى لك\nالشفاء العاجل",
+                      Text(subtext,
                         textAlign: TextAlign.center,
                         style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
@@ -46,7 +46,7 @@ class ConfirmView extends StatelessWidget {
                   SizedBox(height:8.h),
                   GestureDetector(
                     onTap: (){
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>const DetailsView() ,));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder:buttonroute1 ,));
                     },
                     child: Container(
                       height: 7.h,
@@ -55,7 +55,7 @@ class ConfirmView extends StatelessWidget {
                           color: Color(0xff159BAD)
                       ),
                       child: Center(
-                        child: Text("عرض تفاصيل الحجز",
+                        child: Text(buttonTxt,
                           style: GoogleFonts.cairo(
                               textStyle: const TextStyle(
                                   color: Color(0xffFFFFFF),
@@ -68,7 +68,7 @@ class ConfirmView extends StatelessWidget {
                   SizedBox(height:2.h),
                   GestureDetector(
                     onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: route,));
+                    Navigator.push(context, MaterialPageRoute(builder: buttonroute2,));
                     },
                     child: Container(
                       height: 7.h,

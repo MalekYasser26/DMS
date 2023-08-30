@@ -3,6 +3,7 @@ import 'package:doctor_management_system/core/RepeatedWidgets/ButtonWidget.dart'
 import 'package:doctor_management_system/features/booking_view/presentation/views/PatientDetails.dart';
 import 'package:doctor_management_system/features/dates_view/presentation/views/myDates_view.dart';
 import 'package:doctor_management_system/features/rateService_view/presentation/views/widgets/confirm_rating_screen.dart';
+import 'package:doctor_management_system/features/register_view/presentation/views/widgets/confirm_view.dart';
 import 'package:doctor_management_system/features/register_view/presentation/views/widgets/success_confirm_view.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -196,7 +197,7 @@ class _BookingView2State extends State<BookingView2> {
 
                   SizedBox(height: 5.h,),
                   BasicButtonRoute(
-                      route: (context) => ConfirmView(route: (context) => MyDatesView(),),
+                      route: (context) => ConfirmView(buttonroute2: (context) => MyDatesView(),buttonroute1: (context) => DetailsView(),),
                       color: AppColors.lightBlue,
                       Textcolor: Colors.white,
                       TextSt: "حجز",

@@ -3,7 +3,13 @@ import 'package:doctor_management_system/features/patientList/presentation/views
 import 'package:doctor_management_system/features/results/presentation/widgets/TableCalendarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+import 'dart:ui' as ui;
+
+import '../../../../providers/calendar_pickerProvider.dart';
+
 
 class ResultsView extends StatefulWidget {
   const ResultsView({Key? key}) : super(key: key);
@@ -16,16 +22,22 @@ class _ResultsViewState extends State<ResultsView> {
   int? selectedRadio2;
   int? selectedRadio3;
 
-  void _showDatePicker(){
-    showDatePicker(context: context,
+  void _showDatePicker() async{
+   final DateTime? picked = await showDatePicker(context: context,
         initialDate: DateTime.now(),
         firstDate: DateTime(2000),
-        lastDate: DateTime(2025));
+        lastDate: DateTime(2025),);
+   if (picked != null && picked != Provider.of<calendarPickerProvider>(context, listen: false).selectedDate)
+     Provider.of<calendarPickerProvider>(context, listen: false).updateSelectedDate(picked); // Update the selected date
   }
+
   @override
+
   Widget build(BuildContext context) {
+    Provider.of<calendarPickerProvider>(context, listen: false).formattedDate = DateFormat('yyyy-MM-dd').format(Provider.of<calendarPickerProvider>(context, listen: false).selectedDate.toLocal());
+
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: ui.TextDirection.rtl,
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: SafeArea(
@@ -273,7 +285,8 @@ class _ResultsViewState extends State<ResultsView> {
                   ),
                 ),
 
-            TextFormField(
+                TextFormField(
+                  controller: Provider.of<calendarPickerProvider>(context, listen: false).myController,
             decoration: InputDecoration(
               border: const OutlineInputBorder(),
               hintText: "اختر التاريخ",
@@ -288,7 +301,7 @@ class _ResultsViewState extends State<ResultsView> {
             ),
           ),
                 SizedBox(height: 3.h,),
-                TableCalendarWidget(),
+                TableCalendarWidget(syncedDate: Provider.of<calendarPickerProvider>(context, listen: false).selectedDate),
                 SizedBox(height: MediaQuery.of(context).size.height*0.01,),
                 InkWell(
                   onTap:() => Navigator.push(context, MaterialPageRoute(builder: (context) => const PatientListView(),)),

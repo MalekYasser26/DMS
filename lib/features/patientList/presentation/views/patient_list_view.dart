@@ -681,7 +681,8 @@ void showAlertDialog(BuildContext context) {
                   children: [
                     Expanded(
                       child: InkWell(
-                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmRatingView(route: (context) => HomeView(),),)),
+                        onTap: () => Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => ConfirmRatingView(route:PatientListView(),),)),
                         child: Container(
                           height: 5.h,
                           decoration: BoxDecoration(

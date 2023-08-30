@@ -1,11 +1,11 @@
-import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class ConfirmRatingView extends StatelessWidget {
-   ConfirmRatingView({Key? key,required this.route}) : super(key: key);
-  final WidgetBuilder route ;
+   ConfirmRatingView({Key? key,required this.route,this.text="تم الحجز بنجاح"}) : super(key: key);
+  final Widget route ;
+  final String text ;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -21,7 +21,7 @@ class ConfirmRatingView extends StatelessWidget {
                   Image.asset("assets/images/confirm.png",width: 35.w,),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("تم الحجز بنجاح",
+                    child: Text(text,
                       style: GoogleFonts.cairo(
                           textStyle: const TextStyle(
                               fontSize: 18,fontWeight: FontWeight.bold
@@ -46,7 +46,7 @@ class ConfirmRatingView extends StatelessWidget {
                   SizedBox(height:8.h),
                   GestureDetector(
                     onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView(),));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => route,));
                     },
                     child: Container(
                       height: 7.h,

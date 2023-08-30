@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:doctor_management_system/features/doctor_login/presentation/views/doctor_login_view.dart';
 import 'package:doctor_management_system/features/home_view/presentation/views/home_view.dart';
+import 'package:doctor_management_system/features/login_view/presentation/views/login_view.dart';
 import 'package:doctor_management_system/features/onboarding_view/presentation/models/onboarding_model.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -46,7 +47,7 @@ class _AutoScrollViewState extends State<AutoScrollView> {
 
         });
         if (index ==2 ){
-          Future.delayed(Duration(milliseconds: 1500),() => Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorLoginScreen() ,)) ,);
+          Future.delayed(Duration(milliseconds: 1500),() => Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView() ))) ;
 
         }
       },
