@@ -7,7 +7,7 @@ import 'package:sizer/sizer.dart';
 
 class DrugsConfirmView extends StatelessWidget {
   DrugsConfirmView({Key? key,required this.buttonroute2,required this.buttonroute1 ,
-    this.text = "تم اضافة الملاحظة بنجاح",
+    this.text = "تم اضافة الدواء بنجاح",
     this.subtext= "شكرا على استخدامك لنا , نتمنى لك\nالشفاء العاجل",
     this.buttonTxt= "العودة الى صفحة المريض"}) : super(key: key);
   final WidgetBuilder buttonroute2,buttonroute1;

@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class VacationConfirmView extends StatelessWidget {
-  VacationConfirmView({Key? key,required this.route,this.text="تم الحجز بنجاح"}) : super(key: key);
+  VacationConfirmView({Key? key,required this.route,this.text="تم طلب الاجازة بنجاح"}) : super(key: key);
   final Widget route ;
   final String text ;
   @override
@@ -32,7 +32,7 @@ class VacationConfirmView extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 40.0),
                     child: Row(
                       children: [
-                        Text("شكرا على تقييمك لنا , نتمنى لك الشفاء\nالعاجل",
+                        Text("سيتم الرد عليك في اقرب وقت, اجازة سعيدة",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.cairo(
                               textStyle: const TextStyle(

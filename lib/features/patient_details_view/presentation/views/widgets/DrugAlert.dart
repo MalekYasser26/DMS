@@ -17,7 +17,7 @@ class DrugAlertButton extends StatefulWidget {
   final Color borderColor;
   final double textSize;
 
-  DrugAlertButton({
+  const DrugAlertButton({
     Key? key,
     required this.color,
     required this.Textcolor,
@@ -47,7 +47,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                   Text('اضافة ملاحظة',style: GoogleFonts.cairo(fontWeight: FontWeight.bold)),
                   InkWell(
                       onTap: () => Navigator.pop(context),
-                      child: Icon(Icons.close)),
+                      child: const Icon(Icons.close)),
                 ]),
 
             content: SizedBox(
@@ -55,7 +55,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Divider(thickness: 1),
+                    const Divider(thickness: 1),
                     SizedBox(height: 1.h,),
                     Text("اضافة دواء الى المريض “اسم المريض”",style: GoogleFonts.cairo(fontSize: 1.8.h)),
                     SizedBox(height: 1.h,),
@@ -86,10 +86,10 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                       children: [
                         Expanded(
                           child: InkWell(
-                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmView(buttonroute1: (context) =>PatientDetailsView() ,buttonroute2: (context) => PatientListView(),subtext: "",text:"تم إضافة الدواء بنجاح",buttonTxt: "العودة إلى صفحة المريض"),)),
+                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmView(buttonroute1: (context) =>PatientDetailsView() ,buttonroute2: (context) => const PatientListView(),subtext: "",text:"تم إضافة الدواء بنجاح",buttonTxt: "العودة إلى صفحة المريض"),)),
                             child: Container(
                               height: 5.h,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: AppColors.lightBlue,
                               ),
                               child: Center(
