@@ -1,5 +1,6 @@
 import 'package:doctor_management_system/core/utils/Colors.dart';
 import 'package:doctor_management_system/core/utils/Constants.dart';
+import 'package:doctor_management_system/features/patientList/presentation/views/Widgets/vacation_confirm_view.dart';
 import 'package:doctor_management_system/features/patientList/presentation/views/widgets/notes_confirm_view.dart';
 import 'package:doctor_management_system/features/results/presentation/views/results_view.dart';
 import 'package:doctor_management_system/features/results/presentation/widgets/TableCalendarWidget.dart';
@@ -267,7 +268,9 @@ class _PatientListViewState extends State<PatientListView> {
                                                     children: [
                                                       Expanded(
                                                         child: InkWell(
-                                                          onTap: () => Navigator.pop(context),
+                                                          onTap: () => Navigator.push(context,
+                                                              MaterialPageRoute(
+                                                                builder: (context) => NotesConfirmView(buttonroute2:(context) =>  PatientListView(),buttonroute1: (context) => PatientListView(),),)),
                                                           child: Container(
                                                             height: 5.h,
                                                             decoration: const BoxDecoration(
@@ -275,7 +278,7 @@ class _PatientListViewState extends State<PatientListView> {
                                                             ),
                                                             child: Center(
                                                               child: Text(
-                                                                "اضافة",
+                                                                "تأكيد",
                                                                 style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
                                                               ),
                                                             ),
@@ -781,7 +784,9 @@ void showAlertDialog(BuildContext context) {
                   children: [
                     Expanded(
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => NotesConfirmView(buttonroute1: (context) => PatientListView(),buttonroute2: (context) => PatientListView())));
+                        },
                         child: Container(
                           height: 5.h,
                           decoration: const BoxDecoration(
