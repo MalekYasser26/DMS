@@ -76,9 +76,9 @@ class _PatientListViewState extends State<PatientListView> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: GestureDetector(
-                              onTap: (){
-                                Navigator.pop(context);
-                              },
+                                onTap: (){
+                                  Navigator.pop(context);
+                                },
                                 child: const Icon(Icons.arrow_back_ios, size: 16,)),
                           ),
                         ),
@@ -173,7 +173,7 @@ class _PatientListViewState extends State<PatientListView> {
                         height: 6.h,
                         width: 43.5.w,
                         decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xffDFDFDF))
+                            border: Border.all(color: const Color(0xffDFDFDF))
                         ),
                         child: DropdownButton<String>(
                           isExpanded: true,
@@ -181,12 +181,12 @@ class _PatientListViewState extends State<PatientListView> {
                           icon: const Icon(Icons.keyboard_arrow_down,color: Color(0xff151515),),
                           underline: const SizedBox(),
                           hint: Text("طلب تاخير",
-                          style: GoogleFonts.cairo(
-                            textStyle: const TextStyle(
-                              fontSize: 12,fontWeight: FontWeight.bold,
-                              color: Color(0xff404040)
-                            )
-                          ),),
+                            style: GoogleFonts.cairo(
+                                textStyle: const TextStyle(
+                                    fontSize: 12,fontWeight: FontWeight.bold,
+                                    color: Color(0xff404040)
+                                )
+                            ),),
                           value: valueChoose,
                           onChanged: (newValue) {
                             setState(() {
@@ -195,7 +195,7 @@ class _PatientListViewState extends State<PatientListView> {
                           },
                           items: listItem.map((valueItem){
                             return DropdownMenuItem(
-                              value:valueItem ,
+                                value:valueItem ,
                                 child: Text(valueItem));
                           }).toList(
                           ),
@@ -229,7 +229,7 @@ class _PatientListViewState extends State<PatientListView> {
                               if(value==list[2]){
                                 showDialog(context: context,
                                     builder: (BuildContext context){
-                                  return Directionality(
+                                      return Directionality(
                                         textDirection: TextDirection.rtl,
                                         child: AlertDialog(
                                           title: Row(
@@ -245,64 +245,68 @@ class _PatientListViewState extends State<PatientListView> {
                                           content: SizedBox(
                                             width: double.infinity,
                                             height: 60.h,
-                                            child: ListView(
-                                              children: [
-                                                const Divider(thickness: 1),
-                                                SizedBox(height: 1.h,),
-                                                Row(
-                                                  children: [
-                                                    Text("الرجاء تحديد اليوم المراد طلب الاجازة فيه",style: GoogleFonts.cairo(fontSize: 14,)),
-                                                  ],
-                                                ),
-                                                SizedBox(height: 2.h,),
-                                                Container(
-                                                  child:  TableCalendarWidget(syncedDate: Provider.of<calendarPickerProvider>(context, listen: false).selectedDate) ,
-                                                ),
-                                                SizedBox(height: 3.h,),
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                  children: [
-                                                    Expanded(
-                                                      child: InkWell(
-                                                        onTap: () => Navigator.pop(context),
-                                                        child: Container(
-                                                          height: 5.h,
-                                                          decoration: const BoxDecoration(
-                                                            color: AppColors.lightBlue,
-                                                          ),
-                                                          child: Center(
-                                                            child: Text(
-                                                              "اضافة",
-                                                              style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                                            child: SingleChildScrollView(
+                                              child: Column(
+                                                children: [
+                                                  const Divider(thickness: 1),
+                                                  SizedBox(height: 1.h,),
+                                                  Row(
+                                                    children: [
+                                                      Text("الرجاء تحديد اليوم المراد طلب الاجازة فيه",style: GoogleFonts.cairo(fontSize: 14,)),
+                                                    ],
+                                                  ),
+                                                  SizedBox(height: 2.h,),
+                                                  SizedBox(
+                                                    width :400.h,
+                                                    height: 40.h,
+                                                    child:  TableCalendarWidget(syncedDate:DateTime.now(),) ,
+                                                  ),
+                                                  SizedBox(height: 3.h,),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    children: [
+                                                      Expanded(
+                                                        child: InkWell(
+                                                          onTap: () => Navigator.pop(context),
+                                                          child: Container(
+                                                            height: 5.h,
+                                                            decoration: const BoxDecoration(
+                                                              color: AppColors.lightBlue,
+                                                            ),
+                                                            child: Center(
+                                                              child: Text(
+                                                                "اضافة",
+                                                                style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    SizedBox(width: 1.w,),
-                                                    Expanded(
-                                                      child: InkWell(
-                                                        onTap: () => Navigator.pop(context),
-                                                        child: Container(
-                                                          height: 5.h,
-                                                          decoration: BoxDecoration(
-                                                            color:Colors.grey.shade400,
-                                                          ),
-                                                          child: Center(
-                                                            child: Text(
-                                                              "الغاء",
-                                                              style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                                                      SizedBox(width: 1.w,),
+                                                      Expanded(
+                                                        child: InkWell(
+                                                          onTap: () => Navigator.pop(context),
+                                                          child: Container(
+                                                            height: 5.h,
+                                                            decoration: BoxDecoration(
+                                                              color:Colors.grey.shade400,
+                                                            ),
+                                                            child: Center(
+                                                              child: Text(
+                                                                "الغاء",
+                                                                style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
 
-                                                  ],
-                                                )
+                                                    ],
+                                                  )
 
-                                              ],
+                                                ],
 
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -335,7 +339,7 @@ class _PatientListViewState extends State<PatientListView> {
                                   color: Color(0xff404040)
                               )
                           ),),
-                          SizedBox(width:15.h,),
+                        SizedBox(width:15.h,),
                         Image.asset("assets/images/list.png",height: 3.h,),
                         Padding(
                           padding: const EdgeInsets.only(right: 6.0),
@@ -394,7 +398,7 @@ class _PatientListViewState extends State<PatientListView> {
                     ),
                   ),
 
-                 Row(
+                  Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
@@ -526,25 +530,25 @@ class _PatientListViewState extends State<PatientListView> {
                                 height: Mheight*0.07,
                                 color: selectedRadio == index ? AppColors.lightBlue.withOpacity(0.1) : Colors.transparent,
                                 child: Directionality(
-                                    textDirection: TextDirection.ltr,
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.end,
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                          padding:  EdgeInsets.only(right: 2.w),
-                                          child: Text("21 Aug, Mon - 09:20 Am",
-                                             style: GoogleFonts.cairo(
-                                    textStyle:  TextStyle(
-                                    fontSize: Mheight*0.019
-                                    ),
-                                  color:Colors.black,
-                                ),),
-                                        ),
+                                  textDirection: TextDirection.ltr,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding:  EdgeInsets.only(right: 2.w),
+                                        child: Text("21 Aug, Mon - 09:20 Am",
+                                          style: GoogleFonts.cairo(
+                                            textStyle:  TextStyle(
+                                                fontSize: Mheight*0.019
+                                            ),
+                                            color:Colors.black,
+                                          ),),
+                                      ),
 
-                                      ],
-                                    ),
+                                    ],
                                   ),
+                                ),
                               ) :
                               currentIndex == 2?
                               Container(
@@ -567,54 +571,54 @@ class _PatientListViewState extends State<PatientListView> {
                                                 ),
                                                 color:Colors.black,
                                               ),),
-                                             const Spacer(),
-                                             Expanded(
-                                            child: InkWell(
-                                          onTap: () {},
-                                          child: Directionality(
-                                            textDirection: TextDirection.rtl,
-                                            child: PopupMenuButton<String>(
-                                              itemBuilder: (BuildContext context) {
-                                                return <PopupMenuItem<String>>[
-                                                  PopupMenuItem<String>(
-                                                    value: 'item1',
-                                                    child: Text('رؤية التفاصيل',style: GoogleFonts.cairo()),
-                                                  ),
-                                                  PopupMenuItem<String>(
-                                                    value: 'item2',
-                                                    child: Text('رؤية الملاحظات',style: GoogleFonts.cairo()),
-                                                  ),
-                                                  PopupMenuItem<String>(
-                                                    value: 'item3',
-                                                    child: Text('اضافة ملاحظة',style: GoogleFonts.cairo(),),
-                                                  ),
-                                                  if (index == selectedRadio)
-                                                    PopupMenuItem<String>(
-                                                      value: 'item4',
-                                                      child: Text('انهاء وقت المريض',style: GoogleFonts.cairo(),),
-                                                    )
+                                            const Spacer(),
+                                            Expanded(
+                                                child: InkWell(
+                                                  onTap: () {},
+                                                  child: Directionality(
+                                                    textDirection: TextDirection.rtl,
+                                                    child: PopupMenuButton<String>(
+                                                      itemBuilder: (BuildContext context) {
+                                                        return <PopupMenuItem<String>>[
+                                                          PopupMenuItem<String>(
+                                                            value: 'item1',
+                                                            child: Text('رؤية التفاصيل',style: GoogleFonts.cairo()),
+                                                          ),
+                                                          PopupMenuItem<String>(
+                                                            value: 'item2',
+                                                            child: Text('رؤية الملاحظات',style: GoogleFonts.cairo()),
+                                                          ),
+                                                          PopupMenuItem<String>(
+                                                            value: 'item3',
+                                                            child: Text('اضافة ملاحظة',style: GoogleFonts.cairo(),),
+                                                          ),
+                                                          if (index == selectedRadio)
+                                                            PopupMenuItem<String>(
+                                                              value: 'item4',
+                                                              child: Text('انهاء وقت المريض',style: GoogleFonts.cairo(),),
+                                                            )
 
-                                                ];
-                                              },
-                                              onSelected: (String value) {
-                                                if (value == 'item1') {
-                                                  Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 0),));
-                                                } else if (value == 'item2') {
-                                                  Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 2),));
-                                                } else if (value=='item3'){
-                                                  showAlertDialog(context); // Call the function to show the alert dialog
-                                                }else if (value=='item4'){
-                                                  selectedRadio = (selectedRadio!+1) ;
-                                                  setState(() {
-                                                  });
+                                                        ];
+                                                      },
+                                                      onSelected: (String value) {
+                                                        if (value == 'item1') {
+                                                          Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 0),));
+                                                        } else if (value == 'item2') {
+                                                          Navigator.push(context, MaterialPageRoute(builder: (context) => PatientDetailsView(initialIndex: 2),));
+                                                        } else if (value=='item3'){
+                                                          showAlertDialog(context); // Call the function to show the alert dialog
+                                                        }else if (value=='item4'){
+                                                          selectedRadio = (selectedRadio!+1) ;
+                                                          setState(() {
+                                                          });
 
-                                                }
-                                              },
-                                              child: Image.asset('assets/images/threedots.png',height: Mheight*0.01),
-                                            ),
-                                          ),
-                                        )
-                                        )
+                                                        }
+                                                      },
+                                                      child: Image.asset('assets/images/threedots.png',height: Mheight*0.01),
+                                                    ),
+                                                  ),
+                                                )
+                                            )
 
                                           ],
                                         ),
@@ -820,4 +824,3 @@ void showAlertDialog(BuildContext context) {
     },
   );
 }
-
