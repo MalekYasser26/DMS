@@ -736,7 +736,8 @@ void showAlertDialog(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:
               [
-                Text('اضافة ملاحظة',style: GoogleFonts.cairo(fontWeight: FontWeight.bold)),
+                Text('اضافة ملاحظة',
+                    style: GoogleFonts.cairo(fontWeight: FontWeight.bold)),
                 InkWell(
                     onTap: () => Navigator.pop(context),
                     child: const Icon(Icons.close)),
@@ -749,22 +750,25 @@ void showAlertDialog(BuildContext context) {
               children: [
                 const Divider(thickness: 1),
                 SizedBox(height: 1.h,),
-                Text("اضافة ملاحظة الى المريض “اسم المريض”",style: GoogleFonts.cairo(fontSize: 1.8.h)),
+                Text("اضافة ملاحظة الى المريض “اسم المريض”",
+                    style: GoogleFonts.cairo(fontSize: 1.8.h)),
                 SizedBox(height: 1.h,),
                 TextField(
                   textAlignVertical: TextAlignVertical.top,
                   textAlign: TextAlign.start,
                   textDirection: TextDirection.rtl,
-                  onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
+                  onTapOutside: (event) =>
+                      FocusManager.instance.primaryFocus?.unfocus(),
                   decoration: InputDecoration(
-                    enabledBorder:  OutlineInputBorder(
-                      borderSide:  BorderSide(color: Colors.grey.shade300, ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade300,),
                     ),
-                    contentPadding: EdgeInsets.only(bottom: 18.h,right: 2.h,top: 1.h),
+                    contentPadding: EdgeInsets.only(
+                        bottom: 18.h, right: 2.h, top: 1.h),
                     isDense: true,
 
                     hintText: "اضف ملاحظاتك هنا",
-                    hintStyle: GoogleFonts.cairo(color:Colors.grey.shade600 ),
+                    hintStyle: GoogleFonts.cairo(color: Colors.grey.shade600),
                     alignLabelWithHint: true,
 
                   ),
@@ -777,8 +781,7 @@ void showAlertDialog(BuildContext context) {
                   children: [
                     Expanded(
                       child: InkWell(
-                        onTap: (){
-                        },
+                        onTap: () {},
                         child: Container(
                           height: 5.h,
                           decoration: const BoxDecoration(
@@ -787,7 +790,8 @@ void showAlertDialog(BuildContext context) {
                           child: Center(
                             child: Text(
                               "اضافة",
-                              style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                              style: GoogleFonts.cairo(
+                                  color: Colors.white, fontSize: 2.h),
                             ),
                           ),
                         ),
@@ -800,12 +804,13 @@ void showAlertDialog(BuildContext context) {
                         child: Container(
                           height: 5.h,
                           decoration: BoxDecoration(
-                            color:Colors.grey.shade400,
+                            color: Colors.grey.shade400,
                           ),
                           child: Center(
                             child: Text(
                               "الغاء",
-                              style: GoogleFonts.cairo(color: Colors.white,fontSize: 2.h ),
+                              style: GoogleFonts.cairo(
+                                  color: Colors.white, fontSize: 2.h),
                             ),
                           ),
                         ),
