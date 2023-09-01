@@ -270,7 +270,8 @@ class _PatientListViewState extends State<PatientListView> {
                                                         child: InkWell(
                                                           onTap: () => Navigator.push(context,
                                                               MaterialPageRoute(
-                                                                builder: (context) => NotesConfirmView(buttonroute2:(context) =>  PatientListView(),buttonroute1: (context) => PatientListView(),),)),
+                                                                builder: (context) => VacationConfirmView(route: PatientListView())),
+                                                          ),
                                                           child: Container(
                                                             height: 5.h,
                                                             decoration: const BoxDecoration(
