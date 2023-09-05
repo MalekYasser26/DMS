@@ -1,12 +1,12 @@
-import 'package:doctor_management_system/features/splash_view/presentation/views/splash_view.dart';
-import 'package:doctor_management_system/providers/calendar_pickerProvider.dart';
+import 'package:doctor_management_system/features/intro_view/presentation/views/splash_view.dart';
+import 'package:doctor_management_system/features/results_view/providers/calendar_picker_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(MultiProvider(providers:[
-    ChangeNotifierProvider(create: (_) =>calendarPickerProvider ()),
+    ChangeNotifierProvider(create: (_) =>CalendarPickerProvider()),
 
   ]
       ,child : const DoctorManagementSystem()));
@@ -18,7 +18,7 @@ class DoctorManagementSystem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return  const MaterialApp(
+        return const MaterialApp(
           debugShowCheckedModeBanner: false,
           home: SplashView()
         );

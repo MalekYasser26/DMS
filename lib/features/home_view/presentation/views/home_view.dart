@@ -1,12 +1,12 @@
-import 'package:doctor_management_system/core/RepeatedWidgets/BoxWidget.dart';
-import 'package:doctor_management_system/core/RepeatedWidgets/ButtonWidget.dart';
-import 'package:doctor_management_system/core/utils/Colors.dart';
-import 'package:doctor_management_system/core/utils/assets.dart';
-import 'package:doctor_management_system/features/booking_view/presentation/views/booking_view1.dart';
-import 'package:doctor_management_system/features/dates_view/presentation/views/myDates_view.dart';
-import 'package:doctor_management_system/features/login_view/presentation/views/login_view.dart';
-import 'package:doctor_management_system/features/queueWait_view/presentation/views/queueWait_view.dart';
-import 'package:doctor_management_system/features/rateService_view/presentation/views/rateService_view.dart';
+import 'package:doctor_management_system/core/Widgets/box_container_widget.dart';
+import 'package:doctor_management_system/core/Widgets/custom_route_button_widget.dart';
+import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/assets.dart';
+import 'package:doctor_management_system/features/auth_view/presentation/views/login_view.dart';
+import 'package:doctor_management_system/features/booking_view/presentation/views/booking_intro_view.dart';
+import 'package:doctor_management_system/features/dates_view/presentation/views/my_dates_view.dart';
+import 'package:doctor_management_system/features/home_view/presentation/views/queue_wait_view.dart';
+import 'package:doctor_management_system/features/home_view/presentation/views/rate_service_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -38,18 +38,18 @@ class HomeView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                          child:BoxWidget(text: "قائمة الانتظار", height: 15.h, fontSize: 2.8.h, borderColor: Colors.white, textColor: Colors.white, route: (context) => LoginView(route: (context) => QueueWaitView()))
+                          child:BoxWidget(text: "قائمة الانتظار", height: 15.h, fontSize: 2.8.h, borderColor: Colors.white, textColor: Colors.white, route: (context) => LoginView(route: (context) => const QueueWaitView()))
                         ),
                         SizedBox(width : 4.w),
                         Expanded(
-                            child:BoxWidget(text: "تقييم الخدمة", height: 15.h, fontSize: 2.8.h, borderColor: Colors.white, textColor: Colors.white, route: (context) => LoginView(route: (context) => RateSeviceView()))
+                            child:BoxWidget(text: "تقييم الخدمة", height: 15.h, fontSize: 2.8.h, borderColor: Colors.white, textColor: Colors.white, route: (context) => LoginView(route: (context) => const RateSeviceView()))
                         ),
                       ],
                     ),
                     SizedBox(height: 2.h,),
-                    BasicButtonRoute(route: (context) => LoginView(route: (context) => MyDatesView()), color: AppColors.lightBlue, Textcolor: Colors.white, TextSt: "تسجيل الدخول", borderColor: Colors.transparent,textSize: 2.h),
+                    BasicButtonRoute(route: (context) => LoginView(route: (context) => const MyDatesView()), color: AppColors.lightBlue, textColor: Colors.white, textSt: "تسجيل الدخول", borderColor: Colors.transparent,textSize: 2.h),
                     SizedBox(height: 2.h,),
-                    BasicButtonRoute(route: (context) => BookingView1(), color:Colors.white , Textcolor: AppColors.lightBlue, TextSt: "حجز سريع", borderColor: Colors.transparent,textSize: 2.h),
+                    BasicButtonRoute(route: (context) => const BookingIntroView(), color:Colors.white , textColor: AppColors.lightBlue, textSt: "حجز سريع", borderColor: Colors.transparent,textSize: 2.h),
 
 
                   ],
