@@ -1,5 +1,5 @@
-import 'package:doctor_management_system/features/intro_view/presentation/views/splash_view.dart';
-import 'package:doctor_management_system/features/results_view/providers/calendar_picker_provider.dart';
+import 'package:doctor_management_system/features/intro/presentation/views/splash_view.dart';
+import 'package:doctor_management_system/features/results/providers/calendar_picker_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
