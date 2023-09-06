@@ -7,11 +7,8 @@ import 'package:sizer/sizer.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'dart:ui' as ui;
 
-// ignore: must_be_immutable
 class TableCalendarWidget extends StatefulWidget {
-  late DateTime syncedDate;
-
-  TableCalendarWidget({Key? key, required this.syncedDate}) : super(key: key);
+  const TableCalendarWidget({Key? key}) : super(key: key);
 
   @override
   State<TableCalendarWidget> createState() => _TableCalendarWidgetState();
@@ -21,11 +18,9 @@ class _TableCalendarWidgetState extends State<TableCalendarWidget> {
   DateTime today = DateTime.now();
   final myController = TextEditingController();
   DateTime selectedDate = DateTime.now();
-
   void selectDay(DateTime day, DateTime foucsedDay) {
     setState(() {
       today = day;
-      widget.syncedDate = day;
     });
   }
 
@@ -82,8 +77,14 @@ class _TableCalendarWidgetState extends State<TableCalendarWidget> {
                   titleTextStyle: GoogleFonts.cairo(
                       fontWeight: FontWeight.w500, fontSize: 15.sp),
                   titleCentered: true),
-              focusedDay: widget.syncedDate,
-              selectedDayPredicate: (day) => isSameDay(day, widget.syncedDate),
+              focusedDay:
+                  Provider.of<CalendarPickerProvider>(context, listen: false)
+                      .selectedDate,
+              selectedDayPredicate: (day) => isSameDay(
+                day,
+                Provider.of<CalendarPickerProvider>(context, listen: false)
+                    .selectedDate,
+              ),
               firstDay: DateTime.utc(2023, 1, 1),
               lastDay: DateTime.utc(2023, 12, 31),
               rowHeight: MediaQuery.of(context).size.height * 0.05,

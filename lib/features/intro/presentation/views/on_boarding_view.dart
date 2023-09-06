@@ -13,7 +13,7 @@ class OnboardingView extends StatefulWidget {
 
 class _OnboardingViewState extends State<OnboardingView> {
   final pageController = PageController();
-  int currentIndex = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class _OnboardingViewState extends State<OnboardingView> {
         body: Stack(
           children: <Widget>[
             AutoScroll(
-                currentIndex: currentIndex, pagesController: pageController),
+                 pagesController: pageController),
             Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 
 class CalendarPickerProvider extends ChangeNotifier {
   String? formattedDate;
-
   final TextEditingController myController = TextEditingController();
   DateTime selectedDate = DateTime.now();
 

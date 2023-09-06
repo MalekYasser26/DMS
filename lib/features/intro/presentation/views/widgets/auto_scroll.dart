@@ -4,13 +4,12 @@ import 'package:doctor_management_system/features/intro/presentation/models/onbo
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-// ignore: must_be_immutable
 class AutoScroll extends StatefulWidget {
   final PageController pagesController;
-  late int currentIndex;
+  final int currentIndex = 0;
 
-  AutoScroll(
-      {Key? key, required this.pagesController, required this.currentIndex})
+  const AutoScroll(
+      {Key? key, required this.pagesController})
       : super(key: key);
 
   @override
@@ -23,7 +22,6 @@ class _AutoScrollState extends State<AutoScroll> {
     super.initState();
     startAutoScroll();
   }
-
   void startAutoScroll() {
     Timer.periodic(const Duration(milliseconds: 2500), (timer) {
       if (widget.currentIndex < boardingItems.length - 1) {
@@ -48,9 +46,6 @@ class _AutoScrollState extends State<AutoScroll> {
       controller: widget.pagesController,
       itemCount: boardingItems.length,
       onPageChanged: (index) {
-        setState(() {
-          widget.currentIndex = index;
-        });
         if (index == 2) {
           Future.delayed(
               const Duration(milliseconds: 1500),

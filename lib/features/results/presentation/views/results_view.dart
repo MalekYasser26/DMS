@@ -332,10 +332,7 @@ class _ResultsViewState extends State<ResultsView> {
                 SizedBox(
                   height: 3.h,
                 ),
-                TableCalendarWidget(
-                    syncedDate: Provider.of<CalendarPickerProvider>(context,
-                            listen: false)
-                        .selectedDate),
+                const TableCalendarWidget(),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.01,
                 ),
