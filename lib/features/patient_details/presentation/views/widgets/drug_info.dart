@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class DrugWidget extends StatelessWidget {
+class DrugInfoWidget extends StatelessWidget {
   final String imagePath;
   final String text;
   final String drugs;
   final String manyTimes;
 
-  const DrugWidget({super.key,
+  const DrugInfoWidget({
+    super.key,
     required this.imagePath,
     required this.text,
     required this.drugs,
@@ -28,7 +29,7 @@ class DrugWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding:  EdgeInsets.all(2.h),
+            padding: EdgeInsets.all(2.h),
             child: Image.asset(
               height: 6.h,
               fit: BoxFit.fill,
@@ -41,34 +42,36 @@ class DrugWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal : 1.h),
+                  padding: EdgeInsets.symmetric(horizontal: 1.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         textDirection: TextDirection.ltr,
                         text,
-                        style: GoogleFonts.cairo(fontSize: 1.8.h, color: Colors.grey),
+                        style: GoogleFonts.cairo(
+                            fontSize: 1.8.h, color: Colors.grey),
                       ),
-                      SizedBox(width: 6.w,),
+                      SizedBox(
+                        width: 6.w,
+                      ),
                       Text(
                         manyTimes,
-                        style: GoogleFonts.cairo(fontSize: 1.7.h, color: Colors.grey),
+                        style: GoogleFonts.cairo(
+                            fontSize: 1.7.h, color: Colors.grey),
                       ),
-
-
                     ],
                   ),
                 ),
                 Padding(
-                  padding:  EdgeInsets.all(1.0.h),
+                  padding: EdgeInsets.all(1.0.h),
                   child: Text(
                     textDirection: TextDirection.ltr,
                     drugs,
-                    style: GoogleFonts.cairo(fontSize: 2.h, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.cairo(
+                        fontSize: 2.h, fontWeight: FontWeight.bold),
                   ),
                 ),
-
               ],
             ),
           ),

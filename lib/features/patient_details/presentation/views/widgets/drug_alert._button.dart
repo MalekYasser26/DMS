@@ -10,7 +10,7 @@ import 'package:sizer/sizer.dart';
 class DrugAlertButton extends StatefulWidget {
   final Color color;
   final Color textColor;
-  final String textSt;
+  final String text;
   final Color borderColor;
   final double textSize;
 
@@ -18,7 +18,7 @@ class DrugAlertButton extends StatefulWidget {
     Key? key,
     required this.color,
     required this.textColor,
-    required this.textSt,
+    required this.text,
     required this.borderColor,
     this.textSize = 14,
   }) : super(key: key);
@@ -80,9 +80,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                       ),
                       keyboardType: TextInputType.emailAddress,
                     ),
-                    SizedBox(
-                      height: 2.h,
-                    ),
+                    SizedBox(height: 2.h),
                     const UploadPhotoWidget(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -164,7 +162,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
         ),
         child: Center(
           child: Text(
-            widget.textSt,
+            widget.text,
             style: GoogleFonts.cairo(
               color: widget.textColor,
               fontSize: widget.textSize,

@@ -5,12 +5,11 @@ import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
-  runApp(MultiProvider(providers:[
-    ChangeNotifierProvider(create: (_) =>CalendarPickerProvider()),
-
-  ]
-      ,child : const DoctorManagementSystem()));
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_) => CalendarPickerProvider()),
+  ], child: const DoctorManagementSystem()));
 }
+
 class DoctorManagementSystem extends StatelessWidget {
   const DoctorManagementSystem({Key? key}) : super(key: key);
 
@@ -19,9 +18,8 @@ class DoctorManagementSystem extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return const MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: SplashView()
-        );
+            debugShowCheckedModeBanner: false,
+            home: SplashView());
       },
     );
   }

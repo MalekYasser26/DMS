@@ -2,7 +2,7 @@ import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart
 import 'package:doctor_management_system/core/Widgets/custom_route_button.dart';
 import 'package:doctor_management_system/core/constants/colors.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
-import 'package:doctor_management_system/features/booking/presentation/views/widgets/patient_details_widget.dart';
+import 'package:doctor_management_system/features/booking/presentation/views/widgets/patient_details.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/appointment_confirm_view.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/success_confirm_view.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';

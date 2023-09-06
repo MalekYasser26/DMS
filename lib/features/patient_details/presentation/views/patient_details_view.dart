@@ -1,12 +1,12 @@
 import 'package:doctor_management_system/core/constants/colors.dart';
 import 'package:doctor_management_system/data/patient_details_temp_data.dart';
 import 'package:doctor_management_system/core/constants/assets.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_alert._button_widget.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_widget.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/extra_notes_widget.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/medical_box_info_widget.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/medical_history_widget.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/note_alert_dialog_widget.dart';
+import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_alert._button.dart';
+import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_info.dart';
+import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/extra_notes.dart';
+import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/medical_box_info.dart';
+import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/medical_history.dart';
+import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/add_note_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -244,7 +244,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                           Flexible(
                             child: ListView.separated(
                                 physics: const ClampingScrollPhysics(),
-                                itemBuilder: (context, index) => DrugWidget(
+                                itemBuilder: (context, index) => DrugInfoWidget(
                                     imagePath: drugImgs[index],
                                     text: doses[index],
                                     drugs: drugs[index],
@@ -256,7 +256,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                           const DrugAlertButton(
                               color: AppColors.lightBlue,
                               textColor: Colors.white,
-                              textSt: "اضافة دواء",
+                              text: "اضافة دواء",
                               borderColor: Colors.transparent)
                         ],
                       ),
@@ -277,7 +277,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                           const NoteAlertDialogButton(
                               color: AppColors.lightBlue,
                               textColor: Colors.white,
-                              textSt: "اضافة ملاحظة",
+                              text: "اضافة ملاحظة",
                               borderColor: Colors.transparent)
                         ],
                       ),

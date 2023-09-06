@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-
-class ExtraNotesWidget extends StatelessWidget {
+class MedicalHistoryWidget extends StatelessWidget {
+  final String text;
   final String date;
-  final String note;
-  const ExtraNotesWidget({super.key,
+  final String diagnosis;
+
+  const MedicalHistoryWidget({
+    super.key,
+    required this.text,
     required this.date,
-    required this.note,
+    required this.diagnosis,
   });
 
   @override
@@ -28,23 +31,29 @@ class ExtraNotesWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal : 1.h),
+                  padding: EdgeInsets.symmetric(horizontal: 1.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        textDirection: TextDirection.ltr,
-                        date,
-                        style: GoogleFonts.cairo(fontSize: 2.h, color: Colors.grey),
+                        text,
+                        style: GoogleFonts.cairo(
+                            fontSize: 2.h, color: Colors.grey),
+                      ),
+                      Text(
+                        " $date",
+                        style: GoogleFonts.poppins(
+                            fontSize: 1.5.h, color: Colors.grey),
                       ),
                     ],
                   ),
                 ),
                 Padding(
-                  padding:  EdgeInsets.all(1.0.h),
+                  padding: EdgeInsets.all(1.0.h),
                   child: Text(
-                    note,
-                    style: GoogleFonts.cairo(fontSize: 2.3.h, fontWeight: FontWeight.w600),
+                    diagnosis,
+                    style: GoogleFonts.cairo(
+                        fontSize: 2.3.h, fontWeight: FontWeight.w600),
                   ),
                 ),
               ],

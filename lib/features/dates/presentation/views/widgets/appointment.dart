@@ -1,5 +1,5 @@
 import 'package:doctor_management_system/core/constants/colors.dart';
-import 'package:doctor_management_system/features/dates/presentation/views/widgets/absent_present_widget.dart';
+import 'package:doctor_management_system/features/dates/presentation/views/widgets/absent_present.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';

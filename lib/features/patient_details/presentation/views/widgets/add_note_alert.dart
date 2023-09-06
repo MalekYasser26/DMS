@@ -8,7 +8,7 @@ import 'package:sizer/sizer.dart';
 class NoteAlertDialogButton extends StatefulWidget {
   final Color color;
   final Color textColor;
-  final String textSt;
+  final String text;
   final Color borderColor;
   final double textSize;
 
@@ -16,7 +16,7 @@ class NoteAlertDialogButton extends StatefulWidget {
     Key? key,
     required this.color,
     required this.textColor,
-    required this.textSt,
+    required this.text,
     required this.borderColor,
     this.textSize = 14,
   }) : super(key: key);
@@ -159,7 +159,7 @@ class _NoteAlertDialogButtonState extends State<NoteAlertDialogButton> {
         ),
         child: Center(
           child: Text(
-            widget.textSt,
+            widget.text,
             style: GoogleFonts.cairo(
               color: widget.textColor,
               fontSize: widget.textSize,
