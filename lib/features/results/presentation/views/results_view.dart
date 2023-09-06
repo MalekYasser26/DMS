@@ -334,7 +334,7 @@ class _ResultsViewState extends State<ResultsView> {
                 ),
                 const TableCalendarWidget(),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.01,
+                  height: 1.h,
                 ),
                 InkWell(
                   onTap: () => Navigator.push(

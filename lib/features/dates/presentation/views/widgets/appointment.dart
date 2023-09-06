@@ -34,7 +34,12 @@ class AppointmentWidget extends StatelessWidget {
                 Text(name,
                     style: GoogleFonts.cairo(
                         color: AppColors.blueNames, fontSize: 3.h)),
-                if(isNext ==true) AbsentPresentWidget(isAbsent: isAbsent,h: 4.h,w: 8.h,),
+                if (isNext == true)
+                  AbsentPresentWidget(
+                    isAbsent: isAbsent,
+                    h: 4.h,
+                    w: 8.h,
+                  ),
               ],
             ),
             RichText(
@@ -49,9 +54,7 @@ class AppointmentWidget extends StatelessWidget {
                         GoogleFonts.cairo(color: Colors.black, fontSize: 2.h)),
               ]),
             ),
-            SizedBox(
-              height: 1.h,
-            ),
+            SizedBox(height: 1.h),
             RichText(
               text: TextSpan(children: [
                 TextSpan(
@@ -64,9 +67,7 @@ class AppointmentWidget extends StatelessWidget {
                         GoogleFonts.cairo(color: Colors.black, fontSize: 2.h)),
               ]),
             ),
-            SizedBox(
-              height: 1.h,
-            ),
+            SizedBox(height: 1.h),
             RichText(
               text: TextSpan(children: [
                 TextSpan(
@@ -79,9 +80,7 @@ class AppointmentWidget extends StatelessWidget {
                         GoogleFonts.cairo(color: Colors.black, fontSize: 2.h)),
               ]),
             ),
-            SizedBox(
-              height: 1.h,
-            ),
+            SizedBox(height: 1.h),
           ],
         ),
       ),

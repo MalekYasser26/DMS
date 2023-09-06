@@ -128,18 +128,14 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                             ),
                           ],
                         ),
-                        SizedBox(
-                          width: 4.w,
-                        ),
+                        SizedBox(width: 4.w),
                         Row(
                           children: [
                             const Icon(
                               Icons.local_phone_outlined,
                               color: Colors.black,
                             ),
-                            SizedBox(
-                              width: 2.w,
-                            ),
+                            SizedBox(width: 2.w),
                             Text(
                               "+20122402921",
                               style: GoogleFonts.cairo(
@@ -151,9 +147,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 4.w,
-                ),
+                SizedBox(height: 4.w),
                 Directionality(
                   textDirection: TextDirection.ltr,
                   child: Row(
@@ -163,17 +157,13 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                           category: "BMI",
                           isBP: false,
                           extraST: "10"),
-                      SizedBox(
-                        width: 3.w,
-                      ),
+                      SizedBox(width: 3.w),
                       const MedicalBoxInfo(
                           number: "92",
                           category: "Weight",
                           isBP: false,
                           extraST: "10 kg"),
-                      SizedBox(
-                        width: 3.w,
-                      ),
+                      SizedBox(width: 3.w),
                       const MedicalBoxInfo(
                           number: "124/80",
                           category: "Blood Pressure",

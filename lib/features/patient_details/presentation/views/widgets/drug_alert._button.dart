@@ -50,9 +50,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                 child: Column(
                   children: [
                     const Divider(thickness: 1),
-                    SizedBox(
-                      height: 1.h,
-                    ),
+                    SizedBox(height: 1.h),
                     Text("اضافة دواء الى المريض “اسم المريض”",
                         style: GoogleFonts.cairo(fontSize: 1.8.h)),
                     SizedBox(
@@ -114,9 +112,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 1.w,
-                        ),
+                        SizedBox(width: 1.w),
                         Expanded(
                           child: InkWell(
                             onTap: () => Navigator.pop(context),

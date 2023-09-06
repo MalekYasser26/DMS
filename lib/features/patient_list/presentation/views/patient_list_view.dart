@@ -32,7 +32,6 @@ class _PatientListViewState extends State<PatientListView> {
 
   @override
   Widget build(BuildContext context) {
-    var mHeight = MediaQuery.of(context).size.height;
 
     return Directionality(
       textDirection: TextDirection.rtl,
@@ -105,11 +104,11 @@ class _PatientListViewState extends State<PatientListView> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(.3),
-                                blurRadius: 5.0, // soften the shadow
-                                spreadRadius: 1, //extend the shadow
+                                blurRadius: 5.0,
+                                spreadRadius: 1,
                                 offset: const Offset(
-                                  2.0, // Move to right 5  horizontally
-                                  2.0, // Move to bottom 5 Vertically
+                                  2.0,
+                                  2.0,
                                 ),
                               )
                             ],
@@ -247,14 +246,12 @@ class _PatientListViewState extends State<PatientListView> {
                                         child: AlertDialog(
                                           title: Row(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
+                                              MainAxisAlignment.spaceBetween,
                                               children: [
                                                 Text('طلب اجازة',
-                                                    style: GoogleFonts.cairo(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontSize: 16)),
+                                                style: GoogleFonts.cairo(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 16)),
                                                 InkWell(
                                                     onTap: () =>
                                                         Navigator.pop(context),
@@ -265,102 +262,97 @@ class _PatientListViewState extends State<PatientListView> {
                                             width: double.infinity,
                                             height: 60.h,
                                             child: SingleChildScrollView(
-                                              child: Column(
-                                                children: [
-                                                  const Divider(thickness: 1),
-                                                  SizedBox(
-                                                    height: 1.h,
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      Text(
-                                                          "الرجاء تحديد اليوم المراد طلب الاجازة فيه",
-                                                          style:
-                                                              GoogleFonts.cairo(
-                                                            fontSize: 14,
-                                                          )),
-                                                    ],
-                                                  ),
-                                                  SizedBox(
-                                                    height: 2.h,
-                                                  ),
-                                                  SizedBox(
-                                                    width: 400.h,
-                                                    height: 40.h,
-                                                    child:
-                                                        const TableCalendarWidget(),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 3.h,
-                                                  ),
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Expanded(
-                                                        child: InkWell(
-                                                          onTap: () =>
-                                                              Navigator.push(
-                                                            context,
-                                                            MaterialPageRoute(
-                                                                builder: (context) =>
-                                                                    const VacationConfirmView(
-                                                                        route:
-                                                                            PatientListView())),
-                                                          ),
-                                                          child: Container(
-                                                            height: 5.h,
-                                                            decoration:
-                                                                const BoxDecoration(
-                                                              color: AppColors
-                                                                  .lightBlue,
-                                                            ),
-                                                            child: Center(
-                                                              child: Text(
-                                                                "تأكيد",
-                                                                style: GoogleFonts.cairo(
-                                                                    color: Colors
-                                                                        .white,
-                                                                    fontSize:
-                                                                        2.h),
-                                                              ),
-                                                            ),
-                                                          ),
+                                            child: Column(
+                                            children: [
+                                            const Divider(thickness: 1),
+                                            SizedBox(
+                                              height: 1.h,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Text(
+                                                    "الرجاء تحديد اليوم المراد طلب الاجازة فيه",
+                                                    style:
+                                                        GoogleFonts.cairo(
+                                                      fontSize: 14,
+                                                    )),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 2.h,
+                                            ),
+                                            SizedBox(
+                                              width: 400.h,
+                                              height: 40.h,
+                                              child:
+                                                  const TableCalendarWidget(),
+                                            ),
+                                            SizedBox(
+                                              height: 3.h,
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Expanded(
+                                                child: InkWell(
+                                                onTap: () =>
+                                                    Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const VacationConfirmView(
+                                                          route: PatientListView())),
+                                                ),
+                                                    child: Container(
+                                                      height: 5.h,
+                                                      decoration:
+                                                          const BoxDecoration(
+                                                        color: AppColors.lightBlue,
+                                                      ),
+                                                      child: Center(
+                                                        child: Text(
+                                                          "تأكيد",
+                                                          style: GoogleFonts.cairo(
+                                                              color: Colors.white,
+                                                              fontSize: 2.h),
                                                         ),
                                                       ),
-                                                      SizedBox(
-                                                        width: 1.w,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 1.w,
+                                                ),
+                                                Expanded(
+                                                  child: InkWell(
+                                                    onTap: () =>
+                                                        Navigator.pop(
+                                                            context),
+                                                    child: Container(
+                                                      height: 5.h,
+                                                      decoration:
+                                                          BoxDecoration(
+                                                        color: Colors.grey.shade400,
                                                       ),
-                                                      Expanded(
-                                                        child: InkWell(
-                                                          onTap: () =>
-                                                              Navigator.pop(
-                                                                  context),
-                                                          child: Container(
-                                                            height: 5.h,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: Colors.grey
-                                                                  .shade400,
-                                                            ),
-                                                            child: Center(
-                                                              child: Text(
-                                                                "الغاء",
-                                                                style: GoogleFonts.cairo(
-                                                                    color: Colors
-                                                                        .white,
-                                                                    fontSize:
-                                                                        2.h),
-                                                              ),
-                                                            ),
-                                                          ),
+                                                      child: Center(
+                                                        child: Text(
+                                                          "الغاء",
+                                                          style: GoogleFonts.cairo(
+                                                              color: Colors
+                                                                  .white,
+                                                              fontSize:
+                                                                  2.h),
                                                         ),
                                                       ),
-                                                    ],
-                                                  )
-                                                ],
-                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            )
+                                              ],
+                                            ),
                                             ),
                                           ),
                                         ),
@@ -485,11 +477,10 @@ class _PatientListViewState extends State<PatientListView> {
                             itemBuilder: (context, index) {
                               currIndex = index;
                               return Container(
-                                height: mHeight * 0.07,
+                                height: 7.h,
                                 color: selectedRadio == index
                                     ? AppColors.lightBlue.withOpacity(0.1)
                                     : Colors.transparent,
-                                // Set background color based on selection
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
@@ -499,8 +490,7 @@ class _PatientListViewState extends State<PatientListView> {
                                           ? IconButton(
                                               onPressed: () {},
                                               icon: const Icon(
-                                                Icons
-                                                    .check_circle_outline_rounded,
+                                                Icons.check_circle_outline_rounded,
                                                 color: Colors.grey,
                                               ))
                                           : Transform.scale(
@@ -508,8 +498,7 @@ class _PatientListViewState extends State<PatientListView> {
                                               child: Checkbox(
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
+                                                      BorderRadius.circular(100),
                                                 ),
                                                 side: MaterialStateBorderSide
                                                     .resolveWith(
@@ -534,7 +523,7 @@ class _PatientListViewState extends State<PatientListView> {
                                       patientList[index],
                                       style: GoogleFonts.cairo(
                                         textStyle: TextStyle(
-                                            fontSize: mHeight * 0.019),
+                                            fontSize: 2.h),
                                         color: Colors.black,
                                       ),
                                     ),
@@ -546,7 +535,7 @@ class _PatientListViewState extends State<PatientListView> {
                               );
                             },
                             separatorBuilder: (context, index) =>
-                                SizedBox(width: 2.w, height: mHeight * 0.019),
+                                SizedBox(width: 2.w, height: 1.9.h),
                             itemCount: patientList.length),
                       ),
                       Expanded(
@@ -557,428 +546,406 @@ class _PatientListViewState extends State<PatientListView> {
                             itemBuilder: (context, index) {
                               currIndex = index;
                               return currentIndex == 0
-                                  ? Container(
-                                      height: mHeight * 0.07,
-                                      color: selectedRadio == index
-                                          ? AppColors.lightBlue.withOpacity(0.1)
-                                          : Colors.transparent,
-                                      child: Padding(
-                                        padding: EdgeInsets.only(top: 1.h),
+                            ? Container(
+                                height: 7.h,
+                                color: selectedRadio == index
+                                    ? AppColors.lightBlue.withOpacity(0.1)
+                                    : Colors.transparent,
+                                child: Padding(
+                                  padding: EdgeInsets.only(top: 1.h),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: AbsentPresentWidget(
+                                            isAbsent:
+                                            absentPresentPatientList[index],
+                                            h: 4.h,
+                                            w: 1.h),
+                                      ),
+                                      const Spacer(),
+                                      Expanded(
+                                          child: InkWell(
+                                            onTap: () {},
+                                            child:
+                                            Directionality(
+                                              textDirection:
+                                              TextDirection
+                                                  .rtl,
+                                              child:
+                                              PopupMenuButton<String>(
+                                                itemBuilder: (BuildContext context)
+                                                {
+                                                  return <PopupMenuItem<String>>
+                                                  [
+                                                    PopupMenuItem<String>(
+                                                      value:
+                                                      'item1',
+                                                      child: Text(
+                                                          'رؤية التفاصيل',
+                                                          style:
+                                                          GoogleFonts.cairo()),
+                                                    ),
+                                                    PopupMenuItem<String>(
+                                                      value:
+                                                      'item2',
+                                                      child: Text(
+                                                          'رؤية الملاحظات',
+                                                          style:
+                                                          GoogleFonts.cairo()),
+                                                    ),
+                                                    PopupMenuItem<String>(
+                                                      value:
+                                                      'item3',
+                                                      child:
+                                                      Text(
+                                                        'اضافة ملاحظة',
+                                                        style: GoogleFonts
+                                                            .cairo(),
+                                                      ),
+                                                    ),
+                                                    if (index == selectedRadio)
+                                                      PopupMenuItem<String>(
+                                                        value:
+                                                        'item4',
+                                                        child:
+                                                        Text(
+                                                          'انهاء وقت المريض',
+                                                          style:
+                                                          GoogleFonts.cairo(),
+                                                        ),
+                                                      )
+                                                  ];
+                                                },
+                                                onSelected:
+                                                    (String value) {
+                                                  if (value == 'item1') {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                          builder: (context) =>
+                                                          const PatientDetailsView(initialIndex: 0),
+                                                        ));
+                                                  }
+                                                  else if (value == 'item2')
+                                                  {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                          builder: (context) =>
+                                                          const PatientDetailsView(initialIndex: 2),
+                                                        ));
+                                                  }
+                                                  else if (value == 'item3')
+                                                  {
+                                                    showAlertDialog(context);
+                                                  }
+                                                  else if (value == 'item4')
+                                                  {
+                                                    selectedRadio =
+                                                    (selectedRadio! + 1);
+                                                    setState(
+                                                            () {}
+                                                    );
+                                                  }
+                                                },
+                                                child: Image.asset(
+                                                    'assets/images/threedots.png',
+                                                    height:
+                                                    1.h),
+                                              ),
+                                            ),
+                                          ))
+                                    ],
+                                  ),
+                                ),
+                              ) :
+                            currentIndex == 1?
+                            Container(
+                                height: 7.h,
+                                color: selectedRadio == index
+                                    ? AppColors.lightBlue.withOpacity(0.1)
+                                    : Colors.transparent,
+                                child: Directionality(
+                                  textDirection: TextDirection.ltr,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.end,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(right: 2.w),
+                                        child: Text(
+                                          "21 Aug, Mon - 09:20 Am",
+                                          style: GoogleFonts.cairo(
+                                            textStyle: TextStyle(
+                                                fontSize:
+                                                    1.9.h),
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ):
+                            currentIndex == 2 ?
+                            Container(
+                                height: 7.h,
+                                color: selectedRadio == index ?
+                                AppColors.lightBlue.withOpacity(0.1)
+                                    : Colors.transparent,
+                                child: Directionality(
+                                  textDirection:
+                                      TextDirection.rtl,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.end,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            right: 2.w),
                                         child: Row(
                                           children: [
-                                            Expanded(
-                                              child: AbsentPresentWidget(
-                                                  isAbsent:
-                                                      absentPresentPatientList[
-                                                          index],
-                                                  h: 4.h,
-                                                  w: 1.h),
+                                            Text(
+                                              onlineOrOffline[index],
+                                              style: GoogleFonts.cairo(
+                                                textStyle: TextStyle(
+                                                    fontSize: 1.9.h),
+                                                color: Colors.black,
+                                              ),
                                             ),
                                             const Spacer(),
                                             Expanded(
                                                 child: InkWell(
-                                              onTap: () {},
-                                              child: Directionality(
-                                                textDirection:
+                                                  onTap: () {},
+                                                  child:
+                                                  Directionality(
+                                                    textDirection:
                                                     TextDirection.rtl,
-                                                child: PopupMenuButton<String>(
-                                                  itemBuilder:
-                                                      (BuildContext context) {
-                                                    return <PopupMenuItem<
-                                                        String>>[
-                                                      PopupMenuItem<String>(
-                                                        value: 'item1',
-                                                        child: Text(
-                                                            'رؤية التفاصيل',
-                                                            style: GoogleFonts
-                                                                .cairo()),
-                                                      ),
-                                                      PopupMenuItem<String>(
-                                                        value: 'item2',
-                                                        child: Text(
-                                                            'رؤية الملاحظات',
-                                                            style: GoogleFonts
-                                                                .cairo()),
-                                                      ),
-                                                      PopupMenuItem<String>(
-                                                        value: 'item3',
-                                                        child: Text(
-                                                          'اضافة ملاحظة',
-                                                          style: GoogleFonts
-                                                              .cairo(),
-                                                        ),
-                                                      ),
-                                                      if (index ==
-                                                          selectedRadio)
-                                                        PopupMenuItem<String>(
-                                                          value: 'item4',
-                                                          child: Text(
-                                                            'انهاء وقت المريض',
-                                                            style: GoogleFonts
-                                                                .cairo(),
+                                                    child:
+                                                    PopupMenuButton<String>(
+                                                      itemBuilder: (BuildContext context)
+                                                      {
+                                                        return <PopupMenuItem<String>>
+                                                        [
+                                                          PopupMenuItem<String>(
+                                                            value:
+                                                            'item1',
+                                                            child: Text(
+                                                                'رؤية التفاصيل',
+                                                                style:
+                                                                GoogleFonts.cairo()),
                                                           ),
-                                                        )
-                                                    ];
-                                                  },
-                                                  onSelected: (String value) {
-                                                    if (value == 'item1') {
-                                                      Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                const PatientDetailsView(
-                                                                    initialIndex:
-                                                                        0),
-                                                          ));
-                                                    } else if (value ==
-                                                        'item2') {
-                                                      Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                const PatientDetailsView(
-                                                                    initialIndex:
-                                                                        2),
-                                                          ));
-                                                    } else if (value ==
-                                                        'item3') {
-                                                      showAlertDialog(
-                                                          context); // Call the function to show the alert dialog
-                                                    } else if (value ==
-                                                        'item4') {
-                                                      selectedRadio =
+                                                          PopupMenuItem<String>(
+                                                            value:
+                                                            'item2',
+                                                            child: Text(
+                                                                'رؤية الملاحظات',
+                                                                style:
+                                                                GoogleFonts.cairo()),
+                                                          ),
+                                                          PopupMenuItem<String>(
+                                                            value:
+                                                            'item3',
+                                                            child:
+                                                            Text(
+                                                              'اضافة ملاحظة',
+                                                              style: GoogleFonts
+                                                                  .cairo(),
+                                                            ),
+                                                          ),
+                                                          if (index == selectedRadio)
+                                                            PopupMenuItem<String>(
+                                                              value:
+                                                              'item4',
+                                                              child:
+                                                              Text(
+                                                                'انهاء وقت المريض',
+                                                                style:
+                                                                GoogleFonts.cairo(),
+                                                              ),
+                                                            )
+                                                        ];
+                                                      },
+                                                      onSelected:
+                                                          (String value) {
+                                                        if (value == 'item1') {
+                                                          Navigator.push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                builder: (context) =>
+                                                                const PatientDetailsView(initialIndex: 0),
+                                                              ));
+                                                        }
+                                                        else if (value == 'item2')
+                                                        {
+                                                          Navigator.push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                builder: (context) =>
+                                                                const PatientDetailsView(initialIndex: 2),
+                                                              ));
+                                                        }
+                                                        else if (value == 'item3')
+                                                        {
+                                                          showAlertDialog(context);
+                                                        }
+                                                        else if (value == 'item4')
+                                                        {
+                                                          selectedRadio =
                                                           (selectedRadio! + 1);
-                                                      setState(() {});
-                                                    }
-                                                  },
-                                                  child: Image.asset(
-                                                      'assets/images/threedots.png',
-                                                      height: mHeight * 0.01),
-                                                ),
-                                              ),
-                                            ))
+                                                          setState(
+                                                                  () {}
+                                                          );
+                                                        }
+                                                      },
+                                                      child: Image.asset(
+                                                          'assets/images/threedots.png',
+                                                          height:
+                                                          1.h),
+                                                    ),
+                                                  ),
+                                                ))
                                           ],
                                         ),
                                       ),
-                                    )
-                                  : currentIndex == 1
-                                      ? Container(
-                                          height: mHeight * 0.07,
-                                          color: selectedRadio == index
-                                              ? AppColors.lightBlue
-                                                  .withOpacity(0.1)
-                                              : Colors.transparent,
-                                          child: Directionality(
-                                            textDirection: TextDirection.ltr,
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsets.only(
-                                                      right: 2.w),
-                                                  child: Text(
-                                                    "21 Aug, Mon - 09:20 Am",
-                                                    style: GoogleFonts.cairo(
-                                                      textStyle: TextStyle(
-                                                          fontSize:
-                                                              mHeight * 0.019),
-                                                      color: Colors.black,
+                                    ],
+                                  ),
+                                ),
+                              ):
+                            Container(
+                            height: 7.h,
+                            color: selectedRadio == index
+                                ? AppColors.lightBlue
+                                    .withOpacity(0.1)
+                                : Colors.transparent,
+                            child: Directionality(
+                              textDirection:
+                                  TextDirection.rtl,
+                              child: Column(
+                                crossAxisAlignment:
+                                    CrossAxisAlignment.end,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(right: 2.w),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          consultOrCheck[index],
+                                          style: GoogleFonts.cairo(
+                                            textStyle: TextStyle(
+                                                fontSize: 1.9.h),
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                        const Spacer(),
+                                        Expanded(
+                                            child: InkWell(
+                                          onTap: () {},
+                                          child:
+                                              Directionality(
+                                            textDirection:
+                                                TextDirection
+                                                    .rtl,
+                                            child:
+                                                PopupMenuButton<String>(
+                                              itemBuilder: (BuildContext context)
+                                              {
+                                                return <PopupMenuItem<String>>
+                                                [
+                                                  PopupMenuItem<String>(
+                                                    value:
+                                                        'item1',
+                                                    child: Text(
+                                                        'رؤية التفاصيل',
+                                                        style:
+                                                            GoogleFonts.cairo()),
+                                                  ),
+                                                  PopupMenuItem<String>(
+                                                    value:
+                                                        'item2',
+                                                    child: Text(
+                                                        'رؤية الملاحظات',
+                                                        style:
+                                                            GoogleFonts.cairo()),
+                                                  ),
+                                                  PopupMenuItem<String>(
+                                                    value:
+                                                        'item3',
+                                                    child:
+                                                        Text(
+                                                      'اضافة ملاحظة',
+                                                      style: GoogleFonts
+                                                          .cairo(),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
+                                                  if (index == selectedRadio)
+                                                    PopupMenuItem<String>(
+                                                      value:
+                                                          'item4',
+                                                      child:
+                                                          Text(
+                                                        'انهاء وقت المريض',
+                                                        style:
+                                                            GoogleFonts.cairo(),
+                                                      ),
+                                                    )
+                                                ];
+                                              },
+                                              onSelected:
+                                                  (String value) {
+                                                if (value == 'item1') {
+                                                  Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                  builder: (context) =>
+                                                  const PatientDetailsView(initialIndex: 0),
+                                                      ));
+                                                }
+                                                else if (value == 'item2')
+                                                {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const PatientDetailsView(initialIndex: 2),
+                                                      ));
+                                                }
+                                                else if (value == 'item3')
+                                                {
+                                                  showAlertDialog(context);
+                                                }
+                                                else if (value == 'item4')
+                                                {
+                                                  selectedRadio =
+                                                      (selectedRadio! + 1);
+                                                  setState(
+                                                      () {}
+                                                  );
+                                                }
+                                              },
+                                              child: Image.asset(
+                                                  'assets/images/threedots.png',
+                                                  height:
+                                                      1.h),
                                             ),
                                           ),
-                                        )
-                                      : currentIndex == 2
-                                          ? Container(
-                                              height: mHeight * 0.07,
-                                              color: selectedRadio == index
-                                                  ? AppColors.lightBlue
-                                                      .withOpacity(0.1)
-                                                  : Colors.transparent,
-                                              child: Directionality(
-                                                textDirection:
-                                                    TextDirection.rtl,
-                                                child: Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.end,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Padding(
-                                                      padding: EdgeInsets.only(
-                                                          right: 2.w),
-                                                      child: Row(
-                                                        children: [
-                                                          Text(
-                                                            onlineOrOffline[
-                                                                index],
-                                                            style: GoogleFonts
-                                                                .cairo(
-                                                              textStyle: TextStyle(
-                                                                  fontSize:
-                                                                      mHeight *
-                                                                          0.019),
-                                                              color:
-                                                                  Colors.black,
-                                                            ),
-                                                          ),
-                                                          const Spacer(),
-                                                          Expanded(
-                                                              child: InkWell(
-                                                            onTap: () {},
-                                                            child:
-                                                                Directionality(
-                                                              textDirection:
-                                                                  TextDirection
-                                                                      .rtl,
-                                                              child:
-                                                                  PopupMenuButton<
-                                                                      String>(
-                                                                itemBuilder:
-                                                                    (BuildContext
-                                                                        context) {
-                                                                  return <PopupMenuItem<
-                                                                      String>>[
-                                                                    PopupMenuItem<
-                                                                        String>(
-                                                                      value:
-                                                                          'item1',
-                                                                      child: Text(
-                                                                          'رؤية التفاصيل',
-                                                                          style:
-                                                                              GoogleFonts.cairo()),
-                                                                    ),
-                                                                    PopupMenuItem<
-                                                                        String>(
-                                                                      value:
-                                                                          'item2',
-                                                                      child: Text(
-                                                                          'رؤية الملاحظات',
-                                                                          style:
-                                                                              GoogleFonts.cairo()),
-                                                                    ),
-                                                                    PopupMenuItem<
-                                                                        String>(
-                                                                      value:
-                                                                          'item3',
-                                                                      child:
-                                                                          Text(
-                                                                        'اضافة ملاحظة',
-                                                                        style: GoogleFonts
-                                                                            .cairo(),
-                                                                      ),
-                                                                    ),
-                                                                    if (index ==
-                                                                        selectedRadio)
-                                                                      PopupMenuItem<
-                                                                          String>(
-                                                                        value:
-                                                                            'item4',
-                                                                        child:
-                                                                            Text(
-                                                                          'انهاء وقت المريض',
-                                                                          style:
-                                                                              GoogleFonts.cairo(),
-                                                                        ),
-                                                                      )
-                                                                  ];
-                                                                },
-                                                                onSelected:
-                                                                    (String
-                                                                        value) {
-                                                                  if (value ==
-                                                                      'item1') {
-                                                                    Navigator.push(
-                                                                        context,
-                                                                        MaterialPageRoute(
-                                                                          builder: (context) =>
-                                                                              const PatientDetailsView(initialIndex: 0),
-                                                                        ));
-                                                                  } else if (value ==
-                                                                      'item2') {
-                                                                    Navigator.push(
-                                                                        context,
-                                                                        MaterialPageRoute(
-                                                                          builder: (context) =>
-                                                                              const PatientDetailsView(initialIndex: 2),
-                                                                        ));
-                                                                  } else if (value ==
-                                                                      'item3') {
-                                                                    showAlertDialog(
-                                                                        context); // Call the function to show the alert dialog
-                                                                  } else if (value ==
-                                                                      'item4') {
-                                                                    selectedRadio =
-                                                                        (selectedRadio! +
-                                                                            1);
-                                                                    setState(
-                                                                        () {});
-                                                                  }
-                                                                },
-                                                                child: Image.asset(
-                                                                    'assets/images/threedots.png',
-                                                                    height:
-                                                                        mHeight *
-                                                                            0.01),
-                                                              ),
-                                                            ),
-                                                          ))
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            )
-                                          : Container(
-                                              height: mHeight * 0.07,
-                                              color: selectedRadio == index
-                                                  ? AppColors.lightBlue
-                                                      .withOpacity(0.1)
-                                                  : Colors.transparent,
-                                              child: Directionality(
-                                                textDirection:
-                                                    TextDirection.rtl,
-                                                child: Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.end,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Padding(
-                                                      padding: EdgeInsets.only(
-                                                          right: 2.w),
-                                                      child: Row(
-                                                        children: [
-                                                          Text(
-                                                            consultOrCheck[
-                                                                index],
-                                                            style: GoogleFonts
-                                                                .cairo(
-                                                              textStyle: TextStyle(
-                                                                  fontSize:
-                                                                      mHeight *
-                                                                          0.019),
-                                                              color:
-                                                                  Colors.black,
-                                                            ),
-                                                          ),
-                                                          const Spacer(),
-                                                          Expanded(
-                                                              child: InkWell(
-                                                            onTap: () {},
-                                                            child:
-                                                                Directionality(
-                                                              textDirection:
-                                                                  TextDirection
-                                                                      .rtl,
-                                                              child:
-                                                                  PopupMenuButton<
-                                                                      String>(
-                                                                itemBuilder:
-                                                                    (BuildContext
-                                                                        context) {
-                                                                  return <PopupMenuItem<
-                                                                      String>>[
-                                                                    PopupMenuItem<
-                                                                        String>(
-                                                                      value:
-                                                                          'item1',
-                                                                      child: Text(
-                                                                          'رؤية التفاصيل',
-                                                                          style:
-                                                                              GoogleFonts.cairo()),
-                                                                    ),
-                                                                    PopupMenuItem<
-                                                                        String>(
-                                                                      value:
-                                                                          'item2',
-                                                                      child: Text(
-                                                                          'رؤية الملاحظات',
-                                                                          style:
-                                                                              GoogleFonts.cairo()),
-                                                                    ),
-                                                                    PopupMenuItem<
-                                                                        String>(
-                                                                      value:
-                                                                          'item3',
-                                                                      child:
-                                                                          Text(
-                                                                        'اضافة ملاحظة',
-                                                                        style: GoogleFonts
-                                                                            .cairo(),
-                                                                      ),
-                                                                    ),
-                                                                    if (index ==
-                                                                        selectedRadio)
-                                                                      PopupMenuItem<
-                                                                          String>(
-                                                                        value:
-                                                                            'item4',
-                                                                        child:
-                                                                            Text(
-                                                                          'انهاء وقت المريض',
-                                                                          style:
-                                                                              GoogleFonts.cairo(),
-                                                                        ),
-                                                                      )
-                                                                  ];
-                                                                },
-                                                                onSelected:
-                                                                    (String
-                                                                        value) {
-                                                                  if (value ==
-                                                                      'item1') {
-                                                                    Navigator.push(
-                                                                        context,
-                                                                        MaterialPageRoute(
-                                                                          builder: (context) =>
-                                                                              const PatientDetailsView(initialIndex: 0),
-                                                                        ));
-                                                                  } else if (value ==
-                                                                      'item2') {
-                                                                    Navigator.push(
-                                                                        context,
-                                                                        MaterialPageRoute(
-                                                                          builder: (context) =>
-                                                                              const PatientDetailsView(initialIndex: 2),
-                                                                        ));
-                                                                  } else if (value ==
-                                                                      'item3') {
-                                                                    showAlertDialog(
-                                                                        context); // Call the function to show the alert dialog
-                                                                  } else if (value ==
-                                                                      'item4') {
-                                                                    selectedRadio =
-                                                                        (selectedRadio! +
-                                                                            1);
-                                                                    setState(
-                                                                        () {});
-                                                                  }
-                                                                },
-                                                                child: Image.asset(
-                                                                    'assets/images/threedots.png',
-                                                                    height:
-                                                                        mHeight *
-                                                                            0.01),
-                                                              ),
-                                                            ),
-                                                          ))
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            );
+                                        ))
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                              );
                             },
                             separatorBuilder: (context, index) =>
-                                SizedBox(height: mHeight * 0.019),
+                                SizedBox(height:1.9.h),
                             itemCount: absentPresentPatientList.length),
                       ),
                     ],

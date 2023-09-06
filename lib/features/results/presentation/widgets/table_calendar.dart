@@ -87,7 +87,7 @@ class _TableCalendarWidgetState extends State<TableCalendarWidget> {
               ),
               firstDay: DateTime.utc(2023, 1, 1),
               lastDay: DateTime.utc(2023, 12, 31),
-              rowHeight: MediaQuery.of(context).size.height * 0.05,
+              rowHeight: 5.h,
               onDaySelected: (day, focusedDay) {
                 setState(() {
                   Provider.of<CalendarPickerProvider>(context, listen: false)
