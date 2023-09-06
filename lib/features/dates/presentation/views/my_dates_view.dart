@@ -8,11 +8,9 @@ import 'package:sizer/sizer.dart';
 
 class MyDatesView extends StatefulWidget {
   const MyDatesView({Key? key}) : super(key: key);
-
   @override
   State<MyDatesView> createState() => _MyDatesViewState();
 }
-
 class _MyDatesViewState extends State<MyDatesView> {
   @override
   Widget build(BuildContext context) {

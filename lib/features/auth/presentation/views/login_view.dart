@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class LoginView extends StatelessWidget {
   final Widget Function(BuildContext) route;
 
- const LoginView({Key? key,required this.route}) : super(key: key);
+  const LoginView({Key? key, required this.route}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body:LoginBody(route: route),
+    return Scaffold(
+      body: LoginBody(route: route),
     );
   }
 }

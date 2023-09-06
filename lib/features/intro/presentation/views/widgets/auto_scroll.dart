@@ -5,19 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
-class AutoScrollView extends StatefulWidget {
+class AutoScroll extends StatefulWidget {
   final PageController pagesController;
   late int currentIndex;
 
-  AutoScrollView(
+  AutoScroll(
       {Key? key, required this.pagesController, required this.currentIndex})
       : super(key: key);
 
   @override
-  State<AutoScrollView> createState() => _AutoScrollViewState();
+  State<AutoScroll> createState() => _AutoScrollState();
 }
 
-class _AutoScrollViewState extends State<AutoScrollView> {
+class _AutoScrollState extends State<AutoScroll> {
   @override
   void initState() {
     super.initState();

@@ -20,7 +20,7 @@ List<String>patientList = [
   "كريم اشرف",
   "يسرا السيد عبداللطيف"
 ];
-List<String>onlineOroffline=[
+List<String>onlineOrOffline=[
   "اونلاين",
   "اونلاين",
   "اوفلاين",
@@ -31,8 +31,7 @@ List<String>onlineOroffline=[
   "اونلاين",
   "اونلاين",
 ];
-
-List<String>consultOrcheck=[
+List<String>consultOrCheck=[
   "كشف",
   "استشارة",
   "كشف",

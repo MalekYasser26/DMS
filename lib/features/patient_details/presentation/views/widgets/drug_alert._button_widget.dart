@@ -97,7 +97,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                                           const PatientDetailsView(),
                                       buttonRoute2: (context) =>
                                           const PatientListView(),
-                                      subtext: "",
+                                      subText: "",
                                       text: "تم إضافة الدواء بنجاح",
                                       buttonTxt: "العودة إلى صفحة المريض"),
                                 )),

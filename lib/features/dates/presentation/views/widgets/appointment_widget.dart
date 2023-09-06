@@ -6,7 +6,6 @@ import 'package:sizer/sizer.dart';
 
 class AppointmentWidget extends StatelessWidget {
   final String name, date, address, firstTime;
-
   final bool isAbsent, isNext;
 
   const AppointmentWidget(
@@ -35,13 +34,7 @@ class AppointmentWidget extends StatelessWidget {
                 Text(name,
                     style: GoogleFonts.cairo(
                         color: AppColors.blueNames, fontSize: 3.h)),
-                isNext == true
-                    ? AbsentPresentWidget(
-                        isAbsent: isAbsent,
-                        h: 4.h,
-                        w: 8.h,
-                      )
-                    : const Text("")
+                if(isNext ==true) AbsentPresentWidget(isAbsent: isAbsent,h: 4.h,w: 8.h,),
               ],
             ),
             RichText(

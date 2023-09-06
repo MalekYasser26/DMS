@@ -718,7 +718,7 @@ class _PatientListViewState extends State<PatientListView> {
                                                 child: Row(
                                                   children: [
                                                     Text(
-                                                      onlineOroffline[
+                                                      onlineOrOffline[
                                                           index],
                                                       style: GoogleFonts
                                                           .cairo(
@@ -859,7 +859,7 @@ class _PatientListViewState extends State<PatientListView> {
                                                 child: Row(
                                                   children: [
                                                     Text(
-                                                      consultOrcheck[
+                                                      consultOrCheck[
                                                           index],
                                                       style: GoogleFonts
                                                           .cairo(

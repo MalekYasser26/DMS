@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/features/intro/presentation/views/auto_scroll_view.dart';
+import 'package:doctor_management_system/features/intro/presentation/views/widgets/auto_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -21,7 +21,7 @@ class _OnboardingViewState extends State<OnboardingView> {
       child: Scaffold(
         body: Stack(
           children: <Widget>[
-            AutoScrollView(
+            AutoScroll(
                 currentIndex: currentIndex, pagesController: pageController),
             Center(
               child: Column(

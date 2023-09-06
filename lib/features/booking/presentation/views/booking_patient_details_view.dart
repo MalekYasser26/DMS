@@ -13,15 +13,12 @@ import 'package:sizer/sizer.dart';
 
 class BookingPatientDetails extends StatefulWidget {
   const BookingPatientDetails({Key? key}) : super(key: key);
-
   @override
   State<BookingPatientDetails> createState() => _BookingPatientDetailsState();
 }
-
 class _BookingPatientDetailsState extends State<BookingPatientDetails> {
   int selectedOption = 1;
   int patientNum = 2;
-
   @override
   Widget build(BuildContext context) {
     return Directionality(

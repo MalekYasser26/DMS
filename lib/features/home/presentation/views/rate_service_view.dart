@@ -9,23 +9,13 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class RateSeviceView extends StatefulWidget {
+class RateSeviceView extends StatelessWidget {
   const RateSeviceView({Key? key}) : super(key: key);
 
   @override
-  State<RateSeviceView> createState() => _RateSeviceViewState();
-}
-
-class _RateSeviceViewState extends State<RateSeviceView> {
-  final TextEditingController basicController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final TextEditingController basicController = TextEditingController();
+
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -101,7 +91,8 @@ class _RateSeviceViewState extends State<RateSeviceView> {
                 ),
                 SizedBox(height: 1.h),
                 DropDownMenu(
-                    dropList: clinicNameService, icon: Icons.location_on_outlined),
+                    dropList: clinicNameService,
+                    icon: Icons.location_on_outlined),
                 SizedBox(height: 2.h),
                 Container(
                     color: AppColors.lightBlue.withOpacity(0.1),
@@ -125,9 +116,7 @@ class _RateSeviceViewState extends State<RateSeviceView> {
                               Icons.star_outline_rounded,
                               color: Colors.grey,
                             )),
-                        onRatingUpdate: (rating) {
-                          setState(() {});
-                        },
+                        onRatingUpdate: (rating) {},
                       ),
                     )),
                 SizedBox(

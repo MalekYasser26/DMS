@@ -80,7 +80,7 @@ class ClinicChoice extends StatelessWidget {
                                 2.0,
                                 2.0,
                               ),
-                            )
+                            ),
                           ],
                         ),
                         child: Padding(

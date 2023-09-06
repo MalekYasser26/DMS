@@ -5,14 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class QueueWaitView extends StatefulWidget {
+class QueueWaitView extends StatelessWidget {
   const QueueWaitView({Key? key}) : super(key: key);
 
-  @override
-  State<QueueWaitView> createState() => _QueueWaitViewState();
-}
-
-class _QueueWaitViewState extends State<QueueWaitView> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
