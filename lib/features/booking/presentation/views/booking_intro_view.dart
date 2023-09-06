@@ -168,7 +168,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                       route: (context) => const BookingPatientDetails(),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
-                      textSt: "التالي",
+                      text: "التالي",
                       borderColor: Colors.transparent),
                 )
               ],

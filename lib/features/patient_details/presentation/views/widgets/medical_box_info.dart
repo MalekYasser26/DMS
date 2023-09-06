@@ -42,17 +42,13 @@ class MedicalBoxInfo extends StatelessWidget {
                         style: GoogleFonts.cairo(
                             color: Colors.grey,)),
                   ),
-                  if (isBP == false)
-                    const Icon(
-                      Icons.arrow_drop_down,
-                      color: AppColors.green,
-                    ),
-                  if (isBP == false)
-                    Text(
-                      extraST,
+                  if( isBP ==false) ...
+                  [
+                    const Icon(Icons.arrow_drop_down,color: AppColors.green,),
+                    Text(extraST,
                       style: GoogleFonts.cairo(
-                          color: AppColors.green, fontSize: 1.5.h),
-                    )
+                          color: AppColors.green,
+                        fontSize: 1.5.h),), ],
                 ],
               ),
             ),

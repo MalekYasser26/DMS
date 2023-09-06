@@ -79,7 +79,7 @@ class HomeView extends StatelessWidget {
                             LoginView(route: (context) => const MyDatesView()),
                         color: AppColors.lightBlue,
                         textColor: Colors.white,
-                        textSt: "تسجيل الدخول",
+                        text: "تسجيل الدخول",
                         borderColor: Colors.transparent,
                         textSize: 2.h),
                     SizedBox(
@@ -89,7 +89,7 @@ class HomeView extends StatelessWidget {
                         route: (context) => const BookingIntroView(),
                         color: Colors.white,
                         textColor: AppColors.lightBlue,
-                        textSt: "حجز سريع",
+                        text: "حجز سريع",
                         borderColor: Colors.transparent,
                         textSize: 2.h),
                   ],

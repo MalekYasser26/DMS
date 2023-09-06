@@ -228,7 +228,7 @@ class _BookingPatientDetailsState extends State<BookingPatientDetails> {
                           ),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
-                      textSt: "حجز",
+                      text: "حجز",
                       borderColor: Colors.transparent)
                 ],
               ),

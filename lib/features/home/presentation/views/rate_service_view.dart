@@ -162,7 +162,7 @@ class RateSeviceView extends StatelessWidget {
                           route: MyDatesView(), text: "تم التقييم بنجاح"),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
-                      textSt: "تأكيد",
+                      text: "تأكيد",
                       borderColor: Colors.transparent),
                 )
               ],

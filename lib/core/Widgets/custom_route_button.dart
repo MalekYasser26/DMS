@@ -6,15 +6,16 @@ class BasicButtonRoute extends StatelessWidget {
   final WidgetBuilder route;
   final Color color;
   final Color textColor;
-  final String textSt;
+  final String text;
   final Color borderColor;
   final double textSize;
+
   const BasicButtonRoute(
       {Key? key,
       required this.route,
       required this.color,
       required this.textColor,
-      required this.textSt,
+      required this.text,
       required this.borderColor,
       this.textSize = 14})
       : super(key: key);
@@ -32,10 +33,8 @@ class BasicButtonRoute extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            textSt,
-            style: GoogleFonts.cairo(
-                color: textColor,
-                fontSize: textSize),
+            text,
+            style: GoogleFonts.cairo(color: textColor, fontSize: textSize),
           ),
         ),
       ),

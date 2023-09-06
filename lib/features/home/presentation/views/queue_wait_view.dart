@@ -122,7 +122,7 @@ class QueueWaitView extends StatelessWidget {
                 route: (context) => const MyDatesView(),
                 color: Colors.white,
                 textColor: AppColors.lightBlue,
-                textSt: "العودة الى الصفحة الرئيسية",
+                text: "العودة الى الصفحة الرئيسية",
                 borderColor: AppColors.lightBlue)
           ],
         ),
