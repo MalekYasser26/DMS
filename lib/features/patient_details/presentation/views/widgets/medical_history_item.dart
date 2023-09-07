@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class MedicalHistoryWidget extends StatelessWidget {
+class MedicalHistoryItem extends StatelessWidget {
   final String text;
   final String date;
   final String diagnosis;
 
-  const MedicalHistoryWidget({
+  const MedicalHistoryItem({
     super.key,
     required this.text,
     required this.date,

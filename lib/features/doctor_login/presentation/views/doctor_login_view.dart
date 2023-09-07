@@ -51,9 +51,7 @@ class DoctorLoginView extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 3.w,
-                    ),
+                    SizedBox(width: 3.w),
                     Text(
                       "مرحبا بعودتك",
                       style: GoogleFonts.cairo(
@@ -79,14 +77,10 @@ class DoctorLoginView extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
-                  height: 5.h,
-                ),
+                SizedBox(height: 5.h),
                 BasicTextFormField(text: "اسم المستخدم"),
                 BasicTextFormField(text: "كلمة السر"),
-                SizedBox(
-                  height: 10.h,
-                ),
+                SizedBox(height: 10.h),
                 InkWell(
                   onTap: () => Navigator.push(
                       context,
@@ -101,10 +95,11 @@ class DoctorLoginView extends StatelessWidget {
                       child: Text(
                         "تسجيل الدخول",
                         style: GoogleFonts.cairo(
-                            textStyle: const TextStyle(
-                          color: Color(0xffFFFFFF),
-                          fontSize: 16,
-                        )),
+                          textStyle: const TextStyle(
+                            color: Color(0xffFFFFFF),
+                            fontSize: 16,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -116,9 +111,10 @@ class DoctorLoginView extends StatelessWidget {
                     Text(
                       "ليس لديك حساب؟",
                       style: GoogleFonts.cairo(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xff000000)),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: const Color(0xff000000),
+                      ),
                     ),
                     GestureDetector(
                       onTap: () {},

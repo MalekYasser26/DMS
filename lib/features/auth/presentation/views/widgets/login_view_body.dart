@@ -7,6 +7,7 @@ import 'package:sizer/sizer.dart';
 
 class LoginViewBody extends StatelessWidget {
   final WidgetBuilder route;
+
   const LoginViewBody({Key? key, required this.route}) : super(key: key);
 
   @override
@@ -102,7 +103,9 @@ class LoginViewBody extends StatelessWidget {
                         "تسجيل الدخول",
                         style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                                color: Color(0xffFFFFFF), fontSize: 16)),
+                          color: Color(0xffFFFFFF),
+                          fontSize: 16,
+                        )),
                       ),
                     ),
                   ),
@@ -114,9 +117,10 @@ class LoginViewBody extends StatelessWidget {
                     Text(
                       "ليس لديك حساب؟",
                       style: GoogleFonts.cairo(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xff000000)),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: const Color(0xff000000),
+                      ),
                     ),
                     GestureDetector(
                       onTap: () {
@@ -129,9 +133,10 @@ class LoginViewBody extends StatelessWidget {
                       child: Text(
                         "سجل الان",
                         style: GoogleFonts.cairo(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xff4DC143)),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xff4DC143),
+                        ),
                       ),
                     ),
                   ],

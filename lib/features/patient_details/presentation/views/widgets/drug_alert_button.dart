@@ -38,11 +38,14 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
             title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('اضافة ملاحظة',
-                      style: GoogleFonts.cairo(fontWeight: FontWeight.bold)),
+                  Text(
+                    'اضافة ملاحظة',
+                    style: GoogleFonts.cairo(fontWeight: FontWeight.bold),
+                  ),
                   InkWell(
-                      onTap: () => Navigator.pop(context),
-                      child: const Icon(Icons.close)),
+                    onTap: () => Navigator.pop(context),
+                    child: const Icon(Icons.close),
+                  ),
                 ]),
             content: SizedBox(
               width: double.infinity,
@@ -51,11 +54,11 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                   children: [
                     const Divider(thickness: 1),
                     SizedBox(height: 1.h),
-                    Text("اضافة دواء الى المريض “اسم المريض”",
-                        style: GoogleFonts.cairo(fontSize: 1.8.h)),
-                    SizedBox(
-                      height: 1.h,
+                    Text(
+                      "اضافة دواء الى المريض “اسم المريض”",
+                      style: GoogleFonts.cairo(fontSize: 1.8.h),
                     ),
+                    SizedBox(height: 1.h),
                     TextField(
                       textAlignVertical: TextAlignVertical.top,
                       textAlign: TextAlign.start,
@@ -86,17 +89,18 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                         Expanded(
                           child: InkWell(
                             onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => SuccessConfirmView(
-                                      buttonRoute1: (context) =>
-                                          const PatientDetailsView(),
-                                      buttonRoute2: (context) =>
-                                          const PatientListView(),
-                                      subText: "",
-                                      text: "تم إضافة الدواء بنجاح",
-                                      buttonTxt: "العودة إلى صفحة المريض"),
-                                )),
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SuccessConfirmView(
+                                    buttonRoute1: (context) =>
+                                        const PatientDetailsView(),
+                                    buttonRoute2: (context) =>
+                                        const PatientListView(),
+                                    subText: "",
+                                    text: "تم إضافة الدواء بنجاح",
+                                    buttonTxt: "العودة إلى صفحة المريض"),
+                              ),
+                            ),
                             child: Container(
                               height: 5.h,
                               decoration: const BoxDecoration(

@@ -31,11 +31,13 @@ class AppointmentBooking extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(name,
-                    style: GoogleFonts.cairo(
-                      color: AppColors.blueNames,
-                      fontSize: 3.h,
-                    )),
+                Text(
+                  name,
+                  style: GoogleFonts.cairo(
+                    color: AppColors.blueNames,
+                    fontSize: 3.h,
+                  ),
+                ),
                 if (isNext == true)
                   AbsentOrPresent(
                     isAbsent: isAbsent,
@@ -45,20 +47,24 @@ class AppointmentBooking extends StatelessWidget {
               ],
             ),
             RichText(
-              text: TextSpan(children: [
-                TextSpan(
+              text: TextSpan(
+                children: [
+                  TextSpan(
                     text: " اول مرة ؟   ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
-                    )),
-                TextSpan(
+                    ),
+                  ),
+                  TextSpan(
                     text: firstTime,
                     style: GoogleFonts.cairo(
                       color: Colors.black,
                       fontSize: 2.h,
-                    )),
-              ]),
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 1.h),
             RichText(
@@ -79,20 +85,24 @@ class AppointmentBooking extends StatelessWidget {
             ),
             SizedBox(height: 1.h),
             RichText(
-              text: TextSpan(children: [
-                TextSpan(
+              text: TextSpan(
+                children: [
+                  TextSpan(
                     text: "عنوان العيادة   ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
-                    )),
-                TextSpan(
+                    ),
+                  ),
+                  TextSpan(
                     text: address,
                     style: GoogleFonts.cairo(
                       color: Colors.black,
                       fontSize: 2.h,
-                    )),
-              ]),
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 1.h),
           ],

@@ -5,7 +5,7 @@ import 'package:doctor_management_system/features/patient_details/presentation/v
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_info.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/additional_notes.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/medical_box_info.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/medical_history.dart';
+import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/medical_history_item.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/add_note_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -36,9 +36,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
             padding: EdgeInsets.symmetric(horizontal: 4.w),
             child: Column(
               children: [
-                SizedBox(
-                  height: 3.h,
-                ),
+                SizedBox(height: 3.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,39 +66,33 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                             ),
                           )),
                     ),
-                    SizedBox(
-                      width: 4.w,
-                    ),
+                    SizedBox(width: 4.w),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
                           children: [
-                            Text("تفاصيل المريض",
-                                style: GoogleFonts.cairo(
-                                    color: Colors.black,
-                                    fontSize: 3.h,
-                                    fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              width: 10.w,
+                            Text(
+                              "تفاصيل المريض",
+                              style: GoogleFonts.cairo(
+                                  color: Colors.black,
+                                  fontSize: 3.h,
+                                  fontWeight: FontWeight.bold),
                             ),
+                            SizedBox(width: 10.w),
                           ],
                         ),
                       ],
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 4.h,
-                ),
+                SizedBox(height: 4.h),
                 CircleAvatar(
                   backgroundColor: Colors.transparent,
                   radius: 60,
                   child: Image.asset(AssetsData.person, fit: BoxFit.cover),
                 ),
-                SizedBox(
-                  height: 1.h,
-                ),
+                SizedBox(height: 1.h),
                 Text(
                   "احمد خالد اسماعيل",
                   style: GoogleFonts.cairo(fontSize: 3.h, color: Colors.black),
@@ -118,13 +110,13 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                               Icons.person_outline,
                               color: Colors.black,
                             ),
-                            SizedBox(
-                              width: 2.w,
-                            ),
+                            SizedBox(width: 2.w),
                             Text(
                               "26 Years Old, Male",
                               style: GoogleFonts.cairo(
-                                  fontSize: 2.h, color: Colors.grey),
+                                fontSize: 2.h,
+                                color: Colors.grey,
+                              ),
                             ),
                           ],
                         ),
@@ -139,7 +131,9 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                             Text(
                               "+20122402921",
                               style: GoogleFonts.cairo(
-                                  fontSize: 2.h, color: Colors.grey),
+                                fontSize: 2.h,
+                                color: Colors.grey,
+                              ),
                             ),
                           ],
                         ),
@@ -153,22 +147,25 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                   child: Row(
                     children: [
                       const MedicalBoxInfo(
-                          number: "22.4",
-                          category: "BMI",
-                          isBP: false,
-                          extraST: "10"),
+                        number: "22.4",
+                        category: "BMI",
+                        isBP: false,
+                        additionalSubText: "10",
+                      ),
                       SizedBox(width: 3.w),
                       const MedicalBoxInfo(
-                          number: "92",
-                          category: "Weight",
-                          isBP: false,
-                          extraST: "10 kg"),
+                        number: "92",
+                        category: "Weight",
+                        isBP: false,
+                        additionalSubText: "10 kg",
+                      ),
                       SizedBox(width: 3.w),
                       const MedicalBoxInfo(
-                          number: "124/80",
-                          category: "Blood Pressure",
-                          isBP: true,
-                          extraST: ""),
+                        number: "124/80",
+                        category: "Blood Pressure",
+                        isBP: true,
+                        additionalSubText: "",
+                      ),
                     ],
                   ),
                 ),
@@ -186,9 +183,10 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                         labelColor: AppColors.green,
                         unselectedLabelColor: Colors.black,
                         labelStyle: GoogleFonts.cairo(
-                            color: AppColors.green,
-                            fontSize: 2.4.h,
-                            fontWeight: FontWeight.bold),
+                          color: AppColors.green,
+                          fontSize: 2.4.h,
+                          fontWeight: FontWeight.bold,
+                        ),
                         tabs: [
                           Tab(
                             child: Text(
@@ -218,10 +216,11 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                             child: ListView.separated(
                                 physics: const ClampingScrollPhysics(),
                                 itemBuilder: (context, index) =>
-                                    MedicalHistoryWidget(
-                                        text: mdHistory[index],
-                                        date: "21 Aug, Mon ",
-                                        diagnosis: diagnosis[index]),
+                                    MedicalHistoryItem(
+                                      text: mdHistory[index],
+                                      date: "21 Aug, Mon ",
+                                      diagnosis: diagnosis[index],
+                                    ),
                                 separatorBuilder: (context, index) =>
                                     SizedBox(height: 1.h),
                                 itemCount: 4),
@@ -235,10 +234,11 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                             child: ListView.separated(
                                 physics: const ClampingScrollPhysics(),
                                 itemBuilder: (context, index) => DrugInfo(
-                                    imagePath: drugImgs[index],
-                                    text: doses[index],
-                                    drugs: drugs[index],
-                                    manyTimes: timesADay[index]),
+                                      imagePath: drugImgs[index],
+                                      text: doses[index],
+                                      drugs: drugs[index],
+                                      manyTimes: timesADay[index],
+                                    ),
                                 separatorBuilder: (context, index) =>
                                     SizedBox(height: 1.h),
                                 itemCount: drugs.length),
@@ -258,8 +258,9 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                                 physics: const ClampingScrollPhysics(),
                                 itemBuilder: (context, index) =>
                                     AdditionalNotes(
-                                        date: "21 Aug, Mon - 09:20 am",
-                                        note: notes[index]),
+                                      date: "21 Aug, Mon - 09:20 am",
+                                      note: notes[index],
+                                    ),
                                 separatorBuilder: (context, index) =>
                                     SizedBox(height: 1.h),
                                 itemCount: notes.length),

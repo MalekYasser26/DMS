@@ -35,10 +35,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 4),
       () => Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OnboardingView(),
-          )),
+        context,
+        MaterialPageRoute(
+          builder: (context) => const OnboardingView(),
+        ),
+      ),
     );
   }
 
@@ -68,48 +69,54 @@ class _SplashViewBodyState extends State<SplashViewBody>
                           child: Text(
                             "CareConnect",
                             style: GoogleFonts.poppins(
-                                textStyle: const TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 20,
-                                    color: Colors.white)),
+                              textStyle: const TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 20,
+                                  color: Colors.white),
+                            ),
                             textAlign: TextAlign.center,
                           ),
                         );
                       }),
                   AnimatedBuilder(
-                      animation: slidingAnimationLtoR,
-                      builder: (context, _) {
-                        return SlideTransition(
-                            position: slidingAnimationLtoR,
-                            child: SizedBox(
-                              height: 15.h,
-                              width: 25.w,
-                              child: Row(
+                    animation: slidingAnimationLtoR,
+                    builder: (context, _) {
+                      return SlideTransition(
+                        position: slidingAnimationLtoR,
+                        child: SizedBox(
+                          height: 15.h,
+                          width: 25.w,
+                          child: Row(
+                            children: [
+                              Image.asset(
+                                "assets/images/splash2.png",
+                                height: 4.5.h,
+                                width: 5.w,
+                              ),
+                              Stack(
                                 children: [
                                   Image.asset(
-                                    "assets/images/splash2.png",
-                                    height: 4.5.h,
-                                    width: 5.w,
+                                    "assets/images/splash1.png",
+                                    height: 12.h,
+                                    width: 12.w,
                                   ),
-                                  Stack(children: [
-                                    Image.asset(
-                                      "assets/images/splash1.png",
-                                      height: 12.h,
-                                      width: 12.w,
+                                  Positioned(
+                                    left: .2,
+                                    top: 26,
+                                    child: Image.asset(
+                                      "assets/images/splash3.png",
+                                      height: 5.h,
+                                      width: 5.w,
                                     ),
-                                    Positioned(
-                                        left: .2,
-                                        top: 26,
-                                        child: Image.asset(
-                                          "assets/images/splash3.png",
-                                          height: 5.h,
-                                          width: 5.w,
-                                        )),
-                                  ])
+                                  ),
                                 ],
-                              ),
-                            ));
-                      })
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  )
                 ],
               )
             ],

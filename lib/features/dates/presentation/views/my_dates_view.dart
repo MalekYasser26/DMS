@@ -8,9 +8,11 @@ import 'package:sizer/sizer.dart';
 
 class MyDatesView extends StatefulWidget {
   const MyDatesView({Key? key}) : super(key: key);
+
   @override
   State<MyDatesView> createState() => _MyDatesViewState();
 }
+
 class _MyDatesViewState extends State<MyDatesView> {
   @override
   Widget build(BuildContext context) {
@@ -42,34 +44,47 @@ class _MyDatesViewState extends State<MyDatesView> {
                         children: [
                           Row(
                             children: [
-                              Text("مواعيدي",
-                                  style: GoogleFonts.cairo(
-                                      color: Colors.black,
-                                      fontSize: 3.h,
-                                      fontWeight: FontWeight.bold)),
+                              Text(
+                                "مواعيدي",
+                                style: GoogleFonts.cairo(
+                                  color: Colors.black,
+                                  fontSize: 3.h,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                               SizedBox(
                                 width: 20.w,
                               ),
                               InkWell(
                                 onTap: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          const BookingIntroView(),
-                                    )),
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const BookingIntroView(),
+                                  ),
+                                ),
                                 child: Container(
                                   decoration: const BoxDecoration(
-                                      color: AppColors.lightBlue),
+                                    color: AppColors.lightBlue,
+                                  ),
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 2.h, vertical: 1.w),
+                                      horizontal: 2.h,
+                                      vertical: 1.w,
+                                    ),
                                     child: Row(children: [
-                                      Icon(Icons.add,
-                                          color: Colors.white, size: 3.h),
-                                      Text(" اضافة موعد",
-                                          style: GoogleFonts.cairo(
-                                              fontSize: 2.h,
-                                              color: Colors.white)),
+                                      Icon(
+                                        Icons.add,
+                                        color: Colors.white,
+                                        size: 3.h,
+                                      ),
+                                      Text(
+                                        " اضافة موعد",
+                                        style: GoogleFonts.cairo(
+                                          fontSize: 2.h,
+                                          color: Colors.white,
+                                        ),
+                                      ),
                                     ]),
                                   ),
                                 ),
@@ -83,14 +98,22 @@ class _MyDatesViewState extends State<MyDatesView> {
                   SizedBox(height: 3.h),
                   SearchBar(
                     hintStyle: MaterialStatePropertyAll(
-                        GoogleFonts.cairo(color: Colors.grey, fontSize: 2.5.h)),
-                    leading: const Icon(Icons.search_sharp, color: Colors.grey),
+                      GoogleFonts.cairo(
+                        color: Colors.grey,
+                        fontSize: 2.5.h,
+                      ),
+                    ),
+                    leading: const Icon(
+                      Icons.search_sharp,
+                      color: Colors.grey,
+                    ),
                     hintText: "ابحث",
                     shape: const MaterialStatePropertyAll(
                         RoundedRectangleBorder()),
                     elevation: const MaterialStatePropertyAll(0),
                     backgroundColor: MaterialStatePropertyAll(
-                        AppColors.blueGrey.withOpacity(0.4)),
+                      AppColors.blueGrey.withOpacity(0.4),
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 2.h, bottom: 2.h),
@@ -106,9 +129,10 @@ class _MyDatesViewState extends State<MyDatesView> {
                           labelColor: AppColors.green,
                           unselectedLabelColor: Colors.black,
                           labelStyle: GoogleFonts.cairo(
-                              color: AppColors.green,
-                              fontSize: 3.h,
-                              fontWeight: FontWeight.bold),
+                            color: AppColors.green,
+                            fontSize: 3.h,
+                            fontWeight: FontWeight.bold,
+                          ),
                           tabs: const [
                             Tab(
                               text: "السابقة",
@@ -130,12 +154,13 @@ class _MyDatesViewState extends State<MyDatesView> {
                                   physics: const ClampingScrollPhysics(),
                                   itemBuilder: (context, index) =>
                                       AppointmentBooking(
-                                          name: names[index],
-                                          address: "147 النزهة, ش المطار",
-                                          date: "21 Aug, Mon - 09:20 am",
-                                          firstTime: "كشف",
-                                          isAbsent: absentPresentMyDates[index],
-                                          isNext: true),
+                                        name: names[index],
+                                        address: "147 النزهة, ش المطار",
+                                        date: "21 Aug, Mon - 09:20 am",
+                                        firstTime: "كشف",
+                                        isAbsent: absentPresentMyDates[index],
+                                        isNext: true,
+                                      ),
                                   separatorBuilder: (context, index) =>
                                       SizedBox(height: 1.h),
                                   itemCount: names.length),
@@ -150,12 +175,13 @@ class _MyDatesViewState extends State<MyDatesView> {
                                   physics: const ClampingScrollPhysics(),
                                   itemBuilder: (context, index) =>
                                       AppointmentBooking(
-                                          name: names[index],
-                                          address: "147 النزهة, ش المطار",
-                                          date: "21 Aug, Mon - 09:20 am",
-                                          firstTime: "كشف",
-                                          isAbsent: absentPresentMyDates[index],
-                                          isNext: false),
+                                        name: names[index],
+                                        address: "147 النزهة, ش المطار",
+                                        date: "21 Aug, Mon - 09:20 am",
+                                        firstTime: "كشف",
+                                        isAbsent: absentPresentMyDates[index],
+                                        isNext: false,
+                                      ),
                                   separatorBuilder: (context, index) =>
                                       SizedBox(height: 1.h),
                                   itemCount: names.length),

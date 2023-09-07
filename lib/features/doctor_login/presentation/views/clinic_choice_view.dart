@@ -50,9 +50,7 @@ class ClinicChoiceView extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 3.w,
-                    ),
+                    SizedBox(width: 3.w),
                     Text(
                       "قم باختيار العيادة",
                       style: GoogleFonts.cairo(
@@ -99,16 +97,15 @@ class ClinicChoiceView extends StatelessWidget {
                     child: Text(
                       "اختر العيادة المراد رؤية المرضى بها",
                       style: GoogleFonts.cairo(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                          color: const Color(0xff171717)),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: const Color(0xff171717),
+                      ),
                     ),
                   )
                 ],
               ),
-              SizedBox(
-                height: 5.h,
-              ),
+              SizedBox(height: 5.h),
               Image.asset("assets/images/clinic.png"),
               Padding(
                 padding: const EdgeInsets.only(top: 25.0, right: 25, bottom: 8),
@@ -141,9 +138,10 @@ class ClinicChoiceView extends StatelessWidget {
                       Text(
                         "اختر المكان",
                         style: GoogleFonts.cairo(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14,
-                            color: const Color(0xffA3A3A3)),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14,
+                          color: const Color(0xffA3A3A3),
+                        ),
                       ),
                       const Spacer(),
                       const Icon(
@@ -154,9 +152,7 @@ class ClinicChoiceView extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 28.h,
-              ),
+              SizedBox(height: 28.h),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: InkWell(
@@ -173,8 +169,11 @@ class ClinicChoiceView extends StatelessWidget {
                       child: Text(
                         "عرض قائمة المرضى",
                         style: GoogleFonts.cairo(
-                            textStyle: const TextStyle(
-                                color: Color(0xffFFFFFF), fontSize: 16)),
+                          textStyle: const TextStyle(
+                            color: Color(0xffFFFFFF),
+                            fontSize: 16,
+                          ),
+                        ),
                       ),
                     ),
                   ),

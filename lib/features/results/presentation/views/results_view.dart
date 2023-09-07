@@ -1,11 +1,10 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/features/patient_list/presentation/views/patient_list_view.dart';
-import 'package:doctor_management_system/features/results/presentation/widgets/table_calendar.dart';
-import 'package:doctor_management_system/features/results/providers/calendar_picker_provider.dart';
+import 'package:doctor_management_system/features/results/presentation/widgets/table_calendar_item.dart';
+import 'package:doctor_management_system/features/results/presentation/widgets/calendar_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'dart:ui' as ui;
 
@@ -28,23 +27,17 @@ class _ResultsViewState extends State<ResultsView> {
       lastDate: DateTime(2025),
     );
     if (context.mounted) {
-      if (picked != null &&
-          picked !=
-              Provider.of<CalendarPickerProvider>(context, listen: false)
-                  .selectedDate) {
-        Provider.of<CalendarPickerProvider>(context, listen: false)
-            .updateSelectedDate(picked);
+      if (picked != null && picked != CalendarPicker().selectedDate) {
+        CalendarPicker().updateSelectedDate(picked);
       }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    Provider.of<CalendarPickerProvider>(context, listen: false).formattedDate =
-        DateFormat('yyyy-MM-dd').format(
-            Provider.of<CalendarPickerProvider>(context, listen: false)
-                .selectedDate
-                .toLocal());
+    CalendarPicker().formattedDate = DateFormat('yyyy-MM-dd').format(
+      CalendarPicker().selectedDate.toLocal(),
+    );
 
     return Directionality(
       textDirection: ui.TextDirection.rtl,
@@ -78,7 +71,7 @@ class _ResultsViewState extends State<ResultsView> {
                                   2.0,
                                   2.0,
                                 ),
-                              )
+                              ),
                             ],
                           ),
                           child: const Padding(
@@ -90,15 +83,14 @@ class _ResultsViewState extends State<ResultsView> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 3.w,
-                      ),
+                      SizedBox(width: 3.w),
                       Text(
                         "تصفية النتائح",
                         style: GoogleFonts.cairo(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xff171717)),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xff171717),
+                        ),
                       ),
                       const Spacer(),
                     ],
@@ -123,74 +115,82 @@ class _ResultsViewState extends State<ResultsView> {
                     Row(
                       children: [
                         Radio(
-                            visualDensity: const VisualDensity(horizontal: -4),
-                            activeColor: AppColors.lightBlue,
-                            value: 1,
-                            groupValue: selectedRadio2,
-                            onChanged: (value) {
-                              setState(() {
+                          visualDensity: const VisualDensity(horizontal: -4),
+                          activeColor: AppColors.lightBlue,
+                          value: 1,
+                          groupValue: selectedRadio2,
+                          onChanged: (value) {
+                            setState(
+                              () {
                                 selectedRadio2 = value;
-                              });
-                            }),
+                              },
+                            );
+                          },
+                        ),
                         Text(
                           "الجميع",
                           style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xff404040)),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xff404040),
+                            ),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(
-                      width: 7.w,
-                    ),
+                    SizedBox(width: 7.w),
                     Row(
                       children: [
                         Radio(
-                            visualDensity: const VisualDensity(horizontal: -4),
-                            activeColor: AppColors.lightBlue,
-                            value: 2,
-                            groupValue: selectedRadio2,
-                            onChanged: (value) {
-                              setState(() {
+                          visualDensity: const VisualDensity(horizontal: -4),
+                          activeColor: AppColors.lightBlue,
+                          value: 2,
+                          groupValue: selectedRadio2,
+                          onChanged: (value) {
+                            setState(
+                              () {
                                 selectedRadio2 = value;
-                              });
-                            }),
+                              },
+                            );
+                          },
+                        ),
                         Text(
                           "حاضر",
                           style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xff404040)),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xff404040),
+                            ),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(
-                      width: 7.w,
-                    ),
+                    SizedBox(width: 7.w),
                     Row(
                       children: [
                         Radio(
-                            visualDensity: const VisualDensity(horizontal: -4),
-                            activeColor: AppColors.lightBlue,
-                            value: 3,
-                            groupValue: selectedRadio2,
-                            onChanged: (value) {
-                              setState(() {
+                          visualDensity: const VisualDensity(horizontal: -4),
+                          activeColor: AppColors.lightBlue,
+                          value: 3,
+                          groupValue: selectedRadio2,
+                          onChanged: (value) {
+                            setState(
+                              () {
                                 selectedRadio2 = value;
-                              });
-                            }),
+                              },
+                            );
+                          },
+                        ),
                         Text(
                           "غائب",
                           style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xff404040)),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xff404040),
+                            ),
                           ),
                         ),
                       ],
@@ -219,74 +219,82 @@ class _ResultsViewState extends State<ResultsView> {
                     Row(
                       children: [
                         Radio(
-                            visualDensity: const VisualDensity(horizontal: -4),
-                            activeColor: AppColors.lightBlue,
-                            value: 1,
-                            groupValue: selectedRadio3,
-                            onChanged: (value) {
-                              setState(() {
+                          visualDensity: const VisualDensity(horizontal: -4),
+                          activeColor: AppColors.lightBlue,
+                          value: 1,
+                          groupValue: selectedRadio3,
+                          onChanged: (value) {
+                            setState(
+                              () {
                                 selectedRadio3 = value;
-                              });
-                            }),
+                              },
+                            );
+                          },
+                        ),
                         Text(
                           "الجميع",
                           style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xff404040)),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xff404040),
+                            ),
                           ),
                         )
                       ],
                     ),
-                    SizedBox(
-                      width: 6.w,
-                    ),
+                    SizedBox(width: 6.w),
                     Row(
                       children: [
                         Radio(
-                            visualDensity: const VisualDensity(horizontal: -4),
-                            activeColor: AppColors.lightBlue,
-                            value: 2,
-                            groupValue: selectedRadio3,
-                            onChanged: (value) {
-                              setState(() {
+                          visualDensity: const VisualDensity(horizontal: -4),
+                          activeColor: AppColors.lightBlue,
+                          value: 2,
+                          groupValue: selectedRadio3,
+                          onChanged: (value) {
+                            setState(
+                              () {
                                 selectedRadio3 = value;
-                              });
-                            }),
+                              },
+                            );
+                          },
+                        ),
                         Text(
                           "كشف",
                           style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xff404040)),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xff404040),
+                            ),
                           ),
                         )
                       ],
                     ),
-                    SizedBox(
-                      width: 6.w,
-                    ),
+                    SizedBox(width: 6.w),
                     Row(
                       children: [
                         Radio(
-                            visualDensity: const VisualDensity(horizontal: -4),
-                            activeColor: AppColors.lightBlue,
-                            value: 3,
-                            groupValue: selectedRadio3,
-                            onChanged: (value) {
-                              setState(() {
+                          visualDensity: const VisualDensity(horizontal: -4),
+                          activeColor: AppColors.lightBlue,
+                          value: 3,
+                          groupValue: selectedRadio3,
+                          onChanged: (value) {
+                            setState(
+                              () {
                                 selectedRadio3 = value;
-                              });
-                            }),
+                              },
+                            );
+                          },
+                        ),
                         Text(
                           "استشارة",
                           style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xff404040)),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xff404040),
+                            ),
                           ),
                         ),
                       ],
@@ -311,37 +319,35 @@ class _ResultsViewState extends State<ResultsView> {
                   ),
                 ),
                 TextFormField(
-                  controller: Provider.of<CalendarPickerProvider>(context,
-                          listen: false)
-                      .myController,
+                  controller: CalendarPicker().myController,
                   decoration: InputDecoration(
-                      border: const OutlineInputBorder(),
-                      hintText: "اختر التاريخ",
-                      hintStyle: GoogleFonts.cairo(
-                        textStyle: const TextStyle(
-                            fontSize: 14, color: Color(0xffA3A3A3)),
+                    border: const OutlineInputBorder(),
+                    hintText: "اختر التاريخ",
+                    hintStyle: GoogleFonts.cairo(
+                      textStyle: const TextStyle(
+                        fontSize: 14,
+                        color: Color(0xffA3A3A3),
                       ),
-                      suffixIcon: MaterialButton(
-                        onPressed: _showDatePicker,
-                        child: Image.asset(
-                          "assets/images/calendar.png",
-                          height: 4.h,
-                        ),
-                      )),
+                    ),
+                    suffixIcon: MaterialButton(
+                      onPressed: _showDatePicker,
+                      child: Image.asset(
+                        "assets/images/calendar.png",
+                        height: 4.h,
+                      ),
+                    ),
+                  ),
                 ),
-                SizedBox(
-                  height: 3.h,
-                ),
-                const TableCalendarWidget(),
-                SizedBox(
-                  height: 1.h,
-                ),
+                SizedBox(height: 3.h),
+                const TableCalendarItem(),
+                SizedBox(height: 1.h),
                 InkWell(
                   onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PatientListView(),
-                      )),
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PatientListView(),
+                    ),
+                  ),
                   child: Container(
                     height: 7.h,
                     width: double.infinity,
@@ -350,8 +356,11 @@ class _ResultsViewState extends State<ResultsView> {
                       child: Text(
                         "رؤية النتائج",
                         style: GoogleFonts.cairo(
-                            textStyle: const TextStyle(
-                                color: Color(0xffFFFFFF), fontSize: 16)),
+                          textStyle: const TextStyle(
+                            color: Color(0xffFFFFFF),
+                            fontSize: 16,
+                          ),
+                        ),
                       ),
                     ),
                   ),

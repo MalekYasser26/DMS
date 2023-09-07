@@ -31,10 +31,11 @@ class VacationConfirmView extends StatelessWidget {
                     child: Text(
                       text,
                       style: GoogleFonts.cairo(
-                          textStyle: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      )),
+                        textStyle: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -45,10 +46,11 @@ class VacationConfirmView extends StatelessWidget {
                           "سيتم الرد عليك في اقرب وقت, اجازة سعيدة",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.cairo(
-                              textStyle: const TextStyle(
-                            fontSize: 16,
-                            color: Color(0xff8F8E94),
-                          )),
+                            textStyle: const TextStyle(
+                              fontSize: 16,
+                              color: Color(0xff8F8E94),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -57,10 +59,11 @@ class VacationConfirmView extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => route,
-                          ));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => route,
+                        ),
+                      );
                     },
                     child: Container(
                       height: 7.h,
@@ -74,10 +77,11 @@ class VacationConfirmView extends StatelessWidget {
                         child: Text(
                           "العودة الى الصفحة الرئيسية",
                           style: GoogleFonts.cairo(
-                              textStyle: const TextStyle(
-                            color: Color(0xff159BAD),
-                            fontSize: 16,
-                          )),
+                            textStyle: const TextStyle(
+                              color: Color(0xff159BAD),
+                              fontSize: 16,
+                            ),
+                          ),
                         ),
                       ),
                     ),

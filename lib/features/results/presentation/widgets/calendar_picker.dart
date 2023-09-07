@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class CalendarPickerProvider extends ChangeNotifier {
+class CalendarPicker {
   String? formattedDate;
   final TextEditingController myController = TextEditingController();
   DateTime selectedDate = DateTime.now();

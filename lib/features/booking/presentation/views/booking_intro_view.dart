@@ -40,10 +40,11 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                     InkWell(
                       onTap: () => Navigator.pop(context),
                       child: Container(
-                          height: 5.h,
-                          width: 5.h,
-                          decoration:
-                              BoxDecoration(color: Colors.white, boxShadow: [
+                        height: 5.h,
+                        width: 5.h,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(.2),
                               blurRadius: 5.0,
@@ -53,15 +54,18 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                                 2.0,
                               ),
                             )
-                          ]),
-                          child: Center(
-                              child: Padding(
+                          ],
+                        ),
+                        child: Center(
+                          child: Padding(
                             padding: EdgeInsets.only(right: 2.w),
                             child: const Icon(
                               Icons.arrow_back_ios,
                               color: Colors.black,
                             ),
-                          ))),
+                          ),
+                        ),
+                      ),
                     ),
                     SizedBox(width: 4.w),
                     Column(
@@ -74,26 +78,29 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                                 fontSize: 3.h,
                                 fontWeight: FontWeight.bold)),
                         RichText(
-                          text: TextSpan(children: [
-                            TextSpan(
-                                text: "قمت بملئ بياناتك بالفعل؟ ",
-                                style: GoogleFonts.cairo(
-                                    color: Colors.black, fontSize: 2.h)),
-                            TextSpan(
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => LoginView(
-                                            route: (context) =>
-                                                const MyDatesView()),
-                                      )),
-                                text: "تخطي",
-                                style: GoogleFonts.cairo(
-                                    color: AppColors.lightBlue,
-                                    fontSize: 2.h,
-                                    fontWeight: FontWeight.bold)),
-                          ]),
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                  text: "قمت بملئ بياناتك بالفعل؟ ",
+                                  style: GoogleFonts.cairo(
+                                      color: Colors.black, fontSize: 2.h)),
+                              TextSpan(
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () => Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => LoginView(
+                                                route: (context) =>
+                                                    const MyDatesView()),
+                                          ),
+                                        ),
+                                  text: "تخطي",
+                                  style: GoogleFonts.cairo(
+                                      color: AppColors.lightBlue,
+                                      fontSize: 2.h,
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -103,48 +110,56 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                 Row(
                   children: [
                     Expanded(
-                        child: BoxWidget(
-                      text: "كشف",
-                      height: 15.h,
-                      fontSize: 2.8.h,
-                      borderColor: AppColors.lightBlue,
-                      textColor: AppColors.lightBlue,
-                      route: (context) => const HomeView(),
-                      weight: FontWeight.bold,
-                    )),
+                      child: BoxWidget(
+                        text: "كشف",
+                        height: 15.h,
+                        fontSize: 2.8.h,
+                        borderColor: AppColors.lightBlue,
+                        textColor: AppColors.lightBlue,
+                        route: (context) => const HomeView(),
+                        weight: FontWeight.bold,
+                      ),
+                    ),
                     SizedBox(width: 2.h),
                     Expanded(
-                        child: BoxWidget(
-                      text: "استشارة",
-                      height: 15.h,
-                      fontSize: 2.8.h,
-                      borderColor: Colors.grey.shade600,
-                      textColor: Colors.black,
-                      route: (context) => const HomeView(),
-                    )),
+                      child: BoxWidget(
+                        text: "استشارة",
+                        height: 15.h,
+                        fontSize: 2.8.h,
+                        borderColor: Colors.grey.shade600,
+                        textColor: Colors.black,
+                        route: (context) => const HomeView(),
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(height: 1.h),
-                Text("اختر العيادة",
-                    style: GoogleFonts.cairo(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 2.h,
-                        color: Colors.black)),
+                Text(
+                  "اختر العيادة",
+                  style: GoogleFonts.cairo(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 2.h,
+                      color: Colors.black),
+                ),
                 DropDownMenu(
                     dropList: clinicName, icon: Icons.location_on_outlined),
                 SizedBox(height: 1.h),
-                Text("اختر التاريخ",
-                    style: GoogleFonts.cairo(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 2.h,
-                        color: Colors.black)),
+                Text(
+                  "اختر التاريخ",
+                  style: GoogleFonts.cairo(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 2.h,
+                      color: Colors.black),
+                ),
                 DropDownMenu(dropList: dates, icon: Icons.calendar_month),
                 SizedBox(height: 1.h),
-                Text("اختر الوقت",
-                    style: GoogleFonts.cairo(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 2.h,
-                        color: Colors.black)),
+                Text(
+                  "اختر الوقت",
+                  style: GoogleFonts.cairo(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 2.h,
+                      color: Colors.black),
+                ),
                 DropDownMenu(
                   dropList: timeStamps,
                   icon: Icons.watch_later_outlined,

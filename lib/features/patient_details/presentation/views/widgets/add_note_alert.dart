@@ -34,28 +34,30 @@ class _AddNoteAlertState extends State<AddNoteAlert> {
           textDirection: TextDirection.rtl,
           child: AlertDialog(
             title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('اضافة ملاحظة',
-                      style: GoogleFonts.cairo(fontWeight: FontWeight.bold)),
-                  InkWell(
-                      onTap: () => Navigator.pop(context),
-                      child: const Icon(Icons.close)),
-                ]),
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'اضافة ملاحظة',
+                  style: GoogleFonts.cairo(fontWeight: FontWeight.bold),
+                ),
+                InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: const Icon(Icons.close),
+                ),
+              ],
+            ),
             content: SizedBox(
               width: double.infinity,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                     const Divider(thickness: 1),
-                    SizedBox(
-                      height: 1.h,
+                    SizedBox(height: 1.h),
+                    Text(
+                      "اضافة ملاحظة الى المريض “اسم المريض”",
+                      style: GoogleFonts.cairo(fontSize: 1.8.h),
                     ),
-                    Text("اضافة ملاحظة الى المريض “اسم المريض”",
-                        style: GoogleFonts.cairo(fontSize: 1.8.h)),
-                    SizedBox(
-                      height: 1.h,
-                    ),
+                    SizedBox(height: 1.h),
                     TextField(
                       textAlignVertical: TextAlignVertical.top,
                       textAlign: TextAlign.start,
@@ -78,24 +80,23 @@ class _AddNoteAlertState extends State<AddNoteAlert> {
                       ),
                       keyboardType: TextInputType.emailAddress,
                     ),
-                    SizedBox(
-                      height: 2.h,
-                    ),
+                    SizedBox(height: 2.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
                           child: InkWell(
                             onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => AddNoteConfirmView(
-                                    buttonRoute1: (context) =>
-                                        const PatientListView(),
-                                    buttonRoute2: (context) =>
-                                        const PatientListView(),
-                                  ),
-                                )),
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AddNoteConfirmView(
+                                  buttonRoute1: (context) =>
+                                      const PatientListView(),
+                                  buttonRoute2: (context) =>
+                                      const PatientListView(),
+                                ),
+                              ),
+                            ),
                             child: Container(
                               height: 5.h,
                               decoration: const BoxDecoration(
@@ -111,9 +112,7 @@ class _AddNoteAlertState extends State<AddNoteAlert> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 1.w,
-                        ),
+                        SizedBox(width: 1.w),
                         Expanded(
                           child: InkWell(
                             onTap: () => Navigator.pop(context),

@@ -45,10 +45,11 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                       InkWell(
                         onTap: () => Navigator.pop(context),
                         child: Container(
-                            height: 5.h,
-                            width: 5.h,
-                            decoration:
-                                BoxDecoration(color: Colors.white, boxShadow: [
+                          height: 5.h,
+                          width: 5.h,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(.2),
                                 blurRadius: 5.0,
@@ -58,47 +59,58 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                                   2.0,
                                 ),
                               )
-                            ]),
-                            child: Center(
-                                child: Padding(
+                            ],
+                          ),
+                          child: Center(
+                            child: Padding(
                               padding: EdgeInsets.only(right: 2.w),
                               child: const Icon(
                                 Icons.arrow_back_ios,
                                 color: Colors.black,
                               ),
-                            ))),
+                            ),
+                          ),
+                        ),
                       ),
                       SizedBox(width: 4.w),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("ابدأ بملئ بياناتك",
-                              style: GoogleFonts.cairo(
-                                  color: Colors.black,
-                                  fontSize: 3.h,
-                                  fontWeight: FontWeight.bold)),
+                          Text(
+                            "ابدأ بملئ بياناتك",
+                            style: GoogleFonts.cairo(
+                                color: Colors.black,
+                                fontSize: 3.h,
+                                fontWeight: FontWeight.bold),
+                          ),
                           RichText(
-                            text: TextSpan(children: [
-                              TextSpan(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
                                   text: "قمت بملئ بياناتك بالفعل؟ ",
                                   style: GoogleFonts.cairo(
-                                      color: Colors.black, fontSize: 2.h)),
-                              TextSpan(
+                                      color: Colors.black, fontSize: 2.h),
+                                ),
+                                TextSpan(
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () => Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => LoginView(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => LoginView(
                                               route: (context) =>
-                                                  const MyDatesView()),
-                                        )),
+                                                  const MyDatesView(),
+                                            ),
+                                          ),
+                                        ),
                                   text: "تخطي",
                                   style: GoogleFonts.cairo(
                                       color: AppColors.lightBlue,
                                       fontSize: 2.h,
-                                      fontWeight: FontWeight.bold)),
-                            ]),
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),

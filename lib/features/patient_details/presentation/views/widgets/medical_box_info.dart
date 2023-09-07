@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class MedicalBoxInfo extends StatelessWidget {
-  final String number, category, extraST;
+  final String number, category, additionalSubText;
   final bool isBP;
 
   const MedicalBoxInfo({
@@ -12,7 +12,7 @@ class MedicalBoxInfo extends StatelessWidget {
     required this.number,
     required this.category,
     required this.isBP,
-    required this.extraST,
+    required this.additionalSubText,
   }) : super(key: key);
 
   @override
@@ -27,21 +27,25 @@ class MedicalBoxInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(number,
-                style: GoogleFonts.cairo(
-                  color: Colors.black,
-                  fontSize: 3.h,
-                  fontWeight: FontWeight.bold,
-                )),
+            Text(
+              number,
+              style: GoogleFonts.cairo(
+                color: Colors.black,
+                fontSize: 3.h,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             Padding(
               padding: EdgeInsets.only(right: 1.w),
               child: Row(
                 children: [
                   Expanded(
-                    child: Text(category,
-                        style: GoogleFonts.cairo(
-                          color: Colors.grey,
-                        )),
+                    child: Text(
+                      category,
+                      style: GoogleFonts.cairo(
+                        color: Colors.grey,
+                      ),
+                    ),
                   ),
                   if (isBP == false) ...[
                     const Icon(
@@ -49,7 +53,7 @@ class MedicalBoxInfo extends StatelessWidget {
                       color: AppColors.green,
                     ),
                     Text(
-                      extraST,
+                      additionalSubText,
                       style: GoogleFonts.cairo(
                         color: AppColors.green,
                         fontSize: 1.5.h,

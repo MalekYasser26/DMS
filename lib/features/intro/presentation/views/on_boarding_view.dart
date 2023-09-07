@@ -14,7 +14,6 @@ class OnboardingView extends StatefulWidget {
 class _OnboardingViewState extends State<OnboardingView> {
   final pageController = PageController();
 
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,25 +21,23 @@ class _OnboardingViewState extends State<OnboardingView> {
         body: Stack(
           children: <Widget>[
             AutoScroll(
-                 pagesController: pageController),
+              pagesController: pageController,
+            ),
             Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: 6.h,
-                  ),
+                  SizedBox(height: 6.h),
                   Text(
-                      "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
-                      style: GoogleFonts.cairo(
-                          color: Colors.white,
-                          fontSize: 4.h,
-                          fontWeight: FontWeight.bold),
-                      textDirection: TextDirection.ltr,
-                      textAlign: TextAlign.center),
-                  SizedBox(
-                    height: 12.5.h,
+                    "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
+                    style: GoogleFonts.cairo(
+                        color: Colors.white,
+                        fontSize: 4.h,
+                        fontWeight: FontWeight.bold),
+                    textDirection: TextDirection.ltr,
+                    textAlign: TextAlign.center,
                   ),
+                  SizedBox(height: 12.5.h),
                   const Spacer(),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 6.w),
@@ -52,30 +49,32 @@ class _OnboardingViewState extends State<OnboardingView> {
                             InkWell(
                               onTap: () {
                                 pageController.nextPage(
-                                    duration:
-                                        const Duration(milliseconds: 1000),
-                                    curve: Curves.ease);
+                                  duration: const Duration(milliseconds: 1000),
+                                  curve: Curves.ease,
+                                );
                               },
                               child: const CircleAvatar(
                                 backgroundColor: Colors.white,
-                                child: Icon(Icons.arrow_back_ios_outlined,
-                                    color: Colors.black),
+                                child: Icon(
+                                  Icons.arrow_back_ios_outlined,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
-                            SizedBox(
-                              width: 4.w,
-                            ),
+                            SizedBox(width: 4.w),
                             InkWell(
                               child: const CircleAvatar(
                                 backgroundColor: Colors.white,
-                                child: Icon(Icons.arrow_forward_ios_outlined,
-                                    color: Colors.black),
+                                child: Icon(
+                                  Icons.arrow_forward_ios_outlined,
+                                  color: Colors.black,
+                                ),
                               ),
                               onTap: () {
                                 pageController.previousPage(
-                                    duration:
-                                        const Duration(milliseconds: 1000),
-                                    curve: Curves.ease);
+                                  duration: const Duration(milliseconds: 1000),
+                                  curve: Curves.ease,
+                                );
                               },
                             ),
                           ],
@@ -86,22 +85,19 @@ class _OnboardingViewState extends State<OnboardingView> {
                           count: 3,
                           axisDirection: Axis.horizontal,
                           effect: const SwapEffect(
-                              spacing: 8.0,
-                              radius: 1,
-                              dotWidth: 25.0,
-                              dotHeight: 8.0,
-                              dotColor: Colors.grey,
-                              activeDotColor: Colors.white),
+                            spacing: 8.0,
+                            radius: 1,
+                            dotWidth: 25.0,
+                            dotHeight: 8.0,
+                            dotColor: Colors.grey,
+                            activeDotColor: Colors.white,
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 3.5.h,
-                  ),
-                  SizedBox(
-                    height: 4.5.h,
-                  )
+                  SizedBox(height: 3.5.h),
+                  SizedBox(height: 4.5.h)
                 ],
               ),
             ),

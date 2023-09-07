@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:doctor_management_system/features/home/presentation/views/home_view.dart';
-import 'package:doctor_management_system/features/intro/presentation/models/onboarding_model.dart';
+import 'package:doctor_management_system/features/intro/data/models/onboarding_model.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -8,9 +8,7 @@ class AutoScroll extends StatefulWidget {
   final PageController pagesController;
   final int currentIndex = 0;
 
-  const AutoScroll(
-      {Key? key, required this.pagesController})
-      : super(key: key);
+  const AutoScroll({Key? key, required this.pagesController}) : super(key: key);
 
   @override
   State<AutoScroll> createState() => _AutoScrollState();
@@ -22,6 +20,7 @@ class _AutoScrollState extends State<AutoScroll> {
     super.initState();
     startAutoScroll();
   }
+
   void startAutoScroll() {
     Timer.periodic(const Duration(milliseconds: 2500), (timer) {
       if (widget.currentIndex < boardingItems.length - 1) {
@@ -48,9 +47,14 @@ class _AutoScrollState extends State<AutoScroll> {
       onPageChanged: (index) {
         if (index == 2) {
           Future.delayed(
-              const Duration(milliseconds: 1500),
-              () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomeView())));
+            const Duration(milliseconds: 1500),
+            () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HomeView(),
+              ),
+            ),
+          );
         }
       },
       itemBuilder: (context, index) {

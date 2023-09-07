@@ -36,18 +36,20 @@ class AddDrugConfirmView extends StatelessWidget {
                     child: Text(
                       text,
                       style: GoogleFonts.cairo(
-                          textStyle: const TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold)),
+                        textStyle: const TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                   SizedBox(height: 8.h),
                   GestureDetector(
                     onTap: () {
                       Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: buttonRoute1,
-                          ));
+                        context,
+                        MaterialPageRoute(
+                          builder: buttonRoute1,
+                        ),
+                      );
                     },
                     child: Container(
                       height: 7.h,
@@ -57,8 +59,11 @@ class AddDrugConfirmView extends StatelessWidget {
                         child: Text(
                           buttonTxt,
                           style: GoogleFonts.cairo(
-                              textStyle: const TextStyle(
-                                  color: Color(0xffFFFFFF), fontSize: 16)),
+                            textStyle: const TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 16,
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -67,10 +72,11 @@ class AddDrugConfirmView extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: buttonRoute2,
-                          ));
+                        context,
+                        MaterialPageRoute(
+                          builder: buttonRoute2,
+                        ),
+                      );
                     },
                     child: Container(
                       height: 7.h,
@@ -82,8 +88,11 @@ class AddDrugConfirmView extends StatelessWidget {
                         child: Text(
                           "العودة الى الصفحة الرئيسية",
                           style: GoogleFonts.cairo(
-                              textStyle: const TextStyle(
-                                  color: Color(0xff159BAD), fontSize: 16)),
+                            textStyle: const TextStyle(
+                              color: Color(0xff159BAD),
+                              fontSize: 16,
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -95,18 +104,20 @@ class AddDrugConfirmView extends StatelessWidget {
                       Text(
                         "اذا كان لديك اي استفسار يرجى الاتصال على ",
                         style: GoogleFonts.cairo(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xff000000)),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xff000000),
+                        ),
                       ),
                       GestureDetector(
                         onTap: () {},
                         child: Text(
                           "00227751003",
                           style: GoogleFonts.cairo(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xff4DC143)),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xff4DC143),
+                          ),
                         ),
                       ),
                     ],

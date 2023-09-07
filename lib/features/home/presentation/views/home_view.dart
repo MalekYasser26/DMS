@@ -35,56 +35,56 @@ class HomeView extends StatelessWidget {
                       height: 1.h,
                     ),
                     Text(
-                        "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
-                        style: GoogleFonts.cairo(
-                            color: Colors.white,
-                            fontSize: 4.h,
-                            fontWeight: FontWeight.bold),
-                        textDirection: TextDirection.ltr,
-                        textAlign: TextAlign.center),
-                    SizedBox(
-                      height: 42.h,
+                      "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
+                      style: GoogleFonts.cairo(
+                          color: Colors.white,
+                          fontSize: 4.h,
+                          fontWeight: FontWeight.bold),
+                      textDirection: TextDirection.ltr,
+                      textAlign: TextAlign.center,
                     ),
+                    SizedBox(height: 42.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                            child: BoxWidget(
-                                text: "قائمة الانتظار",
-                                height: 15.h,
-                                fontSize: 2.8.h,
-                                borderColor: Colors.white,
-                                textColor: Colors.white,
-                                route: (context) => LoginView(
-                                    route: (context) =>
-                                        const QueueWaitView()))),
+                          child: BoxWidget(
+                            text: "قائمة الانتظار",
+                            height: 15.h,
+                            fontSize: 2.8.h,
+                            borderColor: Colors.white,
+                            textColor: Colors.white,
+                            route: (context) => LoginView(
+                              route: (context) => const QueueWaitView(),
+                            ),
+                          ),
+                        ),
                         SizedBox(width: 4.w),
                         Expanded(
-                            child: BoxWidget(
-                                text: "تقييم الخدمة",
-                                height: 15.h,
-                                fontSize: 2.8.h,
-                                borderColor: Colors.white,
-                                textColor: Colors.white,
-                                route: (context) => LoginView(
-                                    route: (context) =>
-                                        const RateSeviceView()))),
+                          child: BoxWidget(
+                            text: "تقييم الخدمة",
+                            height: 15.h,
+                            fontSize: 2.8.h,
+                            borderColor: Colors.white,
+                            textColor: Colors.white,
+                            route: (context) => LoginView(
+                              route: (context) => const RateSeviceView(),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
-                    SizedBox(
-                      height: 2.h,
-                    ),
+                    SizedBox(height: 2.h),
                     BasicButtonRoute(
-                        route: (context) =>
-                            LoginView(route: (context) => const MyDatesView()),
-                        color: AppColors.lightBlue,
-                        textColor: Colors.white,
-                        text: "تسجيل الدخول",
-                        borderColor: Colors.transparent,
-                        textSize: 2.h),
-                    SizedBox(
-                      height: 2.h,
+                      route: (context) =>
+                          LoginView(route: (context) => const MyDatesView()),
+                      color: AppColors.lightBlue,
+                      textColor: Colors.white,
+                      text: "تسجيل الدخول",
+                      borderColor: Colors.transparent,
+                      textSize: 2.h,
                     ),
+                    SizedBox(height: 2.h),
                     BasicButtonRoute(
                         route: (context) => const BookingIntroView(),
                         color: Colors.white,

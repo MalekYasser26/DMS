@@ -1,24 +1,23 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
-import 'package:doctor_management_system/features/results/providers/calendar_picker_provider.dart';
+import 'package:doctor_management_system/features/results/presentation/widgets/calendar_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'dart:ui' as ui;
 
-class TableCalendarWidget extends StatefulWidget {
-  const TableCalendarWidget({Key? key}) : super(key: key);
+class TableCalendarItem extends StatefulWidget {
+  const TableCalendarItem({Key? key}) : super(key: key);
 
   @override
-  State<TableCalendarWidget> createState() => _TableCalendarWidgetState();
+  State<TableCalendarItem> createState() => _TableCalendarItemState();
 }
 
-class _TableCalendarWidgetState extends State<TableCalendarWidget> {
+class _TableCalendarItemState extends State<TableCalendarItem> {
   DateTime today = DateTime.now();
   final myController = TextEditingController();
   DateTime selectedDate = DateTime.now();
-  void selectDay(DateTime day, DateTime foucsedDay) {
+
+  void selectDay(DateTime day, DateTime focusedDay) {
     setState(() {
       today = day;
     });
@@ -31,7 +30,7 @@ class _TableCalendarWidgetState extends State<TableCalendarWidget> {
     return Column(
       children: [
         Directionality(
-          textDirection: ui.TextDirection.ltr,
+          textDirection: TextDirection.ltr,
           child: Container(
             decoration:
                 BoxDecoration(border: Border.all(color: Colors.grey.shade400)),
@@ -77,21 +76,17 @@ class _TableCalendarWidgetState extends State<TableCalendarWidget> {
                   titleTextStyle: GoogleFonts.cairo(
                       fontWeight: FontWeight.w500, fontSize: 15.sp),
                   titleCentered: true),
-              focusedDay:
-                  Provider.of<CalendarPickerProvider>(context, listen: false)
-                      .selectedDate,
+              focusedDay: CalendarPicker().selectedDate,
               selectedDayPredicate: (day) => isSameDay(
                 day,
-                Provider.of<CalendarPickerProvider>(context, listen: false)
-                    .selectedDate,
+                CalendarPicker().selectedDate,
               ),
               firstDay: DateTime.utc(2023, 1, 1),
               lastDay: DateTime.utc(2023, 12, 31),
               rowHeight: 5.h,
               onDaySelected: (day, focusedDay) {
                 setState(() {
-                  Provider.of<CalendarPickerProvider>(context, listen: false)
-                      .updateSelectedDate(day);
+                  CalendarPicker().updateSelectedDate(day);
                   selectDay(day, focusedDay);
                 });
               },

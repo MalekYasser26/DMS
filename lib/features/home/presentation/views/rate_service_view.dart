@@ -35,10 +35,11 @@ class RateSeviceView extends StatelessWidget {
                     InkWell(
                       onTap: () => Navigator.pop(context),
                       child: Container(
-                          height: 5.h,
-                          width: 5.h,
-                          decoration:
-                              BoxDecoration(color: Colors.white, boxShadow: [
+                        height: 5.h,
+                        width: 5.h,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(.2),
                               blurRadius: 5.0,
@@ -48,80 +49,95 @@ class RateSeviceView extends StatelessWidget {
                                 2.0,
                               ),
                             )
-                          ]),
-                          child: Center(
-                              child: Padding(
+                          ],
+                        ),
+                        child: Center(
+                          child: Padding(
                             padding: EdgeInsets.only(right: 2.w),
                             child: const Icon(
                               Icons.arrow_back_ios,
                               color: Colors.black,
                             ),
-                          ))),
+                          ),
+                        ),
+                      ),
                     ),
-                    SizedBox(
-                      width: 4.w,
+                    SizedBox(width: 4.w),
+                    Text(
+                      "تقييم الخدمة",
+                      style: GoogleFonts.cairo(
+                        color: Colors.black,
+                        fontSize: 3.h,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    Text("تقييم الخدمة",
-                        style: GoogleFonts.cairo(
-                            color: Colors.black,
-                            fontSize: 3.h,
-                            fontWeight: FontWeight.bold)),
                   ],
                 ),
                 SizedBox(height: 2.h),
-                Text("ما هو تقييمك لخدماتنا؟",
-                    style: GoogleFonts.cairo(
-                        color: Colors.black,
-                        fontSize: 2.5.h,
-                        fontWeight: FontWeight.bold)),
                 Text(
-                    "ساعدنا على معرفة رأيك في خدماتنا للعمل على تطويرنا دائماً",
-                    style: GoogleFonts.cairo(
-                        color: Colors.grey,
-                        fontSize: 1.7.h,
-                        fontWeight: FontWeight.w500),
-                    softWrap: false),
+                  "ما هو تقييمك لخدماتنا؟",
+                  style: GoogleFonts.cairo(
+                    color: Colors.black,
+                    fontSize: 2.5.h,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  "ساعدنا على معرفة رأيك في خدماتنا للعمل على تطويرنا دائماً",
+                  style: GoogleFonts.cairo(
+                    color: Colors.grey,
+                    fontSize: 1.7.h,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  softWrap: false,
+                ),
                 SizedBox(height: 2.h),
                 Text(
                   "اختر العيادة المراد تقييمها",
                   style: GoogleFonts.cairo(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 2.1.h),
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 2.1.h,
+                  ),
                 ),
                 SizedBox(height: 1.h),
                 DropDownMenu(
-                    dropList: clinicNameService,
-                    icon: Icons.location_on_outlined),
+                  dropList: clinicNameService,
+                  icon: Icons.location_on_outlined,
+                ),
                 SizedBox(height: 2.h),
                 Container(
-                    color: AppColors.lightBlue.withOpacity(0.1),
-                    width: double.infinity,
-                    height: 8.h,
-                    child: Center(
-                      child: RatingBar(
-                        initialRating: 3,
-                        itemPadding: EdgeInsets.symmetric(horizontal: 1.w),
-                        itemSize: 6.h,
-                        textDirection: TextDirection.ltr,
-                        allowHalfRating: false,
-                        minRating: 1,
-                        maxRating: 5,
-                        ratingWidget: RatingWidget(
-                            full: const Icon(Icons.star_rounded,
-                                color: AppColors.golden),
-                            half: const Icon(Icons.star_rounded,
-                                color: AppColors.golden),
-                            empty: const Icon(
-                              Icons.star_outline_rounded,
-                              color: Colors.grey,
-                            )),
-                        onRatingUpdate: (rating) {},
+                  color: AppColors.lightBlue.withOpacity(0.1),
+                  width: double.infinity,
+                  height: 8.h,
+                  child: Center(
+                    child: RatingBar(
+                      initialRating: 3,
+                      itemPadding: EdgeInsets.symmetric(horizontal: 1.w),
+                      itemSize: 6.h,
+                      textDirection: TextDirection.ltr,
+                      allowHalfRating: false,
+                      minRating: 1,
+                      maxRating: 5,
+                      ratingWidget: RatingWidget(
+                        full: const Icon(
+                          Icons.star_rounded,
+                          color: AppColors.golden,
+                        ),
+                        half: const Icon(
+                          Icons.star_rounded,
+                          color: AppColors.golden,
+                        ),
+                        empty: const Icon(
+                          Icons.star_outline_rounded,
+                          color: Colors.grey,
+                        ),
                       ),
-                    )),
-                SizedBox(
-                  height: 2.h,
+                      onRatingUpdate: (rating) {},
+                    ),
+                  ),
                 ),
+                SizedBox(height: 2.h),
                 Text(
                   "تفاصيل التقييم",
                   style: GoogleFonts.cairo(
@@ -129,9 +145,7 @@ class RateSeviceView extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       fontSize: 2.1.h),
                 ),
-                SizedBox(
-                  height: 1.h,
-                ),
+                SizedBox(height: 1.h),
                 TextField(
                   textAlignVertical: TextAlignVertical.top,
                   textAlign: TextAlign.start,
@@ -164,7 +178,7 @@ class RateSeviceView extends StatelessWidget {
                       textColor: Colors.white,
                       text: "تأكيد",
                       borderColor: Colors.transparent),
-                )
+                ),
               ],
             ),
           ),
