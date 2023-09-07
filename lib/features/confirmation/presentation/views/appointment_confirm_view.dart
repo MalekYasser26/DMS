@@ -37,7 +37,9 @@ class AppointmentConfirmView extends StatelessWidget {
                           "تم الحجز بنجاح",
                           style: GoogleFonts.cairo(
                               textStyle: const TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold)),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          )),
                         ),
                         const Divider(
                           thickness: 1,
@@ -52,17 +54,19 @@ class AppointmentConfirmView extends StatelessWidget {
                                 "الترتيب في قائمة الانتظار",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        color: Color(0xff8F8E94),
-                                        fontSize: 16)),
+                                  color: Color(0xff8F8E94),
+                                  fontSize: 16,
+                                )),
                               ),
                               const Spacer(),
                               Text(
                                 "8",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        fontSize: 16,
-                                        color: Color(0xff1E1E1E),
-                                        fontWeight: FontWeight.w600)),
+                                  fontSize: 16,
+                                  color: Color(0xff1E1E1E),
+                                  fontWeight: FontWeight.w600,
+                                )),
                               ),
                             ],
                           ),
@@ -75,17 +79,19 @@ class AppointmentConfirmView extends StatelessWidget {
                                 "اسم المريض",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        color: Color(0xff8F8E94),
-                                        fontSize: 16)),
+                                  color: Color(0xff8F8E94),
+                                  fontSize: 16,
+                                )),
                               ),
                               const Spacer(),
                               Text(
                                 "احمد خالد حسن",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        fontSize: 16,
-                                        color: Color(0xff1E1E1E),
-                                        fontWeight: FontWeight.w600)),
+                                  fontSize: 16,
+                                  color: Color(0xff1E1E1E),
+                                  fontWeight: FontWeight.w600,
+                                )),
                               ),
                             ],
                           ),
@@ -98,17 +104,19 @@ class AppointmentConfirmView extends StatelessWidget {
                                 "رقم المريض",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        color: Color(0xff8F8E94),
-                                        fontSize: 16)),
+                                  color: Color(0xff8F8E94),
+                                  fontSize: 16,
+                                )),
                               ),
                               const Spacer(),
                               Text(
                                 "23",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        fontSize: 16,
-                                        color: Color(0xff1E1E1E),
-                                        fontWeight: FontWeight.w600)),
+                                  fontSize: 16,
+                                  color: Color(0xff1E1E1E),
+                                  fontWeight: FontWeight.w600,
+                                )),
                               ),
                             ],
                           ),
@@ -121,17 +129,19 @@ class AppointmentConfirmView extends StatelessWidget {
                                 "اول مره؟",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        color: Color(0xff8F8E94),
-                                        fontSize: 16)),
+                                  color: Color(0xff8F8E94),
+                                  fontSize: 16,
+                                )),
                               ),
                               const Spacer(),
                               Text(
                                 "كشف",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        fontSize: 16,
-                                        color: Color(0xff1E1E1E),
-                                        fontWeight: FontWeight.w600)),
+                                  fontSize: 16,
+                                  color: Color(0xff1E1E1E),
+                                  fontWeight: FontWeight.w600,
+                                )),
                               ),
                             ],
                           ),
@@ -144,8 +154,9 @@ class AppointmentConfirmView extends StatelessWidget {
                                 "تاريخ الحجز",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        color: Color(0xff8F8E94),
-                                        fontSize: 16)),
+                                  color: Color(0xff8F8E94),
+                                  fontSize: 16,
+                                )),
                               ),
                               const Spacer(),
                               Directionality(
@@ -154,9 +165,10 @@ class AppointmentConfirmView extends StatelessWidget {
                                   "21 Aug, Mon - 09:20 Am",
                                   style: GoogleFonts.cairo(
                                       textStyle: const TextStyle(
-                                          fontSize: 16,
-                                          color: Color(0xff1E1E1E),
-                                          fontWeight: FontWeight.w600)),
+                                    fontSize: 16,
+                                    color: Color(0xff1E1E1E),
+                                    fontWeight: FontWeight.w600,
+                                  )),
                                 ),
                               ),
                             ],
@@ -170,17 +182,19 @@ class AppointmentConfirmView extends StatelessWidget {
                                 "عنوان العيادة",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        color: Color(0xff8F8E94),
-                                        fontSize: 16)),
+                                  color: Color(0xff8F8E94),
+                                  fontSize: 16,
+                                )),
                               ),
                               const Spacer(),
                               Text(
                                 "147 النزهة,ش المطار",
                                 style: GoogleFonts.cairo(
                                     textStyle: const TextStyle(
-                                        fontSize: 16,
-                                        color: Color(0xff1E1E1E),
-                                        fontWeight: FontWeight.bold)),
+                                  fontSize: 16,
+                                  color: Color(0xff1E1E1E),
+                                  fontWeight: FontWeight.bold,
+                                )),
                               ),
                             ],
                           ),
@@ -191,9 +205,10 @@ class AppointmentConfirmView extends StatelessWidget {
                             "حاول ان تاتي 30 دقيقة مبكرا",
                             style: GoogleFonts.cairo(
                                 textStyle: const TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xff4DC143),
-                                    fontWeight: FontWeight.w400)),
+                              fontSize: 16,
+                              color: Color(0xff4DC143),
+                              fontWeight: FontWeight.w400,
+                            )),
                           ),
                         ),
                       ]),
@@ -211,13 +226,17 @@ class AppointmentConfirmView extends StatelessWidget {
                     child: Container(
                       height: 7.h,
                       width: double.infinity,
-                      decoration: const BoxDecoration(color: Color(0xff159BAD)),
+                      decoration: const BoxDecoration(
+                        color: Color(0xff159BAD),
+                      ),
                       child: Center(
                         child: Text(
                           "مواعيدي",
                           style: GoogleFonts.cairo(
                               textStyle: const TextStyle(
-                                  color: Color(0xffFFFFFF), fontSize: 16)),
+                            color: Color(0xffFFFFFF),
+                            fontSize: 16,
+                          )),
                         ),
                       ),
                     ),
@@ -242,7 +261,9 @@ class AppointmentConfirmView extends StatelessWidget {
                           "العودة الى الصفحة الرئيسية",
                           style: GoogleFonts.cairo(
                               textStyle: const TextStyle(
-                                  color: Color(0xff159BAD), fontSize: 16)),
+                            color: Color(0xff159BAD),
+                            fontSize: 16,
+                          )),
                         ),
                       ),
                     ),

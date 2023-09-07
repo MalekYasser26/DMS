@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -7,17 +7,16 @@ class MedicalBoxInfo extends StatelessWidget {
   final String number, category, extraST;
   final bool isBP;
 
-  const MedicalBoxInfo(
-      {Key? key,
-      required this.number,
-      required this.category,
-      required this.isBP,
-      required this.extraST})
-      : super(key: key);
+  const MedicalBoxInfo({
+    Key? key,
+    required this.number,
+    required this.category,
+    required this.isBP,
+    required this.extraST,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return Expanded(
       child: Container(
         padding: EdgeInsets.only(left: 2.w),
@@ -30,25 +29,33 @@ class MedicalBoxInfo extends StatelessWidget {
           children: [
             Text(number,
                 style: GoogleFonts.cairo(
-                    color: Colors.black,
-                    fontSize: 3.h,
-                    fontWeight: FontWeight.bold)),
+                  color: Colors.black,
+                  fontSize: 3.h,
+                  fontWeight: FontWeight.bold,
+                )),
             Padding(
-              padding:  EdgeInsets.only(right: 1.w),
+              padding: EdgeInsets.only(right: 1.w),
               child: Row(
                 children: [
                   Expanded(
                     child: Text(category,
                         style: GoogleFonts.cairo(
-                            color: Colors.grey,)),
+                          color: Colors.grey,
+                        )),
                   ),
-                  if( isBP ==false) ...
-                  [
-                    const Icon(Icons.arrow_drop_down,color: AppColors.green,),
-                    Text(extraST,
+                  if (isBP == false) ...[
+                    const Icon(
+                      Icons.arrow_drop_down,
+                      color: AppColors.green,
+                    ),
+                    Text(
+                      extraST,
                       style: GoogleFonts.cairo(
-                          color: AppColors.green,
-                        fontSize: 1.5.h),), ],
+                        color: AppColors.green,
+                        fontSize: 1.5.h,
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),

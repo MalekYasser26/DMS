@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class DoctorLoginScreen extends StatelessWidget {
-  const DoctorLoginScreen({Key? key}) : super(key: key);
+class DoctorLoginView extends StatelessWidget {
+  const DoctorLoginView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,9 +57,10 @@ class DoctorLoginScreen extends StatelessWidget {
                     Text(
                       "مرحبا بعودتك",
                       style: GoogleFonts.cairo(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xff171717)),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xff171717),
+                      ),
                     ),
                   ],
                 ),
@@ -70,9 +71,10 @@ class DoctorLoginScreen extends StatelessWidget {
                       child: Text(
                         "قم بمليء بياناتك",
                         style: GoogleFonts.cairo(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: const Color(0xff171717)),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: const Color(0xff171717),
+                        ),
                       ),
                     )
                   ],
@@ -80,8 +82,8 @@ class DoctorLoginScreen extends StatelessWidget {
                 SizedBox(
                   height: 5.h,
                 ),
-                BasicTextFormField(formFieldText: "اسم المستخدم"),
-                BasicTextFormField(formFieldText: "كلمة السر"),
+                BasicTextFormField(text: "اسم المستخدم"),
+                BasicTextFormField(text: "كلمة السر"),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -89,7 +91,7 @@ class DoctorLoginScreen extends StatelessWidget {
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ClinicChoice(),
+                        builder: (context) => const ClinicChoiceView(),
                       )),
                   child: Container(
                     height: 7.h,
@@ -100,14 +102,14 @@ class DoctorLoginScreen extends StatelessWidget {
                         "تسجيل الدخول",
                         style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                                color: Color(0xffFFFFFF), fontSize: 16)),
+                          color: Color(0xffFFFFFF),
+                          fontSize: 16,
+                        )),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 30.h,
-                ),
+                SizedBox(height: 30.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -123,9 +125,10 @@ class DoctorLoginScreen extends StatelessWidget {
                       child: Text(
                         "سجل الان",
                         style: GoogleFonts.cairo(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xff4DC143)),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xff4DC143),
+                        ),
                       ),
                     ),
                   ],

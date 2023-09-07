@@ -16,11 +16,11 @@ class PatientDetails extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 2.h, vertical: 1.h),
         child: Column(children: [
-          BasicTextFormField(formFieldText: "اسم المريض"),
+          BasicTextFormField(text: "اسم المريض"),
           DropDownMenu(dropList: gender),
-          BasicTextFormField(formFieldText: "عمر المريض"),
+          BasicTextFormField(text: "عمر المريض"),
           if (isSingle == true)
-            BasicTextFormField(formFieldText: "رقم التيليفون"),
+            BasicTextFormField(text: "رقم التيليفون"),
         ]),
       ),
     );

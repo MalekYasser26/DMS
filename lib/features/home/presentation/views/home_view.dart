@@ -1,7 +1,7 @@
 import 'package:doctor_management_system/core/Widgets/box_container.dart';
 import 'package:doctor_management_system/core/Widgets/custom_route_button.dart';
-import 'package:doctor_management_system/core/constants/colors.dart';
-import 'package:doctor_management_system/core/constants/assets.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/constants/assets_data.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
 import 'package:doctor_management_system/features/booking/presentation/views/booking_intro_view.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';

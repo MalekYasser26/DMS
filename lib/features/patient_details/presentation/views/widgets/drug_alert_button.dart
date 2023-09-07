@@ -1,5 +1,5 @@
 import 'package:doctor_management_system/core/Widgets/upload_photo_container.dart';
-import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/success_confirm_view.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/patient_details_view.dart';
 import 'package:doctor_management_system/features/patient_list/presentation/views/patient_list_view.dart';
@@ -88,7 +88,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                             onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ConfirmView(
+                                  builder: (context) => SuccessConfirmView(
                                       buttonRoute1: (context) =>
                                           const PatientDetailsView(),
                                       buttonRoute2: (context) =>

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class LoginBody extends StatelessWidget {
+class LoginViewBody extends StatelessWidget {
   final WidgetBuilder route;
-  const LoginBody({Key? key, required this.route}) : super(key: key);
+  const LoginViewBody({Key? key, required this.route}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,9 +53,7 @@ class LoginBody extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 3.w,
-                    ),
+                    SizedBox(width: 3.w),
                     Text(
                       "مرحبا بعودتك",
                       style: GoogleFonts.cairo(
@@ -79,19 +77,15 @@ class LoginBody extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                BasicTextFormField(formFieldText: "رقم الهوية"),
-                BasicTextFormField(formFieldText: "كلمة السر"),
-                SizedBox(
-                  height: 10.h,
-                ),
+                SizedBox(height: 5.h),
+                BasicTextFormField(text: "رقم الهوية"),
+                BasicTextFormField(text: "كلمة السر"),
+                SizedBox(height: 10.h),
                 InkWell(
                   onLongPress: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ClinicChoice(),
+                      builder: (context) => const ClinicChoiceView(),
                     ),
                   ),
                   onTap: () => Navigator.push(
@@ -113,9 +107,7 @@ class LoginBody extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 30.h,
-                ),
+                SizedBox(height: 30.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

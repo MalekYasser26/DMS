@@ -1,15 +1,15 @@
-import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class DrugInfoWidget extends StatelessWidget {
+class DrugInfo extends StatelessWidget {
   final String imagePath;
   final String text;
   final String drugs;
   final String manyTimes;
 
-  const DrugInfoWidget({
+  const DrugInfo({
     super.key,
     required this.imagePath,
     required this.text,
@@ -50,15 +50,17 @@ class DrugInfoWidget extends StatelessWidget {
                         textDirection: TextDirection.ltr,
                         text,
                         style: GoogleFonts.cairo(
-                            fontSize: 1.8.h, color: Colors.grey),
+                          fontSize: 1.8.h,
+                          color: Colors.grey,
+                        ),
                       ),
-                      SizedBox(
-                        width: 6.w,
-                      ),
+                      SizedBox(width: 6.w),
                       Text(
                         manyTimes,
                         style: GoogleFonts.cairo(
-                            fontSize: 1.7.h, color: Colors.grey),
+                          fontSize: 1.7.h,
+                          color: Colors.grey,
+                        ),
                       ),
                     ],
                   ),
@@ -69,7 +71,9 @@ class DrugInfoWidget extends StatelessWidget {
                     textDirection: TextDirection.ltr,
                     drugs,
                     style: GoogleFonts.cairo(
-                        fontSize: 2.h, fontWeight: FontWeight.bold),
+                      fontSize: 2.h,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],

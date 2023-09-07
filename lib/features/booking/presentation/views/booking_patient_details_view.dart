@@ -1,6 +1,6 @@
 import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart';
 import 'package:doctor_management_system/core/Widgets/custom_route_button.dart';
-import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
 import 'package:doctor_management_system/features/booking/presentation/views/widgets/patient_details.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/appointment_confirm_view.dart';
@@ -11,14 +11,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class BookingPatientDetails extends StatefulWidget {
-  const BookingPatientDetails({Key? key}) : super(key: key);
+class BookingPatientDetailsView extends StatefulWidget {
+  const BookingPatientDetailsView({Key? key}) : super(key: key);
+
   @override
-  State<BookingPatientDetails> createState() => _BookingPatientDetailsState();
+  State<BookingPatientDetailsView> createState() =>
+      _BookingPatientDetailsViewState();
 }
-class _BookingPatientDetailsState extends State<BookingPatientDetails> {
+
+class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
   int selectedOption = 1;
   int patientNum = 2;
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -33,9 +37,7 @@ class _BookingPatientDetailsState extends State<BookingPatientDetails> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  SizedBox(height: 3.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,9 +68,7 @@ class _BookingPatientDetailsState extends State<BookingPatientDetails> {
                               ),
                             ))),
                       ),
-                      SizedBox(
-                        width: 4.w,
-                      ),
+                      SizedBox(width: 4.w),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,8 +105,8 @@ class _BookingPatientDetailsState extends State<BookingPatientDetails> {
                     ],
                   ),
                   SizedBox(height: 3.h),
-                  BasicTextFormField(formFieldText: "اسم ولي الأمر"),
-                  BasicTextFormField(formFieldText: "كلمة السر"),
+                  BasicTextFormField(text: "اسم ولي الأمر"),
+                  BasicTextFormField(text: "كلمة السر"),
                   const Divider(
                     thickness: 2,
                   ),
@@ -177,14 +177,11 @@ class _BookingPatientDetailsState extends State<BookingPatientDetails> {
                                     bgColor:
                                         AppColors.lightBlue.withOpacity(0.1),
                                     isSingle: false),
-                                separatorBuilder: (context, index) => SizedBox(
-                                      height: 3.h,
-                                    ),
+                                separatorBuilder: (context, index) =>
+                                    SizedBox(height: 3.h),
                                 itemCount: patientNum),
                           ),
-                          SizedBox(
-                            height: 3.h,
-                          ),
+                          SizedBox(height: 3.h),
                           InkWell(
                             onTap: () {
                               setState(() {
@@ -209,19 +206,13 @@ class _BookingPatientDetailsState extends State<BookingPatientDetails> {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: 3.h,
-                          ),
-                          BasicTextFormField(formFieldText: "رقم التيليفون"),
+                          SizedBox(height: 3.h),
+                          BasicTextFormField(text: "رقم التيليفون"),
                         ]),
-                  SizedBox(
-                    height: 3.h,
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
+                  SizedBox(height: 3.h),
+                  SizedBox(height: 5.h),
                   BasicButtonRoute(
-                      route: (context) => ConfirmView(
+                      route: (context) => SuccessConfirmView(
                             buttonRoute2: (context) => const MyDatesView(),
                             buttonRoute1: (context) =>
                                 const AppointmentConfirmView(),

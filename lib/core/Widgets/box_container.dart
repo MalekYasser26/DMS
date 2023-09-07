@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BoxWidget extends StatelessWidget {
+  final String text;
+  final double height, fontSize;
+  final Color borderColor, textColor;
+  final WidgetBuilder route;
+  final FontWeight weight;
   const BoxWidget(
       {Key? key,
       required this.text, required this.height,
@@ -9,11 +14,6 @@ class BoxWidget extends StatelessWidget {
       required this.textColor, required this.route,
       this.weight = FontWeight.w400})
       : super(key: key);
-  final String text;
-  final double height, fontSize;
-  final Color borderColor, textColor;
-  final WidgetBuilder route;
-  final FontWeight weight;
 
   @override
   Widget build(BuildContext context) {

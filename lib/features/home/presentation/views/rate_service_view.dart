@@ -1,6 +1,6 @@
 import 'package:doctor_management_system/core/Widgets/custom_route_button.dart';
 import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
-import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/data/rate_service_view_temp_data.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/confirm_rating_view.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';

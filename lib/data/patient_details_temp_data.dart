@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/assets.dart';
+import 'package:doctor_management_system/core/constants/assets_data.dart';
 
 List<String>gender = [
   "ذكر",

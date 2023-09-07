@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class ConfirmView extends StatelessWidget {
+class SuccessConfirmView extends StatelessWidget {
   final WidgetBuilder buttonRoute2, buttonRoute1;
   final String text, subText, buttonTxt;
-  const ConfirmView(
+
+  const SuccessConfirmView(
       {Key? key,
       required this.buttonRoute2,
       required this.buttonRoute1,
@@ -25,9 +26,7 @@ class ConfirmView extends StatelessWidget {
             child: Center(
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 10.h,
-                  ),
+                  SizedBox(height: 10.h),
                   Image.asset(
                     "assets/images/confirm.png",
                     width: 35.w,

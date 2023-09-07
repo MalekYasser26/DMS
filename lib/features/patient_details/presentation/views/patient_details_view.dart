@@ -1,9 +1,9 @@
-import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/data/patient_details_temp_data.dart';
-import 'package:doctor_management_system/core/constants/assets.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_alert._button.dart';
+import 'package:doctor_management_system/core/constants/assets_data.dart';
+import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_alert_button.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_info.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/extra_notes.dart';
+import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/additional_notes.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/medical_box_info.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/medical_history.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/add_note_alert.dart';
@@ -234,7 +234,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                           Flexible(
                             child: ListView.separated(
                                 physics: const ClampingScrollPhysics(),
-                                itemBuilder: (context, index) => DrugInfoWidget(
+                                itemBuilder: (context, index) => DrugInfo(
                                     imagePath: drugImgs[index],
                                     text: doses[index],
                                     drugs: drugs[index],
@@ -257,14 +257,14 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                             child: ListView.separated(
                                 physics: const ClampingScrollPhysics(),
                                 itemBuilder: (context, index) =>
-                                    ExtraNotesWidget(
+                                    AdditionalNotes(
                                         date: "21 Aug, Mon - 09:20 am",
                                         note: notes[index]),
                                 separatorBuilder: (context, index) =>
                                     SizedBox(height: 1.h),
                                 itemCount: notes.length),
                           ),
-                          const NoteAlertDialogButton(
+                          const AddNoteAlert(
                               color: AppColors.lightBlue,
                               textColor: Colors.white,
                               text: "اضافة ملاحظة",

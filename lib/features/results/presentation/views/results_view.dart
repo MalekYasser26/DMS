@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/features/patient_list/presentation/views/patient_list_view.dart';
 import 'package:doctor_management_system/features/results/presentation/widgets/table_calendar.dart';
 import 'package:doctor_management_system/features/results/providers/calendar_picker_provider.dart';

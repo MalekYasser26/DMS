@@ -3,19 +3,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class BasicTextFormField extends StatelessWidget {
-  final String formFieldText;
+  final String text;
   final IconData? suffixIcon;
 
   final TextEditingController basicController = TextEditingController();
 
-  BasicTextFormField({Key? key, required this.formFieldText, this.suffixIcon})
+  BasicTextFormField({Key? key, required this.text, this.suffixIcon})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        formFieldText,
+        text,
         style: GoogleFonts.cairo(
           fontWeight: FontWeight.w600,
           fontSize: 2.h,
@@ -37,7 +37,7 @@ class BasicTextFormField extends StatelessWidget {
             ),
             contentPadding:
                 EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 2.h),
-            hintText: "ادخل $formFieldText",
+            hintText: "ادخل $text",
             hintStyle:
                 GoogleFonts.cairo(fontSize: 14.sp, color: Colors.grey.shade400),
             suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,

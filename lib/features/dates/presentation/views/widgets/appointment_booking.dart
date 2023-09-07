@@ -1,14 +1,14 @@
-import 'package:doctor_management_system/core/constants/colors.dart';
-import 'package:doctor_management_system/features/dates/presentation/views/widgets/absent_present.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/features/dates/presentation/views/widgets/absent_or_present.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class AppointmentWidget extends StatelessWidget {
+class AppointmentBooking extends StatelessWidget {
   final String name, date, address, firstTime;
   final bool isAbsent, isNext;
 
-  const AppointmentWidget(
+  const AppointmentBooking(
       {Key? key,
       required this.name,
       required this.date,
@@ -33,9 +33,11 @@ class AppointmentWidget extends StatelessWidget {
               children: [
                 Text(name,
                     style: GoogleFonts.cairo(
-                        color: AppColors.blueNames, fontSize: 3.h)),
+                      color: AppColors.blueNames,
+                      fontSize: 3.h,
+                    )),
                 if (isNext == true)
-                  AbsentPresentWidget(
+                  AbsentOrPresent(
                     isAbsent: isAbsent,
                     h: 4.h,
                     w: 8.h,
@@ -46,12 +48,16 @@ class AppointmentWidget extends StatelessWidget {
               text: TextSpan(children: [
                 TextSpan(
                     text: " اول مرة ؟   ",
-                    style:
-                        GoogleFonts.cairo(color: Colors.grey, fontSize: 2.h)),
+                    style: GoogleFonts.cairo(
+                      color: Colors.grey,
+                      fontSize: 2.h,
+                    )),
                 TextSpan(
                     text: firstTime,
-                    style:
-                        GoogleFonts.cairo(color: Colors.black, fontSize: 2.h)),
+                    style: GoogleFonts.cairo(
+                      color: Colors.black,
+                      fontSize: 2.h,
+                    )),
               ]),
             ),
             SizedBox(height: 1.h),
@@ -59,12 +65,16 @@ class AppointmentWidget extends StatelessWidget {
               text: TextSpan(children: [
                 TextSpan(
                     text: "التاريخ  ",
-                    style:
-                        GoogleFonts.cairo(color: Colors.grey, fontSize: 2.h)),
+                    style: GoogleFonts.cairo(
+                      color: Colors.grey,
+                      fontSize: 2.h,
+                    )),
                 TextSpan(
                     text: date,
-                    style:
-                        GoogleFonts.cairo(color: Colors.black, fontSize: 2.h)),
+                    style: GoogleFonts.cairo(
+                      color: Colors.black,
+                      fontSize: 2.h,
+                    )),
               ]),
             ),
             SizedBox(height: 1.h),
@@ -72,12 +82,16 @@ class AppointmentWidget extends StatelessWidget {
               text: TextSpan(children: [
                 TextSpan(
                     text: "عنوان العيادة   ",
-                    style:
-                        GoogleFonts.cairo(color: Colors.grey, fontSize: 2.h)),
+                    style: GoogleFonts.cairo(
+                      color: Colors.grey,
+                      fontSize: 2.h,
+                    )),
                 TextSpan(
                     text: address,
-                    style:
-                        GoogleFonts.cairo(color: Colors.black, fontSize: 2.h)),
+                    style: GoogleFonts.cairo(
+                      color: Colors.black,
+                      fontSize: 2.h,
+                    )),
               ]),
             ),
             SizedBox(height: 1.h),

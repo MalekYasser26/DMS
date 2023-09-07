@@ -1,18 +1,18 @@
-import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/add_note_confirm_view.dart';
 import 'package:doctor_management_system/features/patient_list/presentation/views/patient_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class NoteAlertDialogButton extends StatefulWidget {
+class AddNoteAlert extends StatefulWidget {
   final Color color;
   final Color textColor;
   final String text;
   final Color borderColor;
   final double textSize;
 
-  const NoteAlertDialogButton({
+  const AddNoteAlert({
     Key? key,
     required this.color,
     required this.textColor,
@@ -22,10 +22,10 @@ class NoteAlertDialogButton extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<NoteAlertDialogButton> createState() => _NoteAlertDialogButtonState();
+  State<AddNoteAlert> createState() => _AddNoteAlertState();
 }
 
-class _NoteAlertDialogButtonState extends State<NoteAlertDialogButton> {
+class _AddNoteAlertState extends State<AddNoteAlert> {
   void showAlertDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -89,7 +89,7 @@ class _NoteAlertDialogButtonState extends State<NoteAlertDialogButton> {
                             onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => NotesConfirmView(
+                                  builder: (context) => AddNoteConfirmView(
                                     buttonRoute1: (context) =>
                                         const PatientListView(),
                                     buttonRoute2: (context) =>

@@ -1,7 +1,7 @@
 import 'package:doctor_management_system/core/Widgets/box_container.dart';
 import 'package:doctor_management_system/core/Widgets/custom_route_button.dart';
 import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
-import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/data/booking_view_temp_data.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
 import 'package:doctor_management_system/features/booking/presentation/views/booking_patient_details_view.dart';
@@ -32,9 +32,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 3.h,
-                ),
+                SizedBox(height: 3.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,9 +63,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                             ),
                           ))),
                     ),
-                    SizedBox(
-                      width: 4.w,
-                    ),
+                    SizedBox(width: 4.w),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,9 +112,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                       route: (context) => const HomeView(),
                       weight: FontWeight.bold,
                     )),
-                    SizedBox(
-                      width: 2.h,
-                    ),
+                    SizedBox(width: 2.h),
                     Expanded(
                         child: BoxWidget(
                       text: "استشارة",
@@ -130,9 +124,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                     )),
                   ],
                 ),
-                SizedBox(
-                  height: 1.h,
-                ),
+                SizedBox(height: 1.h),
                 Text("اختر العيادة",
                     style: GoogleFonts.cairo(
                         fontWeight: FontWeight.w600,
@@ -140,32 +132,29 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                         color: Colors.black)),
                 DropDownMenu(
                     dropList: clinicName, icon: Icons.location_on_outlined),
-                SizedBox(
-                  height: 1.h,
-                ),
+                SizedBox(height: 1.h),
                 Text("اختر التاريخ",
                     style: GoogleFonts.cairo(
                         fontWeight: FontWeight.w600,
                         fontSize: 2.h,
                         color: Colors.black)),
                 DropDownMenu(dropList: dates, icon: Icons.calendar_month),
-                SizedBox(
-                  height: 1.h,
-                ),
+                SizedBox(height: 1.h),
                 Text("اختر الوقت",
                     style: GoogleFonts.cairo(
                         fontWeight: FontWeight.w600,
                         fontSize: 2.h,
                         color: Colors.black)),
                 DropDownMenu(
-                    dropList: timeStamps,
-                    icon: Icons.watch_later_outlined,
-                    textDirection: TextDirection.ltr),
+                  dropList: timeStamps,
+                  icon: Icons.watch_later_outlined,
+                  textDirection: TextDirection.ltr,
+                ),
                 const Spacer(),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 2.h),
                   child: BasicButtonRoute(
-                      route: (context) => const BookingPatientDetails(),
+                      route: (context) => const BookingPatientDetailsView(),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
                       text: "التالي",

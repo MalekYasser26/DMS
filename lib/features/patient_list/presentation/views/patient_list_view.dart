@@ -1,8 +1,8 @@
-import 'package:doctor_management_system/core/constants/colors.dart';
+import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/data/patient_list_view_temp_data.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/add_note_confirm_view.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/vacation_confirm_view.dart';
-import 'package:doctor_management_system/features/dates/presentation/views/widgets/absent_present.dart';
+import 'package:doctor_management_system/features/dates/presentation/views/widgets/absent_or_present.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/patient_details_view.dart';
 import 'package:doctor_management_system/features/results/presentation/views/results_view.dart';
 import 'package:doctor_management_system/features/results/presentation/widgets/table_calendar.dart';
@@ -556,7 +556,7 @@ class _PatientListViewState extends State<PatientListView> {
                                   child: Row(
                                     children: [
                                       Expanded(
-                                        child: AbsentPresentWidget(
+                                        child: AbsentOrPresent(
                                             isAbsent:
                                             absentPresentPatientList[index],
                                             h: 4.h,
@@ -1022,7 +1022,7 @@ void showAlertDialog(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NotesConfirmView(
+                                  builder: (context) => AddNoteConfirmView(
                                       buttonRoute1: (context) =>
                                           const PatientListView(),
                                       buttonRoute2: (context) =>

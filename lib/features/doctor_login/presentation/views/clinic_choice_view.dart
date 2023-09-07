@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class ClinicChoice extends StatelessWidget {
-  const ClinicChoice({Key? key}) : super(key: key);
+class ClinicChoiceView extends StatelessWidget {
+  const ClinicChoiceView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
