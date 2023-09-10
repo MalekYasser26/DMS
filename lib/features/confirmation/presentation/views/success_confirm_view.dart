@@ -62,11 +62,7 @@ class SuccessConfirmView extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: buttonRoute1,
-                        ),
-                      );
+                          context, MaterialPageRoute(builder: buttonRoute1));
                     },
                     child: Container(
                       height: 7.h,
@@ -89,11 +85,7 @@ class SuccessConfirmView extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: buttonRoute2,
-                        ),
-                      );
+                          context, MaterialPageRoute(builder: buttonRoute2));
                     },
                     child: Container(
                       height: 7.h,

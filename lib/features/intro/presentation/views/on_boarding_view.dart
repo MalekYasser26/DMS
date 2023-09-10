@@ -97,7 +97,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                     ),
                   ),
                   SizedBox(height: 3.5.h),
-                  SizedBox(height: 4.5.h)
+                  SizedBox(height: 4.5.h),
                 ],
               ),
             ),

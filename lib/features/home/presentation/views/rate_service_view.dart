@@ -26,9 +26,7 @@ class RateSeviceView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 3.h,
-                ),
+                SizedBox(height: 3.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -44,10 +42,7 @@ class RateSeviceView extends StatelessWidget {
                               color: Colors.grey.withOpacity(.2),
                               blurRadius: 5.0,
                               spreadRadius: 1,
-                              offset: const Offset(
-                                2.0,
-                                2.0,
-                              ),
+                              offset: const Offset(2.0, 2.0),
                             )
                           ],
                         ),
@@ -141,9 +136,10 @@ class RateSeviceView extends StatelessWidget {
                 Text(
                   "تفاصيل التقييم",
                   style: GoogleFonts.cairo(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 2.1.h),
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 2.1.h,
+                  ),
                 ),
                 SizedBox(height: 1.h),
                 TextField(
@@ -155,9 +151,7 @@ class RateSeviceView extends StatelessWidget {
                   controller: basicController,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey.shade300,
-                      ),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
                     ),
                     contentPadding:
                         EdgeInsets.only(bottom: 18.h, right: 2.h, top: 1.h),
@@ -172,12 +166,13 @@ class RateSeviceView extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 1.h),
                   child: BasicButtonRoute(
-                      route: (context) => const ConfirmRatingView(
-                          route: MyDatesView(), text: "تم التقييم بنجاح"),
-                      color: AppColors.lightBlue,
-                      textColor: Colors.white,
-                      text: "تأكيد",
-                      borderColor: Colors.transparent),
+                    route: (context) => const ConfirmRatingView(
+                        route: MyDatesView(), text: "تم التقييم بنجاح"),
+                    color: AppColors.lightBlue,
+                    textColor: Colors.white,
+                    text: "تأكيد",
+                    borderColor: Colors.transparent,
+                  ),
                 ),
               ],
             ),

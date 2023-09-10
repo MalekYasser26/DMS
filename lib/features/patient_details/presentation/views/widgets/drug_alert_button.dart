@@ -67,9 +67,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                           FocusManager.instance.primaryFocus?.unfocus(),
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.grey.shade300,
-                          ),
+                          borderSide: BorderSide(color: Colors.grey.shade300),
                         ),
                         contentPadding:
                             EdgeInsets.only(bottom: 18.h, right: 2.h, top: 1.h),
@@ -92,13 +90,14 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => SuccessConfirmView(
-                                    buttonRoute1: (context) =>
-                                        const PatientDetailsView(),
-                                    buttonRoute2: (context) =>
-                                        const PatientListView(),
-                                    subText: "",
-                                    text: "تم إضافة الدواء بنجاح",
-                                    buttonTxt: "العودة إلى صفحة المريض"),
+                                  buttonRoute1: (context) =>
+                                      const PatientDetailsView(),
+                                  buttonRoute2: (context) =>
+                                      const PatientListView(),
+                                  subText: "",
+                                  text: "تم إضافة الدواء بنجاح",
+                                  buttonTxt: "العودة إلى صفحة المريض",
+                                ),
                               ),
                             ),
                             child: Container(
@@ -110,7 +109,9 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                                 child: Text(
                                   "اضافة",
                                   style: GoogleFonts.cairo(
-                                      color: Colors.white, fontSize: 2.h),
+                                    color: Colors.white,
+                                    fontSize: 2.h,
+                                  ),
                                 ),
                               ),
                             ),
@@ -129,7 +130,9 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                                 child: Text(
                                   "الغاء",
                                   style: GoogleFonts.cairo(
-                                      color: Colors.white, fontSize: 2.h),
+                                    color: Colors.white,
+                                    fontSize: 2.h,
+                                  ),
                                 ),
                               ),
                             ),

@@ -52,10 +52,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                               color: Colors.grey.withOpacity(.2),
                               blurRadius: 5.0,
                               spreadRadius: 1,
-                              offset: const Offset(
-                                2.0,
-                                2.0,
-                              ),
+                              offset: const Offset(2.0, 2.0),
                             )
                           ]),
                           child: Padding(
@@ -75,9 +72,10 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                             Text(
                               "تفاصيل المريض",
                               style: GoogleFonts.cairo(
-                                  color: Colors.black,
-                                  fontSize: 3.h,
-                                  fontWeight: FontWeight.bold),
+                                color: Colors.black,
+                                fontSize: 3.h,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             SizedBox(width: 10.w),
                           ],
@@ -177,32 +175,33 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                       color: Colors.white,
                     ),
                     child: TabBar(
-                        indicatorColor: AppColors.green,
-                        unselectedLabelStyle: GoogleFonts.cairo(
-                            color: AppColors.green, fontSize: 2.4.h),
-                        labelColor: AppColors.green,
-                        unselectedLabelColor: Colors.black,
-                        labelStyle: GoogleFonts.cairo(
-                          color: AppColors.green,
-                          fontSize: 2.4.h,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        tabs: [
-                          Tab(
-                            child: Text(
-                              "التاريخ الطبي",
-                              style: GoogleFonts.cairo(
-                                fontSize: 1.9.h,
-                              ),
+                      indicatorColor: AppColors.green,
+                      unselectedLabelStyle: GoogleFonts.cairo(
+                          color: AppColors.green, fontSize: 2.4.h),
+                      labelColor: AppColors.green,
+                      unselectedLabelColor: Colors.black,
+                      labelStyle: GoogleFonts.cairo(
+                        color: AppColors.green,
+                        fontSize: 2.4.h,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      tabs: [
+                        Tab(
+                          child: Text(
+                            "التاريخ الطبي",
+                            style: GoogleFonts.cairo(
+                              fontSize: 1.9.h,
                             ),
                           ),
-                          const Tab(
-                            text: "الأدوية",
-                          ),
-                          const Tab(
-                            text: "ملاحظات",
-                          ),
-                        ]),
+                        ),
+                        const Tab(
+                          text: "الأدوية",
+                        ),
+                        const Tab(
+                          text: "ملاحظات",
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
@@ -214,17 +213,18 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                         children: [
                           Flexible(
                             child: ListView.separated(
-                                physics: const ClampingScrollPhysics(),
-                                itemBuilder: (context, index) =>
-                                    MedicalHistoryItem(
-                                      text: mdHistory[index],
-                                      date: "21 Aug, Mon ",
-                                      diagnosis: diagnosis[index],
-                                    ),
-                                separatorBuilder: (context, index) =>
-                                    SizedBox(height: 1.h),
-                                itemCount: 4),
-                          )
+                              physics: const ClampingScrollPhysics(),
+                              itemBuilder: (context, index) =>
+                                  MedicalHistoryItem(
+                                text: mdHistory[index],
+                                date: "21 Aug, Mon ",
+                                diagnosis: diagnosis[index],
+                              ),
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 1.h),
+                              itemCount: 4,
+                            ),
+                          ),
                         ],
                       ),
                       Column(
@@ -244,10 +244,11 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                                 itemCount: drugs.length),
                           ),
                           const DrugAlertButton(
-                              color: AppColors.lightBlue,
-                              textColor: Colors.white,
-                              text: "اضافة دواء",
-                              borderColor: Colors.transparent)
+                            color: AppColors.lightBlue,
+                            textColor: Colors.white,
+                            text: "اضافة دواء",
+                            borderColor: Colors.transparent,
+                          )
                         ],
                       ),
                       Column(
@@ -255,21 +256,22 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                         children: [
                           Flexible(
                             child: ListView.separated(
-                                physics: const ClampingScrollPhysics(),
-                                itemBuilder: (context, index) =>
-                                    AdditionalNotes(
-                                      date: "21 Aug, Mon - 09:20 am",
-                                      note: notes[index],
-                                    ),
-                                separatorBuilder: (context, index) =>
-                                    SizedBox(height: 1.h),
-                                itemCount: notes.length),
+                              physics: const ClampingScrollPhysics(),
+                              itemBuilder: (context, index) => AdditionalNotes(
+                                date: "21 Aug, Mon - 09:20 am",
+                                note: notes[index],
+                              ),
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 1.h),
+                              itemCount: notes.length,
+                            ),
                           ),
                           const AddNoteAlert(
-                              color: AppColors.lightBlue,
-                              textColor: Colors.white,
-                              text: "اضافة ملاحظة",
-                              borderColor: Colors.transparent)
+                            color: AppColors.lightBlue,
+                            textColor: Colors.white,
+                            text: "اضافة ملاحظة",
+                            borderColor: Colors.transparent,
+                          ),
                         ],
                       ),
                     ],

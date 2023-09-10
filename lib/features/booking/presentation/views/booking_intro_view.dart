@@ -49,10 +49,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                               color: Colors.grey.withOpacity(.2),
                               blurRadius: 5.0,
                               spreadRadius: 1,
-                              offset: const Offset(
-                                2.0,
-                                2.0,
-                              ),
+                              offset: const Offset(2.0, 2.0),
                             )
                           ],
                         ),
@@ -72,33 +69,37 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("ابدأ بملئ بياناتك",
-                            style: GoogleFonts.cairo(
-                                color: Colors.black,
-                                fontSize: 3.h,
-                                fontWeight: FontWeight.bold)),
+                        Text(
+                          "ابدأ بملئ بياناتك",
+                          style: GoogleFonts.cairo(
+                              color: Colors.black,
+                              fontSize: 3.h,
+                              fontWeight: FontWeight.bold),
+                        ),
                         RichText(
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                  text: "قمت بملئ بياناتك بالفعل؟ ",
-                                  style: GoogleFonts.cairo(
-                                      color: Colors.black, fontSize: 2.h)),
+                                text: "قمت بملئ بياناتك بالفعل؟ ",
+                                style: GoogleFonts.cairo(
+                                    color: Colors.black, fontSize: 2.h),
+                              ),
                               TextSpan(
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = () => Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
                                             builder: (context) => LoginView(
                                                 route: (context) =>
-                                                    const MyDatesView()),
-                                          ),
-                                        ),
-                                  text: "تخطي",
-                                  style: GoogleFonts.cairo(
-                                      color: AppColors.lightBlue,
-                                      fontSize: 2.h,
-                                      fontWeight: FontWeight.bold)),
+                                                    const MyDatesView())),
+                                      ),
+                                text: "تخطي",
+                                style: GoogleFonts.cairo(
+                                  color: AppColors.lightBlue,
+                                  fontSize: 2.h,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ],
                           ),
                         ),

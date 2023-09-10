@@ -42,10 +42,7 @@ class QueueWaitView extends StatelessWidget {
                                       color: Colors.grey.withOpacity(.2),
                                       blurRadius: 5.0,
                                       spreadRadius: 1,
-                                      offset: const Offset(
-                                        2.0,
-                                        2.0,
-                                      ),
+                                      offset: const Offset(2.0, 2.0),
                                     )
                                   ],
                                 ),
@@ -96,8 +93,10 @@ class QueueWaitView extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("أمامك عدد:",
-                            style: GoogleFonts.cairo(fontSize: 3.h)),
+                        Text(
+                          "أمامك عدد:",
+                          style: GoogleFonts.cairo(fontSize: 3.h),
+                        ),
                         SizedBox(height: 2.h),
                         RichText(
                           textDirection: TextDirection.rtl,
@@ -132,7 +131,7 @@ class QueueWaitView extends StatelessWidget {
                   textColor: AppColors.lightBlue,
                   text: "العودة الى الصفحة الرئيسية",
                   borderColor: AppColors.lightBlue,
-                )
+                ),
               ],
             ),
           ),

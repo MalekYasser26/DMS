@@ -38,12 +38,16 @@ class MedicalHistoryItem extends StatelessWidget {
                       Text(
                         text,
                         style: GoogleFonts.cairo(
-                            fontSize: 2.h, color: Colors.grey),
+                          fontSize: 2.h,
+                          color: Colors.grey,
+                        ),
                       ),
                       Text(
                         " $date",
                         style: GoogleFonts.poppins(
-                            fontSize: 1.5.h, color: Colors.grey),
+                          fontSize: 1.5.h,
+                          color: Colors.grey,
+                        ),
                       ),
                     ],
                   ),
@@ -53,7 +57,9 @@ class MedicalHistoryItem extends StatelessWidget {
                   child: Text(
                     diagnosis,
                     style: GoogleFonts.cairo(
-                        fontSize: 2.3.h, fontWeight: FontWeight.w600),
+                      fontSize: 2.3.h,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ],

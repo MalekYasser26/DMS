@@ -112,8 +112,7 @@ class _MyDatesViewState extends State<MyDatesView> {
                         RoundedRectangleBorder()),
                     elevation: const MaterialStatePropertyAll(0),
                     backgroundColor: MaterialStatePropertyAll(
-                      AppColors.blueGrey.withOpacity(0.4),
-                    ),
+                        AppColors.blueGrey.withOpacity(0.4)),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 2.h, bottom: 2.h),
@@ -151,19 +150,20 @@ class _MyDatesViewState extends State<MyDatesView> {
                           children: [
                             Flexible(
                               child: ListView.separated(
-                                  physics: const ClampingScrollPhysics(),
-                                  itemBuilder: (context, index) =>
-                                      AppointmentBooking(
-                                        name: names[index],
-                                        address: "147 النزهة, ش المطار",
-                                        date: "21 Aug, Mon - 09:20 am",
-                                        firstTime: "كشف",
-                                        isAbsent: absentPresentMyDates[index],
-                                        isNext: true,
-                                      ),
-                                  separatorBuilder: (context, index) =>
-                                      SizedBox(height: 1.h),
-                                  itemCount: names.length),
+                                physics: const ClampingScrollPhysics(),
+                                itemBuilder: (context, index) =>
+                                    AppointmentBooking(
+                                  name: names[index],
+                                  address: "147 النزهة, ش المطار",
+                                  date: "21 Aug, Mon - 09:20 am",
+                                  firstTime: "كشف",
+                                  isAbsent: absentPresentMyDates[index],
+                                  isNext: true,
+                                ),
+                                separatorBuilder: (context, index) =>
+                                    SizedBox(height: 1.h),
+                                itemCount: names.length,
+                              ),
                             )
                           ],
                         ),
@@ -172,19 +172,20 @@ class _MyDatesViewState extends State<MyDatesView> {
                           children: [
                             Flexible(
                               child: ListView.separated(
-                                  physics: const ClampingScrollPhysics(),
-                                  itemBuilder: (context, index) =>
-                                      AppointmentBooking(
-                                        name: names[index],
-                                        address: "147 النزهة, ش المطار",
-                                        date: "21 Aug, Mon - 09:20 am",
-                                        firstTime: "كشف",
-                                        isAbsent: absentPresentMyDates[index],
-                                        isNext: false,
-                                      ),
-                                  separatorBuilder: (context, index) =>
-                                      SizedBox(height: 1.h),
-                                  itemCount: names.length),
+                                physics: const ClampingScrollPhysics(),
+                                itemBuilder: (context, index) =>
+                                    AppointmentBooking(
+                                  name: names[index],
+                                  address: "147 النزهة, ش المطار",
+                                  date: "21 Aug, Mon - 09:20 am",
+                                  firstTime: "كشف",
+                                  isAbsent: absentPresentMyDates[index],
+                                  isNext: false,
+                                ),
+                                separatorBuilder: (context, index) =>
+                                    SizedBox(height: 1.h),
+                                itemCount: names.length,
+                              ),
                             )
                           ],
                         ),

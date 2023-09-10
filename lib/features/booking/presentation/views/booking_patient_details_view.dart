@@ -54,10 +54,7 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                                 color: Colors.grey.withOpacity(.2),
                                 blurRadius: 5.0,
                                 spreadRadius: 1,
-                                offset: const Offset(
-                                  2.0,
-                                  2.0,
-                                ),
+                                offset: const Offset(2.0, 2.0),
                               )
                             ],
                           ),
@@ -105,9 +102,10 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                                         ),
                                   text: "تخطي",
                                   style: GoogleFonts.cairo(
-                                      color: AppColors.lightBlue,
-                                      fontSize: 2.h,
-                                      fontWeight: FontWeight.bold),
+                                    color: AppColors.lightBlue,
+                                    fontSize: 2.h,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ],
                             ),
@@ -140,10 +138,7 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                                 });
                               },
                             ),
-                            Text(
-                              "مريض واحد",
-                              style: GoogleFonts.cairo(),
-                            ),
+                            Text("مريض واحد", style: GoogleFonts.cairo()),
                           ],
                         ),
                       ),
@@ -165,9 +160,7 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                             ),
                             Text(
                               "أكثر من مريض",
-                              style: GoogleFonts.cairo(
-                                fontSize: 12.sp,
-                              ),
+                              style: GoogleFonts.cairo(fontSize: 12.sp),
                             ),
                           ],
                         ),
@@ -177,62 +170,61 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                   if (selectedOption == 1) const PatientDetails(),
                   if (selectedOption == 2)
                     Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Flexible(
-                            fit: FlexFit.loose,
-                            child: ListView.separated(
-                                physics: const ClampingScrollPhysics(),
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) => PatientDetails(
-                                    bgColor:
-                                        AppColors.lightBlue.withOpacity(0.1),
-                                    isSingle: false),
-                                separatorBuilder: (context, index) =>
-                                    SizedBox(height: 3.h),
-                                itemCount: patientNum),
-                          ),
-                          SizedBox(height: 3.h),
-                          InkWell(
-                            onTap: () {
-                              setState(() {
-                                patientNum++;
-                              });
-                            },
-                            child: Container(
-                              width: 20.h,
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(color: AppColors.lightBlue)),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 1.h),
-                                child: Row(children: [
-                                  Icon(Icons.add,
-                                      color: AppColors.lightBlue, size: 3.h),
-                                  Text("   اضافة مريض اخر",
-                                      style: GoogleFonts.cairo(
-                                          fontSize: 2.h,
-                                          color: AppColors.lightBlue)),
-                                ]),
-                              ),
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Flexible(
+                          fit: FlexFit.loose,
+                          child: ListView.separated(
+                              physics: const ClampingScrollPhysics(),
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) => PatientDetails(
+                                  bgColor: AppColors.lightBlue.withOpacity(0.1),
+                                  isSingle: false),
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 3.h),
+                              itemCount: patientNum),
+                        ),
+                        SizedBox(height: 3.h),
+                        InkWell(
+                          onTap: () {
+                            setState(() {
+                              patientNum++;
+                            });
+                          },
+                          child: Container(
+                            width: 20.h,
+                            decoration: BoxDecoration(
+                                border: Border.all(color: AppColors.lightBlue)),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 1.h),
+                              child: Row(children: [
+                                Icon(Icons.add,
+                                    color: AppColors.lightBlue, size: 3.h),
+                                Text("   اضافة مريض اخر",
+                                    style: GoogleFonts.cairo(
+                                        fontSize: 2.h,
+                                        color: AppColors.lightBlue)),
+                              ]),
                             ),
                           ),
-                          SizedBox(height: 3.h),
-                          BasicTextFormField(text: "رقم التيليفون"),
-                        ]),
+                        ),
+                        SizedBox(height: 3.h),
+                        BasicTextFormField(text: "رقم التيليفون"),
+                      ],
+                    ),
                   SizedBox(height: 3.h),
                   SizedBox(height: 5.h),
                   BasicButtonRoute(
-                      route: (context) => SuccessConfirmView(
-                            buttonRoute2: (context) => const MyDatesView(),
-                            buttonRoute1: (context) =>
-                                const AppointmentConfirmView(),
-                          ),
-                      color: AppColors.lightBlue,
-                      textColor: Colors.white,
-                      text: "حجز",
-                      borderColor: Colors.transparent)
+                    route: (context) => SuccessConfirmView(
+                      buttonRoute2: (context) => const MyDatesView(),
+                      buttonRoute1: (context) => const AppointmentConfirmView(),
+                    ),
+                    color: AppColors.lightBlue,
+                    textColor: Colors.white,
+                    text: "حجز",
+                    borderColor: Colors.transparent,
+                  ),
                 ],
               ),
             ),
