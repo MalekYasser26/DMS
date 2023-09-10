@@ -80,7 +80,7 @@ class _DrugAlertButtonState extends State<DrugAlertButton> {
                       keyboardType: TextInputType.emailAddress,
                     ),
                     SizedBox(height: 2.h),
-                    const UploadPhotoWidget(),
+                    const UploadPhotoContainer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
