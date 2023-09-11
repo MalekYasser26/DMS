@@ -59,10 +59,7 @@ class _PatientListViewState extends State<PatientListView> {
                                 color: Colors.grey.withOpacity(.3),
                                 blurRadius: 5.0,
                                 spreadRadius: 1,
-                                offset: const Offset(
-                                  2.0,
-                                  2.0,
-                                ),
+                                offset: const Offset(2.0, 2.0),
                               )
                             ],
                           ),
@@ -105,10 +102,7 @@ class _PatientListViewState extends State<PatientListView> {
                                 color: Colors.grey.withOpacity(.3),
                                 blurRadius: 5.0,
                                 spreadRadius: 1,
-                                offset: const Offset(
-                                  2.0,
-                                  2.0,
-                                ),
+                                offset: const Offset(2.0, 2.0),
                               )
                             ],
                           ),
@@ -154,19 +148,16 @@ class _PatientListViewState extends State<PatientListView> {
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ResultsView(),
-                            ),
-                          );
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const ResultsView()));
                         },
                         child: Container(
                           padding: const EdgeInsets.all(12),
                           height: 7.h,
                           width: 16.w,
-                          decoration: const BoxDecoration(
-                            color: Color(0xff159BAD),
-                          ),
+                          decoration:
+                              const BoxDecoration(color: Color(0xff159BAD)),
                           child: Image.asset("assets/images/filtered.png"),
                         ),
                       ),
@@ -180,9 +171,7 @@ class _PatientListViewState extends State<PatientListView> {
                         height: 6.h,
                         width: 43.5.w,
                         decoration: BoxDecoration(
-                          border: Border.all(
-                            color: const Color(0xffDFDFDF),
-                          ),
+                          border: Border.all(color: const Color(0xffDFDFDF)),
                         ),
                         child: DropdownButton<String>(
                           isExpanded: true,
@@ -204,11 +193,9 @@ class _PatientListViewState extends State<PatientListView> {
                           ),
                           value: valueChoose,
                           onChanged: (newValue) {
-                            setState(
-                              () {
-                                valueChoose = newValue;
-                              },
-                            );
+                            setState(() {
+                              valueChoose = newValue;
+                            });
                           },
                           items: listItem.map(
                             (valueItem) {
@@ -317,12 +304,10 @@ class _PatientListViewState extends State<PatientListView> {
                                                               Navigator.push(
                                                             context,
                                                             MaterialPageRoute(
-                                                              builder: (context) =>
-                                                                  const VacationConfirmView(
-                                                                route:
-                                                                    PatientListView(),
-                                                              ),
-                                                            ),
+                                                                builder: (context) =>
+                                                                    const VacationConfirmView(
+                                                                        route:
+                                                                            PatientListView())),
                                                           ),
                                                           child: Container(
                                                             height: 5.h,
@@ -356,9 +341,9 @@ class _PatientListViewState extends State<PatientListView> {
                                                             height: 5.h,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: Colors.grey
-                                                                  .shade400,
-                                                            ),
+                                                                    color: Colors
+                                                                        .grey
+                                                                        .shade400),
                                                             child: Center(
                                                               child: Text(
                                                                 "الغاء",
@@ -448,13 +433,11 @@ class _PatientListViewState extends State<PatientListView> {
                           width: 6.w,
                           child: MaterialButton(
                             onPressed: () {
-                              setState(
-                                () {
-                                  if (currentIndex >= 1) {
-                                    currentIndex = currentIndex - 1;
-                                  }
-                                },
-                              );
+                              setState(() {
+                                if (currentIndex >= 1) {
+                                  currentIndex = currentIndex - 1;
+                                }
+                              });
                             },
                             shape: const CircleBorder(),
                             color: const Color(0xffF5F7F9),
@@ -817,10 +800,8 @@ class _PatientListViewState extends State<PatientListView> {
                                                                   Navigator.push(
                                                                       context,
                                                                       MaterialPageRoute(
-                                                                        builder:
-                                                                            (context) =>
-                                                                                const PatientDetailsView(initialIndex: 0),
-                                                                      ));
+                                                                          builder: (context) =>
+                                                                              const PatientDetailsView(initialIndex: 0)));
                                                                 } else if (value ==
                                                                     'item2') {
                                                                   Navigator
@@ -911,34 +892,28 @@ class _PatientListViewState extends State<PatientListView> {
                                                                         String>(
                                                                       value:
                                                                           'item1',
-                                                                      child:
-                                                                          Text(
-                                                                        'رؤية التفاصيل',
-                                                                        style: GoogleFonts
-                                                                            .cairo(),
-                                                                      ),
+                                                                      child: Text(
+                                                                          'رؤية التفاصيل',
+                                                                          style:
+                                                                              GoogleFonts.cairo()),
                                                                     ),
                                                                     PopupMenuItem<
                                                                         String>(
                                                                       value:
                                                                           'item2',
-                                                                      child:
-                                                                          Text(
-                                                                        'رؤية الملاحظات',
-                                                                        style: GoogleFonts
-                                                                            .cairo(),
-                                                                      ),
+                                                                      child: Text(
+                                                                          'رؤية الملاحظات',
+                                                                          style:
+                                                                              GoogleFonts.cairo()),
                                                                     ),
                                                                     PopupMenuItem<
                                                                         String>(
                                                                       value:
                                                                           'item3',
-                                                                      child:
-                                                                          Text(
-                                                                        'اضافة ملاحظة',
-                                                                        style: GoogleFonts
-                                                                            .cairo(),
-                                                                      ),
+                                                                      child: Text(
+                                                                          'اضافة ملاحظة',
+                                                                          style:
+                                                                              GoogleFonts.cairo()),
                                                                     ),
                                                                     if (index ==
                                                                         selectedRadio)
@@ -963,17 +938,15 @@ class _PatientListViewState extends State<PatientListView> {
                                                                     Navigator.push(
                                                                         context,
                                                                         MaterialPageRoute(
-                                                                          builder: (context) =>
-                                                                              const PatientDetailsView(initialIndex: 0),
-                                                                        ));
+                                                                            builder: (context) =>
+                                                                                const PatientDetailsView(initialIndex: 0)));
                                                                   } else if (value ==
                                                                       'item2') {
                                                                     Navigator.push(
                                                                         context,
                                                                         MaterialPageRoute(
-                                                                          builder: (context) =>
-                                                                              const PatientDetailsView(initialIndex: 2),
-                                                                        ));
+                                                                            builder: (context) =>
+                                                                                const PatientDetailsView(initialIndex: 2)));
                                                                   } else if (value ==
                                                                       'item3') {
                                                                     showAlertDialog(

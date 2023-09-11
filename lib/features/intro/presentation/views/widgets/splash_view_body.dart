@@ -22,14 +22,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 2));
 
-    slidingAnimationRtoL =
-        Tween<Offset>(begin: const Offset(10, 0), end: const Offset(1, 0))
-            .animate(animationController);
+    slidingAnimationRtoL = Tween<Offset>(
+      begin: const Offset(10, 0),
+      end: const Offset(1, 0),
+    ).animate(animationController);
     animationController.forward();
 
-    slidingAnimationLtoR =
-        Tween<Offset>(begin: const Offset(-10, 0), end: const Offset(-.8, 0))
-            .animate(animationController);
+    slidingAnimationLtoR = Tween<Offset>(
+      begin: const Offset(-10, 0),
+      end: const Offset(-.8, 0),
+    ).animate(animationController);
     animationController.forward();
 
     Future.delayed(

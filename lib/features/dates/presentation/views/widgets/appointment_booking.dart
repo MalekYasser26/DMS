@@ -68,20 +68,24 @@ class AppointmentBooking extends StatelessWidget {
             ),
             SizedBox(height: 1.h),
             RichText(
-              text: TextSpan(children: [
-                TextSpan(
+              text: TextSpan(
+                children: [
+                  TextSpan(
                     text: "التاريخ  ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
-                    )),
-                TextSpan(
+                    ),
+                  ),
+                  TextSpan(
                     text: date,
                     style: GoogleFonts.cairo(
                       color: Colors.black,
                       fontSize: 2.h,
-                    )),
-              ]),
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 1.h),
             RichText(

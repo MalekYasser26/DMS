@@ -67,10 +67,7 @@ class _ResultsViewState extends State<ResultsView> {
                                 color: Colors.grey.withOpacity(.3),
                                 blurRadius: 5.0,
                                 spreadRadius: 1,
-                                offset: const Offset(
-                                  2.0,
-                                  2.0,
-                                ),
+                                offset: const Offset(2.0, 2.0),
                               ),
                             ],
                           ),
@@ -120,11 +117,9 @@ class _ResultsViewState extends State<ResultsView> {
                           value: 1,
                           groupValue: selectedRadio2,
                           onChanged: (value) {
-                            setState(
-                              () {
-                                selectedRadio2 = value;
-                              },
-                            );
+                            setState(() {
+                              selectedRadio2 = value;
+                            });
                           },
                         ),
                         Text(
@@ -148,11 +143,9 @@ class _ResultsViewState extends State<ResultsView> {
                           value: 2,
                           groupValue: selectedRadio2,
                           onChanged: (value) {
-                            setState(
-                              () {
-                                selectedRadio2 = value;
-                              },
-                            );
+                            setState(() {
+                              selectedRadio2 = value;
+                            });
                           },
                         ),
                         Text(
@@ -176,11 +169,9 @@ class _ResultsViewState extends State<ResultsView> {
                           value: 3,
                           groupValue: selectedRadio2,
                           onChanged: (value) {
-                            setState(
-                              () {
-                                selectedRadio2 = value;
-                              },
-                            );
+                            setState(() {
+                              selectedRadio2 = value;
+                            });
                           },
                         ),
                         Text(
@@ -224,11 +215,9 @@ class _ResultsViewState extends State<ResultsView> {
                           value: 1,
                           groupValue: selectedRadio3,
                           onChanged: (value) {
-                            setState(
-                              () {
-                                selectedRadio3 = value;
-                              },
-                            );
+                            setState(() {
+                              selectedRadio3 = value;
+                            });
                           },
                         ),
                         Text(
@@ -252,11 +241,9 @@ class _ResultsViewState extends State<ResultsView> {
                           value: 2,
                           groupValue: selectedRadio3,
                           onChanged: (value) {
-                            setState(
-                              () {
-                                selectedRadio3 = value;
-                              },
-                            );
+                            setState(() {
+                              selectedRadio3 = value;
+                            });
                           },
                         ),
                         Text(
@@ -280,11 +267,9 @@ class _ResultsViewState extends State<ResultsView> {
                           value: 3,
                           groupValue: selectedRadio3,
                           onChanged: (value) {
-                            setState(
-                              () {
-                                selectedRadio3 = value;
-                              },
-                            );
+                            setState(() {
+                              selectedRadio3 = value;
+                            });
                           },
                         ),
                         Text(

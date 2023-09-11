@@ -35,10 +35,7 @@ class DoctorLoginView extends StatelessWidget {
                               color: Colors.grey.withOpacity(.3),
                               blurRadius: 5.0,
                               spreadRadius: 1,
-                              offset: const Offset(
-                                2.0,
-                                2.0,
-                              ),
+                              offset: const Offset(2.0, 2.0),
                             )
                           ],
                         ),

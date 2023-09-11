@@ -1,7 +1,7 @@
-import 'package:doctor_management_system/core/Widgets/box_container.dart';
-import 'package:doctor_management_system/core/Widgets/custom_route_button.dart';
 import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
 import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
+import 'package:doctor_management_system/core/widgets/navigator_box.dart';
 import 'package:doctor_management_system/data/booking_view_temp_data.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
 import 'package:doctor_management_system/features/booking/presentation/views/booking_patient_details_view.dart';
@@ -49,10 +49,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                               color: Colors.grey.withOpacity(.2),
                               blurRadius: 5.0,
                               spreadRadius: 1,
-                              offset: const Offset(
-                                2.0,
-                                2.0,
-                              ),
+                              offset: const Offset(2.0, 2.0),
                             )
                           ],
                         ),
@@ -72,33 +69,37 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("ابدأ بملئ بياناتك",
-                            style: GoogleFonts.cairo(
-                                color: Colors.black,
-                                fontSize: 3.h,
-                                fontWeight: FontWeight.bold)),
+                        Text(
+                          "ابدأ بملئ بياناتك",
+                          style: GoogleFonts.cairo(
+                              color: Colors.black,
+                              fontSize: 3.h,
+                              fontWeight: FontWeight.bold),
+                        ),
                         RichText(
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                  text: "قمت بملئ بياناتك بالفعل؟ ",
-                                  style: GoogleFonts.cairo(
-                                      color: Colors.black, fontSize: 2.h)),
+                                text: "قمت بملئ بياناتك بالفعل؟ ",
+                                style: GoogleFonts.cairo(
+                                    color: Colors.black, fontSize: 2.h),
+                              ),
                               TextSpan(
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = () => Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
                                             builder: (context) => LoginView(
                                                 route: (context) =>
-                                                    const MyDatesView()),
-                                          ),
-                                        ),
-                                  text: "تخطي",
-                                  style: GoogleFonts.cairo(
-                                      color: AppColors.lightBlue,
-                                      fontSize: 2.h,
-                                      fontWeight: FontWeight.bold)),
+                                                    const MyDatesView())),
+                                      ),
+                                text: "تخطي",
+                                style: GoogleFonts.cairo(
+                                  color: AppColors.lightBlue,
+                                  fontSize: 2.h,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -110,7 +111,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                 Row(
                   children: [
                     Expanded(
-                      child: BoxWidget(
+                      child: NavigatorBox(
                         text: "كشف",
                         height: 15.h,
                         fontSize: 2.8.h,
@@ -122,7 +123,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                     ),
                     SizedBox(width: 2.h),
                     Expanded(
-                      child: BoxWidget(
+                      child: NavigatorBox(
                         text: "استشارة",
                         height: 15.h,
                         fontSize: 2.8.h,

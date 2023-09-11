@@ -66,9 +66,7 @@ class _AddNoteAlertState extends State<AddNoteAlert> {
                           FocusManager.instance.primaryFocus?.unfocus(),
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.grey.shade300,
-                          ),
+                          borderSide: BorderSide(color: Colors.grey.shade300),
                         ),
                         contentPadding:
                             EdgeInsets.only(bottom: 18.h, right: 2.h, top: 1.h),
@@ -106,7 +104,9 @@ class _AddNoteAlertState extends State<AddNoteAlert> {
                                 child: Text(
                                   "اضافة",
                                   style: GoogleFonts.cairo(
-                                      color: Colors.white, fontSize: 2.h),
+                                    color: Colors.white,
+                                    fontSize: 2.h,
+                                  ),
                                 ),
                               ),
                             ),
@@ -125,7 +125,9 @@ class _AddNoteAlertState extends State<AddNoteAlert> {
                                 child: Text(
                                   "الغاء",
                                   style: GoogleFonts.cairo(
-                                      color: Colors.white, fontSize: 2.h),
+                                    color: Colors.white,
+                                    fontSize: 2.h,
+                                  ),
                                 ),
                               ),
                             ),

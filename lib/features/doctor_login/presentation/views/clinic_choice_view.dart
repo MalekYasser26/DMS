@@ -34,10 +34,7 @@ class ClinicChoiceView extends StatelessWidget {
                               color: Colors.grey.withOpacity(.3),
                               blurRadius: 5.0,
                               spreadRadius: 1,
-                              offset: const Offset(
-                                2.0,
-                                2.0,
-                              ),
+                              offset: const Offset(2.0, 2.0),
                             )
                           ],
                         ),
@@ -74,10 +71,7 @@ class ClinicChoiceView extends StatelessWidget {
                               color: Colors.grey.withOpacity(.3),
                               blurRadius: 5.0,
                               spreadRadius: 1,
-                              offset: const Offset(
-                                2.0,
-                                2.0,
-                              ),
+                              offset: const Offset(2.0, 2.0),
                             ),
                           ],
                         ),
@@ -159,8 +153,7 @@ class ClinicChoiceView extends StatelessWidget {
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const PatientListView(),
-                      )),
+                          builder: (context) => const PatientListView())),
                   child: Container(
                     height: 7.h,
                     width: double.infinity,

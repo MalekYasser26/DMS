@@ -58,12 +58,8 @@ class VacationConfirmView extends StatelessWidget {
                   SizedBox(height: 8.h),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => route,
-                        ),
-                      );
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => route));
                     },
                     child: Container(
                       height: 7.h,

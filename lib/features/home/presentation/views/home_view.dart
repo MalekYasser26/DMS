@@ -1,7 +1,7 @@
-import 'package:doctor_management_system/core/Widgets/box_container.dart';
-import 'package:doctor_management_system/core/Widgets/custom_route_button.dart';
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/core/constants/assets_data.dart';
+import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
+import 'package:doctor_management_system/core/widgets/navigator_box.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
 import 'package:doctor_management_system/features/booking/presentation/views/booking_intro_view.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
@@ -48,7 +48,7 @@ class HomeView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                          child: BoxWidget(
+                          child: NavigatorBox(
                             text: "قائمة الانتظار",
                             height: 15.h,
                             fontSize: 2.8.h,
@@ -61,7 +61,7 @@ class HomeView extends StatelessWidget {
                         ),
                         SizedBox(width: 4.w),
                         Expanded(
-                          child: BoxWidget(
+                          child: NavigatorBox(
                             text: "تقييم الخدمة",
                             height: 15.h,
                             fontSize: 2.8.h,
@@ -86,12 +86,13 @@ class HomeView extends StatelessWidget {
                     ),
                     SizedBox(height: 2.h),
                     BasicButtonRoute(
-                        route: (context) => const BookingIntroView(),
-                        color: Colors.white,
-                        textColor: AppColors.lightBlue,
-                        text: "حجز سريع",
-                        borderColor: Colors.transparent,
-                        textSize: 2.h),
+                      route: (context) => const BookingIntroView(),
+                      color: Colors.white,
+                      textColor: AppColors.lightBlue,
+                      text: "حجز سريع",
+                      borderColor: Colors.transparent,
+                      textSize: 2.h,
+                    ),
                   ],
                 ),
               ),

@@ -54,10 +54,11 @@ class AppointmentConfirmView extends StatelessWidget {
                               Text(
                                 "الترتيب في قائمة الانتظار",
                                 style: GoogleFonts.cairo(
-                                    textStyle: const TextStyle(
-                                  color: Color(0xff8F8E94),
-                                  fontSize: 16,
-                                )),
+                                  textStyle: const TextStyle(
+                                    color: Color(0xff8F8E94),
+                                    fontSize: 16,
+                                  ),
+                                ),
                               ),
                               const Spacer(),
                               Text(
@@ -231,18 +232,14 @@ class AppointmentConfirmView extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const MyDatesView(),
-                        ),
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MyDatesView()));
                     },
                     child: Container(
                       height: 7.h,
                       width: double.infinity,
-                      decoration: const BoxDecoration(
-                        color: Color(0xff159BAD),
-                      ),
+                      decoration: const BoxDecoration(color: Color(0xff159BAD)),
                       child: Center(
                         child: Text(
                           "مواعيدي",
@@ -260,11 +257,9 @@ class AppointmentConfirmView extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const MyDatesView(),
-                        ),
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MyDatesView()));
                     },
                     child: Container(
                       height: 7.h,
