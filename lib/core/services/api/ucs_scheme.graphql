@@ -1,17 +1,3 @@
-directive @gorm(
-  primaryKey: Boolean
-  index: String
-  uniqueIndex: String
-  unique: Boolean
-  autoCreateTime: Boolean
-  autoUpdateTime: String
-  polymorphic: String
-  polymorphicValue: String
-  many2many: String
-  onUpdate: String
-  onDelete: String
-) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
-
 type Mutation {
   setSetting(key: String!, value: String!): String!
 
@@ -89,7 +75,7 @@ type SettingGroup {
 }
 
 type Setting {
-  key: String! @gorm(primaryKey: true)
+  key: String!
 
   name_en: String!
   name_ar: String!
@@ -114,8 +100,8 @@ type BookingBranch {
 
   services: [BookingService!]
 
-  createdAt: Int @gorm(autoCreateTime: true)
-  updatedAt: Int @gorm(autoUpdateTime: "")
+  createdAt: Int
+  updatedAt: Int
 }
 
 type BookingReservation {
@@ -132,16 +118,16 @@ type BookingReservation {
   queueNumber: Int
   status: BookingReservationStatus!
 
-  createdAt: Int @gorm(autoCreateTime: true)
-  updatedAt: Int @gorm(autoUpdateTime: "")
+  createdAt: Int
+  updatedAt: Int
 }
 
 type BookingTimeSlot {
   id: ID!
   reservationId: ID!
-  branchId: ID! @gorm(uniqueIndex: "branch_day_timeslot_index")
-  day: String! @gorm(uniqueIndex: "branch_day_timeslot_index")
-  startTime: Int! @gorm(uniqueIndex: "branch_day_timeslot_index")
+  branchId: ID!
+  day: String!
+  startTime: Int!
   endTime: Int!
 }
 
@@ -161,8 +147,8 @@ type BookingVisit {
   user: User!
   time: Int!
 
-  createdAt: Int @gorm(autoCreateTime: true)
-  updatedAt: Int @gorm(autoUpdateTime: "")
+  createdAt: Int
+  updatedAt: Int
 }
 
 type BookingNote {
@@ -175,8 +161,8 @@ type BookingNote {
   visit: BookingVisit
   text: String
 
-  createdAt: Int @gorm(autoCreateTime: true)
-  updatedAt: Int @gorm(autoUpdateTime: "")
+  createdAt: Int
+  updatedAt: Int 
 }
 
 type BookingReservationPagination {
@@ -252,20 +238,14 @@ input DateRangeInput {
 }
 
 type User {
-  id: ID! @gorm(primaryKey: true)
+  id: ID!
   roles: [Role!]!
-    @gorm(many2many: "user_roles", onUpdate: "CASCADE", onDelete: "CASCADE")
   permissions: [Permission!]!
-    @gorm(
-      many2many: "user_permissions"
-      onUpdate: "CASCADE"
-      onDelete: "CASCADE"
-    )
 
   firstName: String!
   lastName: String!
-  email: String @gorm(uniqueIndex: "email_phone_index")
-  phone: String @gorm(uniqueIndex: "email_phone_index")
+  email: String
+  phone: String
   password: String
   visitCount: Int
   level: Int
@@ -274,8 +254,8 @@ type User {
   gender: String
   photo: String
 
-  createdAt: Int @gorm(autoCreateTime: true)
-  updatedAt: Int @gorm(autoUpdateTime: "")
+  createdAt: Int
+  updatedAt: Int
 }
 
 type Role {
@@ -284,8 +264,8 @@ type Role {
   guardName: String
   description: String
   permissions: [Permission!]!
-  createdAt: Int @gorm(autoCreateTime: true)
-  updatedAt: Int @gorm(autoUpdateTime: "")
+  createdAt: Int
+  updatedAt: Int
 }
 
 type Permission {
@@ -293,8 +273,8 @@ type Permission {
   name: String
   guardName: String
   description: String
-  createdAt: Int @gorm(autoCreateTime: true)
-  updatedAt: Int @gorm(autoUpdateTime: "")
+  createdAt: Int
+  updatedAt: Int
 }
 
 type AuditLog {
