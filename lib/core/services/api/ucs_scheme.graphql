@@ -1,0 +1,370 @@
+directive @gorm(
+  primaryKey: Boolean
+  index: String
+  uniqueIndex: String
+  unique: Boolean
+  autoCreateTime: Boolean
+  autoUpdateTime: String
+  polymorphic: String
+  polymorphicValue: String
+  many2many: String
+  onUpdate: String
+  onDelete: String
+) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+
+type Mutation {
+  setSetting(key: String!, value: String!): String!
+
+  registerRegularPasswordUser(input: RegularPasswordUserInput!): User!
+  createRegularUser(input: RegularUserInput!): User!
+  loginUser(input: UserCredentialsInput!): String!
+  requestResetPassword(identifier: UserIdentifierInput!): Boolean!
+  resetPassword(input: UserResetPasswordInput!): Boolean!
+  updateUser(userId: ID!, data: ModifiableRegularUserInput!): User!
+  updateCurrentUser(input: ModifiableRegularUserInput!): User!
+
+  createBookingReservation(
+    userId: ID!
+    input: BookingReservationInput!
+  ): BookingReservation!
+  createBookingBranch(input: BookingBranchInput!): BookingBranch!
+  createBookingNote(input: BookingNoteInput!): BookingNote!
+  createBookingService(input: BookingServiceInput!): BookingService!
+
+  updateBookingReservation(
+    reservationId: ID!
+    data: BookingReservationModifiableInput!
+  ): BookingReservation!
+  updateBookingBranch(
+    branchId: ID!
+    data: BookingBranchModifiableInput!
+  ): BookingBranch!
+  updateBookingNote(
+    noteId: ID!
+    data: BookingNoteModifiableInput!
+  ): BookingNote!
+  updateBookingService(
+    serviceId: ID!
+    data: BookingServiceModifiableInput!
+  ): BookingService!
+
+  cancelBookingReservation(reservationIds: [ID!]!): [ID!]!
+  switchBookingReservation(
+    firstReservationId: ID!
+    secondReservationId: ID!
+  ): Boolean!
+  endBookingReservation(reservationIds: [ID!]!): [ID!]!
+
+  customerBooking(input: BookingReservationInput!): BookingReservation!
+  customerUpdateBooking(
+    reservationId: ID!
+    data: BookingReservationModifiableInput!
+  ): BookingReservation!
+  customerCancelBooking(reservationId: ID!): Boolean!
+}
+
+type Query {
+  settings: [Setting!]!
+  settingGroups: [SettingGroup!]!
+  users(limit: Int, page: Int, role: String): UserPagination!
+  currentUser: User
+  bookingBranches: [BookingBranch!]!
+  bookingReservations(
+    limit: Int
+    page: Int
+    date: DateRangeInput
+  ): BookingReservationPagination!
+  bookingReservation(reservationId: ID!): BookingReservation!
+  bookingCustomerVisits(customerId: ID!): [BookingVisit!]!
+  bookingCustomerNotes(customerId: ID!): [BookingNote!]!
+  bookingTimeSlots(branchId: ID!, day: Int): [BookingTimeSlot!]!
+  bookingCurrentReservations: [BookingReservation!]!
+}
+
+type SettingGroup {
+  key: String!
+
+  name_en: String!
+  name_ar: String!
+}
+
+type Setting {
+  key: String! @gorm(primaryKey: true)
+
+  name_en: String!
+  name_ar: String!
+  description_en: String
+  description_ar: String
+
+  group: String
+  type: String!
+  component: String!
+  modifiable: Boolean!
+
+  value: String!
+}
+
+type BookingBranch {
+  id: ID!
+  name: String!
+  address: String!
+  phone: String
+  mapURL: String
+  isActive: Boolean
+
+  services: [BookingService!]
+
+  createdAt: Int @gorm(autoCreateTime: true)
+  updatedAt: Int @gorm(autoUpdateTime: "")
+}
+
+type BookingReservation {
+  id: ID!
+  userId: ID!
+  user: User!
+  branchId: ID!
+  branch: BookingBranch!
+  serviceId: ID!
+  service: BookingService!
+  channel: String!
+  date: Int!
+  time: Int!
+  queueNumber: Int
+  status: BookingReservationStatus!
+
+  createdAt: Int @gorm(autoCreateTime: true)
+  updatedAt: Int @gorm(autoUpdateTime: "")
+}
+
+type BookingTimeSlot {
+  id: ID!
+  reservationId: ID!
+  branchId: ID! @gorm(uniqueIndex: "branch_day_timeslot_index")
+  day: String! @gorm(uniqueIndex: "branch_day_timeslot_index")
+  startTime: Int! @gorm(uniqueIndex: "branch_day_timeslot_index")
+  endTime: Int!
+}
+
+type BookingService {
+  id: ID!
+  branchId: ID!
+  branch: BookingBranch!
+
+  isActive: Boolean
+  name: String!
+  duration: Int!
+}
+
+type BookingVisit {
+  id: ID!
+  userId: ID!
+  user: User!
+  time: Int!
+
+  createdAt: Int @gorm(autoCreateTime: true)
+  updatedAt: Int @gorm(autoUpdateTime: "")
+}
+
+type BookingNote {
+  id: ID!
+  userId: ID!
+  user: User!
+  branchId: ID
+  branch: BookingBranch
+  visitId: ID
+  visit: BookingVisit
+  text: String
+
+  createdAt: Int @gorm(autoCreateTime: true)
+  updatedAt: Int @gorm(autoUpdateTime: "")
+}
+
+type BookingReservationPagination {
+  limit: Int
+  page: Int
+  sort: String
+  totalRows: Int
+  totalPages: Int
+  rows: [BookingReservation!]!
+}
+
+enum BookingReservationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  ENDED
+}
+
+input BookingReservationInput {
+  branchId: ID!
+  serviceId: ID!
+  date: Int!
+  time: Int!
+}
+
+input BookingBranchInput {
+  name: String
+  address: String
+  phone: String
+  mapURL: String
+}
+
+input BookingNoteInput {
+  userId: ID!
+  branchId: ID
+  visitId: ID
+  text: String
+}
+
+input BookingServiceInput {
+  branchId: ID!
+  name: String!
+  duration: Int!
+}
+
+input BookingReservationModifiableInput {
+  branchId: ID
+  date: Int
+  time: Int
+}
+
+input BookingBranchModifiableInput {
+  name: String
+  address: String
+  phone: String
+  mapURL: String
+  isActive: Boolean
+}
+
+input BookingNoteModifiableInput {
+  text: String
+}
+
+input BookingServiceModifiableInput {
+  name: String
+  duration: Int
+  isActive: Boolean
+}
+
+input DateRangeInput {
+  startDate: Int!
+  endDate: Int!
+}
+
+type User {
+  id: ID! @gorm(primaryKey: true)
+  roles: [Role!]!
+    @gorm(many2many: "user_roles", onUpdate: "CASCADE", onDelete: "CASCADE")
+  permissions: [Permission!]!
+    @gorm(
+      many2many: "user_permissions"
+      onUpdate: "CASCADE"
+      onDelete: "CASCADE"
+    )
+
+  firstName: String!
+  lastName: String!
+  email: String @gorm(uniqueIndex: "email_phone_index")
+  phone: String @gorm(uniqueIndex: "email_phone_index")
+  password: String
+  visitCount: Int
+  level: Int
+
+  birthDate: Int
+  gender: String
+  photo: String
+
+  createdAt: Int @gorm(autoCreateTime: true)
+  updatedAt: Int @gorm(autoUpdateTime: "")
+}
+
+type Role {
+  id: ID
+  name: String
+  guardName: String
+  description: String
+  permissions: [Permission!]!
+  createdAt: Int @gorm(autoCreateTime: true)
+  updatedAt: Int @gorm(autoUpdateTime: "")
+}
+
+type Permission {
+  id: ID
+  name: String
+  guardName: String
+  description: String
+  createdAt: Int @gorm(autoCreateTime: true)
+  updatedAt: Int @gorm(autoUpdateTime: "")
+}
+
+type AuditLog {
+  id: ID!
+  userId: ID!
+  user: User!
+  action: String!
+  model: String
+  modelID: ID
+  diff: String
+  time: Int
+}
+
+type UserPagination {
+  limit: Int
+  page: Int
+  sort: String
+  totalRows: Int
+  totalPages: Int
+  rows: [User!]!
+}
+
+input RegularPasswordUserInput {
+  firstName: String!
+  lastName: String!
+  password: String!
+
+  email: String
+  photo: String
+
+  birthDate: Int
+  gender: String
+  phone: String
+}
+
+input RegularUserInput {
+  firstName: String!
+  lastName: String!
+
+  email: String
+  phone: String
+
+  birthDate: Int
+  gender: String
+  photo: String
+  level: Int
+}
+
+input ModifiableRegularUserInput {
+  firstName: String
+  lastName: String
+  email: String
+
+  birthDate: Int
+  gender: String
+  photo: String
+  phone: String
+}
+
+input UserCredentialsInput {
+  identifier: String!
+  password: String!
+}
+
+input UserIdentifierInput {
+  email: String
+  phone: String
+}
+
+input UserResetPasswordInput {
+  token: String!
+  password: String!
+}
