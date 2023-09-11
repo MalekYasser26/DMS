@@ -100,9 +100,9 @@ class LoginViewBody extends StatelessWidget {
                         "تسجيل الدخول",
                         style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                          color: Color(0xffFFFFFF),
-                          fontSize: 16,
-                        )),
+                              color: Color(0xffFFFFFF),
+                              fontSize: 16,
+                            )),
                       ),
                     ),
                   ),
