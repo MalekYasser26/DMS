@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/api_service/api_service.dart';
+import 'package:doctor_management_system/core/services/api/api_service.dart';
 import 'package:doctor_management_system/features/intro/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
