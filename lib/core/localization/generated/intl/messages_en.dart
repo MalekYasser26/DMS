@@ -22,11 +22,42 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addRateDetails": MessageLookupByLibrary.simpleMessage(
+            "Add additional details to your rating..."),
+        "ahead": MessageLookupByLibrary.simpleMessage("Ahead of you"),
+        "chooseClinic": MessageLookupByLibrary.simpleMessage(
+            "Choose the clinic you want to rate."),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "enter": MessageLookupByLibrary.simpleMessage("Enter"),
+        "fillData": MessageLookupByLibrary.simpleMessage("Fill your data"),
+        "greeting": MessageLookupByLibrary.simpleMessage("Welcome back"),
+        "helpUsDevelop": MessageLookupByLibrary.simpleMessage(
+            "Help us know your opinion to improve our services"),
+        "id": MessageLookupByLibrary.simpleMessage("ID number"),
+        "inquiries": MessageLookupByLibrary.simpleMessage(
+            "If you have any inquiries, please contact us at "),
+        "inquiryNum": MessageLookupByLibrary.simpleMessage("00227751003"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "noAccount":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "onBoardingText": MessageLookupByLibrary.simpleMessage(
             "The clinic offers many specializations in many fields"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "patients": MessageLookupByLibrary.simpleMessage("Patients"),
         "queueWait": MessageLookupByLibrary.simpleMessage("Waiting queue"),
         "quickBooking": MessageLookupByLibrary.simpleMessage("Quick booking"),
-        "rateService": MessageLookupByLibrary.simpleMessage("Rate services")
+        "rateDetails": MessageLookupByLibrary.simpleMessage("Rating Details"),
+        "rateService": MessageLookupByLibrary.simpleMessage("Rate services"),
+        "ratingDone": MessageLookupByLibrary.simpleMessage(
+            "Rating submitted successfully"),
+        "registerNow": MessageLookupByLibrary.simpleMessage("Register now"),
+        "returnHome":
+            MessageLookupByLibrary.simpleMessage("Return to the home page"),
+        "thxRating": MessageLookupByLibrary.simpleMessage(
+            "Thank you for your rating.\nWe wish you a speedy recovery."),
+        "welcomeToQueue": MessageLookupByLibrary.simpleMessage(
+            "Welcome to our waiting queue"),
+        "whatIsYourRating": MessageLookupByLibrary.simpleMessage(
+            "What is your rating for our services?")
       };
 }

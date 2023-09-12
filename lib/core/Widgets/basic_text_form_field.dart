@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -37,7 +38,7 @@ class BasicTextFormField extends StatelessWidget {
             ),
             contentPadding:
                 EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 2.h),
-            hintText: "ادخل $text",
+            hintText: "${S.of(context).enter} $text",
             hintStyle:
                 GoogleFonts.cairo(fontSize: 14.sp, color: Colors.grey.shade400),
             suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,

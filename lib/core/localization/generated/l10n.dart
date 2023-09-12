@@ -99,6 +99,216 @@ class S {
       args: [],
     );
   }
+
+  /// `Welcome back`
+  String get greeting {
+    return Intl.message(
+      'Welcome back',
+      name: 'greeting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fill your data`
+  String get fillData {
+    return Intl.message(
+      'Fill your data',
+      name: 'fillData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ID number`
+  String get id {
+    return Intl.message(
+      'ID number',
+      name: 'id',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get noAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'noAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register now`
+  String get registerNow {
+    return Intl.message(
+      'Register now',
+      name: 'registerNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What is your rating for our services?`
+  String get whatIsYourRating {
+    return Intl.message(
+      'What is your rating for our services?',
+      name: 'whatIsYourRating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help us know your opinion to improve our services`
+  String get helpUsDevelop {
+    return Intl.message(
+      'Help us know your opinion to improve our services',
+      name: 'helpUsDevelop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose the clinic you want to rate.`
+  String get chooseClinic {
+    return Intl.message(
+      'Choose the clinic you want to rate.',
+      name: 'chooseClinic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rating Details`
+  String get rateDetails {
+    return Intl.message(
+      'Rating Details',
+      name: 'rateDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add additional details to your rating...`
+  String get addRateDetails {
+    return Intl.message(
+      'Add additional details to your rating...',
+      name: 'addRateDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rating submitted successfully`
+  String get ratingDone {
+    return Intl.message(
+      'Rating submitted successfully',
+      name: 'ratingDone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thank you for your rating.\nWe wish you a speedy recovery.`
+  String get thxRating {
+    return Intl.message(
+      'Thank you for your rating.\nWe wish you a speedy recovery.',
+      name: 'thxRating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Return to the home page`
+  String get returnHome {
+    return Intl.message(
+      'Return to the home page',
+      name: 'returnHome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you have any inquiries, please contact us at `
+  String get inquiries {
+    return Intl.message(
+      'If you have any inquiries, please contact us at ',
+      name: 'inquiries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `00227751003`
+  String get inquiryNum {
+    return Intl.message(
+      '00227751003',
+      name: 'inquiryNum',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter`
+  String get enter {
+    return Intl.message(
+      'Enter',
+      name: 'enter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to our waiting queue`
+  String get welcomeToQueue {
+    return Intl.message(
+      'Welcome to our waiting queue',
+      name: 'welcomeToQueue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ahead of you`
+  String get ahead {
+    return Intl.message(
+      'Ahead of you',
+      name: 'ahead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Patients`
+  String get patients {
+    return Intl.message(
+      'Patients',
+      name: 'patients',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

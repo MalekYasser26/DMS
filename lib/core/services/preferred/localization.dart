@@ -11,6 +11,6 @@ class Localization extends ChangeNotifier {
     notifyListeners();
   }
   bool isArabic(){
-    return Intl.getCurrentLocale()=='en' ;
+    return Intl.getCurrentLocale()=='ar' ;
   }
 }
