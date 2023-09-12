@@ -37,7 +37,7 @@ class BasicTextFormField extends StatelessWidget {
             ),
             contentPadding:
                 EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 2.h),
-            hintText: "Fix this",
+            hintText: "ادخل $text",
             hintStyle:
                 GoogleFonts.cairo(fontSize: 14.sp, color: Colors.grey.shade400),
             suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,

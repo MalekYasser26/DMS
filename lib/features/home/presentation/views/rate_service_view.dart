@@ -61,7 +61,7 @@ class RateSeviceView extends StatelessWidget {
                   ),
                   SizedBox(width: 4.w),
                   Text(
-                    "fix this",
+                    "تقييم الخدمة",
                     style: GoogleFonts.cairo(
                       color: Colors.black,
                       fontSize: 3.h,
@@ -72,7 +72,7 @@ class RateSeviceView extends StatelessWidget {
               ),
               SizedBox(height: 2.h),
               Text(
-                "fix this",
+                "ما هو تقييمك لخدماتنا؟",
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontSize: 2.5.h,
@@ -80,7 +80,7 @@ class RateSeviceView extends StatelessWidget {
                 ),
               ),
               Text(
-                "fix this",
+                "ساعدنا على معرفة رأيك في خدماتنا للعمل على تطويرنا دائماً",
                 style: GoogleFonts.cairo(
                   color: Colors.grey,
                   fontSize: 1.7.h,
@@ -90,7 +90,7 @@ class RateSeviceView extends StatelessWidget {
               ),
               SizedBox(height: 2.h),
               Text(
-                "fix this",
+                "اختر العيادة المراد تقييمها",
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontWeight: FontWeight.w600,
@@ -136,7 +136,7 @@ class RateSeviceView extends StatelessWidget {
               ),
               SizedBox(height: 2.h),
               Text(
-                "fix this",
+                "تفاصيل التقييم",
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontWeight: FontWeight.w600,
@@ -158,7 +158,7 @@ class RateSeviceView extends StatelessWidget {
                       ? EdgeInsets.only(bottom: 18.h, right: 2.h, top: 1.h)
                       : EdgeInsets.only(bottom: 18.h, left: 2.h, top: 1.h),
                   isDense: true,
-                  hintText: "fix this",
+                  hintText: "اضف تفاصيل اخرى لتقييمك اذا اردت..",
                   hintStyle: GoogleFonts.cairo(color: Colors.grey.shade600),
                   alignLabelWithHint: true,
                 ),
@@ -170,11 +170,11 @@ class RateSeviceView extends StatelessWidget {
                 child: BasicButtonRoute(
                   route: (context) => const ConfirmRatingView(
                     route: MyDatesView(),
-                    text: "fix this",
+                    text: "تم التقييم بنجاح",
                   ),
                   color: AppColors.lightBlue,
                   textColor: Colors.white,
-                  text: "fix this",
+                  text: "تأكيد",
                   borderColor: Colors.transparent,
                 ),
               ),

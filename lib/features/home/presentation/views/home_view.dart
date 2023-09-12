@@ -33,7 +33,7 @@ class HomeView extends StatelessWidget {
                   children: [
                     SizedBox(height: 1.h),
                     Text(
-                      "fix this",
+                      "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
                       style: GoogleFonts.cairo(
                           color: Colors.white,
                           fontSize: 4.h,
@@ -47,7 +47,7 @@ class HomeView extends StatelessWidget {
                       children: [
                         Expanded(
                           child: NavigatorBox(
-                            text: "fix this",
+                            text: "قائمة الانتظار",
                             height: 15.h,
                             fontSize: 2.8.h,
                             borderColor: Colors.white,
@@ -60,7 +60,7 @@ class HomeView extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Expanded(
                           child: NavigatorBox(
-                            text: "fix this",
+                            text: "تقييم الخدمة",
                             height: 15.h,
                             fontSize: 2.8.h,
                             borderColor: Colors.white,
@@ -78,7 +78,7 @@ class HomeView extends StatelessWidget {
                           LoginView(route: (context) => const MyDatesView()),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
-                      text: "fix this",
+                      text: "تسجيل دخول",
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),
@@ -87,7 +87,7 @@ class HomeView extends StatelessWidget {
                       route: (context) => const BookingIntroView(),
                       color: Colors.white,
                       textColor: AppColors.lightBlue,
-                      text: "fix this",
+                      text: "حجز سريع",
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),

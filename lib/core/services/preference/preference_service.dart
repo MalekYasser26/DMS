@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class PreferenceService extends ChangeNotifier {
-  String _locale = "en";
+  String _locale = "ar";
   Locale get locale => Locale(_locale);
 
   void changeLocale(String language) {

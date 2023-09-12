@@ -56,7 +56,7 @@ class QueueWaitView extends StatelessWidget {
                       ),
                       SizedBox(width: 4.w),
                       Text(
-                        "fix this",
+                        "قائمة الانتظار",
                         style: GoogleFonts.cairo(
                           color: Colors.black,
                           fontSize: 3.h,
@@ -72,7 +72,7 @@ class QueueWaitView extends StatelessWidget {
                 height: 1.h,
               ),
               Text(
-                "fix this",
+                "أهلاً بك في قائمة الانتظار خاصتنا",
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontSize: 2.h,
@@ -92,7 +92,7 @@ class QueueWaitView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "fix this",
+                        "أمامك عدد:",
                         style: GoogleFonts.cairo(fontSize: 3.h),
                       ),
                       SizedBox(height: 2.h),
@@ -108,7 +108,7 @@ class QueueWaitView extends StatelessWidget {
                               ),
                             ),
                             TextSpan(
-                              text: "fix this",
+                              text: "مرضى",
                               style: GoogleFonts.cairo(
                                 fontSize: 4.h,
                                 color: Colors.black,
@@ -126,7 +126,7 @@ class QueueWaitView extends StatelessWidget {
                 route: (context) => const MyDatesView(),
                 color: Colors.white,
                 textColor: AppColors.lightBlue,
-                text: "fix this",
+                text: "العودة الى الصفحة الرئيسية",
                 borderColor: AppColors.lightBlue,
               ),
             ],

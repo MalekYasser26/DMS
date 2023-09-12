@@ -9,7 +9,7 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        Provider(create: (_) => PreferenceService()),
+        ListenableProvider(create: (_) => PreferenceService()),
       ],
       child: const DoctorManagementSystem(),
     ),

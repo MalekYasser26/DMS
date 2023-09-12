@@ -37,7 +37,7 @@ class ConfirmRatingView extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "fix this",
+                  "شكرا لك على تقييمك لنا ، نتمنى لك الشفاء\n العاجل",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.cairo(
                     textStyle: const TextStyle(
@@ -60,7 +60,7 @@ class ConfirmRatingView extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        "fix this",
+                        "العودة الى الصفحة الرئيسية",
                         style: GoogleFonts.cairo(
                           textStyle: const TextStyle(
                             color: Color(0xff159BAD),
@@ -76,7 +76,7 @@ class ConfirmRatingView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "fix this",
+                      "إذا كان لديك أي استفسار يرجى الاتصال على ",
                       style: GoogleFonts.cairo(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
@@ -86,7 +86,7 @@ class ConfirmRatingView extends StatelessWidget {
                     GestureDetector(
                       onTap: () {},
                       child: Text(
-                        "fix this",
+                        "00227751003",
                         style: GoogleFonts.cairo(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,

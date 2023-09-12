@@ -55,7 +55,7 @@ class LoginViewBody extends StatelessWidget {
                   ),
                   SizedBox(width: 3.w),
                   Text(
-                    "fix this",
+                    "مرحباً بعودتك",
                     style: GoogleFonts.cairo(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -70,7 +70,7 @@ class LoginViewBody extends StatelessWidget {
                         ? const EdgeInsets.only(right: 40.0)
                         : const EdgeInsets.only(left: 40.0),
                     child: Text(
-                      "fix this",
+                      "قم بملئ بياناتك",
                       style: GoogleFonts.cairo(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -81,10 +81,10 @@ class LoginViewBody extends StatelessWidget {
               ),
               SizedBox(height: 5.h),
               BasicTextFormField(
-                text: "fix this",
+                text: "اسم المستخدم",
               ),
               BasicTextFormField(
-                text: "fix this",
+                text: "كلمة السر",
               ),
               SizedBox(height: 10.h),
               InkWell(
@@ -105,7 +105,7 @@ class LoginViewBody extends StatelessWidget {
                   decoration: const BoxDecoration(color: Color(0xff159BAD)),
                   child: Center(
                     child: Text(
-                      "fix this",
+                      "تسجيل الدخول",
                       style: GoogleFonts.cairo(
                           textStyle: const TextStyle(
                         color: Color(0xffFFFFFF),
@@ -120,7 +120,7 @@ class LoginViewBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "fix this",
+                    "ليس لديك حساب؟",
                     style: GoogleFonts.cairo(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -136,7 +136,7 @@ class LoginViewBody extends StatelessWidget {
                           ));
                     },
                     child: Text(
-                      "fix this",
+                      "سجل الآن",
                       style: GoogleFonts.cairo(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,

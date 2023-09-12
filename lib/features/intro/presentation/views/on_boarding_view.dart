@@ -29,7 +29,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 children: [
                   SizedBox(height: 6.h),
                   Text(
-                    "fix this",
+                    "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
                     style: GoogleFonts.cairo(
                         color: Colors.white,
                         fontSize: 4.h,
