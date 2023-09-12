@@ -7,7 +7,7 @@ import 'package:doctor_management_system/features/booking/presentation/views/boo
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
 import 'package:doctor_management_system/features/home/presentation/views/queue_wait_view.dart';
 import 'package:doctor_management_system/features/home/presentation/views/rate_service_view.dart';
-import 'package:doctor_management_system/generated/l10n.dart';
+import 'package:doctor_management_system/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';

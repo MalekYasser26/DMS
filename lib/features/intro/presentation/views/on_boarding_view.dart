@@ -1,9 +1,9 @@
+import 'package:doctor_management_system/core/localization/generated/l10n.dart';
 import 'package:doctor_management_system/features/intro/presentation/views/widgets/auto_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:doctor_management_system/generated/l10n.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({Key? key}) : super(key: key);
