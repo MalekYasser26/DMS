@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:doctor_management_system/features/home/presentation/views/home_view.dart';
 import 'package:doctor_management_system/features/intro/data/models/onboarding_model.dart';
+import 'package:doctor_management_system/features/user/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -48,8 +48,12 @@ class _AutoScrollState extends State<AutoScroll> {
         if (index == 2) {
           Future.delayed(
             const Duration(milliseconds: 1500),
-            () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const HomeView())),
+            () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HomeView(),
+              ),
+            ),
           );
         }
       },

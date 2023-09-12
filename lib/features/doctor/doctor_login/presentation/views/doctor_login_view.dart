@@ -1,24 +1,21 @@
 import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart';
 import 'package:doctor_management_system/features/doctor/doctor_login/presentation/views/clinic_choice_view.dart';
-import 'package:doctor_management_system/features/user/booking/presentation/views/booking_intro_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class LoginViewBody extends StatelessWidget {
-  final WidgetBuilder route;
-
-  const LoginViewBody({Key? key, required this.route}) : super(key: key);
+class DoctorLoginView extends StatelessWidget {
+  const DoctorLoginView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: SafeArea(
-        child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          body: Padding(
-            padding: const EdgeInsets.all(18.0),
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
             child: ListView(
               children: [
                 Row(
@@ -55,9 +52,10 @@ class LoginViewBody extends StatelessWidget {
                     Text(
                       "مرحبا بعودتك",
                       style: GoogleFonts.cairo(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xff171717)),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xff171717),
+                      ),
                     ),
                   ],
                 ),
@@ -68,28 +66,23 @@ class LoginViewBody extends StatelessWidget {
                       child: Text(
                         "قم بمليء بياناتك",
                         style: GoogleFonts.cairo(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: const Color(0xff171717)),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: const Color(0xff171717),
+                        ),
                       ),
                     )
                   ],
                 ),
                 SizedBox(height: 5.h),
-                BasicTextFormField(text: "رقم الهوية"),
+                BasicTextFormField(text: "اسم المستخدم"),
                 BasicTextFormField(text: "كلمة السر"),
                 SizedBox(height: 10.h),
                 InkWell(
-                  onLongPress: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ClinicChoiceView(),
-                    ),
-                  ),
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: route,
+                        builder: (context) => const ClinicChoiceView(),
                       )),
                   child: Container(
                     height: 7.h,
@@ -99,10 +92,11 @@ class LoginViewBody extends StatelessWidget {
                       child: Text(
                         "تسجيل الدخول",
                         style: GoogleFonts.cairo(
-                            textStyle: const TextStyle(
-                          color: Color(0xffFFFFFF),
-                          fontSize: 16,
-                        )),
+                          textStyle: const TextStyle(
+                            color: Color(0xffFFFFFF),
+                            fontSize: 16,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -120,13 +114,7 @@ class LoginViewBody extends StatelessWidget {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const BookingIntroView(),
-                            ));
-                      },
+                      onTap: () {},
                       child: Text(
                         "سجل الان",
                         style: GoogleFonts.cairo(
