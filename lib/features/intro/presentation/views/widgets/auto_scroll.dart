@@ -47,7 +47,7 @@ class _AutoScrollState extends State<AutoScroll> {
       onPageChanged: (index) {
         if (index == 2) {
           Future.delayed(
-            const Duration(milliseconds: 1500),
+            const Duration(seconds: 1500),
             () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomeView())),
           );

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:doctor_management_system/generated/l10n.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({Key? key}) : super(key: key);
@@ -29,7 +30,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 children: [
                   SizedBox(height: 6.h),
                   Text(
-                    "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
+                    S.of(context).onBoardingText,
                     style: GoogleFonts.cairo(
                         color: Colors.white,
                         fontSize: 4.h,
@@ -41,59 +42,64 @@ class _OnboardingViewState extends State<OnboardingView> {
                   const Spacer(),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 6.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                pageController.nextPage(
-                                  duration: const Duration(milliseconds: 1000),
-                                  curve: Curves.ease,
-                                );
-                              },
-                              child: const CircleAvatar(
-                                backgroundColor: Colors.white,
-                                child: Icon(
-                                  Icons.arrow_back_ios_outlined,
-                                  color: Colors.black,
+                    child: Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  pageController.nextPage(
+                                    duration:
+                                        const Duration(milliseconds: 1000),
+                                    curve: Curves.ease,
+                                  );
+                                },
+                                child: const CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  child: Icon(
+                                    Icons.arrow_back_ios_outlined,
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(width: 4.w),
-                            InkWell(
-                              child: const CircleAvatar(
-                                backgroundColor: Colors.white,
-                                child: Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  color: Colors.black,
+                              SizedBox(width: 4.w),
+                              InkWell(
+                                child: const CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  child: Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    color: Colors.black,
+                                  ),
                                 ),
+                                onTap: () {
+                                  pageController.previousPage(
+                                    duration:
+                                        const Duration(milliseconds: 1000),
+                                    curve: Curves.ease,
+                                  );
+                                },
                               ),
-                              onTap: () {
-                                pageController.previousPage(
-                                  duration: const Duration(milliseconds: 1000),
-                                  curve: Curves.ease,
-                                );
-                              },
-                            ),
-                          ],
-                        ),
-                        SmoothPageIndicator(
-                          textDirection: TextDirection.rtl,
-                          controller: pageController,
-                          count: 3,
-                          axisDirection: Axis.horizontal,
-                          effect: const SwapEffect(
-                            spacing: 8.0,
-                            radius: 1,
-                            dotWidth: 25.0,
-                            dotHeight: 8.0,
-                            dotColor: Colors.grey,
-                            activeDotColor: Colors.white,
+                            ],
                           ),
-                        ),
-                      ],
+                          SmoothPageIndicator(
+                            textDirection: TextDirection.rtl,
+                            controller: pageController,
+                            count: 3,
+                            axisDirection: Axis.horizontal,
+                            effect: const SwapEffect(
+                              spacing: 8.0,
+                              radius: 1,
+                              dotWidth: 25.0,
+                              dotHeight: 8.0,
+                              dotColor: Colors.grey,
+                              activeDotColor: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(height: 3.5.h),

@@ -7,6 +7,7 @@ import 'package:doctor_management_system/features/booking/presentation/views/boo
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
 import 'package:doctor_management_system/features/home/presentation/views/queue_wait_view.dart';
 import 'package:doctor_management_system/features/home/presentation/views/rate_service_view.dart';
+import 'package:doctor_management_system/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -16,6 +17,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = S.of(context);
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -31,11 +33,9 @@ class HomeView extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 6.w),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 1.h,
-                    ),
+                    SizedBox(height: 1.h),
                     Text(
-                      "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
+                      locale.onBoardingText,
                       style: GoogleFonts.cairo(
                           color: Colors.white,
                           fontSize: 4.h,
@@ -49,7 +49,7 @@ class HomeView extends StatelessWidget {
                       children: [
                         Expanded(
                           child: NavigatorBox(
-                            text: "قائمة الانتظار",
+                            text: locale.queueWait,
                             height: 15.h,
                             fontSize: 2.8.h,
                             borderColor: Colors.white,
@@ -62,7 +62,7 @@ class HomeView extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Expanded(
                           child: NavigatorBox(
-                            text: "تقييم الخدمة",
+                            text: locale.rateService,
                             height: 15.h,
                             fontSize: 2.8.h,
                             borderColor: Colors.white,
@@ -80,7 +80,7 @@ class HomeView extends StatelessWidget {
                           LoginView(route: (context) => const MyDatesView()),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
-                      text: "تسجيل الدخول",
+                      text: locale.login,
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),
@@ -89,7 +89,7 @@ class HomeView extends StatelessWidget {
                       route: (context) => const BookingIntroView(),
                       color: Colors.white,
                       textColor: AppColors.lightBlue,
-                      text: "حجز سريع",
+                      text: locale.quickBooking,
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),
