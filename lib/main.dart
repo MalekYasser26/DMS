@@ -1,15 +1,16 @@
-import 'package:doctor_management_system/core/services/preferred/localization.dart';
+import 'package:doctor_management_system/core/localization/l10n.dart';
+import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/features/intro/presentation/views/splash_view.dart';
-import 'package:doctor_management_system/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => Localization(),
+    MultiProvider(
+      providers: [
+        Provider(create: (_) => PreferenceService()),
+      ],
       child: const DoctorManagementSystem(),
     ),
   );
@@ -20,21 +21,21 @@ class DoctorManagementSystem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          locale: context.watch<Localization>().locale,
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
-          debugShowCheckedModeBanner: false,
-          home: const SplashView(),
-        );
-      },
+    final preference = getPreferenceService(context);
+    return ChangeNotifierProvider<PreferenceService>(
+      create: (context) => PreferenceService(),
+      child: Sizer(
+        builder: (context, orientation, deviceType) {
+          return MaterialApp(
+            title: preference.isEn() ? "DMS" : "نظام إدارة للأطباء",
+            locale: preference.locale,
+            supportedLocales: L10n.supportedLocales,
+            localizationsDelegates: L10n.localizationsDelegates,
+            debugShowCheckedModeBanner: false,
+            home: const SplashView(),
+          );
+        },
+      ),
     );
   }
 }
