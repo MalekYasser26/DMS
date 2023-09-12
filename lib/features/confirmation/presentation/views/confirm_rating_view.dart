@@ -1,4 +1,3 @@
-import 'package:doctor_management_system/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -13,7 +12,6 @@ class ConfirmRatingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = S.of(context);
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -39,7 +37,7 @@ class ConfirmRatingView extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  locale.thxRating,
+                  "fix this",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.cairo(
                     textStyle: const TextStyle(
@@ -62,7 +60,7 @@ class ConfirmRatingView extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        locale.returnHome,
+                        "fix this",
                         style: GoogleFonts.cairo(
                           textStyle: const TextStyle(
                             color: Color(0xff159BAD),
@@ -78,7 +76,7 @@ class ConfirmRatingView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      locale.inquiries,
+                      "fix this",
                       style: GoogleFonts.cairo(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
@@ -88,7 +86,7 @@ class ConfirmRatingView extends StatelessWidget {
                     GestureDetector(
                       onTap: () {},
                       child: Text(
-                        locale.inquiryNum,
+                        "fix this",
                         style: GoogleFonts.cairo(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,

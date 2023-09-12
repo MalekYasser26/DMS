@@ -1,8 +1,7 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
-import 'package:doctor_management_system/core/services/preferred/localization.dart';
+import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
-import 'package:doctor_management_system/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +12,6 @@ class QueueWaitView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = S.of(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -46,10 +44,9 @@ class QueueWaitView extends StatelessWidget {
                             ],
                           ),
                           child: Padding(
-                            padding:
-                                context.watch<Localization>().isArabic()
-                                    ? const EdgeInsets.only(right: 8.0)
-                                    : const EdgeInsets.only(left: 8.0),
+                            padding: !context.watch<PreferenceService>().isEn()
+                                ? const EdgeInsets.only(right: 8.0)
+                                : const EdgeInsets.only(left: 8.0),
                             child: const Icon(
                               Icons.arrow_back_ios,
                               color: Colors.black,
@@ -59,7 +56,7 @@ class QueueWaitView extends StatelessWidget {
                       ),
                       SizedBox(width: 4.w),
                       Text(
-                        locale.queueWait,
+                        "fix this",
                         style: GoogleFonts.cairo(
                           color: Colors.black,
                           fontSize: 3.h,
@@ -71,9 +68,11 @@ class QueueWaitView extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 1.h,),
+              SizedBox(
+                height: 1.h,
+              ),
               Text(
-                locale.welcomeToQueue,
+                "fix this",
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontSize: 2.h,
@@ -93,7 +92,7 @@ class QueueWaitView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        locale.ahead,
+                        "fix this",
                         style: GoogleFonts.cairo(fontSize: 3.h),
                       ),
                       SizedBox(height: 2.h),
@@ -109,7 +108,7 @@ class QueueWaitView extends StatelessWidget {
                               ),
                             ),
                             TextSpan(
-                              text: " ${locale.patients} ",
+                              text: "fix this",
                               style: GoogleFonts.cairo(
                                 fontSize: 4.h,
                                 color: Colors.black,
@@ -127,7 +126,7 @@ class QueueWaitView extends StatelessWidget {
                 route: (context) => const MyDatesView(),
                 color: Colors.white,
                 textColor: AppColors.lightBlue,
-                text: locale.returnHome,
+                text: "fix this",
                 borderColor: AppColors.lightBlue,
               ),
             ],

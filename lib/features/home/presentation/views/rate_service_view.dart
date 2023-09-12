@@ -1,11 +1,10 @@
 import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
 import 'package:doctor_management_system/core/constants/app_colors.dart';
-import 'package:doctor_management_system/core/services/preferred/localization.dart';
+import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/data/rate_service_view_temp_data.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/confirm_rating_view.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
-import 'package:doctor_management_system/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +16,6 @@ class RateSeviceView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = S.of(context);
     final TextEditingController basicController = TextEditingController();
 
     return Scaffold(
@@ -50,7 +48,7 @@ class RateSeviceView extends StatelessWidget {
                       ),
                       child: Center(
                         child: Padding(
-                          padding: context.watch<Localization>().isArabic()
+                          padding: !context.watch<PreferenceService>().isEn()
                               ? EdgeInsets.only(right: 2.w)
                               : EdgeInsets.only(left: 2.w),
                           child: const Icon(
@@ -63,7 +61,7 @@ class RateSeviceView extends StatelessWidget {
                   ),
                   SizedBox(width: 4.w),
                   Text(
-                    locale.rateService,
+                    "fix this",
                     style: GoogleFonts.cairo(
                       color: Colors.black,
                       fontSize: 3.h,
@@ -74,7 +72,7 @@ class RateSeviceView extends StatelessWidget {
               ),
               SizedBox(height: 2.h),
               Text(
-                locale.whatIsYourRating,
+                "fix this",
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontSize: 2.5.h,
@@ -82,7 +80,7 @@ class RateSeviceView extends StatelessWidget {
                 ),
               ),
               Text(
-                locale.helpUsDevelop,
+                "fix this",
                 style: GoogleFonts.cairo(
                   color: Colors.grey,
                   fontSize: 1.7.h,
@@ -92,7 +90,7 @@ class RateSeviceView extends StatelessWidget {
               ),
               SizedBox(height: 2.h),
               Text(
-                locale.chooseClinic,
+                "fix this",
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontWeight: FontWeight.w600,
@@ -138,7 +136,7 @@ class RateSeviceView extends StatelessWidget {
               ),
               SizedBox(height: 2.h),
               Text(
-                locale.rateDetails,
+                "fix this",
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontWeight: FontWeight.w600,
@@ -156,11 +154,11 @@ class RateSeviceView extends StatelessWidget {
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.shade300),
                   ),
-                  contentPadding: context.watch<Localization>().isArabic()
+                  contentPadding: !context.watch<PreferenceService>().isEn()
                       ? EdgeInsets.only(bottom: 18.h, right: 2.h, top: 1.h)
                       : EdgeInsets.only(bottom: 18.h, left: 2.h, top: 1.h),
                   isDense: true,
-                  hintText: locale.addRateDetails,
+                  hintText: "fix this",
                   hintStyle: GoogleFonts.cairo(color: Colors.grey.shade600),
                   alignLabelWithHint: true,
                 ),
@@ -170,11 +168,13 @@ class RateSeviceView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 1.h),
                 child: BasicButtonRoute(
-                  route: (context) => ConfirmRatingView(
-                      route: MyDatesView(), text: locale.ratingDone),
+                  route: (context) => const ConfirmRatingView(
+                    route: MyDatesView(),
+                    text: "fix this",
+                  ),
                   color: AppColors.lightBlue,
                   textColor: Colors.white,
-                  text: locale.confirm,
+                  text: "fix this",
                   borderColor: Colors.transparent,
                 ),
               ),

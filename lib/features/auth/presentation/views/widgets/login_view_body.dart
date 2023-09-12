@@ -1,8 +1,7 @@
 import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart';
-import 'package:doctor_management_system/core/services/preferred/localization.dart';
+import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/features/booking/presentation/views/booking_intro_view.dart';
 import 'package:doctor_management_system/features/clinic_choice/presentation/views/clinic_choice_view.dart';
-import 'package:doctor_management_system/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +14,6 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = S.of(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -44,8 +42,8 @@ class LoginViewBody extends StatelessWidget {
                           )
                         ],
                       ),
-                      child:  Padding(
-                        padding: context.watch<Localization>().isArabic()
+                      child: Padding(
+                        padding: !context.watch<PreferenceService>().isEn()
                             ? const EdgeInsets.only(right: 8.0)
                             : const EdgeInsets.only(left: 8.0),
                         child: const Icon(
@@ -57,7 +55,7 @@ class LoginViewBody extends StatelessWidget {
                   ),
                   SizedBox(width: 3.w),
                   Text(
-                    locale.greeting,
+                    "fix this",
                     style: GoogleFonts.cairo(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -68,11 +66,11 @@ class LoginViewBody extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding: context.watch<Localization>().isArabic()
+                    padding: !context.watch<PreferenceService>().isEn()
                         ? const EdgeInsets.only(right: 40.0)
                         : const EdgeInsets.only(left: 40.0),
                     child: Text(
-                      locale.fillData,
+                      "fix this",
                       style: GoogleFonts.cairo(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -82,8 +80,12 @@ class LoginViewBody extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 5.h),
-              BasicTextFormField(text: locale.id),
-              BasicTextFormField(text: locale.password),
+              BasicTextFormField(
+                text: "fix this",
+              ),
+              BasicTextFormField(
+                text: "fix this",
+              ),
               SizedBox(height: 10.h),
               InkWell(
                 onLongPress: () => Navigator.push(
@@ -103,7 +105,7 @@ class LoginViewBody extends StatelessWidget {
                   decoration: const BoxDecoration(color: Color(0xff159BAD)),
                   child: Center(
                     child: Text(
-                      locale.login,
+                      "fix this",
                       style: GoogleFonts.cairo(
                           textStyle: const TextStyle(
                         color: Color(0xffFFFFFF),
@@ -118,7 +120,7 @@ class LoginViewBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    locale.noAccount,
+                    "fix this",
                     style: GoogleFonts.cairo(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -134,7 +136,7 @@ class LoginViewBody extends StatelessWidget {
                           ));
                     },
                     child: Text(
-                      locale.registerNow,
+                      "fix this",
                       style: GoogleFonts.cairo(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
