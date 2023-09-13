@@ -40,31 +40,35 @@ class _AutoScrollState extends State<AutoScroll> {
 
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      controller: widget.pagesController,
-      itemCount: boardingItems.length,
-      onPageChanged: (index) {
-        if (index == 2) {
-          Future.delayed(
-            const Duration(milliseconds: 1500),
-            () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const HomeView())),
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: PageView.builder(
+
+        physics: const NeverScrollableScrollPhysics(),
+        controller: widget.pagesController,
+        itemCount: boardingItems.length,
+        onPageChanged: (index) {
+          if (index == 2) {
+            Future.delayed(
+              const Duration(milliseconds: 1500),
+              () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomeView())),
+            );
+          }
+        },
+        itemBuilder: (context, index) {
+          return Stack(
+            alignment: Alignment.center,
+            children: [
+              Image.asset(
+                boardingItems[index].image,
+                fit: BoxFit.fill,
+                width: double.infinity.w,
+              ),
+            ],
           );
-        }
-      },
-      itemBuilder: (context, index) {
-        return Stack(
-          alignment: Alignment.center,
-          children: [
-            Image.asset(
-              boardingItems[index].image,
-              fit: BoxFit.fill,
-              width: double.infinity.w,
-            ),
-          ],
-        );
-      },
+        },
+      ),
     );
   }
 }

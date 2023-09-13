@@ -31,9 +31,7 @@ class HomeView extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 6.w),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 1.h,
-                    ),
+                    SizedBox(height: 1.h),
                     Text(
                       "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
                       style: GoogleFonts.cairo(
@@ -80,7 +78,7 @@ class HomeView extends StatelessWidget {
                           LoginView(route: (context) => const MyDatesView()),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
-                      text: "تسجيل الدخول",
+                      text: "تسجيل دخول",
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),
