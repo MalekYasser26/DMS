@@ -12,9 +12,7 @@ class PreferenceService extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool isEn() {
-    return _locale == "en";
-  }
+  bool isEn() => _locale == "en";
 }
 
 PreferenceService getPreferenceService(BuildContext context) =>

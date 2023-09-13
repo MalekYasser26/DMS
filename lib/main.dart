@@ -9,7 +9,7 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ListenableProvider(create: (_) => PreferenceService()),
+        ChangeNotifierProvider(create: (_) => PreferenceService()),
       ],
       child: const DoctorManagementSystem(),
     ),
@@ -21,10 +21,8 @@ class DoctorManagementSystem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final preference = getPreferenceService(context);
-    return ChangeNotifierProvider<PreferenceService>(
-      create: (context) => PreferenceService(),
-      child: Sizer(
+    return Consumer<PreferenceService>(
+      builder: (context, preference, _) => Sizer(
         builder: (context, orientation, deviceType) {
           return MaterialApp(
             title: preference.isEn() ? "DMS" : "نظام إدارة للأطباء",
