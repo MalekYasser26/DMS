@@ -2,7 +2,7 @@ import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/data/rate_service_view_temp_data.dart';
-import 'package:doctor_management_system/features/user/confirmation/presentation/views/confirm_rating_view.dart';
+import 'package:doctor_management_system/features/confirmation/presentation/views/one_button_confirm_view.dart';
 import 'package:doctor_management_system/features/user/dates/presentation/views/my_dates_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -166,8 +166,13 @@ class RateSeviceView extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 1.h),
                   child: BasicButtonRoute(
-                    route: (context) => const ConfirmRatingView(
-                        route: MyDatesView(), text: "تم التقييم بنجاح"),
+                    route: (context) => const OneButtonConfirmView(
+                      route: MyDatesView(),
+                      text: "تم التقييم بنجاح",
+                      subText:
+                          "شكرا لك على تقييمك لنا ، نتمنى لك الشفاء\nالعاجل",
+                      buttonText: "العودة الى الصفحة الرئيسية",
+                    ),
                     color: AppColors.lightBlue,
                     textColor: Colors.white,
                     text: "تأكيد",

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class AppointmentConfirmView extends StatelessWidget {
-  const AppointmentConfirmView({Key? key}) : super(key: key);
+class AppointmentDetailsView extends StatelessWidget {
+  const AppointmentDetailsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

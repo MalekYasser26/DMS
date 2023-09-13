@@ -2,17 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class AddNoteConfirmView extends StatelessWidget {
-  final WidgetBuilder buttonRoute2, buttonRoute1;
-  final String text, subText, buttonTxt;
+class OneButtonConfirmView extends StatelessWidget {
+  final Widget route;
+  final String text,subText,buttonText;
 
-  const AddNoteConfirmView(
-      {Key? key,
-      required this.buttonRoute2,
-      required this.buttonRoute1,
-      this.text = "تم اضافة الملاحظة بنجاح",
-      this.subText = "شكرا على استخدامك لنا , نتمنى لك\nالشفاء العاجل",
-      this.buttonTxt = "العودة الى صفحة المريض"})
+  const OneButtonConfirmView(
+      {Key? key, required this.route, this.text = "",this.subText="",this.buttonText=""})
       : super(key: key);
 
   @override
@@ -43,44 +38,40 @@ class AddNoteConfirmView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 8.h),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                          context, MaterialPageRoute(builder: buttonRoute1));
-                    },
-                    child: Container(
-                      height: 7.h,
-                      width: double.infinity,
-                      decoration: const BoxDecoration(color: Color(0xff159BAD)),
-                      child: Center(
-                        child: Text(
-                          buttonTxt,
+                  Padding(
+                    padding: const EdgeInsets.only(right: 40.0),
+                    child: Row(
+                      children: [
+                        Text(
+                          subText,
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                              color: Color(0xffFFFFFF),
                               fontSize: 16,
+                              color: Color(0xff8F8E94),
                             ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
                   ),
-                  SizedBox(height: 2.h),
+                  SizedBox(height: 8.h),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context, MaterialPageRoute(builder: buttonRoute2));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => route));
                     },
                     child: Container(
                       height: 7.h,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff159BAD)),
+                        border: Border.all(
+                          color: const Color(0xff159BAD),
+                        ),
                       ),
                       child: Center(
                         child: Text(
-                          "العودة الى الصفحة الرئيسية",
+                          buttonText,
                           style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
                               color: Color(0xff159BAD),
@@ -98,9 +89,10 @@ class AddNoteConfirmView extends StatelessWidget {
                       Text(
                         "اذا كان لديك اي استفسار يرجى الاتصال على ",
                         style: GoogleFonts.cairo(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xff000000)),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xff000000),
+                        ),
                       ),
                       GestureDetector(
                         onTap: () {},

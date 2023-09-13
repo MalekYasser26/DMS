@@ -2,8 +2,8 @@ import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
-import 'package:doctor_management_system/features/user/confirmation/presentation/views/appointment_confirm_view.dart';
-import 'package:doctor_management_system/features/confirmation/presentation/views/success_confirm_view.dart';
+import 'package:doctor_management_system/features/confirmation/presentation/views/two_buttons_confirm_view.dart';
+import 'package:doctor_management_system/features/user/appointment_details/presentation/views/appointment_details_view.dart';
 import 'package:doctor_management_system/features/user/dates/presentation/views/my_dates_view.dart';
 import 'package:doctor_management_system/features/user/booking/presentation/views/widgets/patient_details.dart';
 import 'package:flutter/gestures.dart';
@@ -216,9 +216,12 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                   SizedBox(height: 3.h),
                   SizedBox(height: 5.h),
                   BasicButtonRoute(
-                    route: (context) => SuccessConfirmView(
+                    route: (context) => TwoButtonsConfirmView(
                       buttonRoute2: (context) => const MyDatesView(),
-                      buttonRoute1: (context) => const AppointmentConfirmView(),
+                      buttonRoute1: (context) => const AppointmentDetailsView(),
+                      text: "تم الحجز بنجاح",
+                      subText: "شكرا لك على استخدامك لنا ، نتمنى لك الشفاء\nالعاجل",
+                      buttonTxt: "عرض تفاصيل الحجز",
                     ),
                     color: AppColors.lightBlue,
                     textColor: Colors.white,

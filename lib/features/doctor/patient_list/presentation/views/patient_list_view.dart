@@ -1,7 +1,7 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/data/patient_list_view_temp_data.dart';
-import 'package:doctor_management_system/features/doctor/confirmation/presentation/views/add_note_confirm_view.dart';
-import 'package:doctor_management_system/features/doctor/confirmation/presentation/views/vacation_confirm_view.dart';
+import 'package:doctor_management_system/features/confirmation/presentation/views/one_button_confirm_view.dart';
+import 'package:doctor_management_system/features/confirmation/presentation/views/two_buttons_confirm_view.dart';
 import 'package:doctor_management_system/features/doctor/patient_details/presentation/views/patient_details_view.dart';
 import 'package:doctor_management_system/features/doctor/results/presentation/views/results_view.dart';
 import 'package:doctor_management_system/features/doctor/results/presentation/widgets/table_calendar_item.dart';
@@ -306,10 +306,18 @@ class _PatientListViewState extends State<PatientListView> {
                                                               Navigator.push(
                                                             context,
                                                             MaterialPageRoute(
-                                                                builder: (context) =>
-                                                                    const VacationConfirmView(
-                                                                        route:
-                                                                            PatientListView())),
+                                                              builder: (context) =>
+                                                                  const OneButtonConfirmView(
+                                                                text:
+                                                                    "تم طلب الاجازة بنجاح",
+                                                                subText:
+                                                                    "سيتم الرد عليك في اقرب وقت, اجازة سعيدة",
+                                                                buttonText:
+                                                                    "العودة الى الصفحة الرئيسية",
+                                                                route:
+                                                                    PatientListView(),
+                                                              ),
+                                                            ),
                                                           ),
                                                           child: Container(
                                                             height: 5.h,
@@ -1059,7 +1067,7 @@ void showAlertDialog(BuildContext context) {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AddNoteConfirmView(
+                              builder: (context) => TwoButtonsConfirmView(
                                 buttonRoute1: (context) =>
                                     const PatientListView(),
                                 buttonRoute2: (context) =>

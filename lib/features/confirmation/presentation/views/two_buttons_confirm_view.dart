@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class AddDrugConfirmView extends StatelessWidget {
+class TwoButtonsConfirmView extends StatelessWidget {
   final WidgetBuilder buttonRoute2, buttonRoute1;
   final String text, subText, buttonTxt;
 
-  const AddDrugConfirmView(
+  const TwoButtonsConfirmView(
       {Key? key,
       required this.buttonRoute2,
       required this.buttonRoute1,
-      this.text = "تم اضافة الدواء بنجاح",
-      this.subText = "شكرا على استخدامك لنا , نتمنى لك\nالشفاء العاجل",
-      this.buttonTxt = "العودة الى صفحة المريض"})
+      this.text = "",
+      this.subText = "",
+      this.buttonTxt = ""})
       : super(key: key);
 
   @override
@@ -39,6 +39,23 @@ class AddDrugConfirmView extends StatelessWidget {
                         textStyle: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 40.0),
+                    child: Row(
+                      children: [
+                        Text(
+                          subText,
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.cairo(
+                            textStyle: const TextStyle(
+                              fontSize: 16,
+                              color: Color(0xff8F8E94),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(height: 8.h),
