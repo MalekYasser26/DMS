@@ -2,7 +2,7 @@ import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/data/rate_service_view_temp_data.dart';
-import 'package:doctor_management_system/features/confirmation/presentation/views/confirm_rating_view.dart';
+import 'package:doctor_management_system/features/user/confirmation/presentation/views/confirm_rating_view.dart';
 import 'package:doctor_management_system/features/user/dates/presentation/views/my_dates_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
