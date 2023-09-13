@@ -1,0 +1,191 @@
+query currentUser {
+  currentUser {
+    id
+    roles {
+      id
+      name
+    }
+    permissions {
+      id
+      name
+    }
+    firstName
+    lastName
+    email
+    phone
+    password
+    visitCount
+    level
+    birthDate
+    gender
+    photo
+    createdAt
+    updatedAt
+  }
+}
+
+# query bookingBranches {
+#   bookingBranches {
+#     id
+#     name
+#     address
+#     phone
+#     mapURL
+#     isActive
+#     services [BookingService!]
+#     createdAt
+#     updatedAt
+#   }
+# }
+# query bookingCurrentReservations {
+#   bookingCurrentReservations {
+#     id
+#     userId
+#     user User
+#     branchId
+#     branch BookingBranch
+#     serviceId
+#     service BookingService
+#     channel
+#     date
+#     time
+#     queueNumber
+#     status
+#     createdAt
+#     updatedAt
+#   }
+# }
+# query bookingCustomerNotes($customerId: ID!) {
+#   bookingCustomerNotes(customerId: $customerId) {
+#     id
+#     userId
+#     user [User!]
+#     branchId
+#     branch [BookingBranch!]
+#     visitId
+#     visit [BookingVisit!]
+#     text
+#     createdAt
+#     updatedAt
+#   }
+# }
+# query bookingCustomerVisits($customerId: ID!) {
+#   bookingCustomerVisits(customerId: $customerId) {
+#     id
+#     userId
+#     user [User!]
+#     time
+#     createdAt
+#     updatedAt
+#   }
+# }
+# query bookingReservation($reservationId: ID!) {
+#   bookingReservation(reservationId: $reservationId) {
+#     id
+#     userId
+#     user [User!]
+#     branchId
+#     branch [BookingBranch!]
+#     serviceId
+#     service BookingService!
+#     channel
+#     date
+#     time
+#     queueNumber
+#     status
+#     createdAt
+#     updatedAt
+#   }
+# }
+# query bookingReservations(
+#   $limit: Int,
+#   $page: Int,
+#   $date: DateRangeInput
+# ) {
+#   bookingReservations(
+#     limit: $limit,
+#     page: $page,
+#     date: $date
+#   ) {
+#     limit
+#     page
+#     sort
+#     totalRows
+#     totalPages
+#     rows [BookingReservation!]
+#   }
+# }
+# query bookingTimeSlots(
+#   $branchId: ID!,
+#   $day: Int
+# ) {
+#   bookingTimeSlots(
+#     branchId: $branchId,
+#     day: $day
+#   ) {
+#     id
+#     reservationId
+#     branchId
+#     day
+#     startTime
+#     endTime
+#   }
+# }
+# query currentUser {
+#   currentUser {
+#     id
+#     roles [Role!]
+#     permissions [Permission!]
+#     firstName
+#     lastName
+#     email
+#     phone
+#     password
+#     visitCount
+#     level
+#     birthDate
+#     gender
+#     photo
+#     createdAt
+#     updatedAt
+#   }
+# }
+# query settingGroups {
+#   settingGroups {
+#     key
+#     name_en
+#     name_ar
+#   }
+# }
+# query settings {
+#   settings {
+#     key
+#     name_en
+#     name_ar
+#     description_en
+#     description_ar
+#     group
+#     type
+#     component
+#     modifiable
+#     value
+#   }
+# }
+# query users(
+#   $limit: Int,
+#   $page: Int,
+#   $role: String
+# ) {
+#   users(
+#     limit: $limit,
+#     page: $page,
+#     role: $role
+#   ) {
+#     limit
+#     page
+#     sort
+#     totalRows
+#     totalPages
+#     rows [User!]
+#   }
+# }

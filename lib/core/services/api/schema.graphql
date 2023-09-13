@@ -1,165 +1,327 @@
-query bookingBranches {
-  bookingBranches {
-    id
-    name
-    address
-    phone
-    mapURL
-    isActive
-    services [BookingService!]
-    createdAt
-    updatedAt
-  }
+type AuditLog {
+  id: ID!
+  userId: ID!
+  user: User!
+  action: String!
+  model: String
+  modelID: ID
+  diff: String
+  time: Int
 }
-query bookingCurrentReservations {
-  bookingCurrentReservations {
-    id
-    userId
-    user User
-    branchId
-    branch BookingBranch
-    serviceId
-    service BookingService
-    channel
-    date
-    time
-    queueNumber
-    status
-    createdAt
-    updatedAt
-  }
+
+type BookingBranch {
+  id: ID!
+  name: String!
+  address: String!
+  phone: String
+  mapURL: String
+  isActive: Boolean
+  services: [BookingService!]
+  createdAt: Int
+  updatedAt: Int
 }
-query bookingCustomerNotes($customerId: ID!) {
-  bookingCustomerNotes(customerId: $customerId) {
-    id
-    userId
-    user [User!]
-    branchId
-    branch [BookingBranch!]
-    visitId
-    visit [BookingVisit!]
-    text
-    createdAt
-    updatedAt
-  }
+
+input BookingBranchInput {
+  name: String
+  address: String
+  phone: String
+  mapURL: String
 }
-query bookingCustomerVisits($customerId: ID!) {
-  bookingCustomerVisits(customerId: $customerId) {
-    id
-    userId
-    user [User!]
-    time
-    createdAt
-    updatedAt
-  }
+
+input BookingBranchModifiableInput {
+  name: String
+  address: String
+  phone: String
+  mapURL: String
+  isActive: Boolean
 }
-query bookingReservation($reservationId: ID!) {
-  bookingReservation(reservationId: $reservationId) {
-    id
-    userId
-    user [User!]
-    branchId
-    branch [BookingBranch!]
-    serviceId
-    service BookingService!
-    channel
-    date
-    time
-    queueNumber
-    status
-    createdAt
-    updatedAt
-  }
+
+type BookingNote {
+  id: ID!
+  userId: ID!
+  user: User!
+  branchId: ID
+  branch: BookingBranch
+  visitId: ID
+  visit: BookingVisit
+  text: String
+  createdAt: Int
+  updatedAt: Int
 }
-query bookingReservations(
-  $limit: Int,
-  $page: Int,
-  $date: DateRangeInput
-) {
+
+input BookingNoteInput {
+  userId: ID!
+  branchId: ID
+  visitId: ID
+  text: String
+}
+
+input BookingNoteModifiableInput {
+  text: String
+}
+
+type BookingReservation {
+  id: ID!
+  userId: ID!
+  user: User!
+  branchId: ID!
+  branch: BookingBranch!
+  serviceId: ID!
+  service: BookingService!
+  channel: String!
+  date: Int!
+  time: Int!
+  queueNumber: Int
+  status: BookingReservationStatus!
+  createdAt: Int
+  updatedAt: Int
+}
+
+input BookingReservationInput {
+  branchId: ID!
+  serviceId: ID!
+  date: Int!
+  time: Int!
+}
+
+input BookingReservationModifiableInput {
+  branchId: ID
+  date: Int
+  time: Int
+}
+
+type BookingReservationPagination {
+  limit: Int
+  page: Int
+  sort: String
+  totalRows: Int
+  totalPages: Int
+  rows: [BookingReservation!]!
+}
+
+enum BookingReservationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  ENDED
+}
+
+type BookingService {
+  id: ID!
+  branchId: ID!
+  branch: BookingBranch!
+  isActive: Boolean
+  name: String!
+  duration: Int!
+}
+
+input BookingServiceInput {
+  branchId: ID!
+  name: String!
+  duration: Int!
+}
+
+input BookingServiceModifiableInput {
+  name: String
+  duration: Int
+  isActive: Boolean
+}
+
+type BookingTimeSlot {
+  id: ID!
+  reservationId: ID!
+  branchId: ID!
+  day: String!
+  startTime: Int!
+  endTime: Int!
+}
+
+type BookingVisit {
+  id: ID!
+  userId: ID!
+  user: User!
+  time: Int!
+  createdAt: Int
+  updatedAt: Int
+}
+
+input DateRangeInput {
+  startDate: Int!
+  endDate: Int!
+}
+
+input ModifiableRegularUserInput {
+  firstName: String
+  lastName: String
+  email: String
+  birthDate: Int
+  gender: String
+  photo: String
+  phone: String
+}
+
+type Mutation {
+  setSetting(key: String!, value: String!): String!
+  registerRegularPasswordUser(input: RegularPasswordUserInput!): User!
+  createRegularUser(input: RegularUserInput!): User!
+  loginUser(input: UserCredentialsInput!): String!
+  requestResetPassword(identifier: UserIdentifierInput!): Boolean!
+  resetPassword(input: UserResetPasswordInput!): Boolean!
+  updateUser(userId: ID!, data: ModifiableRegularUserInput!): User!
+  updateCurrentUser(input: ModifiableRegularUserInput!): User!
+  createBookingReservation(
+    userId: ID!
+    input: BookingReservationInput!
+  ): BookingReservation!
+  createBookingBranch(input: BookingBranchInput!): BookingBranch!
+  createBookingNote(input: BookingNoteInput!): BookingNote!
+  createBookingService(input: BookingServiceInput!): BookingService!
+  updateBookingReservation(
+    reservationId: ID!
+    data: BookingReservationModifiableInput!
+  ): BookingReservation!
+  updateBookingBranch(
+    branchId: ID!
+    data: BookingBranchModifiableInput!
+  ): BookingBranch!
+  updateBookingNote(
+    noteId: ID!
+    data: BookingNoteModifiableInput!
+  ): BookingNote!
+  updateBookingService(
+    serviceId: ID!
+    data: BookingServiceModifiableInput!
+  ): BookingService!
+  cancelBookingReservation(reservationIds: [ID!]!): [ID!]!
+  switchBookingReservation(
+    firstReservationId: ID!
+    secondReservationId: ID!
+  ): Boolean!
+  endBookingReservation(reservationIds: [ID!]!): [ID!]!
+  customerBooking(input: BookingReservationInput!): BookingReservation!
+  customerUpdateBooking(
+    reservationId: ID!
+    data: BookingReservationModifiableInput!
+  ): BookingReservation!
+  customerCancelBooking(reservationId: ID!): Boolean!
+}
+
+type Permission {
+  id: ID
+  name: String
+  guardName: String
+  description: String
+  createdAt: Int
+  updatedAt: Int
+}
+
+type Query {
+  settings: [Setting!]!
+  settingGroups: [SettingGroup!]!
+  users(limit: Int, page: Int, role: String): UserPagination!
+  currentUser: User
+  bookingBranches: [BookingBranch!]!
   bookingReservations(
-    limit: $limit,
-    page: $page,
-    date: $date
-  ) {
-    limit
-    page
-    sort
-    totalRows
-    totalPages
-    rows [BookingReservation!]
-  }
+    limit: Int
+    page: Int
+    date: DateRangeInput
+  ): BookingReservationPagination!
+  bookingReservation(reservationId: ID!): BookingReservation!
+  bookingCustomerVisits(customerId: ID!): [BookingVisit!]!
+  bookingCustomerNotes(customerId: ID!): [BookingNote!]!
+  bookingTimeSlots(branchId: ID!, day: Int): [BookingTimeSlot!]!
+  bookingCurrentReservations: [BookingReservation!]!
 }
-query bookingTimeSlots(
-  $branchId: ID!,
-  $day: Int
-) {
-  bookingTimeSlots(
-    branchId: $branchId,
-    day: $day
-  ) {
-    id
-    reservationId
-    branchId
-    day
-    startTime
-    endTime
-  }
+
+input RegularPasswordUserInput {
+  firstName: String!
+  lastName: String!
+  password: String!
+  email: String
+  photo: String
+  birthDate: Int
+  gender: String
+  phone: String
 }
-query currentUser {
-  currentUser {
-    id
-    roles [Role!]
-    permissions [Permission!]
-    firstName
-    lastName
-    email
-    phone
-    password
-    visitCount
-    level
-    birthDate
-    gender
-    photo
-    createdAt
-    updatedAt
-  }
+
+input RegularUserInput {
+  firstName: String!
+  lastName: String!
+  email: String
+  phone: String
+  birthDate: Int
+  gender: String
+  photo: String
+  level: Int
 }
-query settingGroups {
-  settingGroups {
-    key
-    name_en
-    name_ar
-  }
+
+type Role {
+  id: ID
+  name: String
+  guardName: String
+  description: String
+  permissions: [Permission!]!
+  createdAt: Int
+  updatedAt: Int
 }
-query settings {
-  settings {
-    key
-    name_en
-    name_ar
-    description_en
-    description_ar
-    group
-    type
-    component
-    modifiable
-    value
-  }
+
+type Setting {
+  key: String!
+  name_en: String!
+  name_ar: String!
+  description_en: String
+  description_ar: String
+  group: String
+  type: String!
+  component: String!
+  modifiable: Boolean!
+  value: String!
 }
-query users(
-  $limit: Int,
-  $page: Int,
-  $role: String
-) {
-  users(
-    limit: $limit,
-    page: $page,
-    role: $role
-  ) {
-    limit
-    page
-    sort
-    totalRows
-    totalPages
-    rows [User!]
-  }
+
+type SettingGroup {
+  key: String!
+  name_en: String!
+  name_ar: String!
+}
+
+type User {
+  id: ID!
+  roles: [Role!]!
+  permissions: [Permission!]!
+  firstName: String!
+  lastName: String!
+  email: String
+  phone: String
+  password: String
+  visitCount: Int
+  level: Int
+  birthDate: Int
+  gender: String
+  photo: String
+  createdAt: Int
+  updatedAt: Int
+}
+
+input UserCredentialsInput {
+  identifier: String!
+  password: String!
+}
+
+input UserIdentifierInput {
+  email: String
+  phone: String
+}
+
+type UserPagination {
+  limit: Int
+  page: Int
+  sort: String
+  totalRows: Int
+  totalPages: Int
+  rows: [User!]!
+}
+
+input UserResetPasswordInput {
+  token: String!
+  password: String!
 }
