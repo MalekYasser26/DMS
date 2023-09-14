@@ -1,6 +1,6 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/data/patient_details_temp_data.dart';
-import 'package:doctor_management_system/core/constants/assets_data.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_data.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_alert_button.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_info.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/additional_notes.dart';

@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/assets_data.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_data.dart';
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
