@@ -1,4 +1,5 @@
 import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart';
+import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/features/booking/presentation/views/booking_intro_view.dart';
 import 'package:doctor_management_system/features/clinic_choice/presentation/views/clinic_choice_view.dart';
@@ -55,7 +56,7 @@ class LoginViewBody extends StatelessWidget {
                   ),
                   SizedBox(width: 3.w),
                   Text(
-                    "مرحباً بعودتك",
+                      getL10n(context).greeting,
                     style: GoogleFonts.cairo(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -70,7 +71,7 @@ class LoginViewBody extends StatelessWidget {
                         ? const EdgeInsets.only(right: 40.0)
                         : const EdgeInsets.only(left: 40.0),
                     child: Text(
-                      "قم بملئ بياناتك",
+                      getL10n(context).fillData,
                       style: GoogleFonts.cairo(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -81,10 +82,12 @@ class LoginViewBody extends StatelessWidget {
               ),
               SizedBox(height: 5.h),
               BasicTextFormField(
-                text: "اسم المستخدم",
+                text:getL10n(context).id,
+                isNumbers: true,
               ),
               BasicTextFormField(
-                text: "كلمة السر",
+                text: getL10n(context).password,
+                isPass: true,
               ),
               SizedBox(height: 10.h),
               InkWell(
@@ -105,7 +108,7 @@ class LoginViewBody extends StatelessWidget {
                   decoration: const BoxDecoration(color: Color(0xff159BAD)),
                   child: Center(
                     child: Text(
-                      "تسجيل الدخول",
+                      getL10n(context).login,
                       style: GoogleFonts.cairo(
                           textStyle: const TextStyle(
                         color: Color(0xffFFFFFF),
@@ -120,7 +123,7 @@ class LoginViewBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "ليس لديك حساب؟",
+                  getL10n(context).noAccount,
                     style: GoogleFonts.cairo(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -136,7 +139,7 @@ class LoginViewBody extends StatelessWidget {
                           ));
                     },
                     child: Text(
-                      "سجل الآن",
+                      getL10n(context).registerNow,
                       style: GoogleFonts.cairo(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,

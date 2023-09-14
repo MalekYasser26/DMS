@@ -1,5 +1,6 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/core/constants/assets_data.dart';
+import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/core/widgets/navigator_box.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
@@ -29,11 +30,14 @@ class HomeView extends StatelessWidget {
             Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6.w),
-                child: Column(
+                child: ListView(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),
                   children: [
                     SizedBox(height: 1.h),
                     Text(
-                      "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
+                      getL10n(context).onBoardingText,
                       style: GoogleFonts.cairo(
                           color: Colors.white,
                           fontSize: 4.h,
@@ -47,7 +51,7 @@ class HomeView extends StatelessWidget {
                       children: [
                         Expanded(
                           child: NavigatorBox(
-                            text: "قائمة الانتظار",
+                            text: getL10n(context).queueWait,
                             height: 15.h,
                             fontSize: 2.8.h,
                             borderColor: Colors.white,
@@ -60,7 +64,7 @@ class HomeView extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Expanded(
                           child: NavigatorBox(
-                            text: "تقييم الخدمة",
+                            text: getL10n(context).rateService,
                             height: 15.h,
                             fontSize: 2.8.h,
                             borderColor: Colors.white,
@@ -78,16 +82,16 @@ class HomeView extends StatelessWidget {
                           LoginView(route: (context) => const MyDatesView()),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
-                      text: "تسجيل دخول",
+                      text: getL10n(context).login,
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),
-                    SizedBox(height: 2.h),
+                    SizedBox(height: 1.h),
                     BasicButtonRoute(
                       route: (context) => const BookingIntroView(),
                       color: Colors.white,
                       textColor: AppColors.lightBlue,
-                      text: "حجز سريع",
+                      text: getL10n(context).quickBooking,
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),

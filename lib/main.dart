@@ -1,5 +1,6 @@
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
+import 'package:doctor_management_system/core/services/shared/shared_services.dart';
 import 'package:doctor_management_system/features/intro/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -10,6 +11,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => PreferenceService()),
+        ChangeNotifierProvider(create: (_) => SharedServices()),
       ],
       child: const DoctorManagementSystem(),
     ),

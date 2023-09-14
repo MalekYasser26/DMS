@@ -1,4 +1,5 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/widgets/absent_or_present.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -50,7 +51,7 @@ class AppointmentBooking extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: " اول مرة ؟   ",
+                    text: " ${getL10n(context).firstTime}   ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
@@ -71,7 +72,7 @@ class AppointmentBooking extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "التاريخ  ",
+                    text: "${getL10n(context).date}  ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
@@ -92,7 +93,7 @@ class AppointmentBooking extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "عنوان العيادة   ",
+                    text: "${getL10n(context).clinicAddress}   ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
