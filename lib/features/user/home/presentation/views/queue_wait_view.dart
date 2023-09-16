@@ -2,7 +2,7 @@ import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
-import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
+import 'package:doctor_management_system/features/user/dates/presentation/views/my_dates_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

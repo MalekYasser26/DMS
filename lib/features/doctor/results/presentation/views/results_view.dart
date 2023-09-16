@@ -1,7 +1,7 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
-import 'package:doctor_management_system/features/patient_list/presentation/views/patient_list_view.dart';
-import 'package:doctor_management_system/features/results/presentation/widgets/table_calendar_item.dart';
-import 'package:doctor_management_system/features/results/presentation/widgets/calendar_picker.dart';
+import 'package:doctor_management_system/features/doctor/patient_list/presentation/views/patient_list_view.dart';
+import 'package:doctor_management_system/features/doctor/results/presentation/widgets/calendar_picker.dart';
+import 'package:doctor_management_system/features/doctor/results/presentation/widgets/table_calendar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';

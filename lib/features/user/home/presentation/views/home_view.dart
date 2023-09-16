@@ -4,10 +4,10 @@ import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/core/widgets/navigator_box.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
-import 'package:doctor_management_system/features/booking/presentation/views/booking_intro_view.dart';
-import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
-import 'package:doctor_management_system/features/home/presentation/views/queue_wait_view.dart';
-import 'package:doctor_management_system/features/home/presentation/views/rate_service_view.dart';
+import 'package:doctor_management_system/features/user/booking/presentation/views/booking_intro_view.dart';
+import 'package:doctor_management_system/features/user/dates/presentation/views/my_dates_view.dart';
+import 'package:doctor_management_system/features/user/home/presentation/views/queue_wait_view.dart';
+import 'package:doctor_management_system/features/user/home/presentation/views/rate_service_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -78,8 +78,9 @@ class HomeView extends StatelessWidget {
                     ),
                     SizedBox(height: 2.h),
                     BasicButtonRoute(
-                      route: (context) =>
-                          LoginView(route: (context) => const MyDatesView()),
+                      route: (context) => LoginView(
+                        route: (context) => const MyDatesView(),
+                      ),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
                       text: locale.login,

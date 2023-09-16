@@ -1,8 +1,8 @@
 import 'package:doctor_management_system/core/Widgets/upload_photo_container.dart';
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/two_buttons_confirm_view.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/patient_details_view.dart';
-import 'package:doctor_management_system/features/patient_list/presentation/views/patient_list_view.dart';
+import 'package:doctor_management_system/features/doctor/patient_details/presentation/views/patient_details_view.dart';
+import 'package:doctor_management_system/features/doctor/patient_list/presentation/views/patient_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';

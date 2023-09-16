@@ -1,6 +1,6 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/two_buttons_confirm_view.dart';
-import 'package:doctor_management_system/features/patient_list/presentation/views/patient_list_view.dart';
+import 'package:doctor_management_system/features/doctor/patient_list/presentation/views/patient_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -88,6 +88,8 @@ class _AddNoteAlertState extends State<AddNoteAlert> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => TwoButtonsConfirmView(
+                                  text: "تم اضافة الملاحظة بنجاح",
+                                  buttonTxt: "العودة الى صفحة المريض",
                                   buttonRoute1: (context) =>
                                       const PatientListView(),
                                   buttonRoute2: (context) =>

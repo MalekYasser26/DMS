@@ -2,10 +2,10 @@ import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/data/patient_list_view_temp_data.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/one_button_confirm_view.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/two_buttons_confirm_view.dart';
-import 'package:doctor_management_system/features/dates/presentation/views/widgets/absent_or_present.dart';
-import 'package:doctor_management_system/features/patient_details/presentation/views/patient_details_view.dart';
-import 'package:doctor_management_system/features/results/presentation/views/results_view.dart';
-import 'package:doctor_management_system/features/results/presentation/widgets/table_calendar_item.dart';
+import 'package:doctor_management_system/features/doctor/patient_details/presentation/views/patient_details_view.dart';
+import 'package:doctor_management_system/features/doctor/results/presentation/views/results_view.dart';
+import 'package:doctor_management_system/features/doctor/results/presentation/widgets/table_calendar_item.dart';
+import 'package:doctor_management_system/core/Widgets/absent_or_present.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -148,9 +148,11 @@ class _PatientListViewState extends State<PatientListView> {
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const ResultsView()));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ResultsView(),
+                            ),
+                          );
                         },
                         child: Container(
                           padding: const EdgeInsets.all(12),
@@ -304,10 +306,18 @@ class _PatientListViewState extends State<PatientListView> {
                                                               Navigator.push(
                                                             context,
                                                             MaterialPageRoute(
-                                                                builder: (context) =>
-                                                                    const OneButtonConfirmView(
-                                                                        route:
-                                                                            PatientListView())),
+                                                              builder: (context) =>
+                                                                  const OneButtonConfirmView(
+                                                                text:
+                                                                    "تم طلب الاجازة بنجاح",
+                                                                subText:
+                                                                    "سيتم الرد عليك في اقرب وقت, اجازة سعيدة",
+                                                                buttonText:
+                                                                    "العودة الى الصفحة الرئيسية",
+                                                                route:
+                                                                    PatientListView(),
+                                                              ),
+                                                            ),
                                                           ),
                                                           child: Container(
                                                             height: 5.h,

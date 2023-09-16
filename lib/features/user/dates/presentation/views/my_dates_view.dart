@@ -1,8 +1,8 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/data/my_dates_view_temp_data.dart';
-import 'package:doctor_management_system/features/booking/presentation/views/booking_intro_view.dart';
-import 'package:doctor_management_system/features/dates/presentation/views/widgets/appointment_booking.dart';
+import 'package:doctor_management_system/features/user/booking/presentation/views/booking_intro_view.dart';
+import 'package:doctor_management_system/features/user/dates/presentation/views/widgets/appointment_booking.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
