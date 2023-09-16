@@ -1,5 +1,5 @@
 import 'package:doctor_management_system/core/localization/l10n.dart';
-import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
+import 'package:doctor_management_system/features/user/dates/presentation/views/my_dates_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';

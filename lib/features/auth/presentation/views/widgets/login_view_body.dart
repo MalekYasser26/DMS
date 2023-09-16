@@ -1,8 +1,8 @@
 import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
-import 'package:doctor_management_system/features/booking/presentation/views/booking_intro_view.dart';
-import 'package:doctor_management_system/features/clinic_choice/presentation/views/clinic_choice_view.dart';
+import 'package:doctor_management_system/features/doctor/clinic_choice/presentation/views/clinic_choice_view.dart';
+import 'package:doctor_management_system/features/user/booking/presentation/views/booking_intro_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -20,11 +20,11 @@ class LoginViewBody extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: ListView(
-            physics: const BouncingScrollPhysics(),
+          padding:  EdgeInsets.all(6.w),
+          child: Column(
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   InkWell(
                     onTap: () {
@@ -47,8 +47,8 @@ class LoginViewBody extends StatelessWidget {
                       ),
                       child: Padding(
                         padding: !context.watch<PreferenceService>().isEn()
-                            ? const EdgeInsets.only(right: 8.0)
-                            : const EdgeInsets.only(left: 8.0),
+                            ?  EdgeInsets.only(right: 2.w)
+                            :  EdgeInsets.only(left: 2.w),
                         child: const Icon(
                           Icons.arrow_back_ios,
                           size: 16,
@@ -57,29 +57,26 @@ class LoginViewBody extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 3.w),
-                  Text(
-                      locale.greeting,
-                    style: GoogleFonts.cairo(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xff171717)),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                          locale.greeting,
+                        style: GoogleFonts.cairo(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xff171717)),
+                      ),
+                      Text(
+                        locale.fillData,
+                        style: GoogleFonts.cairo(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            color: const Color(0xff171717)),
+                      ),
+
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: !context.watch<PreferenceService>().isEn()
-                        ? const EdgeInsets.only(right: 40.0)
-                        : const EdgeInsets.only(left: 40.0),
-                    child: Text(
-                      locale.fillData,
-                      style: GoogleFonts.cairo(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: const Color(0xff171717)),
-                    ),
-                  )
                 ],
               ),
               SizedBox(height: 5.h),
@@ -120,7 +117,7 @@ class LoginViewBody extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 30.h),
+              Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

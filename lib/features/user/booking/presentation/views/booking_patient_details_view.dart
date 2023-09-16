@@ -5,10 +5,10 @@ import 'package:doctor_management_system/core/services/preference/preference_ser
 import 'package:doctor_management_system/core/services/shared/shared_services.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
-import 'package:doctor_management_system/features/booking/presentation/views/widgets/patient_details.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/two_buttons_confirm_view.dart';
-import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
 import 'package:doctor_management_system/features/user/appointment_details/presentation/views/appointment_details_view.dart';
+import 'package:doctor_management_system/features/user/booking/presentation/views/widgets/patient_details.dart';
+import 'package:doctor_management_system/features/user/dates/presentation/views/my_dates_view.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
