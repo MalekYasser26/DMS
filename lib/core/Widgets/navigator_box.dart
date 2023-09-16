@@ -74,7 +74,13 @@ class NavigatorBox extends StatelessWidget {
                                 ? AppColors.lightBlue
                                 : Colors.grey,
                     fontSize: fontSize,
-                    fontWeight: weight),
+                    fontWeight: isRouteRequired
+                        ? FontWeight.w400
+                        : boxNum == 1 && sharedServices.isPressed == false
+                            ? FontWeight.bold
+                            : boxNum == 2 && sharedServices.isPressed == true
+                                ? FontWeight.bold
+                                : FontWeight.w600),
               ),
             ),
           ),
