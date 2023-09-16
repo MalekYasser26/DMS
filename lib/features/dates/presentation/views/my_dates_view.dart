@@ -17,6 +17,7 @@ class MyDatesView extends StatefulWidget {
 class _MyDatesViewState extends State<MyDatesView> {
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context) ;
     return DefaultTabController(
       initialIndex: 1,
       length: 2,
@@ -42,7 +43,7 @@ class _MyDatesViewState extends State<MyDatesView> {
                         Row(
                           children: [
                             Text(
-                              getL10n(context).myDates,
+                              locale.myDates,
                               style: GoogleFonts.cairo(
                                 color: Colors.black,
                                 fontSize: 3.h,
@@ -76,7 +77,7 @@ class _MyDatesViewState extends State<MyDatesView> {
                                       size: 3.h,
                                     ),
                                     Text(
-                                      getL10n(context).addDate,
+                                      locale.addDate,
                                       style: GoogleFonts.cairo(
                                         fontSize: 2.h,
                                         color: Colors.white,
@@ -104,7 +105,7 @@ class _MyDatesViewState extends State<MyDatesView> {
                     Icons.search_sharp,
                     color: Colors.grey,
                   ),
-                  hintText: getL10n(context).search,
+                  hintText: locale.search,
                   shape: const MaterialStatePropertyAll(
                       RoundedRectangleBorder()),
                   elevation: const MaterialStatePropertyAll(0),
@@ -131,10 +132,10 @@ class _MyDatesViewState extends State<MyDatesView> {
                         ),
                         tabs:  [
                           Tab(
-                            text: getL10n(context).previous
+                            text: locale.previous
                           ),
                           Tab(
-                            text:getL10n(context).next
+                            text:locale.next
                           )
                         ]),
                   ),
@@ -147,13 +148,13 @@ class _MyDatesViewState extends State<MyDatesView> {
                         children: [
                           Flexible(
                             child: ListView.separated(
-                              physics: const ClampingScrollPhysics(),
+                              physics: const BouncingScrollPhysics(),
                               itemBuilder: (context, index) =>
                                   AppointmentBooking(
                                 name: names[index],
                                 address: "147 النزهة, ش المطار",
                                 date: "21 Aug, Mon - 09:20 am",
-                                firstTime: getL10n(context).check,
+                                firstTime: locale.check,
                                 isAbsent: absentPresentMyDates[index],
                                 isNext: true,
                               ),
@@ -169,13 +170,13 @@ class _MyDatesViewState extends State<MyDatesView> {
                         children: [
                           Flexible(
                             child: ListView.separated(
-                              physics: const ClampingScrollPhysics(),
+                              physics: const BouncingScrollPhysics(),
                               itemBuilder: (context, index) =>
                                   AppointmentBooking(
                                 name: names[index],
                                 address: "147 النزهة, ش المطار",
                                 date: "21 Aug, Mon - 09:20 am",
-                                firstTime: getL10n(context).check,
+                                firstTime: locale.check,
                                 isAbsent: absentPresentMyDates[index],
                                 isNext: false,
                               ),

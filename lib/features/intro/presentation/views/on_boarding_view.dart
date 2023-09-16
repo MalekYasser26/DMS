@@ -17,6 +17,7 @@ class _OnboardingViewState extends State<OnboardingView> {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context) ;
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -30,7 +31,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 children: [
                   SizedBox(height: 6.h),
                   Text(
-                    getL10n(context).onBoardingText,
+                    locale.onBoardingText,
                     style: GoogleFonts.cairo(
                         color: Colors.white,
                         fontSize: 4.h,

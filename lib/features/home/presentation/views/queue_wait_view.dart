@@ -13,6 +13,7 @@ class QueueWaitView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context) ;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -57,7 +58,7 @@ class QueueWaitView extends StatelessWidget {
                       ),
                       SizedBox(width: 4.w),
                       Text(
-                        getL10n(context).queueWait,
+                        locale.queueWait,
                         style: GoogleFonts.cairo(
                           color: Colors.black,
                           fontSize: 3.h,
@@ -73,7 +74,7 @@ class QueueWaitView extends StatelessWidget {
                 height: 1.h,
               ),
               Text(
-                getL10n(context).welcomeToQueue,
+                locale.welcomeToQueue,
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontSize: 2.h,
@@ -93,7 +94,7 @@ class QueueWaitView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        getL10n(context).ahead,
+                        locale.ahead,
                         style: GoogleFonts.cairo(fontSize: 3.h),
                       ),
                       SizedBox(height: 2.h),
@@ -109,7 +110,7 @@ class QueueWaitView extends StatelessWidget {
                               ),
                             ),
                             TextSpan(
-                              text: getL10n(context).patients,
+                              text: locale.patients,
                               style: GoogleFonts.cairo(
                                 fontSize: 4.h,
                                 color: Colors.black,
@@ -129,7 +130,7 @@ class QueueWaitView extends StatelessWidget {
                   route: (context) => const MyDatesView(),
                   color: Colors.white,
                   textColor: AppColors.lightBlue,
-                  text: getL10n(context).returnHome,
+                  text: locale.returnHome,
                   borderColor: AppColors.lightBlue,
                 ),
               ),

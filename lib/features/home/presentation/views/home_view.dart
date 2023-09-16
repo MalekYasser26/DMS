@@ -17,6 +17,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context) ;
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -30,14 +31,11 @@ class HomeView extends StatelessWidget {
             Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6.w),
-                child: ListView(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  physics: const BouncingScrollPhysics(),
+                child: Column(
                   children: [
                     SizedBox(height: 1.h),
                     Text(
-                      getL10n(context).onBoardingText,
+                      locale.onBoardingText,
                       style: GoogleFonts.cairo(
                           color: Colors.white,
                           fontSize: 4.h,
@@ -45,13 +43,14 @@ class HomeView extends StatelessWidget {
                       textDirection: TextDirection.ltr,
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 42.h),
+                    const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
                           child: NavigatorBox(
-                            text: getL10n(context).queueWait,
+                            boxNum: 3,
+                            text: locale.queueWait,
                             height: 15.h,
                             fontSize: 2.8.h,
                             borderColor: Colors.white,
@@ -64,7 +63,8 @@ class HomeView extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Expanded(
                           child: NavigatorBox(
-                            text: getL10n(context).rateService,
+                            boxNum: 4,
+                            text: locale.rateService,
                             height: 15.h,
                             fontSize: 2.8.h,
                             borderColor: Colors.white,
@@ -82,7 +82,7 @@ class HomeView extends StatelessWidget {
                           LoginView(route: (context) => const MyDatesView()),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
-                      text: getL10n(context).login,
+                      text: locale.login,
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),
@@ -91,10 +91,12 @@ class HomeView extends StatelessWidget {
                       route: (context) => const BookingIntroView(),
                       color: Colors.white,
                       textColor: AppColors.lightBlue,
-                      text: getL10n(context).quickBooking,
+                      text: locale.quickBooking,
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),
+                    SizedBox(height: 2.h),
+
                   ],
                 ),
               ),

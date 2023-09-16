@@ -14,6 +14,7 @@ class AbsentOrPresent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context);
     return isAbsent
         ? Container(
             decoration: BoxDecoration(
@@ -23,7 +24,7 @@ class AbsentOrPresent extends StatelessWidget {
             width: w,
             child: Center(
               child: Text(
-                getL10n(context).present,
+                locale.present,
                 style: GoogleFonts.cairo(
                   color: AppColors.golden,
                   fontSize: 2.3.h,
@@ -39,7 +40,7 @@ class AbsentOrPresent extends StatelessWidget {
             width: 8.h,
             child: Center(
               child: Text(
-                getL10n(context).absent,
+                locale.absent,
                 style: GoogleFonts.cairo(
                   color: AppColors.red,
                   fontSize: 2.3.h,

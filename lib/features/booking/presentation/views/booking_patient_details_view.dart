@@ -6,9 +6,9 @@ import 'package:doctor_management_system/core/services/shared/shared_services.da
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
 import 'package:doctor_management_system/features/booking/presentation/views/widgets/patient_details.dart';
-import 'package:doctor_management_system/features/confirmation/presentation/views/appointment_confirm_view.dart';
-import 'package:doctor_management_system/features/confirmation/presentation/views/success_confirm_view.dart';
+import 'package:doctor_management_system/features/confirmation/presentation/views/two_buttons_confirm_view.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
+import 'package:doctor_management_system/features/user/appointment_details/presentation/views/appointment_details_view.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,6 +28,7 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context);
     return ChangeNotifierProvider(
       create: (context) => SharedServices(),
       child: Scaffold(
@@ -80,7 +81,7 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          getL10n(context).starFillData,
+                          locale.startFillData,
                           style: GoogleFonts.cairo(
                               color: Colors.black,
                               fontSize: 3.h,
@@ -90,7 +91,7 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                text: getL10n(context).alreadyFillData,
+                                text: locale.alreadyFillData,
                                 style: GoogleFonts.cairo(
                                     color: Colors.black, fontSize: 2.h),
                               ),
@@ -105,7 +106,7 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                                           ),
                                         ),
                                       ),
-                                text: getL10n(context).skip,
+                                text: locale.skip,
                                 style: GoogleFonts.cairo(
                                   color: AppColors.lightBlue,
                                   fontSize: 2.h,
@@ -121,9 +122,9 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                 ),
                 SizedBox(height: 3.h),
                 BasicTextFormField(
-                    text: getL10n(context).guardianName, isText: true),
+                    text: locale.guardianName, isText: true),
                 BasicTextFormField(
-                    text: getL10n(context).password, isPass: true),
+                    text: locale.password, isPass: true),
                 const Divider(
                   thickness: 2,
                 ),
@@ -145,7 +146,7 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                             },
                           ),
                           Text(
-                            getL10n(context).onePatient,
+                            locale.onePatient,
                             style: GoogleFonts.cairo(fontSize: 12.sp),
                           ),
                         ],
@@ -168,7 +169,7 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                             },
                           ),
                           Text(
-                            getL10n(context).moreThanPatient,
+                            locale.moreThanPatient,
                             style: GoogleFonts.cairo(fontSize: 12.sp),
                           ),
                         ],
@@ -200,32 +201,34 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                           onTap: () {
                             getSharedServices(context).addPatient();
                           },
-                          child: Container(
-                            width: 25.h,
-                            decoration: BoxDecoration(
-                                border: Border.all(color: AppColors.lightBlue)),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 1.h),
-                              child: Row(children: [
-                                Icon(Icons.add,
-                                    color: AppColors.lightBlue, size: 3.h),
-                                Expanded(
-                                  child: Text(
-                                    getL10n(context).addPatient,
-                                    style: GoogleFonts.cairo(
-                                      fontSize: 2.h,
-                                      color: AppColors.lightBlue,
+                          child: FractionallySizedBox(
+                            widthFactor: 0.6,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: AppColors.lightBlue)),
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 1.h),
+                                child: Row(children: [
+                                  Icon(Icons.add,
+                                      color: AppColors.lightBlue, size: 3.h),
+                                  Expanded(
+                                    child: Text(
+                                      locale.addPatient,
+                                      style: GoogleFonts.cairo(
+                                        fontSize: 2.h,
+                                        color: AppColors.lightBlue,
+                                      ),
+                                      textAlign: TextAlign.center,
                                     ),
-                                    textAlign: TextAlign.center,
                                   ),
-                                ),
-                              ]),
+                                ]),
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(height: 3.h),
                         BasicTextFormField(
-                          text: getL10n(context).phoneNum,
+                          text: locale.phoneNum,
                           isNumbers: true,
                         ),
                       ],
@@ -234,13 +237,16 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                 SizedBox(height: 3.h),
                 SizedBox(height: 5.h),
                 BasicButtonRoute(
-                  route: (context) => SuccessConfirmView(
+                  route: (context) => TwoButtonsConfirmView(
                     buttonRoute2: (context) => const MyDatesView(),
-                    buttonRoute1: (context) => const AppointmentConfirmView(),
+                    buttonRoute1: (context) => const AppointmentDetailsView(),
+                    text: locale.bookingSuccess,
+                    buttonTxt: locale.viewBookingDetails,
+                    subText: locale.thxUsing,
                   ),
                   color: AppColors.lightBlue,
                   textColor: Colors.white,
-                  text: getL10n(context).book,
+                  text: locale.book,
                   borderColor: Colors.transparent,
                 ),
               ],

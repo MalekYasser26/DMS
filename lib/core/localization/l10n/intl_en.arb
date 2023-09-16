@@ -25,7 +25,7 @@
   "welcomeToQueue": "Welcome to our waiting queue",
   "ahead": "Ahead of you",
   "patients": "Patients",
-  "starFillData": "Start filling your data",
+  "startFillData": "Start filling your data",
   "alreadyFillData":"Already filled your data? ",
   "skip": "Skip",
   "consult": "Consultation",
@@ -41,8 +41,8 @@
   "phoneNum": "Phone Number",
   "book": "Book",
   "addPatient": "Add another patient",
-  "male": "male",
-  "female": "female",
+  "male": "Male",
+  "female": "Female",
   "myDates": "My dates",
   "addDate": "Add a date",
   "search" :"Search",
@@ -52,6 +52,13 @@
   "date": "Date",
   "clinicAddress": "Clinic Address",
   "present": "Present",
-  "absent": "Absent"
+  "absent": "Absent",
+  "positionInWaitingQueue": "Position in waiting queue",
+  "patientNum": "Patient number",
+  "bookingDate" : "Booking date",
+  "bookingSuccess": "Booking done successfully",
+  "comeEarly": "Try to come 30 minutes early",
+  "viewBookingDetails": "View booking details",
+  "thxUsing" : "Thank you for using us.\nWe wish you a speedy recovery."
 
 }

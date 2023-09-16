@@ -1,9 +1,9 @@
 import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart';
 import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
+import 'package:doctor_management_system/core/constants/permanent_data.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/core/services/shared/shared_services.dart';
-import 'package:doctor_management_system/data/patient_details_temp_data.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -17,6 +17,7 @@ class PatientDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context);
     return Stack(children: [
       Container(
         color: bgColor,
@@ -24,15 +25,15 @@ class PatientDetails extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 2.h, vertical: 1.h),
           child: Column(
             children: [
-              BasicTextFormField(text: getL10n(context).patientName),
-              DropDownMenu(dropList: gender),
+              BasicTextFormField(text: locale.patientName),
+              DropDownMenu(dropList: genderList(locale)),
               BasicTextFormField(
-                text: getL10n(context).agePatient,
+                text: locale.agePatient,
                 isNumbers: true,
               ),
               if (isSingle == true)
                 BasicTextFormField(
-                  text: getL10n(context).phoneNum,
+                  text: locale.phoneNum,
                   isNumbers: true,
                 ),
             ],

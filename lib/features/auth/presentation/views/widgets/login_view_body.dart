@@ -15,12 +15,14 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Padding(
           padding: const EdgeInsets.all(18.0),
           child: ListView(
+            physics: const BouncingScrollPhysics(),
             children: [
               Row(
                 children: [
@@ -56,7 +58,7 @@ class LoginViewBody extends StatelessWidget {
                   ),
                   SizedBox(width: 3.w),
                   Text(
-                      getL10n(context).greeting,
+                      locale.greeting,
                     style: GoogleFonts.cairo(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -71,7 +73,7 @@ class LoginViewBody extends StatelessWidget {
                         ? const EdgeInsets.only(right: 40.0)
                         : const EdgeInsets.only(left: 40.0),
                     child: Text(
-                      getL10n(context).fillData,
+                      locale.fillData,
                       style: GoogleFonts.cairo(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -82,11 +84,11 @@ class LoginViewBody extends StatelessWidget {
               ),
               SizedBox(height: 5.h),
               BasicTextFormField(
-                text:getL10n(context).id,
+                text:locale.id,
                 isNumbers: true,
               ),
               BasicTextFormField(
-                text: getL10n(context).password,
+                text: locale.password,
                 isPass: true,
               ),
               SizedBox(height: 10.h),
@@ -108,7 +110,7 @@ class LoginViewBody extends StatelessWidget {
                   decoration: const BoxDecoration(color: Color(0xff159BAD)),
                   child: Center(
                     child: Text(
-                      getL10n(context).login,
+                      locale.login,
                       style: GoogleFonts.cairo(
                           textStyle: const TextStyle(
                         color: Color(0xffFFFFFF),
@@ -123,7 +125,7 @@ class LoginViewBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                  getL10n(context).noAccount,
+                  locale.noAccount,
                     style: GoogleFonts.cairo(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -139,7 +141,7 @@ class LoginViewBody extends StatelessWidget {
                           ));
                     },
                     child: Text(
-                      getL10n(context).registerNow,
+                      locale.registerNow,
                       style: GoogleFonts.cairo(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,

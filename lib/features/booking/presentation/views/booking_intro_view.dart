@@ -24,6 +24,8 @@ class BookingIntroView extends StatefulWidget {
 class _BookingIntroViewState extends State<BookingIntroView> {
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context) ;
+    final pref = getPreferenceService(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -72,7 +74,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        getL10n(context).fillData,
+                        locale.fillData,
                         style: GoogleFonts.cairo(
                             color: Colors.black,
                             fontSize: 3.h,
@@ -82,7 +84,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: getL10n(context).alreadyFillData,
+                              text: locale.alreadyFillData,
                               style: GoogleFonts.cairo(
                                   color: Colors.black, fontSize: 2.h),
                             ),
@@ -95,7 +97,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                                               route: (context) =>
                                                   const MyDatesView())),
                                     ),
-                              text: getL10n(context).skip,
+                              text: locale.skip,
                               style: GoogleFonts.cairo(
                                 color: AppColors.lightBlue,
                                 fontSize: 2.h,
@@ -107,6 +109,10 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                       ),
                     ],
                   ),
+                  const Spacer(),
+                  IconButton(onPressed: () {
+                    pref.changeLocale() ;
+                  }, icon: const Icon(Icons.public))
                 ],
               ),
               SizedBox(height: 1.h),
@@ -115,21 +121,23 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                   Expanded(
                     child: NavigatorBox(
                       route: (context) => const HomeView(),
-                      text: getL10n(context).check,
+                      text: locale.check,
                       height: 15.h,
                       fontSize: 2.8.h,
                       borderColor: AppColors.lightBlue,
                       textColor: AppColors.lightBlue,
                       weight: FontWeight.bold,
                       isRouteRequired: false,
+                      boxNum : 1
                     ),
                   ),
                   SizedBox(width: 2.h),
                   Expanded(
                     child: NavigatorBox(
+                      boxNum : 2 ,
                       isRouteRequired: false,
                       route: (context) => const HomeView(),
-                      text: getL10n(context).consult,
+                      text: locale.consult,
                       height: 15.h,
                       fontSize: 2.8.h,
                       borderColor: Colors.grey.shade600,
@@ -140,7 +148,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
               ),
               SizedBox(height: 1.h),
               Text(
-                getL10n(context).chooseClinic,
+                locale.chooseClinic,
                 style: GoogleFonts.cairo(
                     fontWeight: FontWeight.w600,
                     fontSize: 2.h,
@@ -150,7 +158,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                   dropList: clinicName, icon: Icons.location_on_outlined),
               SizedBox(height: 1.h),
               Text(
-                getL10n(context).chooseDate,
+                locale.chooseDate,
                 style: GoogleFonts.cairo(
                     fontWeight: FontWeight.w600,
                     fontSize: 2.h,
@@ -159,7 +167,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
               DropDownMenu(dropList: dates, icon: Icons.calendar_month),
               SizedBox(height: 1.h),
               Text(
-                getL10n(context).chooseTime,
+                locale.chooseTime,
                 style: GoogleFonts.cairo(
                     fontWeight: FontWeight.w600,
                     fontSize: 2.h,
@@ -177,7 +185,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                     route: (context) => const BookingPatientDetailsView(),
                     color: AppColors.lightBlue,
                     textColor: Colors.white,
-                    text: getL10n(context).next,
+                    text: locale.next,
                     borderColor: Colors.transparent),
               )
             ],

@@ -53,5 +53,15 @@
   "date": "التاريخ",
   "clinicAddress": "عنوان العيادة",
   "present": "حاضر",
-  "absent": "غائب"
+  "absent": "غائب",
+  "positionInWaitingQueue": "الترتيب في قائمة الانتظار",
+  "patientNum": "رقم المريض",
+  "bookingDate" : "تاريخ الحجز",
+  "bookingSuccess": "تم الحجز بنجاح",
+  "comeEarly": "حاول أن تأتي 30 دقيقة مبكرا",
+  "viewBookingDetails": "عرض تفاصيل الحجز",
+  "thxUsing" : "شكرا لك على استخدامك لنا ، نتمنى لك\nالشفاء العاجل"
+
+
+
 }

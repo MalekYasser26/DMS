@@ -1,9 +1,10 @@
 import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
 import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/data/rate_service_view_temp_data.dart';
-import 'package:doctor_management_system/features/confirmation/presentation/views/confirm_rating_view.dart';
+import 'package:doctor_management_system/features/confirmation/presentation/views/one_button_confirm_view.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -16,8 +17,8 @@ class RateSeviceView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context) ;
     final TextEditingController basicController = TextEditingController();
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -61,7 +62,7 @@ class RateSeviceView extends StatelessWidget {
                   ),
                   SizedBox(width: 4.w),
                   Text(
-                    "تقييم الخدمة",
+                    locale.rateService,
                     style: GoogleFonts.cairo(
                       color: Colors.black,
                       fontSize: 3.h,
@@ -72,7 +73,7 @@ class RateSeviceView extends StatelessWidget {
               ),
               SizedBox(height: 2.h),
               Text(
-                "ما هو تقييمك لخدماتنا؟",
+                locale.whatIsYourRating,
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontSize: 2.5.h,
@@ -80,7 +81,7 @@ class RateSeviceView extends StatelessWidget {
                 ),
               ),
               Text(
-                "ساعدنا على معرفة رأيك في خدماتنا للعمل على تطويرنا دائماً",
+                locale.helpUsDevelop,
                 style: GoogleFonts.cairo(
                   color: Colors.grey,
                   fontSize: 1.7.h,
@@ -90,7 +91,7 @@ class RateSeviceView extends StatelessWidget {
               ),
               SizedBox(height: 2.h),
               Text(
-                "اختر العيادة المراد تقييمها",
+                locale.chooseClinic,
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontWeight: FontWeight.w600,
@@ -136,7 +137,7 @@ class RateSeviceView extends StatelessWidget {
               ),
               SizedBox(height: 2.h),
               Text(
-                "تفاصيل التقييم",
+                locale.rateDetails,
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontWeight: FontWeight.w600,
@@ -158,7 +159,7 @@ class RateSeviceView extends StatelessWidget {
                       ? EdgeInsets.only(bottom: 18.h, right: 2.h, top: 1.h)
                       : EdgeInsets.only(bottom: 18.h, left: 2.h, top: 1.h),
                   isDense: true,
-                  hintText: "اضف تفاصيل اخرى لتقييمك اذا اردت..",
+                  hintText: locale.addRateDetails,
                   hintStyle: GoogleFonts.cairo(color: Colors.grey.shade600),
                   alignLabelWithHint: true,
                 ),
@@ -168,13 +169,15 @@ class RateSeviceView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 1.h),
                 child: BasicButtonRoute(
-                  route: (context) => const ConfirmRatingView(
-                    route: MyDatesView(),
-                    text: "تم التقييم بنجاح",
+                  route: (context) =>  OneButtonConfirmView(
+                    route: const MyDatesView(),
+                    text: locale.ratingDone,
+                    subText: locale.thxRating,
+                    buttonText: locale.returnHome,
                   ),
                   color: AppColors.lightBlue,
                   textColor: Colors.white,
-                  text: "تأكيد",
+                  text: locale.confirm,
                   borderColor: Colors.transparent,
                 ),
               ),

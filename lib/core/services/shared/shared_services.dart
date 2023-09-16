@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 
 class SharedServices extends ChangeNotifier {
   int patientNum = 2;
-  bool? isNavBoxActive;
+  bool isNavBoxActive = false;
+  bool isPressed = false;
 
   void addPatient() {
     patientNum++;
@@ -11,11 +12,16 @@ class SharedServices extends ChangeNotifier {
   }
 
   void removePatient() {
-    patientNum--;
+    if (patientNum > 2) {
+      patientNum--;
+    }
     notifyListeners();
   }
 
-
+  void toggleNavBoxActive() {
+    isNavBoxActive = !isNavBoxActive;
+    notifyListeners();
+  }
 }
 
 SharedServices getSharedServices(BuildContext context) =>

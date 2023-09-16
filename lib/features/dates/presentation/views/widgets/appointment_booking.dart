@@ -21,6 +21,7 @@ class AppointmentBooking extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context) ;
     return Container(
       decoration:
           BoxDecoration(border: Border.all(color: Colors.grey.shade300)),
@@ -51,7 +52,7 @@ class AppointmentBooking extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: " ${getL10n(context).firstTime}   ",
+                    text: " ${locale.firstTime}   ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
@@ -72,7 +73,7 @@ class AppointmentBooking extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "${getL10n(context).date}  ",
+                    text: "${locale.date}  ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
@@ -93,7 +94,7 @@ class AppointmentBooking extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "${getL10n(context).clinicAddress}   ",
+                    text: "${locale.clinicAddress}   ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
