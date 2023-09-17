@@ -29,231 +29,228 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
   @override
   Widget build(BuildContext context) {
     final locale = getL10n(context);
-    return ChangeNotifierProvider(
-      create: (context) => SharedServices(),
-      child: Scaffold(
-          body: SafeArea(
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 6.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(height: 3.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InkWell(
-                      onTap: () => Navigator.pop(context),
-                      child: Container(
-                        height: 5.h,
-                        width: 5.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(.2),
-                              blurRadius: 5.0,
-                              spreadRadius: 1,
-                              offset: const Offset(2.0, 2.0),
-                            )
-                          ],
-                        ),
-                        child: Center(
-                          child: Padding(
-                            padding: getPreferenceService(context).isEn()
-                                ? EdgeInsets.only(left: 2.w)
-                                : EdgeInsets.only(right: 2.w),
-                            child: const Icon(
-                              Icons.arrow_back_ios,
-                              color: Colors.black,
-                            ),
+    return Scaffold(
+        body: SafeArea(
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 6.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(height: 3.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  InkWell(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      height: 5.h,
+                      width: 5.h,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(.2),
+                            blurRadius: 5.0,
+                            spreadRadius: 1,
+                            offset: const Offset(2.0, 2.0),
+                          )
+                        ],
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: getPreferenceService(context).isEn()
+                              ? EdgeInsets.only(left: 2.w)
+                              : EdgeInsets.only(right: 2.w),
+                          child: const Icon(
+                            Icons.arrow_back_ios,
+                            color: Colors.black,
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(width: 4.w),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          locale.startFillData,
-                          style: GoogleFonts.cairo(
-                              color: Colors.black,
-                              fontSize: 3.h,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: locale.alreadyFillData,
-                                style: GoogleFonts.cairo(
-                                    color: Colors.black, fontSize: 2.h),
-                              ),
-                              TextSpan(
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () => Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => LoginView(
-                                            route: (context) =>
-                                                const MyDatesView(),
-                                          ),
+                  ),
+                  SizedBox(width: 4.w),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        locale.startFillData,
+                        style: GoogleFonts.cairo(
+                            color: Colors.black,
+                            fontSize: 3.h,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: locale.alreadyFillData,
+                              style: GoogleFonts.cairo(
+                                  color: Colors.black, fontSize: 2.h),
+                            ),
+                            TextSpan(
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => LoginView(
+                                          route: (context) =>
+                                              const MyDatesView(),
                                         ),
                                       ),
-                                text: locale.skip,
-                                style: GoogleFonts.cairo(
-                                  color: AppColors.lightBlue,
-                                  fontSize: 2.h,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                    ),
+                              text: locale.skip,
+                              style: GoogleFonts.cairo(
+                                color: AppColors.lightBlue,
+                                fontSize: 2.h,
+                                fontWeight: FontWeight.bold,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 3.h),
+              BasicTextFormField(
+                  text: locale.guardianName, isText: true),
+              BasicTextFormField(
+                  text: locale.password, isPass: true),
+              const Divider(
+                thickness: 2,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Row(
+                      children: [
+                        Radio<int>(
+                          activeColor: AppColors.lightBlue,
+                          visualDensity: const VisualDensity(horizontal: -4),
+                          value: 1,
+                          groupValue: selectedOption,
+                          onChanged: (value) {
+                            setState(() {
+                              selectedOption = value!;
+                            });
+                          },
+                        ),
+                        Text(
+                          locale.onePatient,
+                          style: GoogleFonts.cairo(fontSize: 12.sp),
                         ),
                       ],
                     ),
-                  ],
-                ),
-                SizedBox(height: 3.h),
-                BasicTextFormField(
-                    text: locale.guardianName, isText: true),
-                BasicTextFormField(
-                    text: locale.password, isPass: true),
-                const Divider(
-                  thickness: 2,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: Row(
-                        children: [
-                          Radio<int>(
-                            activeColor: AppColors.lightBlue,
-                            visualDensity: const VisualDensity(horizontal: -4),
-                            value: 1,
-                            groupValue: selectedOption,
-                            onChanged: (value) {
-                              setState(() {
-                                selectedOption = value!;
-                              });
-                            },
-                          ),
-                          Text(
-                            locale.onePatient,
-                            style: GoogleFonts.cairo(fontSize: 12.sp),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      flex: 3,
-                      child: Row(
-                        children: [
-                          Radio<int>(
-                            activeColor: AppColors.lightBlue,
-                            visualDensity: const VisualDensity(
-                                horizontal: -4, vertical: -4),
-                            value: 2,
-                            groupValue: selectedOption,
-                            onChanged: (value) {
-                              setState(() {
-                                selectedOption = value!;
-                              });
-                            },
-                          ),
-                          Text(
-                            locale.moreThanPatient,
-                            style: GoogleFonts.cairo(fontSize: 12.sp),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                if (selectedOption == 1) const PatientDetails(),
-                if (selectedOption == 2)
-                  Consumer<SharedServices>(
-                    builder: (context, value, child) => Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Row(
                       children: [
-                        Flexible(
-                          fit: FlexFit.loose,
-                          child: ListView.separated(
-                              physics: const ClampingScrollPhysics(),
-                              shrinkWrap: true,
-                              itemBuilder: (context, index) => PatientDetails(
-                                  bgColor: AppColors.lightBlue.withOpacity(0.1),
-                                  isSingle: false),
-                              separatorBuilder: (context, index) =>
-                                  SizedBox(height: 3.h),
-                              itemCount: getSharedServices(context).patientNum),
-                        ),
-                        SizedBox(height: 3.h),
-                        InkWell(
-                          onTap: () {
-                            getSharedServices(context).addPatient();
+                        Radio<int>(
+                          activeColor: AppColors.lightBlue,
+                          visualDensity: const VisualDensity(
+                              horizontal: -4, vertical: -4),
+                          value: 2,
+                          groupValue: selectedOption,
+                          onChanged: (value) {
+                            setState(() {
+                              selectedOption = value!;
+                            });
                           },
-                          child: FractionallySizedBox(
-                            widthFactor: 0.6,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: AppColors.lightBlue)),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 1.h),
-                                child: Row(children: [
-                                  Icon(Icons.add,
-                                      color: AppColors.lightBlue, size: 3.h),
-                                  Expanded(
-                                    child: Text(
-                                      locale.addPatient,
-                                      style: GoogleFonts.cairo(
-                                        fontSize: 2.h,
-                                        color: AppColors.lightBlue,
-                                      ),
-                                      textAlign: TextAlign.center,
+                        ),
+                        Text(
+                          locale.moreThanPatient,
+                          style: GoogleFonts.cairo(fontSize: 12.sp),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              if (selectedOption == 1) const PatientDetails(),
+              if (selectedOption == 2)
+                Consumer<SharedServices>(
+                  builder: (context, value, child) => Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        fit: FlexFit.loose,
+                        child: ListView.separated(
+                            physics: const ClampingScrollPhysics(),
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) => PatientDetails(
+                                bgColor: AppColors.lightBlue.withOpacity(0.1),
+                                isSingle: false),
+                            separatorBuilder: (context, index) =>
+                                SizedBox(height: 3.h),
+                            itemCount: getSharedServices(context).patientNum),
+                      ),
+                      SizedBox(height: 3.h),
+                      InkWell(
+                        onTap: () {
+                          getSharedServices(context).addPatient();
+                        },
+                        child: FractionallySizedBox(
+                          widthFactor: 0.6,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(color: AppColors.lightBlue)),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 1.h),
+                              child: Row(children: [
+                                Icon(Icons.add,
+                                    color: AppColors.lightBlue, size: 3.h),
+                                Expanded(
+                                  child: Text(
+                                    locale.addPatient,
+                                    style: GoogleFonts.cairo(
+                                      fontSize: 2.h,
+                                      color: AppColors.lightBlue,
                                     ),
+                                    textAlign: TextAlign.center,
                                   ),
-                                ]),
-                              ),
+                                ),
+                              ]),
                             ),
                           ),
                         ),
-                        SizedBox(height: 3.h),
-                        BasicTextFormField(
-                          text: locale.phoneNum,
-                          isNumbers: true,
-                        ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(height: 3.h),
+                      BasicTextFormField(
+                        text: locale.phoneNum,
+                        isNumbers: true,
+                      ),
+                    ],
                   ),
-                SizedBox(height: 3.h),
-                SizedBox(height: 5.h),
-                BasicButtonRoute(
-                  route: (context) => TwoButtonsConfirmView(
-                    buttonRoute2: (context) => const MyDatesView(),
-                    buttonRoute1: (context) => const AppointmentDetailsView(),
-                    text: locale.bookingSuccess,
-                    buttonTxt: locale.viewBookingDetails,
-                    subText: locale.thxUsing,
-                  ),
-                  color: AppColors.lightBlue,
-                  textColor: Colors.white,
-                  text: locale.book,
-                  borderColor: Colors.transparent,
                 ),
-              ],
-            ),
+              SizedBox(height: 3.h),
+              SizedBox(height: 5.h),
+              BasicButtonRoute(
+                route: (context) => TwoButtonsConfirmView(
+                  buttonRoute2: (context) => const MyDatesView(),
+                  buttonRoute1: (context) => const AppointmentDetailsView(),
+                  text: locale.bookingSuccess,
+                  buttonTxt: locale.viewBookingDetails,
+                  subText: locale.thxUsing,
+                ),
+                color: AppColors.lightBlue,
+                textColor: Colors.white,
+                text: locale.book,
+                borderColor: Colors.transparent,
+              ),
+            ],
           ),
         ),
-      )),
-    );
+      ),
+    ));
   }
 }

@@ -29,59 +29,56 @@ class NavigatorBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sharedServices = Provider.of<SharedServices>(context);
-    return ChangeNotifierProvider<SharedServices>(
-      create: (context) => SharedServices(),
-      child: Consumer<SharedServices>(
-        builder: (context, value, child) => InkWell(
-          onTap: () {
-            if (isRouteRequired) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: route),
-              );
-            } else if (!isRouteRequired) {
-              if (boxNum == 1) {
-                sharedServices.isPressed = false;
-              }
-              if (boxNum == 2) {
-                sharedServices.isPressed = true;
-              }
-              sharedServices.toggleNavBoxActive();
+    return Consumer<SharedServices>(
+      builder: (context, value, child) => InkWell(
+        onTap: () {
+          if (isRouteRequired) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: route),
+            );
+          } else if (!isRouteRequired) {
+            if (boxNum == 1) {
+              sharedServices.isPressed = false;
             }
-          },
-          child: Container(
-            height: height,
-            decoration: BoxDecoration(
-              border: Border.all(
+            if (boxNum == 2) {
+              sharedServices.isPressed = true;
+            }
+            sharedServices.toggleNavBoxActive();
+          }
+        },
+        child: Container(
+          height: height,
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: isRouteRequired
+                    ? Colors.white
+                    : (boxNum == 1 && sharedServices.isPressed == false
+                    ? AppColors.lightBlue
+                    : boxNum == 2 && sharedServices.isPressed == true
+                    ? AppColors.lightBlue
+                    : Colors.grey)),
+            color: Colors.transparent,
+          ),
+          child: Center(
+            child: Text(
+              text,
+              style: GoogleFonts.cairo(
                   color: isRouteRequired
                       ? Colors.white
-                      : (boxNum == 1 && sharedServices.isPressed == false
-                          ? AppColors.lightBlue
-                          : boxNum == 2 && sharedServices.isPressed == true
-                              ? AppColors.lightBlue
-                              : Colors.grey)),
-              color: Colors.transparent,
-            ),
-            child: Center(
-              child: Text(
-                text,
-                style: GoogleFonts.cairo(
-                    color: isRouteRequired
-                        ? Colors.white
-                        : boxNum == 1 && sharedServices.isPressed == false
-                            ? AppColors.lightBlue
-                            : boxNum == 2 && sharedServices.isPressed == true
-                                ? AppColors.lightBlue
-                                : Colors.grey,
-                    fontSize: fontSize,
-                    fontWeight: isRouteRequired
-                        ? FontWeight.w400
-                        : boxNum == 1 && sharedServices.isPressed == false
-                            ? FontWeight.bold
-                            : boxNum == 2 && sharedServices.isPressed == true
-                                ? FontWeight.bold
-                                : FontWeight.w600),
-              ),
+                      : boxNum == 1 && sharedServices.isPressed == false
+                      ? AppColors.lightBlue
+                      : boxNum == 2 && sharedServices.isPressed == true
+                      ? AppColors.lightBlue
+                      : Colors.grey,
+                  fontSize: fontSize,
+                  fontWeight: isRouteRequired
+                      ? FontWeight.w400
+                      : boxNum == 1 && sharedServices.isPressed == false
+                      ? FontWeight.bold
+                      : boxNum == 2 && sharedServices.isPressed == true
+                      ? FontWeight.bold
+                      : FontWeight.w600),
             ),
           ),
         ),

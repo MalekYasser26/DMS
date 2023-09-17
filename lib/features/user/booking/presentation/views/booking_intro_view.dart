@@ -14,14 +14,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class BookingIntroView extends StatefulWidget {
+class BookingIntroView extends StatelessWidget {
   const BookingIntroView({Key? key}) : super(key: key);
 
-  @override
-  State<BookingIntroView> createState() => _BookingIntroViewState();
-}
-
-class _BookingIntroViewState extends State<BookingIntroView> {
   @override
   Widget build(BuildContext context) {
     final locale = getL10n(context) ;
@@ -134,6 +129,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                   SizedBox(width: 2.h),
                   Expanded(
                     child: NavigatorBox(
+
                       boxNum : 2 ,
                       isRouteRequired: false,
                       route: (context) => const HomeView(),
