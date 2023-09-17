@@ -4,19 +4,21 @@ import 'package:provider/provider.dart';
 
 
 class APIService {
-  final GraphQLClient qlClient = GraphQLClient(
-    link: HttpLink('https://rasha-clinic.offer4us.com/graphql'),
-    cache: GraphQLCache(),
-  );
-
-  // Future<String> getUserToken(
-  //     {required Input$UserCredentialsInput userCredentialsInput}) async {
-  //
-  //   final mutation = Variables$Mutation$loginUser();
-  //  final result = await qlClient.mutate(mutation) ;
-  //   return "";
-  // }
+  late String baseUrl = 'https://rasha-clinic.offer4us.com/graphql';
+  late String  authToken;
+   APIService(this.authToken);
+  GraphQLClient  getGraphQLClient() {
+    final Link link = HttpLink(
+      baseUrl,
+      defaultHeaders: {
+        'Authorization': 'Bearer $authToken',
+      },
+    );
+    return GraphQLClient(
+      cache: GraphQLCache(),
+      link: link,
+    );
+  }
 }
-
-APIService getAPIService(BuildContext context) =>
-    Provider.of<APIService>(context, listen: false);
+APIService getAPIService(BuildContext context , {bool listen = false}) =>
+    Provider.of<APIService>(context, listen: listen);

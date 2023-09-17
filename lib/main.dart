@@ -5,11 +5,10 @@ import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  final APIService apiService = APIService();
   runApp(
     MultiProvider(
       providers: [
-        Provider<APIService>(create: (_)=>apiService),
+        Provider(create: (context) => APIService("PLACEHOLDER TOKEN"),)
       ],
       child: const DoctorManagementSystem(),
     ),
