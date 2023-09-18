@@ -1,4 +1,8 @@
+import 'dart:async';
+import 'package:flutter/widgets.dart' as widgets;
 import 'package:gql/ast.dart';
+import 'package:graphql/client.dart' as graphql;
+import 'package:graphql_flutter/graphql_flutter.dart' as graphql_flutter;
 import 'schema.graphql.dart';
 
 class Query$currentUser {
@@ -318,6 +322,142 @@ const documentNodeQuerycurrentUser = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$currentUser _parserFn$Query$currentUser(Map<String, dynamic> data) =>
+    Query$currentUser.fromJson(data);
+typedef OnQueryComplete$Query$currentUser = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$currentUser?,
+);
+
+class Options$Query$currentUser
+    extends graphql.QueryOptions<Query$currentUser> {
+  Options$Query$currentUser({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$currentUser? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$currentUser? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$currentUser(data),
+                  ),
+          onError: onError,
+          document: documentNodeQuerycurrentUser,
+          parserFn: _parserFn$Query$currentUser,
+        );
+
+  final OnQueryComplete$Query$currentUser? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$currentUser
+    extends graphql.WatchQueryOptions<Query$currentUser> {
+  WatchOptions$Query$currentUser({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$currentUser? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQuerycurrentUser,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$currentUser,
+        );
+}
+
+class FetchMoreOptions$Query$currentUser extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$currentUser({required graphql.UpdateQuery updateQuery})
+      : super(
+          updateQuery: updateQuery,
+          document: documentNodeQuerycurrentUser,
+        );
+}
+
+extension ClientExtension$Query$currentUser on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$currentUser>> query$currentUser(
+          [Options$Query$currentUser? options]) async =>
+      await this.query(options ?? Options$Query$currentUser());
+  graphql.ObservableQuery<Query$currentUser> watchQuery$currentUser(
+          [WatchOptions$Query$currentUser? options]) =>
+      this.watchQuery(options ?? WatchOptions$Query$currentUser());
+  void writeQuery$currentUser({
+    required Query$currentUser data,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+            operation:
+                graphql.Operation(document: documentNodeQuerycurrentUser)),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$currentUser? readQuery$currentUser({bool optimistic = true}) {
+    final result = this.readQuery(
+      graphql.Request(
+          operation: graphql.Operation(document: documentNodeQuerycurrentUser)),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$currentUser.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$currentUser> useQuery$currentUser(
+        [Options$Query$currentUser? options]) =>
+    graphql_flutter.useQuery(options ?? Options$Query$currentUser());
+graphql.ObservableQuery<Query$currentUser> useWatchQuery$currentUser(
+        [WatchOptions$Query$currentUser? options]) =>
+    graphql_flutter.useWatchQuery(options ?? WatchOptions$Query$currentUser());
+
+class Query$currentUser$Widget
+    extends graphql_flutter.Query<Query$currentUser> {
+  Query$currentUser$Widget({
+    widgets.Key? key,
+    Options$Query$currentUser? options,
+    required graphql_flutter.QueryBuilder<Query$currentUser> builder,
+  }) : super(
+          key: key,
+          options: options ?? Options$Query$currentUser(),
+          builder: builder,
+        );
+}
 
 class Query$currentUser$currentUser {
   Query$currentUser$currentUser({
@@ -1316,6 +1456,146 @@ const documentNodeQuerybookingBranches = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$bookingBranches _parserFn$Query$bookingBranches(
+        Map<String, dynamic> data) =>
+    Query$bookingBranches.fromJson(data);
+typedef OnQueryComplete$Query$bookingBranches = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$bookingBranches?,
+);
+
+class Options$Query$bookingBranches
+    extends graphql.QueryOptions<Query$bookingBranches> {
+  Options$Query$bookingBranches({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingBranches? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$bookingBranches? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$bookingBranches(data),
+                  ),
+          onError: onError,
+          document: documentNodeQuerybookingBranches,
+          parserFn: _parserFn$Query$bookingBranches,
+        );
+
+  final OnQueryComplete$Query$bookingBranches? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$bookingBranches
+    extends graphql.WatchQueryOptions<Query$bookingBranches> {
+  WatchOptions$Query$bookingBranches({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingBranches? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQuerybookingBranches,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$bookingBranches,
+        );
+}
+
+class FetchMoreOptions$Query$bookingBranches extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$bookingBranches(
+      {required graphql.UpdateQuery updateQuery})
+      : super(
+          updateQuery: updateQuery,
+          document: documentNodeQuerybookingBranches,
+        );
+}
+
+extension ClientExtension$Query$bookingBranches on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$bookingBranches>> query$bookingBranches(
+          [Options$Query$bookingBranches? options]) async =>
+      await this.query(options ?? Options$Query$bookingBranches());
+  graphql.ObservableQuery<Query$bookingBranches> watchQuery$bookingBranches(
+          [WatchOptions$Query$bookingBranches? options]) =>
+      this.watchQuery(options ?? WatchOptions$Query$bookingBranches());
+  void writeQuery$bookingBranches({
+    required Query$bookingBranches data,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+            operation:
+                graphql.Operation(document: documentNodeQuerybookingBranches)),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$bookingBranches? readQuery$bookingBranches({bool optimistic = true}) {
+    final result = this.readQuery(
+      graphql.Request(
+          operation:
+              graphql.Operation(document: documentNodeQuerybookingBranches)),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$bookingBranches.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$bookingBranches> useQuery$bookingBranches(
+        [Options$Query$bookingBranches? options]) =>
+    graphql_flutter.useQuery(options ?? Options$Query$bookingBranches());
+graphql.ObservableQuery<Query$bookingBranches> useWatchQuery$bookingBranches(
+        [WatchOptions$Query$bookingBranches? options]) =>
+    graphql_flutter
+        .useWatchQuery(options ?? WatchOptions$Query$bookingBranches());
+
+class Query$bookingBranches$Widget
+    extends graphql_flutter.Query<Query$bookingBranches> {
+  Query$bookingBranches$Widget({
+    widgets.Key? key,
+    Options$Query$bookingBranches? options,
+    required graphql_flutter.QueryBuilder<Query$bookingBranches> builder,
+  }) : super(
+          key: key,
+          options: options ?? Options$Query$bookingBranches(),
+          builder: builder,
+        );
+}
 
 class Query$bookingBranches$bookingBranches {
   Query$bookingBranches$bookingBranches({
@@ -2173,6 +2453,165 @@ const documentNodeQuerybookingCustomerNotes = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$bookingCustomerNotes _parserFn$Query$bookingCustomerNotes(
+        Map<String, dynamic> data) =>
+    Query$bookingCustomerNotes.fromJson(data);
+typedef OnQueryComplete$Query$bookingCustomerNotes = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$bookingCustomerNotes?,
+);
+
+class Options$Query$bookingCustomerNotes
+    extends graphql.QueryOptions<Query$bookingCustomerNotes> {
+  Options$Query$bookingCustomerNotes({
+    String? operationName,
+    required Variables$Query$bookingCustomerNotes variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingCustomerNotes? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$bookingCustomerNotes? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null
+                        ? null
+                        : _parserFn$Query$bookingCustomerNotes(data),
+                  ),
+          onError: onError,
+          document: documentNodeQuerybookingCustomerNotes,
+          parserFn: _parserFn$Query$bookingCustomerNotes,
+        );
+
+  final OnQueryComplete$Query$bookingCustomerNotes? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$bookingCustomerNotes
+    extends graphql.WatchQueryOptions<Query$bookingCustomerNotes> {
+  WatchOptions$Query$bookingCustomerNotes({
+    String? operationName,
+    required Variables$Query$bookingCustomerNotes variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingCustomerNotes? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQuerybookingCustomerNotes,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$bookingCustomerNotes,
+        );
+}
+
+class FetchMoreOptions$Query$bookingCustomerNotes
+    extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$bookingCustomerNotes({
+    required graphql.UpdateQuery updateQuery,
+    required Variables$Query$bookingCustomerNotes variables,
+  }) : super(
+          updateQuery: updateQuery,
+          variables: variables.toJson(),
+          document: documentNodeQuerybookingCustomerNotes,
+        );
+}
+
+extension ClientExtension$Query$bookingCustomerNotes on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$bookingCustomerNotes>>
+      query$bookingCustomerNotes(
+              Options$Query$bookingCustomerNotes options) async =>
+          await this.query(options);
+  graphql.ObservableQuery<Query$bookingCustomerNotes>
+      watchQuery$bookingCustomerNotes(
+              WatchOptions$Query$bookingCustomerNotes options) =>
+          this.watchQuery(options);
+  void writeQuery$bookingCustomerNotes({
+    required Query$bookingCustomerNotes data,
+    required Variables$Query$bookingCustomerNotes variables,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+          operation: graphql.Operation(
+              document: documentNodeQuerybookingCustomerNotes),
+          variables: variables.toJson(),
+        ),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$bookingCustomerNotes? readQuery$bookingCustomerNotes({
+    required Variables$Query$bookingCustomerNotes variables,
+    bool optimistic = true,
+  }) {
+    final result = this.readQuery(
+      graphql.Request(
+        operation:
+            graphql.Operation(document: documentNodeQuerybookingCustomerNotes),
+        variables: variables.toJson(),
+      ),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$bookingCustomerNotes.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$bookingCustomerNotes>
+    useQuery$bookingCustomerNotes(Options$Query$bookingCustomerNotes options) =>
+        graphql_flutter.useQuery(options);
+graphql.ObservableQuery<Query$bookingCustomerNotes>
+    useWatchQuery$bookingCustomerNotes(
+            WatchOptions$Query$bookingCustomerNotes options) =>
+        graphql_flutter.useWatchQuery(options);
+
+class Query$bookingCustomerNotes$Widget
+    extends graphql_flutter.Query<Query$bookingCustomerNotes> {
+  Query$bookingCustomerNotes$Widget({
+    widgets.Key? key,
+    required Options$Query$bookingCustomerNotes options,
+    required graphql_flutter.QueryBuilder<Query$bookingCustomerNotes> builder,
+  }) : super(
+          key: key,
+          options: options,
+          builder: builder,
+        );
+}
 
 class Query$bookingCustomerNotes$bookingCustomerNotes {
   Query$bookingCustomerNotes$bookingCustomerNotes({
@@ -3287,6 +3726,166 @@ const documentNodeQuerybookingCustomerVisits = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$bookingCustomerVisits _parserFn$Query$bookingCustomerVisits(
+        Map<String, dynamic> data) =>
+    Query$bookingCustomerVisits.fromJson(data);
+typedef OnQueryComplete$Query$bookingCustomerVisits = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$bookingCustomerVisits?,
+);
+
+class Options$Query$bookingCustomerVisits
+    extends graphql.QueryOptions<Query$bookingCustomerVisits> {
+  Options$Query$bookingCustomerVisits({
+    String? operationName,
+    required Variables$Query$bookingCustomerVisits variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingCustomerVisits? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$bookingCustomerVisits? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null
+                        ? null
+                        : _parserFn$Query$bookingCustomerVisits(data),
+                  ),
+          onError: onError,
+          document: documentNodeQuerybookingCustomerVisits,
+          parserFn: _parserFn$Query$bookingCustomerVisits,
+        );
+
+  final OnQueryComplete$Query$bookingCustomerVisits? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$bookingCustomerVisits
+    extends graphql.WatchQueryOptions<Query$bookingCustomerVisits> {
+  WatchOptions$Query$bookingCustomerVisits({
+    String? operationName,
+    required Variables$Query$bookingCustomerVisits variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingCustomerVisits? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQuerybookingCustomerVisits,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$bookingCustomerVisits,
+        );
+}
+
+class FetchMoreOptions$Query$bookingCustomerVisits
+    extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$bookingCustomerVisits({
+    required graphql.UpdateQuery updateQuery,
+    required Variables$Query$bookingCustomerVisits variables,
+  }) : super(
+          updateQuery: updateQuery,
+          variables: variables.toJson(),
+          document: documentNodeQuerybookingCustomerVisits,
+        );
+}
+
+extension ClientExtension$Query$bookingCustomerVisits on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$bookingCustomerVisits>>
+      query$bookingCustomerVisits(
+              Options$Query$bookingCustomerVisits options) async =>
+          await this.query(options);
+  graphql.ObservableQuery<Query$bookingCustomerVisits>
+      watchQuery$bookingCustomerVisits(
+              WatchOptions$Query$bookingCustomerVisits options) =>
+          this.watchQuery(options);
+  void writeQuery$bookingCustomerVisits({
+    required Query$bookingCustomerVisits data,
+    required Variables$Query$bookingCustomerVisits variables,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+          operation: graphql.Operation(
+              document: documentNodeQuerybookingCustomerVisits),
+          variables: variables.toJson(),
+        ),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$bookingCustomerVisits? readQuery$bookingCustomerVisits({
+    required Variables$Query$bookingCustomerVisits variables,
+    bool optimistic = true,
+  }) {
+    final result = this.readQuery(
+      graphql.Request(
+        operation:
+            graphql.Operation(document: documentNodeQuerybookingCustomerVisits),
+        variables: variables.toJson(),
+      ),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$bookingCustomerVisits.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$bookingCustomerVisits>
+    useQuery$bookingCustomerVisits(
+            Options$Query$bookingCustomerVisits options) =>
+        graphql_flutter.useQuery(options);
+graphql.ObservableQuery<Query$bookingCustomerVisits>
+    useWatchQuery$bookingCustomerVisits(
+            WatchOptions$Query$bookingCustomerVisits options) =>
+        graphql_flutter.useWatchQuery(options);
+
+class Query$bookingCustomerVisits$Widget
+    extends graphql_flutter.Query<Query$bookingCustomerVisits> {
+  Query$bookingCustomerVisits$Widget({
+    widgets.Key? key,
+    required Options$Query$bookingCustomerVisits options,
+    required graphql_flutter.QueryBuilder<Query$bookingCustomerVisits> builder,
+  }) : super(
+          key: key,
+          options: options,
+          builder: builder,
+        );
+}
 
 class Query$bookingCustomerVisits$bookingCustomerVisits {
   Query$bookingCustomerVisits$bookingCustomerVisits({
@@ -4089,6 +4688,165 @@ const documentNodeQuerybookingReservation = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$bookingReservation _parserFn$Query$bookingReservation(
+        Map<String, dynamic> data) =>
+    Query$bookingReservation.fromJson(data);
+typedef OnQueryComplete$Query$bookingReservation = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$bookingReservation?,
+);
+
+class Options$Query$bookingReservation
+    extends graphql.QueryOptions<Query$bookingReservation> {
+  Options$Query$bookingReservation({
+    String? operationName,
+    required Variables$Query$bookingReservation variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingReservation? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$bookingReservation? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null
+                        ? null
+                        : _parserFn$Query$bookingReservation(data),
+                  ),
+          onError: onError,
+          document: documentNodeQuerybookingReservation,
+          parserFn: _parserFn$Query$bookingReservation,
+        );
+
+  final OnQueryComplete$Query$bookingReservation? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$bookingReservation
+    extends graphql.WatchQueryOptions<Query$bookingReservation> {
+  WatchOptions$Query$bookingReservation({
+    String? operationName,
+    required Variables$Query$bookingReservation variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingReservation? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQuerybookingReservation,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$bookingReservation,
+        );
+}
+
+class FetchMoreOptions$Query$bookingReservation
+    extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$bookingReservation({
+    required graphql.UpdateQuery updateQuery,
+    required Variables$Query$bookingReservation variables,
+  }) : super(
+          updateQuery: updateQuery,
+          variables: variables.toJson(),
+          document: documentNodeQuerybookingReservation,
+        );
+}
+
+extension ClientExtension$Query$bookingReservation on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$bookingReservation>>
+      query$bookingReservation(
+              Options$Query$bookingReservation options) async =>
+          await this.query(options);
+  graphql.ObservableQuery<Query$bookingReservation>
+      watchQuery$bookingReservation(
+              WatchOptions$Query$bookingReservation options) =>
+          this.watchQuery(options);
+  void writeQuery$bookingReservation({
+    required Query$bookingReservation data,
+    required Variables$Query$bookingReservation variables,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+          operation:
+              graphql.Operation(document: documentNodeQuerybookingReservation),
+          variables: variables.toJson(),
+        ),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$bookingReservation? readQuery$bookingReservation({
+    required Variables$Query$bookingReservation variables,
+    bool optimistic = true,
+  }) {
+    final result = this.readQuery(
+      graphql.Request(
+        operation:
+            graphql.Operation(document: documentNodeQuerybookingReservation),
+        variables: variables.toJson(),
+      ),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$bookingReservation.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$bookingReservation>
+    useQuery$bookingReservation(Options$Query$bookingReservation options) =>
+        graphql_flutter.useQuery(options);
+graphql.ObservableQuery<Query$bookingReservation>
+    useWatchQuery$bookingReservation(
+            WatchOptions$Query$bookingReservation options) =>
+        graphql_flutter.useWatchQuery(options);
+
+class Query$bookingReservation$Widget
+    extends graphql_flutter.Query<Query$bookingReservation> {
+  Query$bookingReservation$Widget({
+    widgets.Key? key,
+    required Options$Query$bookingReservation options,
+    required graphql_flutter.QueryBuilder<Query$bookingReservation> builder,
+  }) : super(
+          key: key,
+          options: options,
+          builder: builder,
+        );
+}
 
 class Query$bookingReservation$bookingReservation {
   Query$bookingReservation$bookingReservation({
@@ -5333,6 +6091,168 @@ const documentNodeQuerybookingReservations = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$bookingReservations _parserFn$Query$bookingReservations(
+        Map<String, dynamic> data) =>
+    Query$bookingReservations.fromJson(data);
+typedef OnQueryComplete$Query$bookingReservations = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$bookingReservations?,
+);
+
+class Options$Query$bookingReservations
+    extends graphql.QueryOptions<Query$bookingReservations> {
+  Options$Query$bookingReservations({
+    String? operationName,
+    Variables$Query$bookingReservations? variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingReservations? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$bookingReservations? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          variables: variables?.toJson() ?? {},
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null
+                        ? null
+                        : _parserFn$Query$bookingReservations(data),
+                  ),
+          onError: onError,
+          document: documentNodeQuerybookingReservations,
+          parserFn: _parserFn$Query$bookingReservations,
+        );
+
+  final OnQueryComplete$Query$bookingReservations? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$bookingReservations
+    extends graphql.WatchQueryOptions<Query$bookingReservations> {
+  WatchOptions$Query$bookingReservations({
+    String? operationName,
+    Variables$Query$bookingReservations? variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingReservations? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          variables: variables?.toJson() ?? {},
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQuerybookingReservations,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$bookingReservations,
+        );
+}
+
+class FetchMoreOptions$Query$bookingReservations
+    extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$bookingReservations({
+    required graphql.UpdateQuery updateQuery,
+    Variables$Query$bookingReservations? variables,
+  }) : super(
+          updateQuery: updateQuery,
+          variables: variables?.toJson() ?? {},
+          document: documentNodeQuerybookingReservations,
+        );
+}
+
+extension ClientExtension$Query$bookingReservations on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$bookingReservations>>
+      query$bookingReservations(
+              [Options$Query$bookingReservations? options]) async =>
+          await this.query(options ?? Options$Query$bookingReservations());
+  graphql.ObservableQuery<Query$bookingReservations>
+      watchQuery$bookingReservations(
+              [WatchOptions$Query$bookingReservations? options]) =>
+          this.watchQuery(options ?? WatchOptions$Query$bookingReservations());
+  void writeQuery$bookingReservations({
+    required Query$bookingReservations data,
+    Variables$Query$bookingReservations? variables,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+          operation:
+              graphql.Operation(document: documentNodeQuerybookingReservations),
+          variables: variables?.toJson() ?? const {},
+        ),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$bookingReservations? readQuery$bookingReservations({
+    Variables$Query$bookingReservations? variables,
+    bool optimistic = true,
+  }) {
+    final result = this.readQuery(
+      graphql.Request(
+        operation:
+            graphql.Operation(document: documentNodeQuerybookingReservations),
+        variables: variables?.toJson() ?? const {},
+      ),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$bookingReservations.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$bookingReservations>
+    useQuery$bookingReservations(
+            [Options$Query$bookingReservations? options]) =>
+        graphql_flutter
+            .useQuery(options ?? Options$Query$bookingReservations());
+graphql.ObservableQuery<Query$bookingReservations>
+    useWatchQuery$bookingReservations(
+            [WatchOptions$Query$bookingReservations? options]) =>
+        graphql_flutter
+            .useWatchQuery(options ?? WatchOptions$Query$bookingReservations());
+
+class Query$bookingReservations$Widget
+    extends graphql_flutter.Query<Query$bookingReservations> {
+  Query$bookingReservations$Widget({
+    widgets.Key? key,
+    Options$Query$bookingReservations? options,
+    required graphql_flutter.QueryBuilder<Query$bookingReservations> builder,
+  }) : super(
+          key: key,
+          options: options ?? Options$Query$bookingReservations(),
+          builder: builder,
+        );
+}
 
 class Query$bookingReservations$bookingReservations {
   Query$bookingReservations$bookingReservations({
@@ -6107,6 +7027,161 @@ const documentNodeQuerybookingTimeSlots = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$bookingTimeSlots _parserFn$Query$bookingTimeSlots(
+        Map<String, dynamic> data) =>
+    Query$bookingTimeSlots.fromJson(data);
+typedef OnQueryComplete$Query$bookingTimeSlots = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$bookingTimeSlots?,
+);
+
+class Options$Query$bookingTimeSlots
+    extends graphql.QueryOptions<Query$bookingTimeSlots> {
+  Options$Query$bookingTimeSlots({
+    String? operationName,
+    required Variables$Query$bookingTimeSlots variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingTimeSlots? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$bookingTimeSlots? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null
+                        ? null
+                        : _parserFn$Query$bookingTimeSlots(data),
+                  ),
+          onError: onError,
+          document: documentNodeQuerybookingTimeSlots,
+          parserFn: _parserFn$Query$bookingTimeSlots,
+        );
+
+  final OnQueryComplete$Query$bookingTimeSlots? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$bookingTimeSlots
+    extends graphql.WatchQueryOptions<Query$bookingTimeSlots> {
+  WatchOptions$Query$bookingTimeSlots({
+    String? operationName,
+    required Variables$Query$bookingTimeSlots variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingTimeSlots? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQuerybookingTimeSlots,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$bookingTimeSlots,
+        );
+}
+
+class FetchMoreOptions$Query$bookingTimeSlots extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$bookingTimeSlots({
+    required graphql.UpdateQuery updateQuery,
+    required Variables$Query$bookingTimeSlots variables,
+  }) : super(
+          updateQuery: updateQuery,
+          variables: variables.toJson(),
+          document: documentNodeQuerybookingTimeSlots,
+        );
+}
+
+extension ClientExtension$Query$bookingTimeSlots on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$bookingTimeSlots>> query$bookingTimeSlots(
+          Options$Query$bookingTimeSlots options) async =>
+      await this.query(options);
+  graphql.ObservableQuery<Query$bookingTimeSlots> watchQuery$bookingTimeSlots(
+          WatchOptions$Query$bookingTimeSlots options) =>
+      this.watchQuery(options);
+  void writeQuery$bookingTimeSlots({
+    required Query$bookingTimeSlots data,
+    required Variables$Query$bookingTimeSlots variables,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+          operation:
+              graphql.Operation(document: documentNodeQuerybookingTimeSlots),
+          variables: variables.toJson(),
+        ),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$bookingTimeSlots? readQuery$bookingTimeSlots({
+    required Variables$Query$bookingTimeSlots variables,
+    bool optimistic = true,
+  }) {
+    final result = this.readQuery(
+      graphql.Request(
+        operation:
+            graphql.Operation(document: documentNodeQuerybookingTimeSlots),
+        variables: variables.toJson(),
+      ),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$bookingTimeSlots.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$bookingTimeSlots>
+    useQuery$bookingTimeSlots(Options$Query$bookingTimeSlots options) =>
+        graphql_flutter.useQuery(options);
+graphql.ObservableQuery<Query$bookingTimeSlots> useWatchQuery$bookingTimeSlots(
+        WatchOptions$Query$bookingTimeSlots options) =>
+    graphql_flutter.useWatchQuery(options);
+
+class Query$bookingTimeSlots$Widget
+    extends graphql_flutter.Query<Query$bookingTimeSlots> {
+  Query$bookingTimeSlots$Widget({
+    widgets.Key? key,
+    required Options$Query$bookingTimeSlots options,
+    required graphql_flutter.QueryBuilder<Query$bookingTimeSlots> builder,
+  }) : super(
+          key: key,
+          options: options,
+          builder: builder,
+        );
+}
 
 class Query$bookingTimeSlots$bookingTimeSlots {
   Query$bookingTimeSlots$bookingTimeSlots({
@@ -6537,6 +7612,145 @@ const documentNodeQuerysettingGroups = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$settingGroups _parserFn$Query$settingGroups(Map<String, dynamic> data) =>
+    Query$settingGroups.fromJson(data);
+typedef OnQueryComplete$Query$settingGroups = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$settingGroups?,
+);
+
+class Options$Query$settingGroups
+    extends graphql.QueryOptions<Query$settingGroups> {
+  Options$Query$settingGroups({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$settingGroups? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$settingGroups? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$settingGroups(data),
+                  ),
+          onError: onError,
+          document: documentNodeQuerysettingGroups,
+          parserFn: _parserFn$Query$settingGroups,
+        );
+
+  final OnQueryComplete$Query$settingGroups? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$settingGroups
+    extends graphql.WatchQueryOptions<Query$settingGroups> {
+  WatchOptions$Query$settingGroups({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$settingGroups? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQuerysettingGroups,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$settingGroups,
+        );
+}
+
+class FetchMoreOptions$Query$settingGroups extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$settingGroups(
+      {required graphql.UpdateQuery updateQuery})
+      : super(
+          updateQuery: updateQuery,
+          document: documentNodeQuerysettingGroups,
+        );
+}
+
+extension ClientExtension$Query$settingGroups on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$settingGroups>> query$settingGroups(
+          [Options$Query$settingGroups? options]) async =>
+      await this.query(options ?? Options$Query$settingGroups());
+  graphql.ObservableQuery<Query$settingGroups> watchQuery$settingGroups(
+          [WatchOptions$Query$settingGroups? options]) =>
+      this.watchQuery(options ?? WatchOptions$Query$settingGroups());
+  void writeQuery$settingGroups({
+    required Query$settingGroups data,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+            operation:
+                graphql.Operation(document: documentNodeQuerysettingGroups)),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$settingGroups? readQuery$settingGroups({bool optimistic = true}) {
+    final result = this.readQuery(
+      graphql.Request(
+          operation:
+              graphql.Operation(document: documentNodeQuerysettingGroups)),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$settingGroups.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$settingGroups> useQuery$settingGroups(
+        [Options$Query$settingGroups? options]) =>
+    graphql_flutter.useQuery(options ?? Options$Query$settingGroups());
+graphql.ObservableQuery<Query$settingGroups> useWatchQuery$settingGroups(
+        [WatchOptions$Query$settingGroups? options]) =>
+    graphql_flutter
+        .useWatchQuery(options ?? WatchOptions$Query$settingGroups());
+
+class Query$settingGroups$Widget
+    extends graphql_flutter.Query<Query$settingGroups> {
+  Query$settingGroups$Widget({
+    widgets.Key? key,
+    Options$Query$settingGroups? options,
+    required graphql_flutter.QueryBuilder<Query$settingGroups> builder,
+  }) : super(
+          key: key,
+          options: options ?? Options$Query$settingGroups(),
+          builder: builder,
+        );
+}
 
 class Query$settingGroups$settingGroups {
   Query$settingGroups$settingGroups({
@@ -6955,6 +8169,139 @@ const documentNodeQuerysettings = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$settings _parserFn$Query$settings(Map<String, dynamic> data) =>
+    Query$settings.fromJson(data);
+typedef OnQueryComplete$Query$settings = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$settings?,
+);
+
+class Options$Query$settings extends graphql.QueryOptions<Query$settings> {
+  Options$Query$settings({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$settings? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$settings? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$settings(data),
+                  ),
+          onError: onError,
+          document: documentNodeQuerysettings,
+          parserFn: _parserFn$Query$settings,
+        );
+
+  final OnQueryComplete$Query$settings? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$settings
+    extends graphql.WatchQueryOptions<Query$settings> {
+  WatchOptions$Query$settings({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$settings? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQuerysettings,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$settings,
+        );
+}
+
+class FetchMoreOptions$Query$settings extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$settings({required graphql.UpdateQuery updateQuery})
+      : super(
+          updateQuery: updateQuery,
+          document: documentNodeQuerysettings,
+        );
+}
+
+extension ClientExtension$Query$settings on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$settings>> query$settings(
+          [Options$Query$settings? options]) async =>
+      await this.query(options ?? Options$Query$settings());
+  graphql.ObservableQuery<Query$settings> watchQuery$settings(
+          [WatchOptions$Query$settings? options]) =>
+      this.watchQuery(options ?? WatchOptions$Query$settings());
+  void writeQuery$settings({
+    required Query$settings data,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+            operation: graphql.Operation(document: documentNodeQuerysettings)),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$settings? readQuery$settings({bool optimistic = true}) {
+    final result = this.readQuery(
+      graphql.Request(
+          operation: graphql.Operation(document: documentNodeQuerysettings)),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$settings.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$settings> useQuery$settings(
+        [Options$Query$settings? options]) =>
+    graphql_flutter.useQuery(options ?? Options$Query$settings());
+graphql.ObservableQuery<Query$settings> useWatchQuery$settings(
+        [WatchOptions$Query$settings? options]) =>
+    graphql_flutter.useWatchQuery(options ?? WatchOptions$Query$settings());
+
+class Query$settings$Widget extends graphql_flutter.Query<Query$settings> {
+  Query$settings$Widget({
+    widgets.Key? key,
+    Options$Query$settings? options,
+    required graphql_flutter.QueryBuilder<Query$settings> builder,
+  }) : super(
+          key: key,
+          options: options ?? Options$Query$settings(),
+          builder: builder,
+        );
+}
 
 class Query$settings$settings {
   Query$settings$settings({
@@ -7675,6 +9022,153 @@ const documentNodeQueryusers = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$users _parserFn$Query$users(Map<String, dynamic> data) =>
+    Query$users.fromJson(data);
+typedef OnQueryComplete$Query$users = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$users?,
+);
+
+class Options$Query$users extends graphql.QueryOptions<Query$users> {
+  Options$Query$users({
+    String? operationName,
+    Variables$Query$users? variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$users? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$users? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          variables: variables?.toJson() ?? {},
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$users(data),
+                  ),
+          onError: onError,
+          document: documentNodeQueryusers,
+          parserFn: _parserFn$Query$users,
+        );
+
+  final OnQueryComplete$Query$users? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$users extends graphql.WatchQueryOptions<Query$users> {
+  WatchOptions$Query$users({
+    String? operationName,
+    Variables$Query$users? variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$users? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          variables: variables?.toJson() ?? {},
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQueryusers,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$users,
+        );
+}
+
+class FetchMoreOptions$Query$users extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$users({
+    required graphql.UpdateQuery updateQuery,
+    Variables$Query$users? variables,
+  }) : super(
+          updateQuery: updateQuery,
+          variables: variables?.toJson() ?? {},
+          document: documentNodeQueryusers,
+        );
+}
+
+extension ClientExtension$Query$users on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$users>> query$users(
+          [Options$Query$users? options]) async =>
+      await this.query(options ?? Options$Query$users());
+  graphql.ObservableQuery<Query$users> watchQuery$users(
+          [WatchOptions$Query$users? options]) =>
+      this.watchQuery(options ?? WatchOptions$Query$users());
+  void writeQuery$users({
+    required Query$users data,
+    Variables$Query$users? variables,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+          operation: graphql.Operation(document: documentNodeQueryusers),
+          variables: variables?.toJson() ?? const {},
+        ),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$users? readQuery$users({
+    Variables$Query$users? variables,
+    bool optimistic = true,
+  }) {
+    final result = this.readQuery(
+      graphql.Request(
+        operation: graphql.Operation(document: documentNodeQueryusers),
+        variables: variables?.toJson() ?? const {},
+      ),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$users.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$users> useQuery$users(
+        [Options$Query$users? options]) =>
+    graphql_flutter.useQuery(options ?? Options$Query$users());
+graphql.ObservableQuery<Query$users> useWatchQuery$users(
+        [WatchOptions$Query$users? options]) =>
+    graphql_flutter.useWatchQuery(options ?? WatchOptions$Query$users());
+
+class Query$users$Widget extends graphql_flutter.Query<Query$users> {
+  Query$users$Widget({
+    widgets.Key? key,
+    Options$Query$users? options,
+    required graphql_flutter.QueryBuilder<Query$users> builder,
+  }) : super(
+          key: key,
+          options: options ?? Options$Query$users(),
+          builder: builder,
+        );
+}
 
 class Query$users$users {
   Query$users$users({
@@ -8366,6 +9860,162 @@ const documentNodeQuerybookingCurrentReservations = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$bookingCurrentReservations _parserFn$Query$bookingCurrentReservations(
+        Map<String, dynamic> data) =>
+    Query$bookingCurrentReservations.fromJson(data);
+typedef OnQueryComplete$Query$bookingCurrentReservations = FutureOr<void>
+    Function(
+  Map<String, dynamic>?,
+  Query$bookingCurrentReservations?,
+);
+
+class Options$Query$bookingCurrentReservations
+    extends graphql.QueryOptions<Query$bookingCurrentReservations> {
+  Options$Query$bookingCurrentReservations({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingCurrentReservations? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$bookingCurrentReservations? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null
+                        ? null
+                        : _parserFn$Query$bookingCurrentReservations(data),
+                  ),
+          onError: onError,
+          document: documentNodeQuerybookingCurrentReservations,
+          parserFn: _parserFn$Query$bookingCurrentReservations,
+        );
+
+  final OnQueryComplete$Query$bookingCurrentReservations? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$bookingCurrentReservations
+    extends graphql.WatchQueryOptions<Query$bookingCurrentReservations> {
+  WatchOptions$Query$bookingCurrentReservations({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$bookingCurrentReservations? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQuerybookingCurrentReservations,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$bookingCurrentReservations,
+        );
+}
+
+class FetchMoreOptions$Query$bookingCurrentReservations
+    extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$bookingCurrentReservations(
+      {required graphql.UpdateQuery updateQuery})
+      : super(
+          updateQuery: updateQuery,
+          document: documentNodeQuerybookingCurrentReservations,
+        );
+}
+
+extension ClientExtension$Query$bookingCurrentReservations
+    on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$bookingCurrentReservations>>
+      query$bookingCurrentReservations(
+              [Options$Query$bookingCurrentReservations? options]) async =>
+          await this
+              .query(options ?? Options$Query$bookingCurrentReservations());
+  graphql.ObservableQuery<Query$bookingCurrentReservations>
+      watchQuery$bookingCurrentReservations(
+              [WatchOptions$Query$bookingCurrentReservations? options]) =>
+          this.watchQuery(
+              options ?? WatchOptions$Query$bookingCurrentReservations());
+  void writeQuery$bookingCurrentReservations({
+    required Query$bookingCurrentReservations data,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+            operation: graphql.Operation(
+                document: documentNodeQuerybookingCurrentReservations)),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$bookingCurrentReservations? readQuery$bookingCurrentReservations(
+      {bool optimistic = true}) {
+    final result = this.readQuery(
+      graphql.Request(
+          operation: graphql.Operation(
+              document: documentNodeQuerybookingCurrentReservations)),
+      optimistic: optimistic,
+    );
+    return result == null
+        ? null
+        : Query$bookingCurrentReservations.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$bookingCurrentReservations>
+    useQuery$bookingCurrentReservations(
+            [Options$Query$bookingCurrentReservations? options]) =>
+        graphql_flutter
+            .useQuery(options ?? Options$Query$bookingCurrentReservations());
+graphql.ObservableQuery<Query$bookingCurrentReservations>
+    useWatchQuery$bookingCurrentReservations(
+            [WatchOptions$Query$bookingCurrentReservations? options]) =>
+        graphql_flutter.useWatchQuery(
+            options ?? WatchOptions$Query$bookingCurrentReservations());
+
+class Query$bookingCurrentReservations$Widget
+    extends graphql_flutter.Query<Query$bookingCurrentReservations> {
+  Query$bookingCurrentReservations$Widget({
+    widgets.Key? key,
+    Options$Query$bookingCurrentReservations? options,
+    required graphql_flutter.QueryBuilder<Query$bookingCurrentReservations>
+        builder,
+  }) : super(
+          key: key,
+          options: options ?? Options$Query$bookingCurrentReservations(),
+          builder: builder,
+        );
+}
 
 class Query$bookingCurrentReservations$bookingCurrentReservations {
   Query$bookingCurrentReservations$bookingCurrentReservations({

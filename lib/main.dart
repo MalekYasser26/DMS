@@ -8,7 +8,7 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        Provider(create: (context) => APIService("PLACEHOLDER TOKEN"),)
+        Provider(create: (context) => APIService(),),
       ],
       child: const DoctorManagementSystem(),
     ),
