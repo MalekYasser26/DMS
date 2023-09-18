@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -6,11 +7,11 @@ class PreferenceService extends ChangeNotifier {
 
   Locale get locale => Locale(_locale);
 
-  void changeLocale() {
-    isEn() == true ? _locale = 'ar' : _locale = 'en';
+  void changeLocale(String language) {
+    if (!L10n.supportedLocales.contains(Locale(language))) return;
+    _locale = language;
     notifyListeners();
   }
-
   bool isEn() => _locale == "en";
 }
 

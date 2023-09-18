@@ -1,88 +1,74 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
-import 'package:doctor_management_system/core/services/shared/shared_services.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
-class NavigatorBox extends StatelessWidget {
+class NavigatorBox extends StatefulWidget {
   final String text;
   final double height, fontSize;
-  final Color borderColor, textColor;
-  final FontWeight weight;
   final WidgetBuilder route;
   final bool isRouteRequired;
   final int boxNum;
+  final bool isPressed;
+  final Function toggle;
 
   const NavigatorBox({
     Key? key,
     required this.text,
     required this.height,
     required this.fontSize,
-    required this.borderColor,
-    required this.textColor,
     required this.route,
     this.isRouteRequired = true,
     required this.boxNum,
-    this.weight = FontWeight.w400,
+    required this.toggle,
+    this.isPressed = false,
   }) : super(key: key);
 
   @override
+  State<NavigatorBox> createState() => _NavigatorBoxState();
+}
+
+class _NavigatorBoxState extends State<NavigatorBox> {
+  @override
   Widget build(BuildContext context) {
-    final sharedServices = Provider.of<SharedServices>(context);
-    return Consumer<SharedServices>(
-      builder: (context, value, child) => InkWell(
+    return InkWell(
         onTap: () {
-          if (isRouteRequired) {
+          if (widget.isRouteRequired) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: route),
+              MaterialPageRoute(builder: widget.route),
             );
-          } else if (!isRouteRequired) {
-            if (boxNum == 1) {
-              sharedServices.isPressed = false;
-            }
-            if (boxNum == 2) {
-              sharedServices.isPressed = true;
-            }
-            sharedServices.toggleNavBoxActive();
+          } else if (!widget.isRouteRequired) {
+              widget.toggle();
           }
         },
         child: Container(
-          height: height,
+          height: widget.height,
           decoration: BoxDecoration(
-            border: Border.all(
-                color: isRouteRequired
-                    ? Colors.white
-                    : (boxNum == 1 && sharedServices.isPressed == false
-                    ? AppColors.lightBlue
-                    : boxNum == 2 && sharedServices.isPressed == true
-                    ? AppColors.lightBlue
-                    : Colors.grey)),
-            color: Colors.transparent,
-          ),
+              color: Colors.transparent,
+              border: Border.all(
+                  color: widget.isRouteRequired
+                      ? Colors.white
+                      : widget.isPressed
+                          ? AppColors.lightBlue
+                          : Colors.grey)),
           child: Center(
             child: Text(
-              text,
+              widget.text,
               style: GoogleFonts.cairo(
-                  color: isRouteRequired
+                  color: widget.isRouteRequired
                       ? Colors.white
-                      : boxNum == 1 && sharedServices.isPressed == false
-                      ? AppColors.lightBlue
-                      : boxNum == 2 && sharedServices.isPressed == true
-                      ? AppColors.lightBlue
-                      : Colors.grey,
-                  fontSize: fontSize,
-                  fontWeight: isRouteRequired
+                      : widget.isPressed
+                          ? AppColors.lightBlue
+                          : Colors.grey,
+                  fontSize: widget.fontSize,
+                  fontWeight: widget.isRouteRequired
                       ? FontWeight.w400
-                      : boxNum == 1 && sharedServices.isPressed == false
-                      ? FontWeight.bold
-                      : boxNum == 2 && sharedServices.isPressed == true
-                      ? FontWeight.bold
-                      : FontWeight.w600),
+                      :widget.isPressed
+                          ? FontWeight.bold
+                          : FontWeight.w600),
             ),
           ),
         ),
-      ),
     );
   }
 }

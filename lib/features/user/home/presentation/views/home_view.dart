@@ -49,12 +49,11 @@ class HomeView extends StatelessWidget {
                       children: [
                         Expanded(
                           child: NavigatorBox(
+                            toggle: (){},
                             boxNum: 3,
                             text: locale.queueWait,
                             height: 15.h,
                             fontSize: 2.8.h,
-                            borderColor: Colors.white,
-                            textColor: Colors.white,
                             route: (context) => LoginView(
                               route: (context) => const QueueWaitView(),
                             ),
@@ -63,12 +62,11 @@ class HomeView extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Expanded(
                           child: NavigatorBox(
+                            toggle: (){},
                             boxNum: 4,
                             text: locale.rateService,
                             height: 15.h,
                             fontSize: 2.8.h,
-                            borderColor: Colors.white,
-                            textColor: Colors.white,
                             route: (context) => LoginView(
                               route: (context) => const RateSeviceView(),
                             ),

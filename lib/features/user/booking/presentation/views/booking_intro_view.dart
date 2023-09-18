@@ -14,13 +14,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class BookingIntroView extends StatelessWidget {
+class BookingIntroView extends StatefulWidget {
   const BookingIntroView({Key? key}) : super(key: key);
 
   @override
+  State<BookingIntroView> createState() => _BookingIntroViewState();
+}
+
+class _BookingIntroViewState extends State<BookingIntroView> {
+  bool isCheck = true ;
+  @override
   Widget build(BuildContext context) {
     final locale = getL10n(context) ;
-    final pref = getPreferenceService(context);
+    final preferenceService = getPreferenceService(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -52,7 +58,7 @@ class BookingIntroView extends StatelessWidget {
                       ),
                       child: Center(
                         child: Padding(
-                          padding: getPreferenceService(context).isEn()
+                          padding: preferenceService.isEn()
                               ? EdgeInsets.only(left: 2.w)
                               : EdgeInsets.only(right: 2.w),
                           child: const Icon(
@@ -106,7 +112,7 @@ class BookingIntroView extends StatelessWidget {
                   ),
                   const Spacer(),
                   IconButton(onPressed: () {
-                    pref.changeLocale() ;
+                    preferenceService.changeLocale(preferenceService.isEn()?'ar':'en') ;
                   }, icon: const Icon(Icons.public))
                 ],
               ),
@@ -115,29 +121,35 @@ class BookingIntroView extends StatelessWidget {
                 children: [
                   Expanded(
                     child: NavigatorBox(
+                      toggle: (){
+                        isCheck = true ;
+                        setState(() {
+                        });
+                      },
                       route: (context) => const HomeView(),
                       text: locale.check,
                       height: 15.h,
                       fontSize: 2.8.h,
-                      borderColor: AppColors.lightBlue,
-                      textColor: AppColors.lightBlue,
-                      weight: FontWeight.bold,
                       isRouteRequired: false,
-                      boxNum : 1
+                      boxNum : 1,
+                      isPressed : isCheck,
                     ),
                   ),
                   SizedBox(width: 2.h),
                   Expanded(
                     child: NavigatorBox(
-
+                      toggle: (){
+                        isCheck = false ;
+                        setState(() {
+                        });
+                      },
+                      isPressed : !isCheck ,
                       boxNum : 2 ,
                       isRouteRequired: false,
                       route: (context) => const HomeView(),
                       text: locale.consult,
                       height: 15.h,
                       fontSize: 2.8.h,
-                      borderColor: Colors.grey.shade600,
-                      textColor: Colors.black,
                     ),
                   ),
                 ],
