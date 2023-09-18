@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/my_dates_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,7 +30,7 @@ class AppointmentConfirmView extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(top: 23.0, bottom: 8),
                           child: Image.asset(
-                            "assets/images/confirm.png",
+                           AssetsImages.confirm,
                             width: 25.w,
                           ),
                         ),

@@ -1,8 +1,10 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
 import 'package:doctor_management_system/data/my_dates_view_temp_data.dart';
 import 'package:doctor_management_system/features/booking/presentation/views/booking_intro_view.dart';
 import 'package:doctor_management_system/features/dates/presentation/views/widgets/appointment_booking.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
@@ -103,9 +105,8 @@ class _MyDatesViewState extends State<MyDatesView> {
                         fontSize: 2.5.h,
                       ),
                     ),
-                    leading: const Icon(
-                      Icons.search_sharp,
-                      color: Colors.grey,
+                    leading:SvgPicture.asset(
+                      AssetsIcons.searchIcon
                     ),
                     hintText: "ابحث",
                     shape: const MaterialStatePropertyAll(

@@ -1,6 +1,6 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/data/patient_details_temp_data.dart';
-import 'package:doctor_management_system/core/constants/assets/assets_data.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_alert_button.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/drug_info.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/additional_notes.dart';
@@ -8,8 +8,11 @@ import 'package:doctor_management_system/features/patient_details/presentation/v
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/medical_history_item.dart';
 import 'package:doctor_management_system/features/patient_details/presentation/views/widgets/add_note_alert.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../../../core/constants/assets/assets_icons.dart';
 
 class PatientDetailsView extends StatefulWidget {
   final int initialIndex;
@@ -88,7 +91,7 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                 CircleAvatar(
                   backgroundColor: Colors.transparent,
                   radius: 60,
-                  child: Image.asset(AssetsData.person, fit: BoxFit.cover),
+                  child: Image.asset(AssetsImages.person, fit: BoxFit.cover),
                 ),
                 SizedBox(height: 1.h),
                 Text(
@@ -104,9 +107,8 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                       children: [
                         Row(
                           children: [
-                            const Icon(
-                              Icons.person_outline,
-                              color: Colors.black,
+                             SvgPicture.asset(
+                              AssetsIcons.photoUser,
                             ),
                             SizedBox(width: 2.w),
                             Text(
@@ -121,9 +123,8 @@ class _PatientDetailsViewState extends State<PatientDetailsView> {
                         SizedBox(width: 4.w),
                         Row(
                           children: [
-                            const Icon(
-                              Icons.local_phone_outlined,
-                              color: Colors.black,
+                            SvgPicture.asset(
+                              AssetsIcons.photoPhoneIcon,
                             ),
                             SizedBox(width: 2.w),
                             Text(

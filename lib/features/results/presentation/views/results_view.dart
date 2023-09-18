@@ -3,10 +3,13 @@ import 'package:doctor_management_system/features/patient_list/presentation/view
 import 'package:doctor_management_system/features/results/presentation/widgets/table_calendar_item.dart';
 import 'package:doctor_management_system/features/results/presentation/widgets/calendar_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 import 'dart:ui' as ui;
+
+import '../../../../core/constants/assets/assets_icons.dart';
 
 class ResultsView extends StatefulWidget {
   const ResultsView({Key? key}) : super(key: key);
@@ -316,9 +319,8 @@ class _ResultsViewState extends State<ResultsView> {
                     ),
                     suffixIcon: MaterialButton(
                       onPressed: _showDatePicker,
-                      child: Image.asset(
-                        "assets/images/calendar.png",
-                        height: 4.h,
+                      child:  SvgPicture.asset(
+                        AssetsIcons.calendarIcon,
                       ),
                     ),
                   ),
