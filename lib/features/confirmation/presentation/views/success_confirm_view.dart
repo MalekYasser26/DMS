@@ -1,4 +1,3 @@
-import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
 import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,7 +29,7 @@ class SuccessConfirmView extends StatelessWidget {
                 children: [
                   SizedBox(height: 10.h),
                   Image.asset(
-                   AssetsImages.confirm,
+                    AssetsImages.confirm,
                     width: 35.w,
                   ),
                   Padding(
