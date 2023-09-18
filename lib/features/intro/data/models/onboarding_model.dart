@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/assets_data.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 
 class BoardingModel {
   final String image;
@@ -7,7 +7,7 @@ class BoardingModel {
 }
 
 List<BoardingModel> boardingItems = [
-  const BoardingModel(AssetsData.boarding1),
-  const BoardingModel(AssetsData.boarding2),
-  const BoardingModel(AssetsData.boarding3),
+  const BoardingModel(AssetsImages.boarding1),
+  const BoardingModel(AssetsImages.boarding2),
+  const BoardingModel(AssetsImages.boarding3),
 ];

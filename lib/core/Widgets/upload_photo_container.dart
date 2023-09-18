@@ -1,7 +1,8 @@
-import 'package:doctor_management_system/core/constants/assets_data.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
 import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sizer/sizer.dart';
@@ -41,7 +42,7 @@ class _UploadPhotoContainerState extends State<UploadPhotoContainer> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 2.0.h),
-                  child: Image.asset(AssetsData.uploadPhoto, height: 5.h),
+                  child: SvgPicture.asset(AssetsIcons.documentIcon),
                 ),
                 Text(
                   "رفع صورة الدواء ان وجدت",

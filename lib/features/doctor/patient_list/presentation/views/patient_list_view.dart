@@ -1,4 +1,5 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
 import 'package:doctor_management_system/data/patient_list_view_temp_data.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/one_button_confirm_view.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/two_buttons_confirm_view.dart';
@@ -9,6 +10,7 @@ import 'package:doctor_management_system/core/Widgets/absent_or_present.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class PatientListView extends StatefulWidget {
   const PatientListView({Key? key}) : super(key: key);
@@ -108,7 +110,10 @@ class _PatientListViewState extends State<PatientListView> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Image.asset("assets/images/logout.png"),
+                            child:SvgPicture.asset(
+                                AssetsIcons.guidanceIcon,
+                            )
+
                           ),
                         ),
                       ),
@@ -126,12 +131,11 @@ class _PatientListViewState extends State<PatientListView> {
                         ),
                         child: Row(
                           children: [
-                            const Padding(
-                              padding: EdgeInsets.only(right: 5.0, left: 5),
-                              child: Icon(
-                                Icons.search,
-                                color: Color(0xffA3A3A3),
-                              ),
+                             Padding(
+                              padding: const EdgeInsets.only(right: 5.0, left: 5),
+                              child: SvgPicture.asset(
+                                AssetsIcons.searchIcon,
+                              )
                             ),
                             Text(
                               " ابحث",
@@ -160,7 +164,9 @@ class _PatientListViewState extends State<PatientListView> {
                           width: 16.w,
                           decoration:
                               const BoxDecoration(color: Color(0xff159BAD)),
-                          child: Image.asset("assets/images/filtered.png"),
+                          child:SvgPicture.asset(
+                            AssetsIcons.sliderIcon,
+                          )
                         ),
                       ),
                     ],
@@ -409,9 +415,8 @@ class _PatientListViewState extends State<PatientListView> {
                           ),
                         ),
                         SizedBox(width: 15.h),
-                        Image.asset(
-                          "assets/images/list.png",
-                          height: 3.h,
+                        SvgPicture.asset(
+                          AssetsIcons.arrowDownArrowUpIcon,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 6.0),
@@ -433,9 +438,8 @@ class _PatientListViewState extends State<PatientListView> {
                           ),
                         ),
                         const Spacer(),
-                        Image.asset(
-                          "assets/images/list.png",
-                          height: 3.h,
+                        SvgPicture.asset(
+                          AssetsIcons.arrowDownArrowUpIcon,
                         ),
                         SizedBox(width: 1.h),
                         SizedBox(
@@ -475,7 +479,7 @@ class _PatientListViewState extends State<PatientListView> {
                             shape: const CircleBorder(),
                             color: const Color(0xffF5F7F9),
                             child: const Padding(
-                              padding: EdgeInsets.all(3.0),
+                              padding: EdgeInsets.all(1.0),
                               child: Icon(
                                 Icons.arrow_forward_ios,
                                 size: 13,
@@ -664,9 +668,8 @@ class _PatientListViewState extends State<PatientListView> {
                                                       setState(() {});
                                                     }
                                                   },
-                                                  child: Image.asset(
-                                                    'assets/images/threedots.png',
-                                                    height: 1.h,
+                                                  child: SvgPicture.asset(
+                                                    AssetsIcons.groupIcon,
                                                   ),
                                                 ),
                                               ),

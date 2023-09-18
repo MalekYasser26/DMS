@@ -51,14 +51,14 @@ class _MyDatesViewState extends State<MyDatesView> {
                               ),
                             ),
                             SizedBox(
-                              width: 20.w
+                                width: 20.w
                             ),
                             InkWell(
                               onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      const BookingIntroView(),
+                                  const BookingIntroView(),
                                 ),
                               ),
                               child: Container(
@@ -101,9 +101,8 @@ class _MyDatesViewState extends State<MyDatesView> {
                       fontSize: 2.5.h,
                     ),
                   ),
-                  leading: const Icon(
-                    Icons.search_sharp,
-                    color: Colors.grey,
+                  leading:SvgPicture.asset(
+                      AssetsIcons.searchIcon
                   ),
                   hintText: locale.search,
                   shape: const MaterialStatePropertyAll(
@@ -132,10 +131,10 @@ class _MyDatesViewState extends State<MyDatesView> {
                         ),
                         tabs:  [
                           Tab(
-                            text: locale.previous
+                              text: locale.previous
                           ),
                           Tab(
-                            text:locale.next
+                              text:locale.next
                           )
                         ]),
                   ),
@@ -151,13 +150,13 @@ class _MyDatesViewState extends State<MyDatesView> {
                               physics: const BouncingScrollPhysics(),
                               itemBuilder: (context, index) =>
                                   AppointmentBooking(
-                                name: names[index],
-                                address: "147 النزهة, ش المطار",
-                                date: "21 Aug, Mon - 09:20 am",
-                                firstTime: locale.check,
-                                isAbsent: absentPresentMyDates[index],
-                                isNext: true,
-                              ),
+                                    name: names[index],
+                                    address: "147 النزهة, ش المطار",
+                                    date: "21 Aug, Mon - 09:20 am",
+                                    firstTime: locale.check,
+                                    isAbsent: absentPresentMyDates[index],
+                                    isNext: true,
+                                  ),
                               separatorBuilder: (context, index) =>
                                   SizedBox(height: 1.h),
                               itemCount: names.length,
@@ -173,13 +172,13 @@ class _MyDatesViewState extends State<MyDatesView> {
                               physics: const BouncingScrollPhysics(),
                               itemBuilder: (context, index) =>
                                   AppointmentBooking(
-                                name: names[index],
-                                address: "147 النزهة, ش المطار",
-                                date: "21 Aug, Mon - 09:20 am",
-                                firstTime: locale.check,
-                                isAbsent: absentPresentMyDates[index],
-                                isNext: false,
-                              ),
+                                    name: names[index],
+                                    address: "147 النزهة, ش المطار",
+                                    date: "21 Aug, Mon - 09:20 am",
+                                    firstTime: locale.check,
+                                    isAbsent: absentPresentMyDates[index],
+                                    isNext: false,
+                                  ),
                               separatorBuilder: (context, index) =>
                                   SizedBox(height: 1.h),
                               itemCount: names.length,

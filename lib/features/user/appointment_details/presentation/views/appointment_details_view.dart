@@ -26,7 +26,7 @@ class AppointmentDetailsView extends StatelessWidget {
                     Padding(
                       padding:  EdgeInsets.only(top:3.h, bottom: 2.h),
                       child: Image.asset(
-                        "assets/images/confirm.png",
+                        AssetsImages.confirm,
                         width: 25.w,
                       ),
                     ),
