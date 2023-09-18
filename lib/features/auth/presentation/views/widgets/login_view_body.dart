@@ -1,7 +1,7 @@
 import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart';
+import 'package:doctor_management_system/features/doctor/clinic_choice/presentation/views/clinic_choice_view.dart';
+import 'package:doctor_management_system/features/user/booking/presentation/views/booking_intro_view.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
-import 'package:doctor_management_system/features/booking/presentation/views/booking_intro_view.dart';
-import 'package:doctor_management_system/features/clinic_choice/presentation/views/clinic_choice_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
