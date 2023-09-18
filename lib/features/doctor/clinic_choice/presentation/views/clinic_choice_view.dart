@@ -1,5 +1,8 @@
+import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 import 'package:doctor_management_system/features/doctor/patient_list/presentation/views/patient_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
@@ -77,7 +80,7 @@ class ClinicChoiceView extends StatelessWidget {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image.asset("assets/images/logout.png"),
+                          child: SvgPicture.asset(AssetsIcons.guidanceIcon),
                         ),
                       ),
                     ),
@@ -100,7 +103,7 @@ class ClinicChoiceView extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 5.h),
-              Image.asset("assets/images/clinic.png"),
+              Image.asset(AssetsImages.clinic),
               Padding(
                 padding: const EdgeInsets.only(top: 25.0, right: 25, bottom: 8),
                 child: Text(
@@ -123,12 +126,8 @@ class ClinicChoiceView extends StatelessWidget {
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 8.0, left: 8),
-                        child: Image.asset(
-                          "assets/images/location.png",
-                          height: 3.h,
-                        ),
-                      ),
+                          padding: const EdgeInsets.only(right: 8.0, left: 8),
+                          child: SvgPicture.asset(AssetsIcons.locationIcon)),
                       Text(
                         "اختر المكان",
                         style: GoogleFonts.cairo(

@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 import 'package:doctor_management_system/features/intro/presentation/views/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -93,14 +94,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
                             child: Row(
                               children: [
                                 Image.asset(
-                                  "assets/images/splash2.png",
+                                  AssetsImages.splash2,
                                   height: 4.5.h,
                                   width: 5.w,
                                 ),
                                 Stack(
                                   children: [
                                     Image.asset(
-                                      "assets/images/splash1.png",
+                                      AssetsImages.splash1,
                                       height: 12.h,
                                       width: 12.w,
                                     ),
@@ -108,7 +109,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
                                       left: .2,
                                       top: 26,
                                       child: Image.asset(
-                                        "assets/images/splash3.png",
+                                        AssetsImages.splash3,
                                         height: 5.h,
                                         width: 5.w,
                                       ),

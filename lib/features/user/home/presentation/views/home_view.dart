@@ -1,5 +1,5 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
-import 'package:doctor_management_system/core/constants/assets_data.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/core/widgets/navigator_box.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
@@ -22,7 +22,7 @@ class HomeView extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             Image.asset(
-              AssetsData.homeBG,
+              AssetsImages.homeBG,
               fit: BoxFit.fill,
               width: double.infinity.w,
             ),
