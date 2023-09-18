@@ -1,4 +1,5 @@
 import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
 import 'package:doctor_management_system/features/doctor/patient_list/presentation/views/patient_list_view.dart';
 import 'package:doctor_management_system/features/doctor/results/presentation/widgets/calendar_picker.dart';
 import 'package:doctor_management_system/features/doctor/results/presentation/widgets/table_calendar_item.dart';
@@ -8,8 +9,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 import 'dart:ui' as ui;
-
-import '../../../../core/constants/assets/assets_icons.dart';
 
 class ResultsView extends StatefulWidget {
   const ResultsView({Key? key}) : super(key: key);
@@ -319,7 +318,7 @@ class _ResultsViewState extends State<ResultsView> {
                     ),
                     suffixIcon: MaterialButton(
                       onPressed: _showDatePicker,
-                      child:  SvgPicture.asset(
+                      child: SvgPicture.asset(
                         AssetsIcons.calendarIcon,
                       ),
                     ),
