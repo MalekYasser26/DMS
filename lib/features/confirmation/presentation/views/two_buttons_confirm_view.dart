@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -23,30 +24,31 @@ class TwoButtonsConfirmView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding:  EdgeInsets.all(5.w),
           child: Center(
             child: Column(
               children: [
                 SizedBox(height: 10.h),
                 Image.asset(
-                  "assets/images/confirm.png",
+                  AssetsImages.confirm,
                   width: 35.w,
                 ),
                 Text(
                   text,
                   style: GoogleFonts.cairo(
-                    textStyle: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold),
+                    textStyle:  TextStyle(
+                        fontSize: 2.5.h, fontWeight: FontWeight.bold),
                   ),
                 ),
                 SizedBox(height: 1.h,),
                 Text(
+                  softWrap: true,
                   subText,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.cairo(
-                    textStyle: const TextStyle(
-                      fontSize: 16,
-                      color: Color(0xff8F8E94),
+                    textStyle:  TextStyle(
+                      fontSize: 2.h,
+                      color: const Color(0xff8F8E94),
                     ),
                   ),
                 ),

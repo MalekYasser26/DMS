@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -18,44 +19,38 @@ class OneButtonConfirmView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding:  EdgeInsets.all(5.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 10.h),
               Image.asset(
-                "assets/images/confirm.png",
+                AssetsImages.confirm,
                 width: 35.w,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              Text(
+                text,
+                style: GoogleFonts.cairo(
+                  textStyle:  TextStyle(
+                    fontSize: 2.5.h,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Expanded(
                 child: Text(
-                  text,
+                  softWrap: true,
+                  subText,
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.cairo(
-                    textStyle: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                    textStyle:  TextStyle(
+                      fontSize: 2.h,
+                      color: const Color(0xff8F8E94),
                     ),
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    subText,
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.cairo(
-                      textStyle: const TextStyle(
-                        fontSize: 16,
-                        color: Color(0xff8F8E94),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 8.h),
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
@@ -73,9 +68,9 @@ class OneButtonConfirmView extends StatelessWidget {
                     child: Text(
                       buttonText,
                       style: GoogleFonts.cairo(
-                        textStyle: const TextStyle(
-                          color: Color(0xff159BAD),
-                          fontSize: 16,
+                        textStyle:  TextStyle(
+                          color: const Color(0xff159BAD),
+                          fontSize: 2.h,
                         ),
                       ),
                     ),
