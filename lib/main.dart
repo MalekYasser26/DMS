@@ -5,14 +5,14 @@ import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  final APIService apiService = APIService();
   runApp(
     MultiProvider(
       providers: [
-        Provider(create: (context) => APIService(),),
+        Provider(create: (context) => apiService),
       ],
       child: const DoctorManagementSystem(),
     ),
-
   );
 }
 
