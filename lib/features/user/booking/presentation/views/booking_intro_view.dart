@@ -27,6 +27,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
   Widget build(BuildContext context) {
     final locale = getL10n(context);
     final preferenceService = getPreferenceService(context);
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -112,11 +113,11 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                   ),
                   const Spacer(),
                   IconButton(
-                      onPressed: () {
-                        preferenceService.changeLocale(
-                            preferenceService.isEn() ? 'ar' : 'en');
-                      },
-                      icon: const Icon(Icons.public))
+                    onPressed: () {
+                      _changeLocale(preferenceService);
+                    },
+                    icon: const Icon(Icons.public),
+                  ),
                 ],
               ),
               SizedBox(height: 1.h),
@@ -202,5 +203,10 @@ class _BookingIntroViewState extends State<BookingIntroView> {
         ),
       ),
     );
+  }
+
+  void _changeLocale(PreferenceService preferenceService) {
+    final String langCode = preferenceService.isEn() ? 'ar' : 'en';
+    preferenceService.changeLocale(langCode);
   }
 }
