@@ -28,12 +28,12 @@ class Query$currentUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$currentUser = currentUser;
-    _resultData['currentUser'] = l$currentUser?.toJson();
+    resultData['currentUser'] = l$currentUser?.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -51,7 +51,7 @@ class Query$currentUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$currentUser) || runtimeType != other.runtimeType) {
+    if (other is! Query$currentUser || runtimeType != other.runtimeType) {
       return false;
     }
     final l$currentUser = currentUser;
@@ -105,6 +105,7 @@ class _CopyWithImpl$Query$currentUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? currentUser = _undefined,
     Object? $__typename = _undefined,
@@ -117,6 +118,7 @@ class _CopyWithImpl$Query$currentUser<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Query$currentUser$currentUser<TRes> get currentUser {
     final local$currentUser = _instance.currentUser;
     return local$currentUser == null
@@ -130,13 +132,15 @@ class _CopyWithStubImpl$Query$currentUser<TRes>
     implements CopyWith$Query$currentUser<TRes> {
   _CopyWithStubImpl$Query$currentUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Query$currentUser$currentUser? currentUser,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Query$currentUser$currentUser<TRes> get currentUser =>
       CopyWith$Query$currentUser$currentUser.stub(_res);
 }
@@ -414,24 +418,24 @@ class FetchMoreOptions$Query$currentUser extends graphql.FetchMoreOptions {
 extension ClientExtension$Query$currentUser on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$currentUser>> query$currentUser(
           [Options$Query$currentUser? options]) async =>
-      await this.query(options ?? Options$Query$currentUser());
+      await query(options ?? Options$Query$currentUser());
   graphql.ObservableQuery<Query$currentUser> watchQuery$currentUser(
           [WatchOptions$Query$currentUser? options]) =>
-      this.watchQuery(options ?? WatchOptions$Query$currentUser());
+      watchQuery(options ?? WatchOptions$Query$currentUser());
   void writeQuery$currentUser({
     required Query$currentUser data,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
-        graphql.Request(
+      writeQuery(
+        const graphql.Request(
             operation:
                 graphql.Operation(document: documentNodeQuerycurrentUser)),
         data: data.toJson(),
         broadcast: broadcast,
       );
   Query$currentUser? readQuery$currentUser({bool optimistic = true}) {
-    final result = this.readQuery(
-      graphql.Request(
+    final result = readQuery(
+      const graphql.Request(
           operation: graphql.Operation(document: documentNodeQuerycurrentUser)),
       optimistic: optimistic,
     );
@@ -555,40 +559,40 @@ class Query$currentUser$currentUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$roles = roles;
-    _resultData['roles'] = l$roles.map((e) => e.toJson()).toList();
+    resultData['roles'] = l$roles.map((e) => e.toJson()).toList();
     final l$permissions = permissions;
-    _resultData['permissions'] = l$permissions.map((e) => e.toJson()).toList();
+    resultData['permissions'] = l$permissions.map((e) => e.toJson()).toList();
     final l$firstName = firstName;
-    _resultData['firstName'] = l$firstName;
+    resultData['firstName'] = l$firstName;
     final l$lastName = lastName;
-    _resultData['lastName'] = l$lastName;
+    resultData['lastName'] = l$lastName;
     final l$email = email;
-    _resultData['email'] = l$email;
+    resultData['email'] = l$email;
     final l$phone = phone;
-    _resultData['phone'] = l$phone;
+    resultData['phone'] = l$phone;
     final l$password = password;
-    _resultData['password'] = l$password;
+    resultData['password'] = l$password;
     final l$visitCount = visitCount;
-    _resultData['visitCount'] = l$visitCount;
+    resultData['visitCount'] = l$visitCount;
     final l$level = level;
-    _resultData['level'] = l$level;
+    resultData['level'] = l$level;
     final l$birthDate = birthDate;
-    _resultData['birthDate'] = l$birthDate;
+    resultData['birthDate'] = l$birthDate;
     final l$gender = gender;
-    _resultData['gender'] = l$gender;
+    resultData['gender'] = l$gender;
     final l$photo = photo;
-    _resultData['photo'] = l$photo;
+    resultData['photo'] = l$photo;
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -634,7 +638,7 @@ class Query$currentUser$currentUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$currentUser$currentUser) ||
+    if (other is! Query$currentUser$currentUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -777,13 +781,13 @@ abstract class CopyWith$Query$currentUser$currentUser<TRes> {
               Iterable<
                   CopyWith$Query$currentUser$currentUser$roles<
                       Query$currentUser$currentUser$roles>>)
-          _fn);
+          fn);
   TRes permissions(
       Iterable<Query$currentUser$currentUser$permissions> Function(
               Iterable<
                   CopyWith$Query$currentUser$currentUser$permissions<
                       Query$currentUser$currentUser$permissions>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$currentUser$currentUser<TRes>
@@ -799,6 +803,7 @@ class _CopyWithImpl$Query$currentUser$currentUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? roles = _undefined,
@@ -851,26 +856,28 @@ class _CopyWithImpl$Query$currentUser$currentUser<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes roles(
           Iterable<Query$currentUser$currentUser$roles> Function(
                   Iterable<
                       CopyWith$Query$currentUser$currentUser$roles<
                           Query$currentUser$currentUser$roles>>)
-              _fn) =>
+              fn) =>
       call(
-          roles: _fn(_instance.roles
+          roles: fn(_instance.roles
               .map((e) => CopyWith$Query$currentUser$currentUser$roles(
                     e,
                     (i) => i,
                   ))).toList());
+  @override
   TRes permissions(
           Iterable<Query$currentUser$currentUser$permissions> Function(
                   Iterable<
                       CopyWith$Query$currentUser$currentUser$permissions<
                           Query$currentUser$currentUser$permissions>>)
-              _fn) =>
+              fn) =>
       call(
-          permissions: _fn(_instance.permissions
+          permissions: fn(_instance.permissions
               .map((e) => CopyWith$Query$currentUser$currentUser$permissions(
                     e,
                     (i) => i,
@@ -881,8 +888,9 @@ class _CopyWithStubImpl$Query$currentUser$currentUser<TRes>
     implements CopyWith$Query$currentUser$currentUser<TRes> {
   _CopyWithStubImpl$Query$currentUser$currentUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     List<Query$currentUser$currentUser$roles>? roles,
@@ -902,8 +910,10 @@ class _CopyWithStubImpl$Query$currentUser$currentUser<TRes>
     String? $__typename,
   }) =>
       _res;
-  roles(_fn) => _res;
-  permissions(_fn) => _res;
+  @override
+  roles(fn) => _res;
+  @override
+  permissions(fn) => _res;
 }
 
 class Query$currentUser$currentUser$roles {
@@ -932,14 +942,14 @@ class Query$currentUser$currentUser$roles {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -959,7 +969,7 @@ class Query$currentUser$currentUser$roles {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$currentUser$currentUser$roles) ||
+    if (other is! Query$currentUser$currentUser$roles ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1021,6 +1031,7 @@ class _CopyWithImpl$Query$currentUser$currentUser$roles<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -1039,8 +1050,9 @@ class _CopyWithStubImpl$Query$currentUser$currentUser$roles<TRes>
     implements CopyWith$Query$currentUser$currentUser$roles<TRes> {
   _CopyWithStubImpl$Query$currentUser$currentUser$roles(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -1075,14 +1087,14 @@ class Query$currentUser$currentUser$permissions {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -1102,7 +1114,7 @@ class Query$currentUser$currentUser$permissions {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$currentUser$currentUser$permissions) ||
+    if (other is! Query$currentUser$currentUser$permissions ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1164,6 +1176,7 @@ class _CopyWithImpl$Query$currentUser$currentUser$permissions<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -1182,8 +1195,9 @@ class _CopyWithStubImpl$Query$currentUser$currentUser$permissions<TRes>
     implements CopyWith$Query$currentUser$currentUser$permissions<TRes> {
   _CopyWithStubImpl$Query$currentUser$currentUser$permissions(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -1215,13 +1229,13 @@ class Query$bookingBranches {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$bookingBranches = bookingBranches;
-    _resultData['bookingBranches'] =
+    resultData['bookingBranches'] =
         l$bookingBranches.map((e) => e.toJson()).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -1239,7 +1253,7 @@ class Query$bookingBranches {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingBranches) || runtimeType != other.runtimeType) {
+    if (other is! Query$bookingBranches || runtimeType != other.runtimeType) {
       return false;
     }
     final l$bookingBranches = bookingBranches;
@@ -1289,7 +1303,7 @@ abstract class CopyWith$Query$bookingBranches<TRes> {
               Iterable<
                   CopyWith$Query$bookingBranches$bookingBranches<
                       Query$bookingBranches$bookingBranches>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$bookingBranches<TRes>
@@ -1305,6 +1319,7 @@ class _CopyWithImpl$Query$bookingBranches<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? bookingBranches = _undefined,
     Object? $__typename = _undefined,
@@ -1318,14 +1333,15 @@ class _CopyWithImpl$Query$bookingBranches<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes bookingBranches(
           Iterable<Query$bookingBranches$bookingBranches> Function(
                   Iterable<
                       CopyWith$Query$bookingBranches$bookingBranches<
                           Query$bookingBranches$bookingBranches>>)
-              _fn) =>
+              fn) =>
       call(
-          bookingBranches: _fn(_instance.bookingBranches
+          bookingBranches: fn(_instance.bookingBranches
               .map((e) => CopyWith$Query$bookingBranches$bookingBranches(
                     e,
                     (i) => i,
@@ -1336,14 +1352,16 @@ class _CopyWithStubImpl$Query$bookingBranches<TRes>
     implements CopyWith$Query$bookingBranches<TRes> {
   _CopyWithStubImpl$Query$bookingBranches(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     List<Query$bookingBranches$bookingBranches>? bookingBranches,
     String? $__typename,
   }) =>
       _res;
-  bookingBranches(_fn) => _res;
+  @override
+  bookingBranches(fn) => _res;
 }
 
 const documentNodeQuerybookingBranches = DocumentNode(definitions: [
@@ -1550,24 +1568,24 @@ class FetchMoreOptions$Query$bookingBranches extends graphql.FetchMoreOptions {
 extension ClientExtension$Query$bookingBranches on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$bookingBranches>> query$bookingBranches(
           [Options$Query$bookingBranches? options]) async =>
-      await this.query(options ?? Options$Query$bookingBranches());
+      await query(options ?? Options$Query$bookingBranches());
   graphql.ObservableQuery<Query$bookingBranches> watchQuery$bookingBranches(
           [WatchOptions$Query$bookingBranches? options]) =>
-      this.watchQuery(options ?? WatchOptions$Query$bookingBranches());
+      watchQuery(options ?? WatchOptions$Query$bookingBranches());
   void writeQuery$bookingBranches({
     required Query$bookingBranches data,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
-        graphql.Request(
+      writeQuery(
+        const graphql.Request(
             operation:
                 graphql.Operation(document: documentNodeQuerybookingBranches)),
         data: data.toJson(),
         broadcast: broadcast,
       );
   Query$bookingBranches? readQuery$bookingBranches({bool optimistic = true}) {
-    final result = this.readQuery(
-      graphql.Request(
+    final result = readQuery(
+      const graphql.Request(
           operation:
               graphql.Operation(document: documentNodeQuerybookingBranches)),
       optimistic: optimistic,
@@ -1661,28 +1679,28 @@ class Query$bookingBranches$bookingBranches {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$address = address;
-    _resultData['address'] = l$address;
+    resultData['address'] = l$address;
     final l$phone = phone;
-    _resultData['phone'] = l$phone;
+    resultData['phone'] = l$phone;
     final l$mapURL = mapURL;
-    _resultData['mapURL'] = l$mapURL;
+    resultData['mapURL'] = l$mapURL;
     final l$isActive = isActive;
-    _resultData['isActive'] = l$isActive;
+    resultData['isActive'] = l$isActive;
     final l$services = services;
-    _resultData['services'] = l$services?.map((e) => e.toJson()).toList();
+    resultData['services'] = l$services?.map((e) => e.toJson()).toList();
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -1716,7 +1734,7 @@ class Query$bookingBranches$bookingBranches {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingBranches$bookingBranches) ||
+    if (other is! Query$bookingBranches$bookingBranches ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1821,7 +1839,7 @@ abstract class CopyWith$Query$bookingBranches$bookingBranches<TRes> {
               Iterable<
                   CopyWith$Query$bookingBranches$bookingBranches$services<
                       Query$bookingBranches$bookingBranches$services>>?)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$bookingBranches$bookingBranches<TRes>
@@ -1837,6 +1855,7 @@ class _CopyWithImpl$Query$bookingBranches$bookingBranches<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -1873,14 +1892,15 @@ class _CopyWithImpl$Query$bookingBranches$bookingBranches<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes services(
           Iterable<Query$bookingBranches$bookingBranches$services>? Function(
                   Iterable<
                       CopyWith$Query$bookingBranches$bookingBranches$services<
                           Query$bookingBranches$bookingBranches$services>>?)
-              _fn) =>
+              fn) =>
       call(
-          services: _fn(_instance.services?.map(
+          services: fn(_instance.services?.map(
               (e) => CopyWith$Query$bookingBranches$bookingBranches$services(
                     e,
                     (i) => i,
@@ -1891,8 +1911,9 @@ class _CopyWithStubImpl$Query$bookingBranches$bookingBranches<TRes>
     implements CopyWith$Query$bookingBranches$bookingBranches<TRes> {
   _CopyWithStubImpl$Query$bookingBranches$bookingBranches(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -1906,7 +1927,8 @@ class _CopyWithStubImpl$Query$bookingBranches$bookingBranches<TRes>
     String? $__typename,
   }) =>
       _res;
-  services(_fn) => _res;
+  @override
+  services(fn) => _res;
 }
 
 class Query$bookingBranches$bookingBranches$services {
@@ -1930,12 +1952,12 @@ class Query$bookingBranches$bookingBranches$services {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -1953,7 +1975,7 @@ class Query$bookingBranches$bookingBranches$services {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingBranches$bookingBranches$services) ||
+    if (other is! Query$bookingBranches$bookingBranches$services ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2010,6 +2032,7 @@ class _CopyWithImpl$Query$bookingBranches$bookingBranches$services<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -2026,8 +2049,9 @@ class _CopyWithStubImpl$Query$bookingBranches$bookingBranches$services<TRes>
     implements CopyWith$Query$bookingBranches$bookingBranches$services<TRes> {
   _CopyWithStubImpl$Query$bookingBranches$bookingBranches$services(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -2072,7 +2096,7 @@ class Variables$Query$bookingCustomerNotes {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$bookingCustomerNotes) ||
+    if (other is! Variables$Query$bookingCustomerNotes ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2116,6 +2140,7 @@ class _CopyWithImpl$Variables$Query$bookingCustomerNotes<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? customerId = _undefined}) =>
       _then(Variables$Query$bookingCustomerNotes._({
         ..._instance._$data,
@@ -2128,8 +2153,9 @@ class _CopyWithStubImpl$Variables$Query$bookingCustomerNotes<TRes>
     implements CopyWith$Variables$Query$bookingCustomerNotes<TRes> {
   _CopyWithStubImpl$Variables$Query$bookingCustomerNotes(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({String? customerId}) => _res;
 }
 
@@ -2157,13 +2183,13 @@ class Query$bookingCustomerNotes {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$bookingCustomerNotes = bookingCustomerNotes;
-    _resultData['bookingCustomerNotes'] =
+    resultData['bookingCustomerNotes'] =
         l$bookingCustomerNotes.map((e) => e.toJson()).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -2181,7 +2207,7 @@ class Query$bookingCustomerNotes {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingCustomerNotes) ||
+    if (other is! Query$bookingCustomerNotes ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2233,7 +2259,7 @@ abstract class CopyWith$Query$bookingCustomerNotes<TRes> {
               Iterable<
                   CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes<
                       Query$bookingCustomerNotes$bookingCustomerNotes>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$bookingCustomerNotes<TRes>
@@ -2249,6 +2275,7 @@ class _CopyWithImpl$Query$bookingCustomerNotes<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? bookingCustomerNotes = _undefined,
     Object? $__typename = _undefined,
@@ -2263,14 +2290,15 @@ class _CopyWithImpl$Query$bookingCustomerNotes<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes bookingCustomerNotes(
           Iterable<Query$bookingCustomerNotes$bookingCustomerNotes> Function(
                   Iterable<
                       CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes<
                           Query$bookingCustomerNotes$bookingCustomerNotes>>)
-              _fn) =>
+              fn) =>
       call(
-          bookingCustomerNotes: _fn(_instance.bookingCustomerNotes.map(
+          bookingCustomerNotes: fn(_instance.bookingCustomerNotes.map(
               (e) => CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes(
                     e,
                     (i) => i,
@@ -2281,14 +2309,16 @@ class _CopyWithStubImpl$Query$bookingCustomerNotes<TRes>
     implements CopyWith$Query$bookingCustomerNotes<TRes> {
   _CopyWithStubImpl$Query$bookingCustomerNotes(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     List<Query$bookingCustomerNotes$bookingCustomerNotes>? bookingCustomerNotes,
     String? $__typename,
   }) =>
       _res;
-  bookingCustomerNotes(_fn) => _res;
+  @override
+  bookingCustomerNotes(fn) => _res;
 }
 
 const documentNodeQuerybookingCustomerNotes = DocumentNode(definitions: [
@@ -2557,19 +2587,19 @@ extension ClientExtension$Query$bookingCustomerNotes on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$bookingCustomerNotes>>
       query$bookingCustomerNotes(
               Options$Query$bookingCustomerNotes options) async =>
-          await this.query(options);
+          await query(options);
   graphql.ObservableQuery<Query$bookingCustomerNotes>
       watchQuery$bookingCustomerNotes(
               WatchOptions$Query$bookingCustomerNotes options) =>
-          this.watchQuery(options);
+          watchQuery(options);
   void writeQuery$bookingCustomerNotes({
     required Query$bookingCustomerNotes data,
     required Variables$Query$bookingCustomerNotes variables,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
+      writeQuery(
         graphql.Request(
-          operation: graphql.Operation(
+          operation: const graphql.Operation(
               document: documentNodeQuerybookingCustomerNotes),
           variables: variables.toJson(),
         ),
@@ -2580,10 +2610,10 @@ extension ClientExtension$Query$bookingCustomerNotes on graphql.GraphQLClient {
     required Variables$Query$bookingCustomerNotes variables,
     bool optimistic = true,
   }) {
-    final result = this.readQuery(
+    final result = readQuery(
       graphql.Request(
-        operation:
-            graphql.Operation(document: documentNodeQuerybookingCustomerNotes),
+        operation: const graphql.Operation(
+            document: documentNodeQuerybookingCustomerNotes),
         variables: variables.toJson(),
       ),
       optimistic: optimistic,
@@ -2602,7 +2632,7 @@ graphql.ObservableQuery<Query$bookingCustomerNotes>
 
 class Query$bookingCustomerNotes$Widget
     extends graphql_flutter.Query<Query$bookingCustomerNotes> {
-  Query$bookingCustomerNotes$Widget({
+  const Query$bookingCustomerNotes$Widget({
     widgets.Key? key,
     required Options$Query$bookingCustomerNotes options,
     required graphql_flutter.QueryBuilder<Query$bookingCustomerNotes> builder,
@@ -2686,30 +2716,30 @@ class Query$bookingCustomerNotes$bookingCustomerNotes {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$userId = userId;
-    _resultData['userId'] = l$userId;
+    resultData['userId'] = l$userId;
     final l$user = user;
-    _resultData['user'] = l$user.toJson();
+    resultData['user'] = l$user.toJson();
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch?.toJson();
+    resultData['branch'] = l$branch?.toJson();
     final l$visitId = visitId;
-    _resultData['visitId'] = l$visitId;
+    resultData['visitId'] = l$visitId;
     final l$visit = visit;
-    _resultData['visit'] = l$visit?.toJson();
+    resultData['visit'] = l$visit?.toJson();
     final l$text = text;
-    _resultData['text'] = l$text;
+    resultData['text'] = l$text;
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -2745,7 +2775,7 @@ class Query$bookingCustomerNotes$bookingCustomerNotes {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingCustomerNotes$bookingCustomerNotes) ||
+    if (other is! Query$bookingCustomerNotes$bookingCustomerNotes ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2861,6 +2891,7 @@ class _CopyWithImpl$Query$bookingCustomerNotes$bookingCustomerNotes<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? userId = _undefined,
@@ -2902,12 +2933,14 @@ class _CopyWithImpl$Query$bookingCustomerNotes$bookingCustomerNotes<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes$user<TRes> get user {
     final local$user = _instance.user;
     return CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes$user(
         local$user, (e) => call(user: e));
   }
 
+  @override
   CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes$branch<TRes>
       get branch {
     final local$branch = _instance.branch;
@@ -2918,6 +2951,7 @@ class _CopyWithImpl$Query$bookingCustomerNotes$bookingCustomerNotes<TRes>
             local$branch, (e) => call(branch: e));
   }
 
+  @override
   CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes$visit<TRes>
       get visit {
     final local$visit = _instance.visit;
@@ -2933,8 +2967,9 @@ class _CopyWithStubImpl$Query$bookingCustomerNotes$bookingCustomerNotes<TRes>
     implements CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes<TRes> {
   _CopyWithStubImpl$Query$bookingCustomerNotes$bookingCustomerNotes(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? userId,
@@ -2949,14 +2984,17 @@ class _CopyWithStubImpl$Query$bookingCustomerNotes$bookingCustomerNotes<TRes>
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes$user<TRes>
       get user =>
           CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes$user.stub(
               _res);
+  @override
   CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes$branch<TRes>
       get branch =>
           CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes$branch.stub(
               _res);
+  @override
   CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes$visit<TRes>
       get visit =>
           CopyWith$Query$bookingCustomerNotes$bookingCustomerNotes$visit.stub(
@@ -2984,12 +3022,12 @@ class Query$bookingCustomerNotes$bookingCustomerNotes$user {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -3007,7 +3045,7 @@ class Query$bookingCustomerNotes$bookingCustomerNotes$user {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingCustomerNotes$bookingCustomerNotes$user) ||
+    if (other is! Query$bookingCustomerNotes$bookingCustomerNotes$user ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3068,6 +3106,7 @@ class _CopyWithImpl$Query$bookingCustomerNotes$bookingCustomerNotes$user<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -3087,8 +3126,9 @@ class _CopyWithStubImpl$Query$bookingCustomerNotes$bookingCustomerNotes$user<
   _CopyWithStubImpl$Query$bookingCustomerNotes$bookingCustomerNotes$user(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -3117,12 +3157,12 @@ class Query$bookingCustomerNotes$bookingCustomerNotes$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -3140,7 +3180,7 @@ class Query$bookingCustomerNotes$bookingCustomerNotes$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingCustomerNotes$bookingCustomerNotes$branch) ||
+    if (other is! Query$bookingCustomerNotes$bookingCustomerNotes$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3201,6 +3241,7 @@ class _CopyWithImpl$Query$bookingCustomerNotes$bookingCustomerNotes$branch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -3220,8 +3261,9 @@ class _CopyWithStubImpl$Query$bookingCustomerNotes$bookingCustomerNotes$branch<
   _CopyWithStubImpl$Query$bookingCustomerNotes$bookingCustomerNotes$branch(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -3250,12 +3292,12 @@ class Query$bookingCustomerNotes$bookingCustomerNotes$visit {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -3273,7 +3315,7 @@ class Query$bookingCustomerNotes$bookingCustomerNotes$visit {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingCustomerNotes$bookingCustomerNotes$visit) ||
+    if (other is! Query$bookingCustomerNotes$bookingCustomerNotes$visit ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3334,6 +3376,7 @@ class _CopyWithImpl$Query$bookingCustomerNotes$bookingCustomerNotes$visit<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -3353,8 +3396,9 @@ class _CopyWithStubImpl$Query$bookingCustomerNotes$bookingCustomerNotes$visit<
   _CopyWithStubImpl$Query$bookingCustomerNotes$bookingCustomerNotes$visit(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -3399,7 +3443,7 @@ class Variables$Query$bookingCustomerVisits {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$bookingCustomerVisits) ||
+    if (other is! Variables$Query$bookingCustomerVisits ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3443,6 +3487,7 @@ class _CopyWithImpl$Variables$Query$bookingCustomerVisits<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? customerId = _undefined}) =>
       _then(Variables$Query$bookingCustomerVisits._({
         ..._instance._$data,
@@ -3455,8 +3500,9 @@ class _CopyWithStubImpl$Variables$Query$bookingCustomerVisits<TRes>
     implements CopyWith$Variables$Query$bookingCustomerVisits<TRes> {
   _CopyWithStubImpl$Variables$Query$bookingCustomerVisits(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({String? customerId}) => _res;
 }
 
@@ -3485,13 +3531,13 @@ class Query$bookingCustomerVisits {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$bookingCustomerVisits = bookingCustomerVisits;
-    _resultData['bookingCustomerVisits'] =
+    resultData['bookingCustomerVisits'] =
         l$bookingCustomerVisits.map((e) => e.toJson()).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -3509,7 +3555,7 @@ class Query$bookingCustomerVisits {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingCustomerVisits) ||
+    if (other is! Query$bookingCustomerVisits ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3563,7 +3609,7 @@ abstract class CopyWith$Query$bookingCustomerVisits<TRes> {
               Iterable<
                   CopyWith$Query$bookingCustomerVisits$bookingCustomerVisits<
                       Query$bookingCustomerVisits$bookingCustomerVisits>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$bookingCustomerVisits<TRes>
@@ -3579,6 +3625,7 @@ class _CopyWithImpl$Query$bookingCustomerVisits<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? bookingCustomerVisits = _undefined,
     Object? $__typename = _undefined,
@@ -3593,14 +3640,15 @@ class _CopyWithImpl$Query$bookingCustomerVisits<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes bookingCustomerVisits(
           Iterable<Query$bookingCustomerVisits$bookingCustomerVisits> Function(
                   Iterable<
                       CopyWith$Query$bookingCustomerVisits$bookingCustomerVisits<
                           Query$bookingCustomerVisits$bookingCustomerVisits>>)
-              _fn) =>
+              fn) =>
       call(
-          bookingCustomerVisits: _fn(_instance.bookingCustomerVisits.map(
+          bookingCustomerVisits: fn(_instance.bookingCustomerVisits.map(
               (e) => CopyWith$Query$bookingCustomerVisits$bookingCustomerVisits(
                     e,
                     (i) => i,
@@ -3611,15 +3659,17 @@ class _CopyWithStubImpl$Query$bookingCustomerVisits<TRes>
     implements CopyWith$Query$bookingCustomerVisits<TRes> {
   _CopyWithStubImpl$Query$bookingCustomerVisits(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     List<Query$bookingCustomerVisits$bookingCustomerVisits>?
         bookingCustomerVisits,
     String? $__typename,
   }) =>
       _res;
-  bookingCustomerVisits(_fn) => _res;
+  @override
+  bookingCustomerVisits(fn) => _res;
 }
 
 const documentNodeQuerybookingCustomerVisits = DocumentNode(definitions: [
@@ -3830,19 +3880,19 @@ extension ClientExtension$Query$bookingCustomerVisits on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$bookingCustomerVisits>>
       query$bookingCustomerVisits(
               Options$Query$bookingCustomerVisits options) async =>
-          await this.query(options);
+          await query(options);
   graphql.ObservableQuery<Query$bookingCustomerVisits>
       watchQuery$bookingCustomerVisits(
               WatchOptions$Query$bookingCustomerVisits options) =>
-          this.watchQuery(options);
+          watchQuery(options);
   void writeQuery$bookingCustomerVisits({
     required Query$bookingCustomerVisits data,
     required Variables$Query$bookingCustomerVisits variables,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
+      writeQuery(
         graphql.Request(
-          operation: graphql.Operation(
+          operation: const graphql.Operation(
               document: documentNodeQuerybookingCustomerVisits),
           variables: variables.toJson(),
         ),
@@ -3853,10 +3903,10 @@ extension ClientExtension$Query$bookingCustomerVisits on graphql.GraphQLClient {
     required Variables$Query$bookingCustomerVisits variables,
     bool optimistic = true,
   }) {
-    final result = this.readQuery(
+    final result = readQuery(
       graphql.Request(
-        operation:
-            graphql.Operation(document: documentNodeQuerybookingCustomerVisits),
+        operation: const graphql.Operation(
+            document: documentNodeQuerybookingCustomerVisits),
         variables: variables.toJson(),
       ),
       optimistic: optimistic,
@@ -3876,7 +3926,7 @@ graphql.ObservableQuery<Query$bookingCustomerVisits>
 
 class Query$bookingCustomerVisits$Widget
     extends graphql_flutter.Query<Query$bookingCustomerVisits> {
-  Query$bookingCustomerVisits$Widget({
+  const Query$bookingCustomerVisits$Widget({
     widgets.Key? key,
     required Options$Query$bookingCustomerVisits options,
     required graphql_flutter.QueryBuilder<Query$bookingCustomerVisits> builder,
@@ -3934,22 +3984,22 @@ class Query$bookingCustomerVisits$bookingCustomerVisits {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$userId = userId;
-    _resultData['userId'] = l$userId;
+    resultData['userId'] = l$userId;
     final l$user = user;
-    _resultData['user'] = l$user.toJson();
+    resultData['user'] = l$user.toJson();
     final l$time = time;
-    _resultData['time'] = l$time;
+    resultData['time'] = l$time;
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -3977,7 +4027,7 @@ class Query$bookingCustomerVisits$bookingCustomerVisits {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingCustomerVisits$bookingCustomerVisits) ||
+    if (other is! Query$bookingCustomerVisits$bookingCustomerVisits ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4069,6 +4119,7 @@ class _CopyWithImpl$Query$bookingCustomerVisits$bookingCustomerVisits<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? userId = _undefined,
@@ -4096,6 +4147,7 @@ class _CopyWithImpl$Query$bookingCustomerVisits$bookingCustomerVisits<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Query$bookingCustomerVisits$bookingCustomerVisits$user<TRes>
       get user {
     final local$user = _instance.user;
@@ -4110,8 +4162,9 @@ class _CopyWithStubImpl$Query$bookingCustomerVisits$bookingCustomerVisits<TRes>
   _CopyWithStubImpl$Query$bookingCustomerVisits$bookingCustomerVisits(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? userId,
@@ -4122,6 +4175,7 @@ class _CopyWithStubImpl$Query$bookingCustomerVisits$bookingCustomerVisits<TRes>
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Query$bookingCustomerVisits$bookingCustomerVisits$user<TRes>
       get user =>
           CopyWith$Query$bookingCustomerVisits$bookingCustomerVisits$user.stub(
@@ -4149,12 +4203,12 @@ class Query$bookingCustomerVisits$bookingCustomerVisits$user {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -4172,7 +4226,7 @@ class Query$bookingCustomerVisits$bookingCustomerVisits$user {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingCustomerVisits$bookingCustomerVisits$user) ||
+    if (other is! Query$bookingCustomerVisits$bookingCustomerVisits$user ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4233,6 +4287,7 @@ class _CopyWithImpl$Query$bookingCustomerVisits$bookingCustomerVisits$user<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -4252,8 +4307,9 @@ class _CopyWithStubImpl$Query$bookingCustomerVisits$bookingCustomerVisits$user<
   _CopyWithStubImpl$Query$bookingCustomerVisits$bookingCustomerVisits$user(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -4298,7 +4354,7 @@ class Variables$Query$bookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$bookingReservation) ||
+    if (other is! Variables$Query$bookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4342,6 +4398,7 @@ class _CopyWithImpl$Variables$Query$bookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? reservationId = _undefined}) =>
       _then(Variables$Query$bookingReservation._({
         ..._instance._$data,
@@ -4354,8 +4411,9 @@ class _CopyWithStubImpl$Variables$Query$bookingReservation<TRes>
     implements CopyWith$Variables$Query$bookingReservation<TRes> {
   _CopyWithStubImpl$Variables$Query$bookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({String? reservationId}) => _res;
 }
 
@@ -4380,12 +4438,12 @@ class Query$bookingReservation {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$bookingReservation = bookingReservation;
-    _resultData['bookingReservation'] = l$bookingReservation.toJson();
+    resultData['bookingReservation'] = l$bookingReservation.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -4403,7 +4461,7 @@ class Query$bookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingReservation) ||
+    if (other is! Query$bookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4460,6 +4518,7 @@ class _CopyWithImpl$Query$bookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? bookingReservation = _undefined,
     Object? $__typename = _undefined,
@@ -4474,6 +4533,7 @@ class _CopyWithImpl$Query$bookingReservation<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Query$bookingReservation$bookingReservation<TRes>
       get bookingReservation {
     final local$bookingReservation = _instance.bookingReservation;
@@ -4486,13 +4546,15 @@ class _CopyWithStubImpl$Query$bookingReservation<TRes>
     implements CopyWith$Query$bookingReservation<TRes> {
   _CopyWithStubImpl$Query$bookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Query$bookingReservation$bookingReservation? bookingReservation,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Query$bookingReservation$bookingReservation<TRes>
       get bookingReservation =>
           CopyWith$Query$bookingReservation$bookingReservation.stub(_res);
@@ -4792,20 +4854,20 @@ extension ClientExtension$Query$bookingReservation on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$bookingReservation>>
       query$bookingReservation(
               Options$Query$bookingReservation options) async =>
-          await this.query(options);
+          await query(options);
   graphql.ObservableQuery<Query$bookingReservation>
       watchQuery$bookingReservation(
               WatchOptions$Query$bookingReservation options) =>
-          this.watchQuery(options);
+          watchQuery(options);
   void writeQuery$bookingReservation({
     required Query$bookingReservation data,
     required Variables$Query$bookingReservation variables,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
+      writeQuery(
         graphql.Request(
-          operation:
-              graphql.Operation(document: documentNodeQuerybookingReservation),
+          operation: const graphql.Operation(
+              document: documentNodeQuerybookingReservation),
           variables: variables.toJson(),
         ),
         data: data.toJson(),
@@ -4815,10 +4877,10 @@ extension ClientExtension$Query$bookingReservation on graphql.GraphQLClient {
     required Variables$Query$bookingReservation variables,
     bool optimistic = true,
   }) {
-    final result = this.readQuery(
+    final result = readQuery(
       graphql.Request(
-        operation:
-            graphql.Operation(document: documentNodeQuerybookingReservation),
+        operation: const graphql.Operation(
+            document: documentNodeQuerybookingReservation),
         variables: variables.toJson(),
       ),
       optimistic: optimistic,
@@ -4837,7 +4899,7 @@ graphql.ObservableQuery<Query$bookingReservation>
 
 class Query$bookingReservation$Widget
     extends graphql_flutter.Query<Query$bookingReservation> {
-  Query$bookingReservation$Widget({
+  const Query$bookingReservation$Widget({
     widgets.Key? key,
     required Options$Query$bookingReservation options,
     required graphql_flutter.QueryBuilder<Query$bookingReservation> builder,
@@ -4937,38 +4999,38 @@ class Query$bookingReservation$bookingReservation {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$userId = userId;
-    _resultData['userId'] = l$userId;
+    resultData['userId'] = l$userId;
     final l$user = user;
-    _resultData['user'] = l$user.toJson();
+    resultData['user'] = l$user.toJson();
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch.toJson();
+    resultData['branch'] = l$branch.toJson();
     final l$serviceId = serviceId;
-    _resultData['serviceId'] = l$serviceId;
+    resultData['serviceId'] = l$serviceId;
     final l$service = service;
-    _resultData['service'] = l$service.toJson();
+    resultData['service'] = l$service.toJson();
     final l$channel = channel;
-    _resultData['channel'] = l$channel;
+    resultData['channel'] = l$channel;
     final l$date = date;
-    _resultData['date'] = l$date;
+    resultData['date'] = l$date;
     final l$time = time;
-    _resultData['time'] = l$time;
+    resultData['time'] = l$time;
     final l$queueNumber = queueNumber;
-    _resultData['queueNumber'] = l$queueNumber;
+    resultData['queueNumber'] = l$queueNumber;
     final l$status = status;
-    _resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
+    resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -5012,7 +5074,7 @@ class Query$bookingReservation$bookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingReservation$bookingReservation) ||
+    if (other is! Query$bookingReservation$bookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5150,6 +5212,7 @@ class _CopyWithImpl$Query$bookingReservation$bookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? userId = _undefined,
@@ -5208,18 +5271,21 @@ class _CopyWithImpl$Query$bookingReservation$bookingReservation<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Query$bookingReservation$bookingReservation$user<TRes> get user {
     final local$user = _instance.user;
     return CopyWith$Query$bookingReservation$bookingReservation$user(
         local$user, (e) => call(user: e));
   }
 
+  @override
   CopyWith$Query$bookingReservation$bookingReservation$branch<TRes> get branch {
     final local$branch = _instance.branch;
     return CopyWith$Query$bookingReservation$bookingReservation$branch(
         local$branch, (e) => call(branch: e));
   }
 
+  @override
   CopyWith$Query$bookingReservation$bookingReservation$service<TRes>
       get service {
     final local$service = _instance.service;
@@ -5232,8 +5298,9 @@ class _CopyWithStubImpl$Query$bookingReservation$bookingReservation<TRes>
     implements CopyWith$Query$bookingReservation$bookingReservation<TRes> {
   _CopyWithStubImpl$Query$bookingReservation$bookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? userId,
@@ -5252,12 +5319,15 @@ class _CopyWithStubImpl$Query$bookingReservation$bookingReservation<TRes>
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Query$bookingReservation$bookingReservation$user<TRes> get user =>
       CopyWith$Query$bookingReservation$bookingReservation$user.stub(_res);
+  @override
   CopyWith$Query$bookingReservation$bookingReservation$branch<TRes>
       get branch =>
           CopyWith$Query$bookingReservation$bookingReservation$branch.stub(
               _res);
+  @override
   CopyWith$Query$bookingReservation$bookingReservation$service<TRes>
       get service =>
           CopyWith$Query$bookingReservation$bookingReservation$service.stub(
@@ -5285,12 +5355,12 @@ class Query$bookingReservation$bookingReservation$user {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -5308,7 +5378,7 @@ class Query$bookingReservation$bookingReservation$user {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingReservation$bookingReservation$user) ||
+    if (other is! Query$bookingReservation$bookingReservation$user ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5365,6 +5435,7 @@ class _CopyWithImpl$Query$bookingReservation$bookingReservation$user<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -5381,8 +5452,9 @@ class _CopyWithStubImpl$Query$bookingReservation$bookingReservation$user<TRes>
     implements CopyWith$Query$bookingReservation$bookingReservation$user<TRes> {
   _CopyWithStubImpl$Query$bookingReservation$bookingReservation$user(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -5411,12 +5483,12 @@ class Query$bookingReservation$bookingReservation$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -5434,7 +5506,7 @@ class Query$bookingReservation$bookingReservation$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingReservation$bookingReservation$branch) ||
+    if (other is! Query$bookingReservation$bookingReservation$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5494,6 +5566,7 @@ class _CopyWithImpl$Query$bookingReservation$bookingReservation$branch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -5512,8 +5585,9 @@ class _CopyWithStubImpl$Query$bookingReservation$bookingReservation$branch<TRes>
   _CopyWithStubImpl$Query$bookingReservation$bookingReservation$branch(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -5542,12 +5616,12 @@ class Query$bookingReservation$bookingReservation$service {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -5565,7 +5639,7 @@ class Query$bookingReservation$bookingReservation$service {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingReservation$bookingReservation$service) ||
+    if (other is! Query$bookingReservation$bookingReservation$service ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5626,6 +5700,7 @@ class _CopyWithImpl$Query$bookingReservation$bookingReservation$service<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -5645,8 +5720,9 @@ class _CopyWithStubImpl$Query$bookingReservation$bookingReservation$service<
   _CopyWithStubImpl$Query$bookingReservation$bookingReservation$service(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -5721,7 +5797,7 @@ class Variables$Query$bookingReservations {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$bookingReservations) ||
+    if (other is! Variables$Query$bookingReservations ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5794,6 +5870,7 @@ class _CopyWithImpl$Variables$Query$bookingReservations<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? limit = _undefined,
     Object? page = _undefined,
@@ -5811,8 +5888,9 @@ class _CopyWithStubImpl$Variables$Query$bookingReservations<TRes>
     implements CopyWith$Variables$Query$bookingReservations<TRes> {
   _CopyWithStubImpl$Variables$Query$bookingReservations(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     int? limit,
     int? page,
@@ -5843,12 +5921,12 @@ class Query$bookingReservations {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$bookingReservations = bookingReservations;
-    _resultData['bookingReservations'] = l$bookingReservations.toJson();
+    resultData['bookingReservations'] = l$bookingReservations.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -5866,7 +5944,7 @@ class Query$bookingReservations {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingReservations) ||
+    if (other is! Query$bookingReservations ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5923,6 +6001,7 @@ class _CopyWithImpl$Query$bookingReservations<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? bookingReservations = _undefined,
     Object? $__typename = _undefined,
@@ -5937,6 +6016,7 @@ class _CopyWithImpl$Query$bookingReservations<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Query$bookingReservations$bookingReservations<TRes>
       get bookingReservations {
     final local$bookingReservations = _instance.bookingReservations;
@@ -5949,13 +6029,15 @@ class _CopyWithStubImpl$Query$bookingReservations<TRes>
     implements CopyWith$Query$bookingReservations<TRes> {
   _CopyWithStubImpl$Query$bookingReservations(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Query$bookingReservations$bookingReservations? bookingReservations,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Query$bookingReservations$bookingReservations<TRes>
       get bookingReservations =>
           CopyWith$Query$bookingReservations$bookingReservations.stub(_res);
@@ -6195,20 +6277,20 @@ extension ClientExtension$Query$bookingReservations on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$bookingReservations>>
       query$bookingReservations(
               [Options$Query$bookingReservations? options]) async =>
-          await this.query(options ?? Options$Query$bookingReservations());
+          await query(options ?? Options$Query$bookingReservations());
   graphql.ObservableQuery<Query$bookingReservations>
       watchQuery$bookingReservations(
               [WatchOptions$Query$bookingReservations? options]) =>
-          this.watchQuery(options ?? WatchOptions$Query$bookingReservations());
+          watchQuery(options ?? WatchOptions$Query$bookingReservations());
   void writeQuery$bookingReservations({
     required Query$bookingReservations data,
     Variables$Query$bookingReservations? variables,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
+      writeQuery(
         graphql.Request(
-          operation:
-              graphql.Operation(document: documentNodeQuerybookingReservations),
+          operation: const graphql.Operation(
+              document: documentNodeQuerybookingReservations),
           variables: variables?.toJson() ?? const {},
         ),
         data: data.toJson(),
@@ -6218,10 +6300,10 @@ extension ClientExtension$Query$bookingReservations on graphql.GraphQLClient {
     Variables$Query$bookingReservations? variables,
     bool optimistic = true,
   }) {
-    final result = this.readQuery(
+    final result = readQuery(
       graphql.Request(
-        operation:
-            graphql.Operation(document: documentNodeQuerybookingReservations),
+        operation: const graphql.Operation(
+            document: documentNodeQuerybookingReservations),
         variables: variables?.toJson() ?? const {},
       ),
       optimistic: optimistic,
@@ -6230,11 +6312,10 @@ extension ClientExtension$Query$bookingReservations on graphql.GraphQLClient {
   }
 }
 
-graphql_flutter.QueryHookResult<Query$bookingReservations>
-    useQuery$bookingReservations(
-            [Options$Query$bookingReservations? options]) =>
-        graphql_flutter
-            .useQuery(options ?? Options$Query$bookingReservations());
+graphql_flutter
+    .QueryHookResult<Query$bookingReservations> useQuery$bookingReservations(
+        [Options$Query$bookingReservations? options]) =>
+    graphql_flutter.useQuery(options ?? Options$Query$bookingReservations());
 graphql.ObservableQuery<Query$bookingReservations>
     useWatchQuery$bookingReservations(
             [WatchOptions$Query$bookingReservations? options]) =>
@@ -6304,22 +6385,22 @@ class Query$bookingReservations$bookingReservations {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$limit = limit;
-    _resultData['limit'] = l$limit;
+    resultData['limit'] = l$limit;
     final l$page = page;
-    _resultData['page'] = l$page;
+    resultData['page'] = l$page;
     final l$sort = sort;
-    _resultData['sort'] = l$sort;
+    resultData['sort'] = l$sort;
     final l$totalRows = totalRows;
-    _resultData['totalRows'] = l$totalRows;
+    resultData['totalRows'] = l$totalRows;
     final l$totalPages = totalPages;
-    _resultData['totalPages'] = l$totalPages;
+    resultData['totalPages'] = l$totalPages;
     final l$rows = rows;
-    _resultData['rows'] = l$rows.map((e) => e.toJson()).toList();
+    resultData['rows'] = l$rows.map((e) => e.toJson()).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -6347,7 +6428,7 @@ class Query$bookingReservations$bookingReservations {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingReservations$bookingReservations) ||
+    if (other is! Query$bookingReservations$bookingReservations ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6431,7 +6512,7 @@ abstract class CopyWith$Query$bookingReservations$bookingReservations<TRes> {
               Iterable<
                   CopyWith$Query$bookingReservations$bookingReservations$rows<
                       Query$bookingReservations$bookingReservations$rows>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$bookingReservations$bookingReservations<TRes>
@@ -6447,6 +6528,7 @@ class _CopyWithImpl$Query$bookingReservations$bookingReservations<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? limit = _undefined,
     Object? page = _undefined,
@@ -6473,14 +6555,15 @@ class _CopyWithImpl$Query$bookingReservations$bookingReservations<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes rows(
           Iterable<Query$bookingReservations$bookingReservations$rows> Function(
                   Iterable<
                       CopyWith$Query$bookingReservations$bookingReservations$rows<
                           Query$bookingReservations$bookingReservations$rows>>)
-              _fn) =>
+              fn) =>
       call(
-          rows: _fn(_instance.rows.map((e) =>
+          rows: fn(_instance.rows.map((e) =>
               CopyWith$Query$bookingReservations$bookingReservations$rows(
                 e,
                 (i) => i,
@@ -6491,8 +6574,9 @@ class _CopyWithStubImpl$Query$bookingReservations$bookingReservations<TRes>
     implements CopyWith$Query$bookingReservations$bookingReservations<TRes> {
   _CopyWithStubImpl$Query$bookingReservations$bookingReservations(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     int? limit,
     int? page,
@@ -6503,7 +6587,8 @@ class _CopyWithStubImpl$Query$bookingReservations$bookingReservations<TRes>
     String? $__typename,
   }) =>
       _res;
-  rows(_fn) => _res;
+  @override
+  rows(fn) => _res;
 }
 
 class Query$bookingReservations$bookingReservations$rows {
@@ -6527,12 +6612,12 @@ class Query$bookingReservations$bookingReservations$rows {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -6550,7 +6635,7 @@ class Query$bookingReservations$bookingReservations$rows {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingReservations$bookingReservations$rows) ||
+    if (other is! Query$bookingReservations$bookingReservations$rows ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6610,6 +6695,7 @@ class _CopyWithImpl$Query$bookingReservations$bookingReservations$rows<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -6628,8 +6714,9 @@ class _CopyWithStubImpl$Query$bookingReservations$bookingReservations$rows<TRes>
   _CopyWithStubImpl$Query$bookingReservations$bookingReservations$rows(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -6685,7 +6772,7 @@ class Variables$Query$bookingTimeSlots {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$bookingTimeSlots) ||
+    if (other is! Variables$Query$bookingTimeSlots ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6744,6 +6831,7 @@ class _CopyWithImpl$Variables$Query$bookingTimeSlots<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? branchId = _undefined,
     Object? day = _undefined,
@@ -6760,8 +6848,9 @@ class _CopyWithStubImpl$Variables$Query$bookingTimeSlots<TRes>
     implements CopyWith$Variables$Query$bookingTimeSlots<TRes> {
   _CopyWithStubImpl$Variables$Query$bookingTimeSlots(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? branchId,
     int? day,
@@ -6792,13 +6881,13 @@ class Query$bookingTimeSlots {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$bookingTimeSlots = bookingTimeSlots;
-    _resultData['bookingTimeSlots'] =
+    resultData['bookingTimeSlots'] =
         l$bookingTimeSlots.map((e) => e.toJson()).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -6816,8 +6905,7 @@ class Query$bookingTimeSlots {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingTimeSlots) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Query$bookingTimeSlots || runtimeType != other.runtimeType) {
       return false;
     }
     final l$bookingTimeSlots = bookingTimeSlots;
@@ -6867,7 +6955,7 @@ abstract class CopyWith$Query$bookingTimeSlots<TRes> {
               Iterable<
                   CopyWith$Query$bookingTimeSlots$bookingTimeSlots<
                       Query$bookingTimeSlots$bookingTimeSlots>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$bookingTimeSlots<TRes>
@@ -6883,6 +6971,7 @@ class _CopyWithImpl$Query$bookingTimeSlots<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? bookingTimeSlots = _undefined,
     Object? $__typename = _undefined,
@@ -6897,14 +6986,15 @@ class _CopyWithImpl$Query$bookingTimeSlots<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes bookingTimeSlots(
           Iterable<Query$bookingTimeSlots$bookingTimeSlots> Function(
                   Iterable<
                       CopyWith$Query$bookingTimeSlots$bookingTimeSlots<
                           Query$bookingTimeSlots$bookingTimeSlots>>)
-              _fn) =>
+              fn) =>
       call(
-          bookingTimeSlots: _fn(_instance.bookingTimeSlots
+          bookingTimeSlots: fn(_instance.bookingTimeSlots
               .map((e) => CopyWith$Query$bookingTimeSlots$bookingTimeSlots(
                     e,
                     (i) => i,
@@ -6915,14 +7005,16 @@ class _CopyWithStubImpl$Query$bookingTimeSlots<TRes>
     implements CopyWith$Query$bookingTimeSlots<TRes> {
   _CopyWithStubImpl$Query$bookingTimeSlots(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     List<Query$bookingTimeSlots$bookingTimeSlots>? bookingTimeSlots,
     String? $__typename,
   }) =>
       _res;
-  bookingTimeSlots(_fn) => _res;
+  @override
+  bookingTimeSlots(fn) => _res;
 }
 
 const documentNodeQuerybookingTimeSlots = DocumentNode(definitions: [
@@ -7129,19 +7221,19 @@ class FetchMoreOptions$Query$bookingTimeSlots extends graphql.FetchMoreOptions {
 extension ClientExtension$Query$bookingTimeSlots on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$bookingTimeSlots>> query$bookingTimeSlots(
           Options$Query$bookingTimeSlots options) async =>
-      await this.query(options);
+      await query(options);
   graphql.ObservableQuery<Query$bookingTimeSlots> watchQuery$bookingTimeSlots(
           WatchOptions$Query$bookingTimeSlots options) =>
-      this.watchQuery(options);
+      watchQuery(options);
   void writeQuery$bookingTimeSlots({
     required Query$bookingTimeSlots data,
     required Variables$Query$bookingTimeSlots variables,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
+      writeQuery(
         graphql.Request(
-          operation:
-              graphql.Operation(document: documentNodeQuerybookingTimeSlots),
+          operation: const graphql.Operation(
+              document: documentNodeQuerybookingTimeSlots),
           variables: variables.toJson(),
         ),
         data: data.toJson(),
@@ -7151,10 +7243,10 @@ extension ClientExtension$Query$bookingTimeSlots on graphql.GraphQLClient {
     required Variables$Query$bookingTimeSlots variables,
     bool optimistic = true,
   }) {
-    final result = this.readQuery(
+    final result = readQuery(
       graphql.Request(
-        operation:
-            graphql.Operation(document: documentNodeQuerybookingTimeSlots),
+        operation: const graphql.Operation(
+            document: documentNodeQuerybookingTimeSlots),
         variables: variables.toJson(),
       ),
       optimistic: optimistic,
@@ -7172,7 +7264,7 @@ graphql.ObservableQuery<Query$bookingTimeSlots> useWatchQuery$bookingTimeSlots(
 
 class Query$bookingTimeSlots$Widget
     extends graphql_flutter.Query<Query$bookingTimeSlots> {
-  Query$bookingTimeSlots$Widget({
+  const Query$bookingTimeSlots$Widget({
     widgets.Key? key,
     required Options$Query$bookingTimeSlots options,
     required graphql_flutter.QueryBuilder<Query$bookingTimeSlots> builder,
@@ -7229,22 +7321,22 @@ class Query$bookingTimeSlots$bookingTimeSlots {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$reservationId = reservationId;
-    _resultData['reservationId'] = l$reservationId;
+    resultData['reservationId'] = l$reservationId;
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$day = day;
-    _resultData['day'] = l$day;
+    resultData['day'] = l$day;
     final l$startTime = startTime;
-    _resultData['startTime'] = l$startTime;
+    resultData['startTime'] = l$startTime;
     final l$endTime = endTime;
-    _resultData['endTime'] = l$endTime;
+    resultData['endTime'] = l$endTime;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -7272,7 +7364,7 @@ class Query$bookingTimeSlots$bookingTimeSlots {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingTimeSlots$bookingTimeSlots) ||
+    if (other is! Query$bookingTimeSlots$bookingTimeSlots ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -7358,6 +7450,7 @@ class _CopyWithImpl$Query$bookingTimeSlots$bookingTimeSlots<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? reservationId = _undefined,
@@ -7392,8 +7485,9 @@ class _CopyWithStubImpl$Query$bookingTimeSlots$bookingTimeSlots<TRes>
     implements CopyWith$Query$bookingTimeSlots$bookingTimeSlots<TRes> {
   _CopyWithStubImpl$Query$bookingTimeSlots$bookingTimeSlots(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? reservationId,
@@ -7429,13 +7523,13 @@ class Query$settingGroups {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$settingGroups = settingGroups;
-    _resultData['settingGroups'] =
+    resultData['settingGroups'] =
         l$settingGroups.map((e) => e.toJson()).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -7453,7 +7547,7 @@ class Query$settingGroups {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$settingGroups) || runtimeType != other.runtimeType) {
+    if (other is! Query$settingGroups || runtimeType != other.runtimeType) {
       return false;
     }
     final l$settingGroups = settingGroups;
@@ -7503,7 +7597,7 @@ abstract class CopyWith$Query$settingGroups<TRes> {
               Iterable<
                   CopyWith$Query$settingGroups$settingGroups<
                       Query$settingGroups$settingGroups>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$settingGroups<TRes>
@@ -7519,6 +7613,7 @@ class _CopyWithImpl$Query$settingGroups<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? settingGroups = _undefined,
     Object? $__typename = _undefined,
@@ -7531,14 +7626,15 @@ class _CopyWithImpl$Query$settingGroups<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes settingGroups(
           Iterable<Query$settingGroups$settingGroups> Function(
                   Iterable<
                       CopyWith$Query$settingGroups$settingGroups<
                           Query$settingGroups$settingGroups>>)
-              _fn) =>
+              fn) =>
       call(
-          settingGroups: _fn(_instance.settingGroups
+          settingGroups: fn(_instance.settingGroups
               .map((e) => CopyWith$Query$settingGroups$settingGroups(
                     e,
                     (i) => i,
@@ -7549,14 +7645,16 @@ class _CopyWithStubImpl$Query$settingGroups<TRes>
     implements CopyWith$Query$settingGroups<TRes> {
   _CopyWithStubImpl$Query$settingGroups(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     List<Query$settingGroups$settingGroups>? settingGroups,
     String? $__typename,
   }) =>
       _res;
-  settingGroups(_fn) => _res;
+  @override
+  settingGroups(fn) => _res;
 }
 
 const documentNodeQuerysettingGroups = DocumentNode(definitions: [
@@ -7705,24 +7803,24 @@ class FetchMoreOptions$Query$settingGroups extends graphql.FetchMoreOptions {
 extension ClientExtension$Query$settingGroups on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$settingGroups>> query$settingGroups(
           [Options$Query$settingGroups? options]) async =>
-      await this.query(options ?? Options$Query$settingGroups());
+      await query(options ?? Options$Query$settingGroups());
   graphql.ObservableQuery<Query$settingGroups> watchQuery$settingGroups(
           [WatchOptions$Query$settingGroups? options]) =>
-      this.watchQuery(options ?? WatchOptions$Query$settingGroups());
+      watchQuery(options ?? WatchOptions$Query$settingGroups());
   void writeQuery$settingGroups({
     required Query$settingGroups data,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
-        graphql.Request(
+      writeQuery(
+        const graphql.Request(
             operation:
                 graphql.Operation(document: documentNodeQuerysettingGroups)),
         data: data.toJson(),
         broadcast: broadcast,
       );
   Query$settingGroups? readQuery$settingGroups({bool optimistic = true}) {
-    final result = this.readQuery(
-      graphql.Request(
+    final result = readQuery(
+      const graphql.Request(
           operation:
               graphql.Operation(document: documentNodeQuerysettingGroups)),
       optimistic: optimistic,
@@ -7763,13 +7861,13 @@ class Query$settingGroups$settingGroups {
   factory Query$settingGroups$settingGroups.fromJson(
       Map<String, dynamic> json) {
     final l$key = json['key'];
-    final l$name_en = json['name_en'];
-    final l$name_ar = json['name_ar'];
+    final l$nameEn = json['name_en'];
+    final l$nameAr = json['name_ar'];
     final l$$__typename = json['__typename'];
     return Query$settingGroups$settingGroups(
       key: (l$key as String),
-      name_en: (l$name_en as String),
-      name_ar: (l$name_ar as String),
+      name_en: (l$nameEn as String),
+      name_ar: (l$nameAr as String),
       $__typename: (l$$__typename as String),
     );
   }
@@ -7783,28 +7881,28 @@ class Query$settingGroups$settingGroups {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$key = key;
-    _resultData['key'] = l$key;
-    final l$name_en = name_en;
-    _resultData['name_en'] = l$name_en;
-    final l$name_ar = name_ar;
-    _resultData['name_ar'] = l$name_ar;
+    resultData['key'] = l$key;
+    final l$nameEn = name_en;
+    resultData['name_en'] = l$nameEn;
+    final l$nameAr = name_ar;
+    resultData['name_ar'] = l$nameAr;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
   int get hashCode {
     final l$key = key;
-    final l$name_en = name_en;
-    final l$name_ar = name_ar;
+    final l$nameEn = name_en;
+    final l$nameAr = name_ar;
     final l$$__typename = $__typename;
     return Object.hashAll([
       l$key,
-      l$name_en,
-      l$name_ar,
+      l$nameEn,
+      l$nameAr,
       l$$__typename,
     ]);
   }
@@ -7814,7 +7912,7 @@ class Query$settingGroups$settingGroups {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$settingGroups$settingGroups) ||
+    if (other is! Query$settingGroups$settingGroups ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -7823,14 +7921,14 @@ class Query$settingGroups$settingGroups {
     if (l$key != lOther$key) {
       return false;
     }
-    final l$name_en = name_en;
-    final lOther$name_en = other.name_en;
-    if (l$name_en != lOther$name_en) {
+    final l$nameEn = name_en;
+    final lother$nameEn = other.name_en;
+    if (l$nameEn != lother$nameEn) {
       return false;
     }
-    final l$name_ar = name_ar;
-    final lOther$name_ar = other.name_ar;
-    if (l$name_ar != lOther$name_ar) {
+    final l$nameAr = name_ar;
+    final lother$nameAr = other.name_ar;
+    if (l$nameAr != lother$nameAr) {
       return false;
     }
     final l$$__typename = $__typename;
@@ -7881,6 +7979,7 @@ class _CopyWithImpl$Query$settingGroups$settingGroups<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? key = _undefined,
     Object? name_en = _undefined,
@@ -7905,8 +8004,9 @@ class _CopyWithStubImpl$Query$settingGroups$settingGroups<TRes>
     implements CopyWith$Query$settingGroups$settingGroups<TRes> {
   _CopyWithStubImpl$Query$settingGroups$settingGroups(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? key,
     String? name_en,
@@ -7939,12 +8039,12 @@ class Query$settings {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$settings = settings;
-    _resultData['settings'] = l$settings.map((e) => e.toJson()).toList();
+    resultData['settings'] = l$settings.map((e) => e.toJson()).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -7962,7 +8062,7 @@ class Query$settings {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$settings) || runtimeType != other.runtimeType) {
+    if (other is! Query$settings || runtimeType != other.runtimeType) {
       return false;
     }
     final l$settings = settings;
@@ -8011,7 +8111,7 @@ abstract class CopyWith$Query$settings<TRes> {
       Iterable<Query$settings$settings> Function(
               Iterable<
                   CopyWith$Query$settings$settings<Query$settings$settings>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$settings<TRes>
@@ -8027,6 +8127,7 @@ class _CopyWithImpl$Query$settings<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? settings = _undefined,
     Object? $__typename = _undefined,
@@ -8039,15 +8140,16 @@ class _CopyWithImpl$Query$settings<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes settings(
           Iterable<Query$settings$settings> Function(
                   Iterable<
                       CopyWith$Query$settings$settings<
                           Query$settings$settings>>)
-              _fn) =>
+              fn) =>
       call(
-          settings: _fn(
-              _instance.settings.map((e) => CopyWith$Query$settings$settings(
+          settings:
+              fn(_instance.settings.map((e) => CopyWith$Query$settings$settings(
                     e,
                     (i) => i,
                   ))).toList());
@@ -8057,14 +8159,16 @@ class _CopyWithStubImpl$Query$settings<TRes>
     implements CopyWith$Query$settings<TRes> {
   _CopyWithStubImpl$Query$settings(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     List<Query$settings$settings>? settings,
     String? $__typename,
   }) =>
       _res;
-  settings(_fn) => _res;
+  @override
+  settings(fn) => _res;
 }
 
 const documentNodeQuerysettings = DocumentNode(definitions: [
@@ -8260,23 +8364,23 @@ class FetchMoreOptions$Query$settings extends graphql.FetchMoreOptions {
 extension ClientExtension$Query$settings on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$settings>> query$settings(
           [Options$Query$settings? options]) async =>
-      await this.query(options ?? Options$Query$settings());
+      await query(options ?? Options$Query$settings());
   graphql.ObservableQuery<Query$settings> watchQuery$settings(
           [WatchOptions$Query$settings? options]) =>
-      this.watchQuery(options ?? WatchOptions$Query$settings());
+      watchQuery(options ?? WatchOptions$Query$settings());
   void writeQuery$settings({
     required Query$settings data,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
-        graphql.Request(
+      writeQuery(
+        const graphql.Request(
             operation: graphql.Operation(document: documentNodeQuerysettings)),
         data: data.toJson(),
         broadcast: broadcast,
       );
   Query$settings? readQuery$settings({bool optimistic = true}) {
-    final result = this.readQuery(
-      graphql.Request(
+    final result = readQuery(
+      const graphql.Request(
           operation: graphql.Operation(document: documentNodeQuerysettings)),
       optimistic: optimistic,
     );
@@ -8320,10 +8424,10 @@ class Query$settings$settings {
 
   factory Query$settings$settings.fromJson(Map<String, dynamic> json) {
     final l$key = json['key'];
-    final l$name_en = json['name_en'];
-    final l$name_ar = json['name_ar'];
-    final l$description_en = json['description_en'];
-    final l$description_ar = json['description_ar'];
+    final l$nameEn = json['name_en'];
+    final l$nameAr = json['name_ar'];
+    final l$descriptionEn = json['description_en'];
+    final l$descriptionAr = json['description_ar'];
     final l$group = json['group'];
     final l$type = json['type'];
     final l$component = json['component'];
@@ -8332,10 +8436,10 @@ class Query$settings$settings {
     final l$$__typename = json['__typename'];
     return Query$settings$settings(
       key: (l$key as String),
-      name_en: (l$name_en as String),
-      name_ar: (l$name_ar as String),
-      description_en: (l$description_en as String?),
-      description_ar: (l$description_ar as String?),
+      name_en: (l$nameEn as String),
+      name_ar: (l$nameAr as String),
+      description_en: (l$descriptionEn as String?),
+      description_ar: (l$descriptionAr as String?),
       group: (l$group as String?),
       type: (l$type as String),
       component: (l$component as String),
@@ -8368,39 +8472,39 @@ class Query$settings$settings {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$key = key;
-    _resultData['key'] = l$key;
-    final l$name_en = name_en;
-    _resultData['name_en'] = l$name_en;
-    final l$name_ar = name_ar;
-    _resultData['name_ar'] = l$name_ar;
-    final l$description_en = description_en;
-    _resultData['description_en'] = l$description_en;
-    final l$description_ar = description_ar;
-    _resultData['description_ar'] = l$description_ar;
+    resultData['key'] = l$key;
+    final l$nameEn = name_en;
+    resultData['name_en'] = l$nameEn;
+    final l$nameAr = name_ar;
+    resultData['name_ar'] = l$nameAr;
+    final l$descriptionEn = description_en;
+    resultData['description_en'] = l$descriptionEn;
+    final l$descriptionAr = description_ar;
+    resultData['description_ar'] = l$descriptionAr;
     final l$group = group;
-    _resultData['group'] = l$group;
+    resultData['group'] = l$group;
     final l$type = type;
-    _resultData['type'] = l$type;
+    resultData['type'] = l$type;
     final l$component = component;
-    _resultData['component'] = l$component;
+    resultData['component'] = l$component;
     final l$modifiable = modifiable;
-    _resultData['modifiable'] = l$modifiable;
+    resultData['modifiable'] = l$modifiable;
     final l$value = value;
-    _resultData['value'] = l$value;
+    resultData['value'] = l$value;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
   int get hashCode {
     final l$key = key;
-    final l$name_en = name_en;
-    final l$name_ar = name_ar;
-    final l$description_en = description_en;
-    final l$description_ar = description_ar;
+    final l$nameEn = name_en;
+    final l$nameAr = name_ar;
+    final l$descriptionEn = description_en;
+    final l$descriptionAr = description_ar;
     final l$group = group;
     final l$type = type;
     final l$component = component;
@@ -8409,10 +8513,10 @@ class Query$settings$settings {
     final l$$__typename = $__typename;
     return Object.hashAll([
       l$key,
-      l$name_en,
-      l$name_ar,
-      l$description_en,
-      l$description_ar,
+      l$nameEn,
+      l$nameAr,
+      l$descriptionEn,
+      l$descriptionAr,
       l$group,
       l$type,
       l$component,
@@ -8427,8 +8531,7 @@ class Query$settings$settings {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$settings$settings) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Query$settings$settings || runtimeType != other.runtimeType) {
       return false;
     }
     final l$key = key;
@@ -8436,24 +8539,24 @@ class Query$settings$settings {
     if (l$key != lOther$key) {
       return false;
     }
-    final l$name_en = name_en;
-    final lOther$name_en = other.name_en;
-    if (l$name_en != lOther$name_en) {
+    final l$nameEn = name_en;
+    final lother$nameEn = other.name_en;
+    if (l$nameEn != lother$nameEn) {
       return false;
     }
-    final l$name_ar = name_ar;
-    final lOther$name_ar = other.name_ar;
-    if (l$name_ar != lOther$name_ar) {
+    final l$nameAr = name_ar;
+    final lother$nameAr = other.name_ar;
+    if (l$nameAr != lother$nameAr) {
       return false;
     }
-    final l$description_en = description_en;
-    final lOther$description_en = other.description_en;
-    if (l$description_en != lOther$description_en) {
+    final l$descriptionEn = description_en;
+    final lother$descriptionEn = other.description_en;
+    if (l$descriptionEn != lother$descriptionEn) {
       return false;
     }
-    final l$description_ar = description_ar;
-    final lOther$description_ar = other.description_ar;
-    if (l$description_ar != lOther$description_ar) {
+    final l$descriptionAr = description_ar;
+    final lother$descriptionAr = other.description_ar;
+    if (l$descriptionAr != lother$descriptionAr) {
       return false;
     }
     final l$group = group;
@@ -8535,6 +8638,7 @@ class _CopyWithImpl$Query$settings$settings<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? key = _undefined,
     Object? name_en = _undefined,
@@ -8585,8 +8689,9 @@ class _CopyWithStubImpl$Query$settings$settings<TRes>
     implements CopyWith$Query$settings$settings<TRes> {
   _CopyWithStubImpl$Query$settings$settings(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? key,
     String? name_en,
@@ -8666,7 +8771,7 @@ class Variables$Query$users {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$users) || runtimeType != other.runtimeType) {
+    if (other is! Variables$Query$users || runtimeType != other.runtimeType) {
       return false;
     }
     final l$limit = limit;
@@ -8738,6 +8843,7 @@ class _CopyWithImpl$Variables$Query$users<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? limit = _undefined,
     Object? page = _undefined,
@@ -8755,8 +8861,9 @@ class _CopyWithStubImpl$Variables$Query$users<TRes>
     implements CopyWith$Variables$Query$users<TRes> {
   _CopyWithStubImpl$Variables$Query$users(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     int? limit,
     int? page,
@@ -8785,12 +8892,12 @@ class Query$users {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$users = users;
-    _resultData['users'] = l$users.toJson();
+    resultData['users'] = l$users.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -8808,7 +8915,7 @@ class Query$users {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$users) || runtimeType != other.runtimeType) {
+    if (other is! Query$users || runtimeType != other.runtimeType) {
       return false;
     }
     final l$users = users;
@@ -8859,6 +8966,7 @@ class _CopyWithImpl$Query$users<TRes> implements CopyWith$Query$users<TRes> {
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? users = _undefined,
     Object? $__typename = _undefined,
@@ -8871,6 +8979,7 @@ class _CopyWithImpl$Query$users<TRes> implements CopyWith$Query$users<TRes> {
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Query$users$users<TRes> get users {
     final local$users = _instance.users;
     return CopyWith$Query$users$users(local$users, (e) => call(users: e));
@@ -8881,13 +8990,15 @@ class _CopyWithStubImpl$Query$users<TRes>
     implements CopyWith$Query$users<TRes> {
   _CopyWithStubImpl$Query$users(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Query$users$users? users,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Query$users$users<TRes> get users =>
       CopyWith$Query$users$users.stub(_res);
 }
@@ -9119,18 +9230,18 @@ class FetchMoreOptions$Query$users extends graphql.FetchMoreOptions {
 extension ClientExtension$Query$users on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$users>> query$users(
           [Options$Query$users? options]) async =>
-      await this.query(options ?? Options$Query$users());
+      await query(options ?? Options$Query$users());
   graphql.ObservableQuery<Query$users> watchQuery$users(
           [WatchOptions$Query$users? options]) =>
-      this.watchQuery(options ?? WatchOptions$Query$users());
+      watchQuery(options ?? WatchOptions$Query$users());
   void writeQuery$users({
     required Query$users data,
     Variables$Query$users? variables,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
+      writeQuery(
         graphql.Request(
-          operation: graphql.Operation(document: documentNodeQueryusers),
+          operation: const graphql.Operation(document: documentNodeQueryusers),
           variables: variables?.toJson() ?? const {},
         ),
         data: data.toJson(),
@@ -9140,9 +9251,9 @@ extension ClientExtension$Query$users on graphql.GraphQLClient {
     Variables$Query$users? variables,
     bool optimistic = true,
   }) {
-    final result = this.readQuery(
+    final result = readQuery(
       graphql.Request(
-        operation: graphql.Operation(document: documentNodeQueryusers),
+        operation: const graphql.Operation(document: documentNodeQueryusers),
         variables: variables?.toJson() ?? const {},
       ),
       optimistic: optimistic,
@@ -9218,22 +9329,22 @@ class Query$users$users {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$limit = limit;
-    _resultData['limit'] = l$limit;
+    resultData['limit'] = l$limit;
     final l$page = page;
-    _resultData['page'] = l$page;
+    resultData['page'] = l$page;
     final l$sort = sort;
-    _resultData['sort'] = l$sort;
+    resultData['sort'] = l$sort;
     final l$totalRows = totalRows;
-    _resultData['totalRows'] = l$totalRows;
+    resultData['totalRows'] = l$totalRows;
     final l$totalPages = totalPages;
-    _resultData['totalPages'] = l$totalPages;
+    resultData['totalPages'] = l$totalPages;
     final l$rows = rows;
-    _resultData['rows'] = l$rows.map((e) => e.toJson()).toList();
+    resultData['rows'] = l$rows.map((e) => e.toJson()).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -9261,7 +9372,7 @@ class Query$users$users {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$users$users) || runtimeType != other.runtimeType) {
+    if (other is! Query$users$users || runtimeType != other.runtimeType) {
       return false;
     }
     final l$limit = limit;
@@ -9339,7 +9450,7 @@ abstract class CopyWith$Query$users$users<TRes> {
   TRes rows(
       Iterable<Query$users$users$rows> Function(
               Iterable<CopyWith$Query$users$users$rows<Query$users$users$rows>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$users$users<TRes>
@@ -9355,6 +9466,7 @@ class _CopyWithImpl$Query$users$users<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? limit = _undefined,
     Object? page = _undefined,
@@ -9380,13 +9492,14 @@ class _CopyWithImpl$Query$users$users<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes rows(
           Iterable<Query$users$users$rows> Function(
                   Iterable<
                       CopyWith$Query$users$users$rows<Query$users$users$rows>>)
-              _fn) =>
+              fn) =>
       call(
-          rows: _fn(_instance.rows.map((e) => CopyWith$Query$users$users$rows(
+          rows: fn(_instance.rows.map((e) => CopyWith$Query$users$users$rows(
                 e,
                 (i) => i,
               ))).toList());
@@ -9396,8 +9509,9 @@ class _CopyWithStubImpl$Query$users$users<TRes>
     implements CopyWith$Query$users$users<TRes> {
   _CopyWithStubImpl$Query$users$users(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     int? limit,
     int? page,
@@ -9408,7 +9522,8 @@ class _CopyWithStubImpl$Query$users$users<TRes>
     String? $__typename,
   }) =>
       _res;
-  rows(_fn) => _res;
+  @override
+  rows(fn) => _res;
 }
 
 class Query$users$users$rows {
@@ -9431,12 +9546,12 @@ class Query$users$users$rows {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -9454,8 +9569,7 @@ class Query$users$users$rows {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$users$users$rows) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Query$users$users$rows || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -9508,6 +9622,7 @@ class _CopyWithImpl$Query$users$users$rows<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -9524,8 +9639,9 @@ class _CopyWithStubImpl$Query$users$users$rows<TRes>
     implements CopyWith$Query$users$users$rows<TRes> {
   _CopyWithStubImpl$Query$users$users$rows(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -9559,13 +9675,13 @@ class Query$bookingCurrentReservations {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$bookingCurrentReservations = bookingCurrentReservations;
-    _resultData['bookingCurrentReservations'] =
+    resultData['bookingCurrentReservations'] =
         l$bookingCurrentReservations.map((e) => e.toJson()).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -9583,7 +9699,7 @@ class Query$bookingCurrentReservations {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$bookingCurrentReservations) ||
+    if (other is! Query$bookingCurrentReservations ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -9640,7 +9756,7 @@ abstract class CopyWith$Query$bookingCurrentReservations<TRes> {
               Iterable<
                   CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations<
                       Query$bookingCurrentReservations$bookingCurrentReservations>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Query$bookingCurrentReservations<TRes>
@@ -9656,6 +9772,7 @@ class _CopyWithImpl$Query$bookingCurrentReservations<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? bookingCurrentReservations = _undefined,
     Object? $__typename = _undefined,
@@ -9670,14 +9787,15 @@ class _CopyWithImpl$Query$bookingCurrentReservations<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes bookingCurrentReservations(
           Iterable<Query$bookingCurrentReservations$bookingCurrentReservations> Function(
                   Iterable<
                       CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations<
                           Query$bookingCurrentReservations$bookingCurrentReservations>>)
-              _fn) =>
+              fn) =>
       call(
-          bookingCurrentReservations: _fn(_instance.bookingCurrentReservations
+          bookingCurrentReservations: fn(_instance.bookingCurrentReservations
               .map((e) =>
                   CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations(
                     e,
@@ -9689,15 +9807,17 @@ class _CopyWithStubImpl$Query$bookingCurrentReservations<TRes>
     implements CopyWith$Query$bookingCurrentReservations<TRes> {
   _CopyWithStubImpl$Query$bookingCurrentReservations(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     List<Query$bookingCurrentReservations$bookingCurrentReservations>?
         bookingCurrentReservations,
     String? $__typename,
   }) =>
       _res;
-  bookingCurrentReservations(_fn) => _res;
+  @override
+  bookingCurrentReservations(fn) => _res;
 }
 
 const documentNodeQuerybookingCurrentReservations = DocumentNode(definitions: [
@@ -9960,19 +10080,17 @@ extension ClientExtension$Query$bookingCurrentReservations
   Future<graphql.QueryResult<Query$bookingCurrentReservations>>
       query$bookingCurrentReservations(
               [Options$Query$bookingCurrentReservations? options]) async =>
-          await this
-              .query(options ?? Options$Query$bookingCurrentReservations());
-  graphql.ObservableQuery<Query$bookingCurrentReservations>
-      watchQuery$bookingCurrentReservations(
-              [WatchOptions$Query$bookingCurrentReservations? options]) =>
-          this.watchQuery(
-              options ?? WatchOptions$Query$bookingCurrentReservations());
+          await query(options ?? Options$Query$bookingCurrentReservations());
+  graphql.ObservableQuery<
+      Query$bookingCurrentReservations> watchQuery$bookingCurrentReservations(
+          [WatchOptions$Query$bookingCurrentReservations? options]) =>
+      watchQuery(options ?? WatchOptions$Query$bookingCurrentReservations());
   void writeQuery$bookingCurrentReservations({
     required Query$bookingCurrentReservations data,
     bool broadcast = true,
   }) =>
-      this.writeQuery(
-        graphql.Request(
+      writeQuery(
+        const graphql.Request(
             operation: graphql.Operation(
                 document: documentNodeQuerybookingCurrentReservations)),
         data: data.toJson(),
@@ -9980,8 +10098,8 @@ extension ClientExtension$Query$bookingCurrentReservations
       );
   Query$bookingCurrentReservations? readQuery$bookingCurrentReservations(
       {bool optimistic = true}) {
-    final result = this.readQuery(
-      graphql.Request(
+    final result = readQuery(
+      const graphql.Request(
           operation: graphql.Operation(
               document: documentNodeQuerybookingCurrentReservations)),
       optimistic: optimistic,
@@ -10109,38 +10227,38 @@ class Query$bookingCurrentReservations$bookingCurrentReservations {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$userId = userId;
-    _resultData['userId'] = l$userId;
+    resultData['userId'] = l$userId;
     final l$user = user;
-    _resultData['user'] = l$user.toJson();
+    resultData['user'] = l$user.toJson();
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch.toJson();
+    resultData['branch'] = l$branch.toJson();
     final l$serviceId = serviceId;
-    _resultData['serviceId'] = l$serviceId;
+    resultData['serviceId'] = l$serviceId;
     final l$service = service;
-    _resultData['service'] = l$service.toJson();
+    resultData['service'] = l$service.toJson();
     final l$channel = channel;
-    _resultData['channel'] = l$channel;
+    resultData['channel'] = l$channel;
     final l$date = date;
-    _resultData['date'] = l$date;
+    resultData['date'] = l$date;
     final l$time = time;
-    _resultData['time'] = l$time;
+    resultData['time'] = l$time;
     final l$queueNumber = queueNumber;
-    _resultData['queueNumber'] = l$queueNumber;
+    resultData['queueNumber'] = l$queueNumber;
     final l$status = status;
-    _resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
+    resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -10184,8 +10302,7 @@ class Query$bookingCurrentReservations$bookingCurrentReservations {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Query$bookingCurrentReservations$bookingCurrentReservations) ||
+    if (other is! Query$bookingCurrentReservations$bookingCurrentReservations ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10334,6 +10451,7 @@ class _CopyWithImpl$Query$bookingCurrentReservations$bookingCurrentReservations<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? userId = _undefined,
@@ -10395,6 +10513,7 @@ class _CopyWithImpl$Query$bookingCurrentReservations$bookingCurrentReservations<
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations$user<
       TRes> get user {
     final local$user = _instance.user;
@@ -10402,6 +10521,7 @@ class _CopyWithImpl$Query$bookingCurrentReservations$bookingCurrentReservations<
         local$user, (e) => call(user: e));
   }
 
+  @override
   CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations$branch<
       TRes> get branch {
     final local$branch = _instance.branch;
@@ -10409,6 +10529,7 @@ class _CopyWithImpl$Query$bookingCurrentReservations$bookingCurrentReservations<
         local$branch, (e) => call(branch: e));
   }
 
+  @override
   CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations$service<
       TRes> get service {
     final local$service = _instance.service;
@@ -10425,8 +10546,9 @@ class _CopyWithStubImpl$Query$bookingCurrentReservations$bookingCurrentReservati
   _CopyWithStubImpl$Query$bookingCurrentReservations$bookingCurrentReservations(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? userId,
@@ -10446,16 +10568,19 @@ class _CopyWithStubImpl$Query$bookingCurrentReservations$bookingCurrentReservati
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations$user<
           TRes>
       get user =>
           CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations$user
               .stub(_res);
+  @override
   CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations$branch<
           TRes>
       get branch =>
           CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations$branch
               .stub(_res);
+  @override
   CopyWith$Query$bookingCurrentReservations$bookingCurrentReservations$service<
           TRes>
       get service =>
@@ -10472,8 +10597,8 @@ class Query$bookingCurrentReservations$bookingCurrentReservations$user {
   }
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
-    return _resultData;
+    final resultData = <String, dynamic>{};
+    return resultData;
   }
 
   @override
@@ -10486,8 +10611,8 @@ class Query$bookingCurrentReservations$bookingCurrentReservations$user {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Query$bookingCurrentReservations$bookingCurrentReservations$user) ||
+    if (other
+            is! Query$bookingCurrentReservations$bookingCurrentReservations$user ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10540,6 +10665,7 @@ class _CopyWithImpl$Query$bookingCurrentReservations$bookingCurrentReservations$
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call() =>
       _then(Query$bookingCurrentReservations$bookingCurrentReservations$user());
 }
@@ -10552,8 +10678,9 @@ class _CopyWithStubImpl$Query$bookingCurrentReservations$bookingCurrentReservati
   _CopyWithStubImpl$Query$bookingCurrentReservations$bookingCurrentReservations$user(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call() => _res;
 }
 
@@ -10578,12 +10705,12 @@ class Query$bookingCurrentReservations$bookingCurrentReservations$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -10601,8 +10728,8 @@ class Query$bookingCurrentReservations$bookingCurrentReservations$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Query$bookingCurrentReservations$bookingCurrentReservations$branch) ||
+    if (other
+            is! Query$bookingCurrentReservations$bookingCurrentReservations$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10668,6 +10795,7 @@ class _CopyWithImpl$Query$bookingCurrentReservations$bookingCurrentReservations$
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -10688,8 +10816,9 @@ class _CopyWithStubImpl$Query$bookingCurrentReservations$bookingCurrentReservati
   _CopyWithStubImpl$Query$bookingCurrentReservations$bookingCurrentReservations$branch(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -10718,12 +10847,12 @@ class Query$bookingCurrentReservations$bookingCurrentReservations$service {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -10741,8 +10870,8 @@ class Query$bookingCurrentReservations$bookingCurrentReservations$service {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Query$bookingCurrentReservations$bookingCurrentReservations$service) ||
+    if (other
+            is! Query$bookingCurrentReservations$bookingCurrentReservations$service ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10810,6 +10939,7 @@ class _CopyWithImpl$Query$bookingCurrentReservations$bookingCurrentReservations$
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -10830,8 +10960,9 @@ class _CopyWithStubImpl$Query$bookingCurrentReservations$bookingCurrentReservati
   _CopyWithStubImpl$Query$bookingCurrentReservations$bookingCurrentReservations$service(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,

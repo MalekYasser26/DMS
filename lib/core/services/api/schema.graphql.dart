@@ -72,7 +72,7 @@ class Input$BookingBranchInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingBranchInput) ||
+    if (other is! Input$BookingBranchInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -156,6 +156,7 @@ class _CopyWithImpl$Input$BookingBranchInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? name = _undefined,
     Object? address = _undefined,
@@ -175,8 +176,9 @@ class _CopyWithStubImpl$Input$BookingBranchInput<TRes>
     implements CopyWith$Input$BookingBranchInput<TRes> {
   _CopyWithStubImpl$Input$BookingBranchInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? name,
     String? address,
@@ -273,7 +275,7 @@ class Input$BookingBranchModifiableInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingBranchModifiableInput) ||
+    if (other is! Input$BookingBranchModifiableInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -369,6 +371,7 @@ class _CopyWithImpl$Input$BookingBranchModifiableInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? name = _undefined,
     Object? address = _undefined,
@@ -390,8 +393,9 @@ class _CopyWithStubImpl$Input$BookingBranchModifiableInput<TRes>
     implements CopyWith$Input$BookingBranchModifiableInput<TRes> {
   _CopyWithStubImpl$Input$BookingBranchModifiableInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? name,
     String? address,
@@ -472,8 +476,7 @@ class Input$BookingNoteInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingNoteInput) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$BookingNoteInput || runtimeType != other.runtimeType) {
       return false;
     }
     final l$userId = userId;
@@ -554,6 +557,7 @@ class _CopyWithImpl$Input$BookingNoteInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? userId = _undefined,
     Object? branchId = _undefined,
@@ -574,8 +578,9 @@ class _CopyWithStubImpl$Input$BookingNoteInput<TRes>
     implements CopyWith$Input$BookingNoteInput<TRes> {
   _CopyWithStubImpl$Input$BookingNoteInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? userId,
     String? branchId,
@@ -624,7 +629,7 @@ class Input$BookingNoteModifiableInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingNoteModifiableInput) ||
+    if (other is! Input$BookingNoteModifiableInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -671,6 +676,7 @@ class _CopyWithImpl$Input$BookingNoteModifiableInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? text = _undefined}) =>
       _then(Input$BookingNoteModifiableInput._({
         ..._instance._$data,
@@ -682,8 +688,9 @@ class _CopyWithStubImpl$Input$BookingNoteModifiableInput<TRes>
     implements CopyWith$Input$BookingNoteModifiableInput<TRes> {
   _CopyWithStubImpl$Input$BookingNoteModifiableInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({String? text}) => _res;
 }
 
@@ -745,7 +752,7 @@ class Input$BookingReservationInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingReservationInput) ||
+    if (other is! Input$BookingReservationInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -817,6 +824,7 @@ class _CopyWithImpl$Input$BookingReservationInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? branchId = _undefined,
     Object? serviceId = _undefined,
@@ -838,8 +846,9 @@ class _CopyWithStubImpl$Input$BookingReservationInput<TRes>
     implements CopyWith$Input$BookingReservationInput<TRes> {
   _CopyWithStubImpl$Input$BookingReservationInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? branchId,
     String? serviceId,
@@ -914,7 +923,7 @@ class Input$BookingReservationModifiableInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingReservationModifiableInput) ||
+    if (other is! Input$BookingReservationModifiableInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -988,6 +997,7 @@ class _CopyWithImpl$Input$BookingReservationModifiableInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? branchId = _undefined,
     Object? date = _undefined,
@@ -1005,8 +1015,9 @@ class _CopyWithStubImpl$Input$BookingReservationModifiableInput<TRes>
     implements CopyWith$Input$BookingReservationModifiableInput<TRes> {
   _CopyWithStubImpl$Input$BookingReservationModifiableInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? branchId,
     int? date,
@@ -1066,7 +1077,7 @@ class Input$BookingServiceInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingServiceInput) ||
+    if (other is! Input$BookingServiceInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1130,6 +1141,7 @@ class _CopyWithImpl$Input$BookingServiceInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? branchId = _undefined,
     Object? name = _undefined,
@@ -1149,8 +1161,9 @@ class _CopyWithStubImpl$Input$BookingServiceInput<TRes>
     implements CopyWith$Input$BookingServiceInput<TRes> {
   _CopyWithStubImpl$Input$BookingServiceInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? branchId,
     String? name,
@@ -1224,7 +1237,7 @@ class Input$BookingServiceModifiableInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingServiceModifiableInput) ||
+    if (other is! Input$BookingServiceModifiableInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1299,6 +1312,7 @@ class _CopyWithImpl$Input$BookingServiceModifiableInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? name = _undefined,
     Object? duration = _undefined,
@@ -1316,8 +1330,9 @@ class _CopyWithStubImpl$Input$BookingServiceModifiableInput<TRes>
     implements CopyWith$Input$BookingServiceModifiableInput<TRes> {
   _CopyWithStubImpl$Input$BookingServiceModifiableInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? name,
     int? duration,
@@ -1370,7 +1385,7 @@ class Input$DateRangeInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$DateRangeInput) || runtimeType != other.runtimeType) {
+    if (other is! Input$DateRangeInput || runtimeType != other.runtimeType) {
       return false;
     }
     final l$startDate = startDate;
@@ -1425,6 +1440,7 @@ class _CopyWithImpl$Input$DateRangeInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? startDate = _undefined,
     Object? endDate = _undefined,
@@ -1442,8 +1458,9 @@ class _CopyWithStubImpl$Input$DateRangeInput<TRes>
     implements CopyWith$Input$DateRangeInput<TRes> {
   _CopyWithStubImpl$Input$DateRangeInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     int? startDate,
     int? endDate,
@@ -1558,7 +1575,7 @@ class Input$ModifiableRegularUserInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$ModifiableRegularUserInput) ||
+    if (other is! Input$ModifiableRegularUserInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1678,6 +1695,7 @@ class _CopyWithImpl$Input$ModifiableRegularUserInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? firstName = _undefined,
     Object? lastName = _undefined,
@@ -1703,8 +1721,9 @@ class _CopyWithStubImpl$Input$ModifiableRegularUserInput<TRes>
     implements CopyWith$Input$ModifiableRegularUserInput<TRes> {
   _CopyWithStubImpl$Input$ModifiableRegularUserInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? firstName,
     String? lastName,
@@ -1823,7 +1842,7 @@ class Input$RegularPasswordUserInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RegularPasswordUserInput) ||
+    if (other is! Input$RegularPasswordUserInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1943,6 +1962,7 @@ class _CopyWithImpl$Input$RegularPasswordUserInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? firstName = _undefined,
     Object? lastName = _undefined,
@@ -1973,8 +1993,9 @@ class _CopyWithStubImpl$Input$RegularPasswordUserInput<TRes>
     implements CopyWith$Input$RegularPasswordUserInput<TRes> {
   _CopyWithStubImpl$Input$RegularPasswordUserInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? firstName,
     String? lastName,
@@ -2098,8 +2119,7 @@ class Input$RegularUserInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RegularUserInput) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$RegularUserInput || runtimeType != other.runtimeType) {
       return false;
     }
     final l$firstName = firstName;
@@ -2221,6 +2241,7 @@ class _CopyWithImpl$Input$RegularUserInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? firstName = _undefined,
     Object? lastName = _undefined,
@@ -2250,8 +2271,9 @@ class _CopyWithStubImpl$Input$RegularUserInput<TRes>
     implements CopyWith$Input$RegularUserInput<TRes> {
   _CopyWithStubImpl$Input$RegularUserInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? firstName,
     String? lastName,
@@ -2309,7 +2331,7 @@ class Input$UserCredentialsInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UserCredentialsInput) ||
+    if (other is! Input$UserCredentialsInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2365,6 +2387,7 @@ class _CopyWithImpl$Input$UserCredentialsInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? identifier = _undefined,
     Object? password = _undefined,
@@ -2382,8 +2405,9 @@ class _CopyWithStubImpl$Input$UserCredentialsInput<TRes>
     implements CopyWith$Input$UserCredentialsInput<TRes> {
   _CopyWithStubImpl$Input$UserCredentialsInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? identifier,
     String? password,
@@ -2443,7 +2467,7 @@ class Input$UserIdentifierInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UserIdentifierInput) ||
+    if (other is! Input$UserIdentifierInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2505,6 +2529,7 @@ class _CopyWithImpl$Input$UserIdentifierInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? email = _undefined,
     Object? phone = _undefined,
@@ -2520,8 +2545,9 @@ class _CopyWithStubImpl$Input$UserIdentifierInput<TRes>
     implements CopyWith$Input$UserIdentifierInput<TRes> {
   _CopyWithStubImpl$Input$UserIdentifierInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? email,
     String? phone,
@@ -2573,7 +2599,7 @@ class Input$UserResetPasswordInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UserResetPasswordInput) ||
+    if (other is! Input$UserResetPasswordInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2629,6 +2655,7 @@ class _CopyWithImpl$Input$UserResetPasswordInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? token = _undefined,
     Object? password = _undefined,
@@ -2645,8 +2672,9 @@ class _CopyWithStubImpl$Input$UserResetPasswordInput<TRes>
     implements CopyWith$Input$UserResetPasswordInput<TRes> {
   _CopyWithStubImpl$Input$UserResetPasswordInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? token,
     String? password,

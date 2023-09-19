@@ -44,7 +44,7 @@ class Variables$Mutation$cancelBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$cancelBookingReservation) ||
+    if (other is! Variables$Mutation$cancelBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -95,6 +95,7 @@ class _CopyWithImpl$Variables$Mutation$cancelBookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? reservationIds = _undefined}) =>
       _then(Variables$Mutation$cancelBookingReservation._({
         ..._instance._$data,
@@ -107,8 +108,9 @@ class _CopyWithStubImpl$Variables$Mutation$cancelBookingReservation<TRes>
     implements CopyWith$Variables$Mutation$cancelBookingReservation<TRes> {
   _CopyWithStubImpl$Variables$Mutation$cancelBookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({List<String>? reservationIds}) => _res;
 }
 
@@ -135,13 +137,13 @@ class Mutation$cancelBookingReservation {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$cancelBookingReservation = cancelBookingReservation;
-    _resultData['cancelBookingReservation'] =
+    resultData['cancelBookingReservation'] =
         l$cancelBookingReservation.map((e) => e).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -159,7 +161,7 @@ class Mutation$cancelBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$cancelBookingReservation) ||
+    if (other is! Mutation$cancelBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -224,6 +226,7 @@ class _CopyWithImpl$Mutation$cancelBookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? cancelBookingReservation = _undefined,
     Object? $__typename = _undefined,
@@ -243,8 +246,9 @@ class _CopyWithStubImpl$Mutation$cancelBookingReservation<TRes>
     implements CopyWith$Mutation$cancelBookingReservation<TRes> {
   _CopyWithStubImpl$Mutation$cancelBookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     List<String>? cancelBookingReservation,
     String? $__typename,
@@ -389,11 +393,11 @@ extension ClientExtension$Mutation$cancelBookingReservation
   Future<graphql.QueryResult<Mutation$cancelBookingReservation>>
       mutate$cancelBookingReservation(
               Options$Mutation$cancelBookingReservation options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$cancelBookingReservation>
       watchMutation$cancelBookingReservation(
               WatchOptions$Mutation$cancelBookingReservation options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$cancelBookingReservation$HookResult {
@@ -554,7 +558,7 @@ class Variables$Mutation$createBookingBranch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$createBookingBranch) ||
+    if (other is! Variables$Mutation$createBookingBranch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -598,6 +602,7 @@ class _CopyWithImpl$Variables$Mutation$createBookingBranch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? input = _undefined}) =>
       _then(Variables$Mutation$createBookingBranch._({
         ..._instance._$data,
@@ -610,8 +615,9 @@ class _CopyWithStubImpl$Variables$Mutation$createBookingBranch<TRes>
     implements CopyWith$Variables$Mutation$createBookingBranch<TRes> {
   _CopyWithStubImpl$Variables$Mutation$createBookingBranch(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({Input$BookingBranchInput? input}) => _res;
 }
 
@@ -637,12 +643,12 @@ class Mutation$createBookingBranch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$createBookingBranch = createBookingBranch;
-    _resultData['createBookingBranch'] = l$createBookingBranch.toJson();
+    resultData['createBookingBranch'] = l$createBookingBranch.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -660,7 +666,7 @@ class Mutation$createBookingBranch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingBranch) ||
+    if (other is! Mutation$createBookingBranch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -717,6 +723,7 @@ class _CopyWithImpl$Mutation$createBookingBranch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? createBookingBranch = _undefined,
     Object? $__typename = _undefined,
@@ -731,6 +738,7 @@ class _CopyWithImpl$Mutation$createBookingBranch<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$createBookingBranch$createBookingBranch<TRes>
       get createBookingBranch {
     final local$createBookingBranch = _instance.createBookingBranch;
@@ -743,13 +751,15 @@ class _CopyWithStubImpl$Mutation$createBookingBranch<TRes>
     implements CopyWith$Mutation$createBookingBranch<TRes> {
   _CopyWithStubImpl$Mutation$createBookingBranch(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$createBookingBranch$createBookingBranch? createBookingBranch,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$createBookingBranch$createBookingBranch<TRes>
       get createBookingBranch =>
           CopyWith$Mutation$createBookingBranch$createBookingBranch.stub(_res);
@@ -974,11 +984,11 @@ extension ClientExtension$Mutation$createBookingBranch
   Future<graphql.QueryResult<Mutation$createBookingBranch>>
       mutate$createBookingBranch(
               Options$Mutation$createBookingBranch options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$createBookingBranch>
       watchMutation$createBookingBranch(
               WatchOptions$Mutation$createBookingBranch options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$createBookingBranch$HookResult {
@@ -1162,28 +1172,28 @@ class Mutation$createBookingBranch$createBookingBranch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$address = address;
-    _resultData['address'] = l$address;
+    resultData['address'] = l$address;
     final l$phone = phone;
-    _resultData['phone'] = l$phone;
+    resultData['phone'] = l$phone;
     final l$mapURL = mapURL;
-    _resultData['mapURL'] = l$mapURL;
+    resultData['mapURL'] = l$mapURL;
     final l$isActive = isActive;
-    _resultData['isActive'] = l$isActive;
+    resultData['isActive'] = l$isActive;
     final l$services = services;
-    _resultData['services'] = l$services?.map((e) => e.toJson()).toList();
+    resultData['services'] = l$services?.map((e) => e.toJson()).toList();
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -1217,7 +1227,7 @@ class Mutation$createBookingBranch$createBookingBranch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingBranch$createBookingBranch) ||
+    if (other is! Mutation$createBookingBranch$createBookingBranch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1323,7 +1333,7 @@ abstract class CopyWith$Mutation$createBookingBranch$createBookingBranch<TRes> {
               Iterable<
                   CopyWith$Mutation$createBookingBranch$createBookingBranch$services<
                       Mutation$createBookingBranch$createBookingBranch$services>>?)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Mutation$createBookingBranch$createBookingBranch<TRes>
@@ -1339,6 +1349,7 @@ class _CopyWithImpl$Mutation$createBookingBranch$createBookingBranch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -1375,14 +1386,15 @@ class _CopyWithImpl$Mutation$createBookingBranch$createBookingBranch<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes services(
           Iterable<Mutation$createBookingBranch$createBookingBranch$services>? Function(
                   Iterable<
                       CopyWith$Mutation$createBookingBranch$createBookingBranch$services<
                           Mutation$createBookingBranch$createBookingBranch$services>>?)
-              _fn) =>
+              fn) =>
       call(
-          services: _fn(_instance.services?.map((e) =>
+          services: fn(_instance.services?.map((e) =>
               CopyWith$Mutation$createBookingBranch$createBookingBranch$services(
                 e,
                 (i) => i,
@@ -1393,8 +1405,9 @@ class _CopyWithStubImpl$Mutation$createBookingBranch$createBookingBranch<TRes>
     implements CopyWith$Mutation$createBookingBranch$createBookingBranch<TRes> {
   _CopyWithStubImpl$Mutation$createBookingBranch$createBookingBranch(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -1408,7 +1421,8 @@ class _CopyWithStubImpl$Mutation$createBookingBranch$createBookingBranch<TRes>
     String? $__typename,
   }) =>
       _res;
-  services(_fn) => _res;
+  @override
+  services(fn) => _res;
 }
 
 class Mutation$createBookingBranch$createBookingBranch$services {
@@ -1432,12 +1446,12 @@ class Mutation$createBookingBranch$createBookingBranch$services {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -1455,7 +1469,7 @@ class Mutation$createBookingBranch$createBookingBranch$services {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingBranch$createBookingBranch$services) ||
+    if (other is! Mutation$createBookingBranch$createBookingBranch$services ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1519,6 +1533,7 @@ class _CopyWithImpl$Mutation$createBookingBranch$createBookingBranch$services<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -1539,8 +1554,9 @@ class _CopyWithStubImpl$Mutation$createBookingBranch$createBookingBranch$service
   _CopyWithStubImpl$Mutation$createBookingBranch$createBookingBranch$services(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -1588,7 +1604,7 @@ class Variables$Mutation$createBookingNote {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$createBookingNote) ||
+    if (other is! Variables$Mutation$createBookingNote ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1632,6 +1648,7 @@ class _CopyWithImpl$Variables$Mutation$createBookingNote<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? input = _undefined}) =>
       _then(Variables$Mutation$createBookingNote._({
         ..._instance._$data,
@@ -1644,8 +1661,9 @@ class _CopyWithStubImpl$Variables$Mutation$createBookingNote<TRes>
     implements CopyWith$Variables$Mutation$createBookingNote<TRes> {
   _CopyWithStubImpl$Variables$Mutation$createBookingNote(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({Input$BookingNoteInput? input}) => _res;
 }
 
@@ -1670,12 +1688,12 @@ class Mutation$createBookingNote {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$createBookingNote = createBookingNote;
-    _resultData['createBookingNote'] = l$createBookingNote.toJson();
+    resultData['createBookingNote'] = l$createBookingNote.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -1693,7 +1711,7 @@ class Mutation$createBookingNote {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingNote) ||
+    if (other is! Mutation$createBookingNote ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1750,6 +1768,7 @@ class _CopyWithImpl$Mutation$createBookingNote<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? createBookingNote = _undefined,
     Object? $__typename = _undefined,
@@ -1764,6 +1783,7 @@ class _CopyWithImpl$Mutation$createBookingNote<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$createBookingNote$createBookingNote<TRes>
       get createBookingNote {
     final local$createBookingNote = _instance.createBookingNote;
@@ -1776,13 +1796,15 @@ class _CopyWithStubImpl$Mutation$createBookingNote<TRes>
     implements CopyWith$Mutation$createBookingNote<TRes> {
   _CopyWithStubImpl$Mutation$createBookingNote(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$createBookingNote$createBookingNote? createBookingNote,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$createBookingNote$createBookingNote<TRes>
       get createBookingNote =>
           CopyWith$Mutation$createBookingNote$createBookingNote.stub(_res);
@@ -2043,11 +2065,11 @@ extension ClientExtension$Mutation$createBookingNote on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$createBookingNote>>
       mutate$createBookingNote(
               Options$Mutation$createBookingNote options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$createBookingNote>
       watchMutation$createBookingNote(
               WatchOptions$Mutation$createBookingNote options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$createBookingNote$HookResult {
@@ -2239,30 +2261,30 @@ class Mutation$createBookingNote$createBookingNote {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$userId = userId;
-    _resultData['userId'] = l$userId;
+    resultData['userId'] = l$userId;
     final l$user = user;
-    _resultData['user'] = l$user.toJson();
+    resultData['user'] = l$user.toJson();
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch?.toJson();
+    resultData['branch'] = l$branch?.toJson();
     final l$visitId = visitId;
-    _resultData['visitId'] = l$visitId;
+    resultData['visitId'] = l$visitId;
     final l$visit = visit;
-    _resultData['visit'] = l$visit?.toJson();
+    resultData['visit'] = l$visit?.toJson();
     final l$text = text;
-    _resultData['text'] = l$text;
+    resultData['text'] = l$text;
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -2298,7 +2320,7 @@ class Mutation$createBookingNote$createBookingNote {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingNote$createBookingNote) ||
+    if (other is! Mutation$createBookingNote$createBookingNote ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2411,6 +2433,7 @@ class _CopyWithImpl$Mutation$createBookingNote$createBookingNote<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? userId = _undefined,
@@ -2451,12 +2474,14 @@ class _CopyWithImpl$Mutation$createBookingNote$createBookingNote<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$createBookingNote$createBookingNote$user<TRes> get user {
     final local$user = _instance.user;
     return CopyWith$Mutation$createBookingNote$createBookingNote$user(
         local$user, (e) => call(user: e));
   }
 
+  @override
   CopyWith$Mutation$createBookingNote$createBookingNote$branch<TRes>
       get branch {
     final local$branch = _instance.branch;
@@ -2467,6 +2492,7 @@ class _CopyWithImpl$Mutation$createBookingNote$createBookingNote<TRes>
             local$branch, (e) => call(branch: e));
   }
 
+  @override
   CopyWith$Mutation$createBookingNote$createBookingNote$visit<TRes> get visit {
     final local$visit = _instance.visit;
     return local$visit == null
@@ -2481,8 +2507,9 @@ class _CopyWithStubImpl$Mutation$createBookingNote$createBookingNote<TRes>
     implements CopyWith$Mutation$createBookingNote$createBookingNote<TRes> {
   _CopyWithStubImpl$Mutation$createBookingNote$createBookingNote(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? userId,
@@ -2497,12 +2524,15 @@ class _CopyWithStubImpl$Mutation$createBookingNote$createBookingNote<TRes>
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$createBookingNote$createBookingNote$user<TRes> get user =>
       CopyWith$Mutation$createBookingNote$createBookingNote$user.stub(_res);
+  @override
   CopyWith$Mutation$createBookingNote$createBookingNote$branch<TRes>
       get branch =>
           CopyWith$Mutation$createBookingNote$createBookingNote$branch.stub(
               _res);
+  @override
   CopyWith$Mutation$createBookingNote$createBookingNote$visit<TRes> get visit =>
       CopyWith$Mutation$createBookingNote$createBookingNote$visit.stub(_res);
 }
@@ -2528,12 +2558,12 @@ class Mutation$createBookingNote$createBookingNote$user {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -2551,7 +2581,7 @@ class Mutation$createBookingNote$createBookingNote$user {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingNote$createBookingNote$user) ||
+    if (other is! Mutation$createBookingNote$createBookingNote$user ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2611,6 +2641,7 @@ class _CopyWithImpl$Mutation$createBookingNote$createBookingNote$user<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -2629,8 +2660,9 @@ class _CopyWithStubImpl$Mutation$createBookingNote$createBookingNote$user<TRes>
   _CopyWithStubImpl$Mutation$createBookingNote$createBookingNote$user(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -2659,12 +2691,12 @@ class Mutation$createBookingNote$createBookingNote$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -2682,7 +2714,7 @@ class Mutation$createBookingNote$createBookingNote$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingNote$createBookingNote$branch) ||
+    if (other is! Mutation$createBookingNote$createBookingNote$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2743,6 +2775,7 @@ class _CopyWithImpl$Mutation$createBookingNote$createBookingNote$branch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -2762,8 +2795,9 @@ class _CopyWithStubImpl$Mutation$createBookingNote$createBookingNote$branch<
   _CopyWithStubImpl$Mutation$createBookingNote$createBookingNote$branch(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -2792,12 +2826,12 @@ class Mutation$createBookingNote$createBookingNote$visit {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -2815,7 +2849,7 @@ class Mutation$createBookingNote$createBookingNote$visit {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingNote$createBookingNote$visit) ||
+    if (other is! Mutation$createBookingNote$createBookingNote$visit ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2875,6 +2909,7 @@ class _CopyWithImpl$Mutation$createBookingNote$createBookingNote$visit<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -2893,8 +2928,9 @@ class _CopyWithStubImpl$Mutation$createBookingNote$createBookingNote$visit<TRes>
   _CopyWithStubImpl$Mutation$createBookingNote$createBookingNote$visit(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -2950,7 +2986,7 @@ class Variables$Mutation$createBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$createBookingReservation) ||
+    if (other is! Variables$Mutation$createBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3006,6 +3042,7 @@ class _CopyWithImpl$Variables$Mutation$createBookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? userId = _undefined,
     Object? input = _undefined,
@@ -3023,8 +3060,9 @@ class _CopyWithStubImpl$Variables$Mutation$createBookingReservation<TRes>
     implements CopyWith$Variables$Mutation$createBookingReservation<TRes> {
   _CopyWithStubImpl$Variables$Mutation$createBookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? userId,
     Input$BookingReservationInput? input,
@@ -3056,13 +3094,13 @@ class Mutation$createBookingReservation {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$createBookingReservation = createBookingReservation;
-    _resultData['createBookingReservation'] =
+    resultData['createBookingReservation'] =
         l$createBookingReservation.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -3080,7 +3118,7 @@ class Mutation$createBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingReservation) ||
+    if (other is! Mutation$createBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3138,6 +3176,7 @@ class _CopyWithImpl$Mutation$createBookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? createBookingReservation = _undefined,
     Object? $__typename = _undefined,
@@ -3152,6 +3191,7 @@ class _CopyWithImpl$Mutation$createBookingReservation<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$createBookingReservation$createBookingReservation<TRes>
       get createBookingReservation {
     final local$createBookingReservation = _instance.createBookingReservation;
@@ -3165,14 +3205,16 @@ class _CopyWithStubImpl$Mutation$createBookingReservation<TRes>
     implements CopyWith$Mutation$createBookingReservation<TRes> {
   _CopyWithStubImpl$Mutation$createBookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$createBookingReservation$createBookingReservation?
         createBookingReservation,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$createBookingReservation$createBookingReservation<TRes>
       get createBookingReservation =>
           CopyWith$Mutation$createBookingReservation$createBookingReservation
@@ -3477,11 +3519,11 @@ extension ClientExtension$Mutation$createBookingReservation
   Future<graphql.QueryResult<Mutation$createBookingReservation>>
       mutate$createBookingReservation(
               Options$Mutation$createBookingReservation options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$createBookingReservation>
       watchMutation$createBookingReservation(
               WatchOptions$Mutation$createBookingReservation options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$createBookingReservation$HookResult {
@@ -3694,38 +3736,38 @@ class Mutation$createBookingReservation$createBookingReservation {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$userId = userId;
-    _resultData['userId'] = l$userId;
+    resultData['userId'] = l$userId;
     final l$user = user;
-    _resultData['user'] = l$user.toJson();
+    resultData['user'] = l$user.toJson();
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch.toJson();
+    resultData['branch'] = l$branch.toJson();
     final l$serviceId = serviceId;
-    _resultData['serviceId'] = l$serviceId;
+    resultData['serviceId'] = l$serviceId;
     final l$service = service;
-    _resultData['service'] = l$service.toJson();
+    resultData['service'] = l$service.toJson();
     final l$channel = channel;
-    _resultData['channel'] = l$channel;
+    resultData['channel'] = l$channel;
     final l$date = date;
-    _resultData['date'] = l$date;
+    resultData['date'] = l$date;
     final l$time = time;
-    _resultData['time'] = l$time;
+    resultData['time'] = l$time;
     final l$queueNumber = queueNumber;
-    _resultData['queueNumber'] = l$queueNumber;
+    resultData['queueNumber'] = l$queueNumber;
     final l$status = status;
-    _resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
+    resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -3769,8 +3811,7 @@ class Mutation$createBookingReservation$createBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$createBookingReservation$createBookingReservation) ||
+    if (other is! Mutation$createBookingReservation$createBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3918,6 +3959,7 @@ class _CopyWithImpl$Mutation$createBookingReservation$createBookingReservation<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? userId = _undefined,
@@ -3979,6 +4021,7 @@ class _CopyWithImpl$Mutation$createBookingReservation$createBookingReservation<
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$createBookingReservation$createBookingReservation$user<TRes>
       get user {
     final local$user = _instance.user;
@@ -3986,6 +4029,7 @@ class _CopyWithImpl$Mutation$createBookingReservation$createBookingReservation<
         local$user, (e) => call(user: e));
   }
 
+  @override
   CopyWith$Mutation$createBookingReservation$createBookingReservation$branch<
       TRes> get branch {
     final local$branch = _instance.branch;
@@ -3993,6 +4037,7 @@ class _CopyWithImpl$Mutation$createBookingReservation$createBookingReservation<
         local$branch, (e) => call(branch: e));
   }
 
+  @override
   CopyWith$Mutation$createBookingReservation$createBookingReservation$service<
       TRes> get service {
     final local$service = _instance.service;
@@ -4009,8 +4054,9 @@ class _CopyWithStubImpl$Mutation$createBookingReservation$createBookingReservati
   _CopyWithStubImpl$Mutation$createBookingReservation$createBookingReservation(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? userId,
@@ -4029,15 +4075,18 @@ class _CopyWithStubImpl$Mutation$createBookingReservation$createBookingReservati
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$createBookingReservation$createBookingReservation$user<TRes>
       get user =>
           CopyWith$Mutation$createBookingReservation$createBookingReservation$user
               .stub(_res);
+  @override
   CopyWith$Mutation$createBookingReservation$createBookingReservation$branch<
           TRes>
       get branch =>
           CopyWith$Mutation$createBookingReservation$createBookingReservation$branch
               .stub(_res);
+  @override
   CopyWith$Mutation$createBookingReservation$createBookingReservation$service<
           TRes>
       get service =>
@@ -4066,12 +4115,12 @@ class Mutation$createBookingReservation$createBookingReservation$user {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -4089,8 +4138,8 @@ class Mutation$createBookingReservation$createBookingReservation$user {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$createBookingReservation$createBookingReservation$user) ||
+    if (other
+            is! Mutation$createBookingReservation$createBookingReservation$user ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4156,6 +4205,7 @@ class _CopyWithImpl$Mutation$createBookingReservation$createBookingReservation$u
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -4176,8 +4226,9 @@ class _CopyWithStubImpl$Mutation$createBookingReservation$createBookingReservati
   _CopyWithStubImpl$Mutation$createBookingReservation$createBookingReservation$user(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -4206,12 +4257,12 @@ class Mutation$createBookingReservation$createBookingReservation$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -4229,8 +4280,8 @@ class Mutation$createBookingReservation$createBookingReservation$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$createBookingReservation$createBookingReservation$branch) ||
+    if (other
+            is! Mutation$createBookingReservation$createBookingReservation$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4296,6 +4347,7 @@ class _CopyWithImpl$Mutation$createBookingReservation$createBookingReservation$b
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -4316,8 +4368,9 @@ class _CopyWithStubImpl$Mutation$createBookingReservation$createBookingReservati
   _CopyWithStubImpl$Mutation$createBookingReservation$createBookingReservation$branch(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -4346,12 +4399,12 @@ class Mutation$createBookingReservation$createBookingReservation$service {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -4369,8 +4422,8 @@ class Mutation$createBookingReservation$createBookingReservation$service {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$createBookingReservation$createBookingReservation$service) ||
+    if (other
+            is! Mutation$createBookingReservation$createBookingReservation$service ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4436,6 +4489,7 @@ class _CopyWithImpl$Mutation$createBookingReservation$createBookingReservation$s
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -4456,8 +4510,9 @@ class _CopyWithStubImpl$Mutation$createBookingReservation$createBookingReservati
   _CopyWithStubImpl$Mutation$createBookingReservation$createBookingReservation$service(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -4505,7 +4560,7 @@ class Variables$Mutation$createBookingService {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$createBookingService) ||
+    if (other is! Variables$Mutation$createBookingService ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4549,6 +4604,7 @@ class _CopyWithImpl$Variables$Mutation$createBookingService<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? input = _undefined}) =>
       _then(Variables$Mutation$createBookingService._({
         ..._instance._$data,
@@ -4561,8 +4617,9 @@ class _CopyWithStubImpl$Variables$Mutation$createBookingService<TRes>
     implements CopyWith$Variables$Mutation$createBookingService<TRes> {
   _CopyWithStubImpl$Variables$Mutation$createBookingService(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({Input$BookingServiceInput? input}) => _res;
 }
 
@@ -4588,12 +4645,12 @@ class Mutation$createBookingService {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$createBookingService = createBookingService;
-    _resultData['createBookingService'] = l$createBookingService.toJson();
+    resultData['createBookingService'] = l$createBookingService.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -4611,7 +4668,7 @@ class Mutation$createBookingService {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingService) ||
+    if (other is! Mutation$createBookingService ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4668,6 +4725,7 @@ class _CopyWithImpl$Mutation$createBookingService<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? createBookingService = _undefined,
     Object? $__typename = _undefined,
@@ -4682,6 +4740,7 @@ class _CopyWithImpl$Mutation$createBookingService<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$createBookingService$createBookingService<TRes>
       get createBookingService {
     final local$createBookingService = _instance.createBookingService;
@@ -4694,13 +4753,15 @@ class _CopyWithStubImpl$Mutation$createBookingService<TRes>
     implements CopyWith$Mutation$createBookingService<TRes> {
   _CopyWithStubImpl$Mutation$createBookingService(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$createBookingService$createBookingService? createBookingService,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$createBookingService$createBookingService<TRes>
       get createBookingService =>
           CopyWith$Mutation$createBookingService$createBookingService.stub(
@@ -4906,11 +4967,11 @@ extension ClientExtension$Mutation$createBookingService
   Future<graphql.QueryResult<Mutation$createBookingService>>
       mutate$createBookingService(
               Options$Mutation$createBookingService options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$createBookingService>
       watchMutation$createBookingService(
               WatchOptions$Mutation$createBookingService options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$createBookingService$HookResult {
@@ -5078,22 +5139,22 @@ class Mutation$createBookingService$createBookingService {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch.toJson();
+    resultData['branch'] = l$branch.toJson();
     final l$isActive = isActive;
-    _resultData['isActive'] = l$isActive;
+    resultData['isActive'] = l$isActive;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$duration = duration;
-    _resultData['duration'] = l$duration;
+    resultData['duration'] = l$duration;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -5121,7 +5182,7 @@ class Mutation$createBookingService$createBookingService {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingService$createBookingService) ||
+    if (other is! Mutation$createBookingService$createBookingService ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5213,6 +5274,7 @@ class _CopyWithImpl$Mutation$createBookingService$createBookingService<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? branchId = _undefined,
@@ -5243,6 +5305,7 @@ class _CopyWithImpl$Mutation$createBookingService$createBookingService<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$createBookingService$createBookingService$branch<TRes>
       get branch {
     final local$branch = _instance.branch;
@@ -5257,8 +5320,9 @@ class _CopyWithStubImpl$Mutation$createBookingService$createBookingService<TRes>
   _CopyWithStubImpl$Mutation$createBookingService$createBookingService(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? branchId,
@@ -5269,6 +5333,7 @@ class _CopyWithStubImpl$Mutation$createBookingService$createBookingService<TRes>
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$createBookingService$createBookingService$branch<TRes>
       get branch =>
           CopyWith$Mutation$createBookingService$createBookingService$branch
@@ -5296,12 +5361,12 @@ class Mutation$createBookingService$createBookingService$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -5319,7 +5384,7 @@ class Mutation$createBookingService$createBookingService$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createBookingService$createBookingService$branch) ||
+    if (other is! Mutation$createBookingService$createBookingService$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5383,6 +5448,7 @@ class _CopyWithImpl$Mutation$createBookingService$createBookingService$branch<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -5403,8 +5469,9 @@ class _CopyWithStubImpl$Mutation$createBookingService$createBookingService$branc
   _CopyWithStubImpl$Mutation$createBookingService$createBookingService$branch(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -5452,7 +5519,7 @@ class Variables$Mutation$createRegularUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$createRegularUser) ||
+    if (other is! Variables$Mutation$createRegularUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5496,6 +5563,7 @@ class _CopyWithImpl$Variables$Mutation$createRegularUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? input = _undefined}) =>
       _then(Variables$Mutation$createRegularUser._({
         ..._instance._$data,
@@ -5508,8 +5576,9 @@ class _CopyWithStubImpl$Variables$Mutation$createRegularUser<TRes>
     implements CopyWith$Variables$Mutation$createRegularUser<TRes> {
   _CopyWithStubImpl$Variables$Mutation$createRegularUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({Input$RegularUserInput? input}) => _res;
 }
 
@@ -5534,12 +5603,12 @@ class Mutation$createRegularUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$createRegularUser = createRegularUser;
-    _resultData['createRegularUser'] = l$createRegularUser.toJson();
+    resultData['createRegularUser'] = l$createRegularUser.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -5557,7 +5626,7 @@ class Mutation$createRegularUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createRegularUser) ||
+    if (other is! Mutation$createRegularUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5614,6 +5683,7 @@ class _CopyWithImpl$Mutation$createRegularUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? createRegularUser = _undefined,
     Object? $__typename = _undefined,
@@ -5628,6 +5698,7 @@ class _CopyWithImpl$Mutation$createRegularUser<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$createRegularUser$createRegularUser<TRes>
       get createRegularUser {
     final local$createRegularUser = _instance.createRegularUser;
@@ -5640,13 +5711,15 @@ class _CopyWithStubImpl$Mutation$createRegularUser<TRes>
     implements CopyWith$Mutation$createRegularUser<TRes> {
   _CopyWithStubImpl$Mutation$createRegularUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$createRegularUser$createRegularUser? createRegularUser,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$createRegularUser$createRegularUser<TRes>
       get createRegularUser =>
           CopyWith$Mutation$createRegularUser$createRegularUser.stub(_res);
@@ -5941,11 +6014,11 @@ extension ClientExtension$Mutation$createRegularUser on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$createRegularUser>>
       mutate$createRegularUser(
               Options$Mutation$createRegularUser options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$createRegularUser>
       watchMutation$createRegularUser(
               WatchOptions$Mutation$createRegularUser options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$createRegularUser$HookResult {
@@ -6164,40 +6237,40 @@ class Mutation$createRegularUser$createRegularUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$roles = roles;
-    _resultData['roles'] = l$roles.map((e) => e.toJson()).toList();
+    resultData['roles'] = l$roles.map((e) => e.toJson()).toList();
     final l$permissions = permissions;
-    _resultData['permissions'] = l$permissions.map((e) => e.toJson()).toList();
+    resultData['permissions'] = l$permissions.map((e) => e.toJson()).toList();
     final l$firstName = firstName;
-    _resultData['firstName'] = l$firstName;
+    resultData['firstName'] = l$firstName;
     final l$lastName = lastName;
-    _resultData['lastName'] = l$lastName;
+    resultData['lastName'] = l$lastName;
     final l$email = email;
-    _resultData['email'] = l$email;
+    resultData['email'] = l$email;
     final l$phone = phone;
-    _resultData['phone'] = l$phone;
+    resultData['phone'] = l$phone;
     final l$password = password;
-    _resultData['password'] = l$password;
+    resultData['password'] = l$password;
     final l$visitCount = visitCount;
-    _resultData['visitCount'] = l$visitCount;
+    resultData['visitCount'] = l$visitCount;
     final l$level = level;
-    _resultData['level'] = l$level;
+    resultData['level'] = l$level;
     final l$birthDate = birthDate;
-    _resultData['birthDate'] = l$birthDate;
+    resultData['birthDate'] = l$birthDate;
     final l$gender = gender;
-    _resultData['gender'] = l$gender;
+    resultData['gender'] = l$gender;
     final l$photo = photo;
-    _resultData['photo'] = l$photo;
+    resultData['photo'] = l$photo;
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -6243,7 +6316,7 @@ class Mutation$createRegularUser$createRegularUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createRegularUser$createRegularUser) ||
+    if (other is! Mutation$createRegularUser$createRegularUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6387,13 +6460,13 @@ abstract class CopyWith$Mutation$createRegularUser$createRegularUser<TRes> {
               Iterable<
                   CopyWith$Mutation$createRegularUser$createRegularUser$roles<
                       Mutation$createRegularUser$createRegularUser$roles>>)
-          _fn);
+          fn);
   TRes permissions(
       Iterable<Mutation$createRegularUser$createRegularUser$permissions> Function(
               Iterable<
                   CopyWith$Mutation$createRegularUser$createRegularUser$permissions<
                       Mutation$createRegularUser$createRegularUser$permissions>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Mutation$createRegularUser$createRegularUser<TRes>
@@ -6409,6 +6482,7 @@ class _CopyWithImpl$Mutation$createRegularUser$createRegularUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? roles = _undefined,
@@ -6463,26 +6537,28 @@ class _CopyWithImpl$Mutation$createRegularUser$createRegularUser<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes roles(
           Iterable<Mutation$createRegularUser$createRegularUser$roles> Function(
                   Iterable<
                       CopyWith$Mutation$createRegularUser$createRegularUser$roles<
                           Mutation$createRegularUser$createRegularUser$roles>>)
-              _fn) =>
+              fn) =>
       call(
-          roles: _fn(_instance.roles.map((e) =>
+          roles: fn(_instance.roles.map((e) =>
               CopyWith$Mutation$createRegularUser$createRegularUser$roles(
                 e,
                 (i) => i,
               ))).toList());
+  @override
   TRes permissions(
           Iterable<Mutation$createRegularUser$createRegularUser$permissions> Function(
                   Iterable<
                       CopyWith$Mutation$createRegularUser$createRegularUser$permissions<
                           Mutation$createRegularUser$createRegularUser$permissions>>)
-              _fn) =>
+              fn) =>
       call(
-          permissions: _fn(_instance.permissions.map((e) =>
+          permissions: fn(_instance.permissions.map((e) =>
               CopyWith$Mutation$createRegularUser$createRegularUser$permissions(
                 e,
                 (i) => i,
@@ -6493,8 +6569,9 @@ class _CopyWithStubImpl$Mutation$createRegularUser$createRegularUser<TRes>
     implements CopyWith$Mutation$createRegularUser$createRegularUser<TRes> {
   _CopyWithStubImpl$Mutation$createRegularUser$createRegularUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     List<Mutation$createRegularUser$createRegularUser$roles>? roles,
@@ -6514,8 +6591,10 @@ class _CopyWithStubImpl$Mutation$createRegularUser$createRegularUser<TRes>
     String? $__typename,
   }) =>
       _res;
-  roles(_fn) => _res;
-  permissions(_fn) => _res;
+  @override
+  roles(fn) => _res;
+  @override
+  permissions(fn) => _res;
 }
 
 class Mutation$createRegularUser$createRegularUser$roles {
@@ -6544,14 +6623,14 @@ class Mutation$createRegularUser$createRegularUser$roles {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -6571,7 +6650,7 @@ class Mutation$createRegularUser$createRegularUser$roles {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createRegularUser$createRegularUser$roles) ||
+    if (other is! Mutation$createRegularUser$createRegularUser$roles ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6637,6 +6716,7 @@ class _CopyWithImpl$Mutation$createRegularUser$createRegularUser$roles<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -6657,8 +6737,9 @@ class _CopyWithStubImpl$Mutation$createRegularUser$createRegularUser$roles<TRes>
   _CopyWithStubImpl$Mutation$createRegularUser$createRegularUser$roles(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -6693,14 +6774,14 @@ class Mutation$createRegularUser$createRegularUser$permissions {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -6720,7 +6801,7 @@ class Mutation$createRegularUser$createRegularUser$permissions {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$createRegularUser$createRegularUser$permissions) ||
+    if (other is! Mutation$createRegularUser$createRegularUser$permissions ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6790,6 +6871,7 @@ class _CopyWithImpl$Mutation$createRegularUser$createRegularUser$permissions<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -6812,8 +6894,9 @@ class _CopyWithStubImpl$Mutation$createRegularUser$createRegularUser$permissions
   _CopyWithStubImpl$Mutation$createRegularUser$createRegularUser$permissions(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -6862,7 +6945,7 @@ class Variables$Mutation$customerBooking {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$customerBooking) ||
+    if (other is! Variables$Mutation$customerBooking ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6906,6 +6989,7 @@ class _CopyWithImpl$Variables$Mutation$customerBooking<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? input = _undefined}) =>
       _then(Variables$Mutation$customerBooking._({
         ..._instance._$data,
@@ -6918,8 +7002,9 @@ class _CopyWithStubImpl$Variables$Mutation$customerBooking<TRes>
     implements CopyWith$Variables$Mutation$customerBooking<TRes> {
   _CopyWithStubImpl$Variables$Mutation$customerBooking(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({Input$BookingReservationInput? input}) => _res;
 }
 
@@ -6944,12 +7029,12 @@ class Mutation$customerBooking {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$customerBooking = customerBooking;
-    _resultData['customerBooking'] = l$customerBooking.toJson();
+    resultData['customerBooking'] = l$customerBooking.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -6967,7 +7052,7 @@ class Mutation$customerBooking {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$customerBooking) ||
+    if (other is! Mutation$customerBooking ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -7023,6 +7108,7 @@ class _CopyWithImpl$Mutation$customerBooking<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? customerBooking = _undefined,
     Object? $__typename = _undefined,
@@ -7036,6 +7122,7 @@ class _CopyWithImpl$Mutation$customerBooking<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$customerBooking$customerBooking<TRes> get customerBooking {
     final local$customerBooking = _instance.customerBooking;
     return CopyWith$Mutation$customerBooking$customerBooking(
@@ -7047,13 +7134,15 @@ class _CopyWithStubImpl$Mutation$customerBooking<TRes>
     implements CopyWith$Mutation$customerBooking<TRes> {
   _CopyWithStubImpl$Mutation$customerBooking(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$customerBooking$customerBooking? customerBooking,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$customerBooking$customerBooking<TRes> get customerBooking =>
       CopyWith$Mutation$customerBooking$customerBooking.stub(_res);
 }
@@ -7339,11 +7428,11 @@ class WatchOptions$Mutation$customerBooking
 extension ClientExtension$Mutation$customerBooking on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$customerBooking>> mutate$customerBooking(
           Options$Mutation$customerBooking options) async =>
-      await this.mutate(options);
+      await mutate(options);
   graphql.ObservableQuery<Mutation$customerBooking>
       watchMutation$customerBooking(
               WatchOptions$Mutation$customerBooking options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$customerBooking$HookResult {
@@ -7551,38 +7640,38 @@ class Mutation$customerBooking$customerBooking {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$userId = userId;
-    _resultData['userId'] = l$userId;
+    resultData['userId'] = l$userId;
     final l$user = user;
-    _resultData['user'] = l$user.toJson();
+    resultData['user'] = l$user.toJson();
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch.toJson();
+    resultData['branch'] = l$branch.toJson();
     final l$serviceId = serviceId;
-    _resultData['serviceId'] = l$serviceId;
+    resultData['serviceId'] = l$serviceId;
     final l$service = service;
-    _resultData['service'] = l$service.toJson();
+    resultData['service'] = l$service.toJson();
     final l$channel = channel;
-    _resultData['channel'] = l$channel;
+    resultData['channel'] = l$channel;
     final l$date = date;
-    _resultData['date'] = l$date;
+    resultData['date'] = l$date;
     final l$time = time;
-    _resultData['time'] = l$time;
+    resultData['time'] = l$time;
     final l$queueNumber = queueNumber;
-    _resultData['queueNumber'] = l$queueNumber;
+    resultData['queueNumber'] = l$queueNumber;
     final l$status = status;
-    _resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
+    resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -7626,7 +7715,7 @@ class Mutation$customerBooking$customerBooking {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$customerBooking$customerBooking) ||
+    if (other is! Mutation$customerBooking$customerBooking ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -7763,6 +7852,7 @@ class _CopyWithImpl$Mutation$customerBooking$customerBooking<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? userId = _undefined,
@@ -7821,18 +7911,21 @@ class _CopyWithImpl$Mutation$customerBooking$customerBooking<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$customerBooking$customerBooking$user<TRes> get user {
     final local$user = _instance.user;
     return CopyWith$Mutation$customerBooking$customerBooking$user(
         local$user, (e) => call(user: e));
   }
 
+  @override
   CopyWith$Mutation$customerBooking$customerBooking$branch<TRes> get branch {
     final local$branch = _instance.branch;
     return CopyWith$Mutation$customerBooking$customerBooking$branch(
         local$branch, (e) => call(branch: e));
   }
 
+  @override
   CopyWith$Mutation$customerBooking$customerBooking$service<TRes> get service {
     final local$service = _instance.service;
     return CopyWith$Mutation$customerBooking$customerBooking$service(
@@ -7844,8 +7937,9 @@ class _CopyWithStubImpl$Mutation$customerBooking$customerBooking<TRes>
     implements CopyWith$Mutation$customerBooking$customerBooking<TRes> {
   _CopyWithStubImpl$Mutation$customerBooking$customerBooking(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? userId,
@@ -7864,10 +7958,13 @@ class _CopyWithStubImpl$Mutation$customerBooking$customerBooking<TRes>
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$customerBooking$customerBooking$user<TRes> get user =>
       CopyWith$Mutation$customerBooking$customerBooking$user.stub(_res);
+  @override
   CopyWith$Mutation$customerBooking$customerBooking$branch<TRes> get branch =>
       CopyWith$Mutation$customerBooking$customerBooking$branch.stub(_res);
+  @override
   CopyWith$Mutation$customerBooking$customerBooking$service<TRes> get service =>
       CopyWith$Mutation$customerBooking$customerBooking$service.stub(_res);
 }
@@ -7893,12 +7990,12 @@ class Mutation$customerBooking$customerBooking$user {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -7916,7 +8013,7 @@ class Mutation$customerBooking$customerBooking$user {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$customerBooking$customerBooking$user) ||
+    if (other is! Mutation$customerBooking$customerBooking$user ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -7973,6 +8070,7 @@ class _CopyWithImpl$Mutation$customerBooking$customerBooking$user<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -7989,8 +8087,9 @@ class _CopyWithStubImpl$Mutation$customerBooking$customerBooking$user<TRes>
     implements CopyWith$Mutation$customerBooking$customerBooking$user<TRes> {
   _CopyWithStubImpl$Mutation$customerBooking$customerBooking$user(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -8019,12 +8118,12 @@ class Mutation$customerBooking$customerBooking$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -8042,7 +8141,7 @@ class Mutation$customerBooking$customerBooking$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$customerBooking$customerBooking$branch) ||
+    if (other is! Mutation$customerBooking$customerBooking$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -8099,6 +8198,7 @@ class _CopyWithImpl$Mutation$customerBooking$customerBooking$branch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -8115,8 +8215,9 @@ class _CopyWithStubImpl$Mutation$customerBooking$customerBooking$branch<TRes>
     implements CopyWith$Mutation$customerBooking$customerBooking$branch<TRes> {
   _CopyWithStubImpl$Mutation$customerBooking$customerBooking$branch(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -8145,12 +8246,12 @@ class Mutation$customerBooking$customerBooking$service {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -8168,7 +8269,7 @@ class Mutation$customerBooking$customerBooking$service {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$customerBooking$customerBooking$service) ||
+    if (other is! Mutation$customerBooking$customerBooking$service ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -8225,6 +8326,7 @@ class _CopyWithImpl$Mutation$customerBooking$customerBooking$service<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -8241,8 +8343,9 @@ class _CopyWithStubImpl$Mutation$customerBooking$customerBooking$service<TRes>
     implements CopyWith$Mutation$customerBooking$customerBooking$service<TRes> {
   _CopyWithStubImpl$Mutation$customerBooking$customerBooking$service(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -8288,7 +8391,7 @@ class Variables$Mutation$customerCancelBooking {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$customerCancelBooking) ||
+    if (other is! Variables$Mutation$customerCancelBooking ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -8332,6 +8435,7 @@ class _CopyWithImpl$Variables$Mutation$customerCancelBooking<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? reservationId = _undefined}) =>
       _then(Variables$Mutation$customerCancelBooking._({
         ..._instance._$data,
@@ -8344,8 +8448,9 @@ class _CopyWithStubImpl$Variables$Mutation$customerCancelBooking<TRes>
     implements CopyWith$Variables$Mutation$customerCancelBooking<TRes> {
   _CopyWithStubImpl$Variables$Mutation$customerCancelBooking(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({String? reservationId}) => _res;
 }
 
@@ -8369,12 +8474,12 @@ class Mutation$customerCancelBooking {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$customerCancelBooking = customerCancelBooking;
-    _resultData['customerCancelBooking'] = l$customerCancelBooking;
+    resultData['customerCancelBooking'] = l$customerCancelBooking;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -8392,7 +8497,7 @@ class Mutation$customerCancelBooking {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$customerCancelBooking) ||
+    if (other is! Mutation$customerCancelBooking ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -8447,6 +8552,7 @@ class _CopyWithImpl$Mutation$customerCancelBooking<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? customerCancelBooking = _undefined,
     Object? $__typename = _undefined,
@@ -8466,8 +8572,9 @@ class _CopyWithStubImpl$Mutation$customerCancelBooking<TRes>
     implements CopyWith$Mutation$customerCancelBooking<TRes> {
   _CopyWithStubImpl$Mutation$customerCancelBooking(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     bool? customerCancelBooking,
     String? $__typename,
@@ -8609,11 +8716,11 @@ extension ClientExtension$Mutation$customerCancelBooking
   Future<graphql.QueryResult<Mutation$customerCancelBooking>>
       mutate$customerCancelBooking(
               Options$Mutation$customerCancelBooking options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$customerCancelBooking>
       watchMutation$customerCancelBooking(
               WatchOptions$Mutation$customerCancelBooking options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$customerCancelBooking$HookResult {
@@ -8781,7 +8888,7 @@ class Variables$Mutation$customerUpdateBooking {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$customerUpdateBooking) ||
+    if (other is! Variables$Mutation$customerUpdateBooking ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -8837,6 +8944,7 @@ class _CopyWithImpl$Variables$Mutation$customerUpdateBooking<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? reservationId = _undefined,
     Object? data = _undefined,
@@ -8854,8 +8962,9 @@ class _CopyWithStubImpl$Variables$Mutation$customerUpdateBooking<TRes>
     implements CopyWith$Variables$Mutation$customerUpdateBooking<TRes> {
   _CopyWithStubImpl$Variables$Mutation$customerUpdateBooking(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? reservationId,
     Input$BookingReservationModifiableInput? data,
@@ -8886,12 +8995,12 @@ class Mutation$customerUpdateBooking {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$customerUpdateBooking = customerUpdateBooking;
-    _resultData['customerUpdateBooking'] = l$customerUpdateBooking.toJson();
+    resultData['customerUpdateBooking'] = l$customerUpdateBooking.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -8909,7 +9018,7 @@ class Mutation$customerUpdateBooking {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$customerUpdateBooking) ||
+    if (other is! Mutation$customerUpdateBooking ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -8966,6 +9075,7 @@ class _CopyWithImpl$Mutation$customerUpdateBooking<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? customerUpdateBooking = _undefined,
     Object? $__typename = _undefined,
@@ -8980,6 +9090,7 @@ class _CopyWithImpl$Mutation$customerUpdateBooking<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking<TRes>
       get customerUpdateBooking {
     final local$customerUpdateBooking = _instance.customerUpdateBooking;
@@ -8992,13 +9103,15 @@ class _CopyWithStubImpl$Mutation$customerUpdateBooking<TRes>
     implements CopyWith$Mutation$customerUpdateBooking<TRes> {
   _CopyWithStubImpl$Mutation$customerUpdateBooking(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$customerUpdateBooking$customerUpdateBooking? customerUpdateBooking,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking<TRes>
       get customerUpdateBooking =>
           CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking.stub(
@@ -9303,11 +9416,11 @@ extension ClientExtension$Mutation$customerUpdateBooking
   Future<graphql.QueryResult<Mutation$customerUpdateBooking>>
       mutate$customerUpdateBooking(
               Options$Mutation$customerUpdateBooking options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$customerUpdateBooking>
       watchMutation$customerUpdateBooking(
               WatchOptions$Mutation$customerUpdateBooking options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$customerUpdateBooking$HookResult {
@@ -9518,38 +9631,38 @@ class Mutation$customerUpdateBooking$customerUpdateBooking {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$userId = userId;
-    _resultData['userId'] = l$userId;
+    resultData['userId'] = l$userId;
     final l$user = user;
-    _resultData['user'] = l$user.toJson();
+    resultData['user'] = l$user.toJson();
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch.toJson();
+    resultData['branch'] = l$branch.toJson();
     final l$serviceId = serviceId;
-    _resultData['serviceId'] = l$serviceId;
+    resultData['serviceId'] = l$serviceId;
     final l$service = service;
-    _resultData['service'] = l$service.toJson();
+    resultData['service'] = l$service.toJson();
     final l$channel = channel;
-    _resultData['channel'] = l$channel;
+    resultData['channel'] = l$channel;
     final l$date = date;
-    _resultData['date'] = l$date;
+    resultData['date'] = l$date;
     final l$time = time;
-    _resultData['time'] = l$time;
+    resultData['time'] = l$time;
     final l$queueNumber = queueNumber;
-    _resultData['queueNumber'] = l$queueNumber;
+    resultData['queueNumber'] = l$queueNumber;
     final l$status = status;
-    _resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
+    resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -9593,7 +9706,7 @@ class Mutation$customerUpdateBooking$customerUpdateBooking {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$customerUpdateBooking$customerUpdateBooking) ||
+    if (other is! Mutation$customerUpdateBooking$customerUpdateBooking ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -9738,6 +9851,7 @@ class _CopyWithImpl$Mutation$customerUpdateBooking$customerUpdateBooking<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? userId = _undefined,
@@ -9799,6 +9913,7 @@ class _CopyWithImpl$Mutation$customerUpdateBooking$customerUpdateBooking<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking$user<TRes>
       get user {
     final local$user = _instance.user;
@@ -9806,6 +9921,7 @@ class _CopyWithImpl$Mutation$customerUpdateBooking$customerUpdateBooking<TRes>
         local$user, (e) => call(user: e));
   }
 
+  @override
   CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking$branch<TRes>
       get branch {
     final local$branch = _instance.branch;
@@ -9813,6 +9929,7 @@ class _CopyWithImpl$Mutation$customerUpdateBooking$customerUpdateBooking<TRes>
         local$branch, (e) => call(branch: e));
   }
 
+  @override
   CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking$service<TRes>
       get service {
     final local$service = _instance.service;
@@ -9828,8 +9945,9 @@ class _CopyWithStubImpl$Mutation$customerUpdateBooking$customerUpdateBooking<
   _CopyWithStubImpl$Mutation$customerUpdateBooking$customerUpdateBooking(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? userId,
@@ -9848,14 +9966,17 @@ class _CopyWithStubImpl$Mutation$customerUpdateBooking$customerUpdateBooking<
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking$user<TRes>
       get user =>
           CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking$user
               .stub(_res);
+  @override
   CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking$branch<TRes>
       get branch =>
           CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking$branch
               .stub(_res);
+  @override
   CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking$service<TRes>
       get service =>
           CopyWith$Mutation$customerUpdateBooking$customerUpdateBooking$service
@@ -9883,12 +10004,12 @@ class Mutation$customerUpdateBooking$customerUpdateBooking$user {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -9906,7 +10027,7 @@ class Mutation$customerUpdateBooking$customerUpdateBooking$user {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$customerUpdateBooking$customerUpdateBooking$user) ||
+    if (other is! Mutation$customerUpdateBooking$customerUpdateBooking$user ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -9970,6 +10091,7 @@ class _CopyWithImpl$Mutation$customerUpdateBooking$customerUpdateBooking$user<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -9990,8 +10112,9 @@ class _CopyWithStubImpl$Mutation$customerUpdateBooking$customerUpdateBooking$use
   _CopyWithStubImpl$Mutation$customerUpdateBooking$customerUpdateBooking$user(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -10020,12 +10143,12 @@ class Mutation$customerUpdateBooking$customerUpdateBooking$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -10043,8 +10166,7 @@ class Mutation$customerUpdateBooking$customerUpdateBooking$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$customerUpdateBooking$customerUpdateBooking$branch) ||
+    if (other is! Mutation$customerUpdateBooking$customerUpdateBooking$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10108,6 +10230,7 @@ class _CopyWithImpl$Mutation$customerUpdateBooking$customerUpdateBooking$branch<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -10128,8 +10251,9 @@ class _CopyWithStubImpl$Mutation$customerUpdateBooking$customerUpdateBooking$bra
   _CopyWithStubImpl$Mutation$customerUpdateBooking$customerUpdateBooking$branch(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -10158,12 +10282,12 @@ class Mutation$customerUpdateBooking$customerUpdateBooking$service {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -10181,8 +10305,8 @@ class Mutation$customerUpdateBooking$customerUpdateBooking$service {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$customerUpdateBooking$customerUpdateBooking$service) ||
+    if (other
+            is! Mutation$customerUpdateBooking$customerUpdateBooking$service ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10246,6 +10370,7 @@ class _CopyWithImpl$Mutation$customerUpdateBooking$customerUpdateBooking$service
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -10266,8 +10391,9 @@ class _CopyWithStubImpl$Mutation$customerUpdateBooking$customerUpdateBooking$ser
   _CopyWithStubImpl$Mutation$customerUpdateBooking$customerUpdateBooking$service(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -10314,7 +10440,7 @@ class Variables$Mutation$endBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$endBookingReservation) ||
+    if (other is! Variables$Mutation$endBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10365,6 +10491,7 @@ class _CopyWithImpl$Variables$Mutation$endBookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? reservationIds = _undefined}) =>
       _then(Variables$Mutation$endBookingReservation._({
         ..._instance._$data,
@@ -10377,8 +10504,9 @@ class _CopyWithStubImpl$Variables$Mutation$endBookingReservation<TRes>
     implements CopyWith$Variables$Mutation$endBookingReservation<TRes> {
   _CopyWithStubImpl$Variables$Mutation$endBookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({List<String>? reservationIds}) => _res;
 }
 
@@ -10404,13 +10532,13 @@ class Mutation$endBookingReservation {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$endBookingReservation = endBookingReservation;
-    _resultData['endBookingReservation'] =
+    resultData['endBookingReservation'] =
         l$endBookingReservation.map((e) => e).toList();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -10428,7 +10556,7 @@ class Mutation$endBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$endBookingReservation) ||
+    if (other is! Mutation$endBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10491,6 +10619,7 @@ class _CopyWithImpl$Mutation$endBookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? endBookingReservation = _undefined,
     Object? $__typename = _undefined,
@@ -10510,8 +10639,9 @@ class _CopyWithStubImpl$Mutation$endBookingReservation<TRes>
     implements CopyWith$Mutation$endBookingReservation<TRes> {
   _CopyWithStubImpl$Mutation$endBookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     List<String>? endBookingReservation,
     String? $__typename,
@@ -10656,11 +10786,11 @@ extension ClientExtension$Mutation$endBookingReservation
   Future<graphql.QueryResult<Mutation$endBookingReservation>>
       mutate$endBookingReservation(
               Options$Mutation$endBookingReservation options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$endBookingReservation>
       watchMutation$endBookingReservation(
               WatchOptions$Mutation$endBookingReservation options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$endBookingReservation$HookResult {
@@ -10818,7 +10948,7 @@ class Variables$Mutation$loginUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$loginUser) ||
+    if (other is! Variables$Mutation$loginUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10862,6 +10992,7 @@ class _CopyWithImpl$Variables$Mutation$loginUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? input = _undefined}) =>
       _then(Variables$Mutation$loginUser._({
         ..._instance._$data,
@@ -10874,8 +11005,9 @@ class _CopyWithStubImpl$Variables$Mutation$loginUser<TRes>
     implements CopyWith$Variables$Mutation$loginUser<TRes> {
   _CopyWithStubImpl$Variables$Mutation$loginUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({Input$UserCredentialsInput? input}) => _res;
 }
 
@@ -10899,12 +11031,12 @@ class Mutation$loginUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$loginUser = loginUser;
-    _resultData['loginUser'] = l$loginUser;
+    resultData['loginUser'] = l$loginUser;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -10922,7 +11054,7 @@ class Mutation$loginUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$loginUser) || runtimeType != other.runtimeType) {
+    if (other is! Mutation$loginUser || runtimeType != other.runtimeType) {
       return false;
     }
     final l$loginUser = loginUser;
@@ -10975,6 +11107,7 @@ class _CopyWithImpl$Mutation$loginUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? loginUser = _undefined,
     Object? $__typename = _undefined,
@@ -10993,8 +11126,9 @@ class _CopyWithStubImpl$Mutation$loginUser<TRes>
     implements CopyWith$Mutation$loginUser<TRes> {
   _CopyWithStubImpl$Mutation$loginUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? loginUser,
     String? $__typename,
@@ -11129,10 +11263,10 @@ class WatchOptions$Mutation$loginUser
 extension ClientExtension$Mutation$loginUser on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$loginUser>> mutate$loginUser(
           Options$Mutation$loginUser options) async =>
-      await this.mutate(options);
+      await mutate(options);
   graphql.ObservableQuery<Mutation$loginUser> watchMutation$loginUser(
           WatchOptions$Mutation$loginUser options) =>
-      this.watchMutation(options);
+      watchMutation(options);
 }
 
 class Mutation$loginUser$HookResult {
@@ -11288,7 +11422,7 @@ class Variables$Mutation$registerRegularPasswordUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$registerRegularPasswordUser) ||
+    if (other is! Variables$Mutation$registerRegularPasswordUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -11333,6 +11467,7 @@ class _CopyWithImpl$Variables$Mutation$registerRegularPasswordUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? input = _undefined}) =>
       _then(Variables$Mutation$registerRegularPasswordUser._({
         ..._instance._$data,
@@ -11345,8 +11480,9 @@ class _CopyWithStubImpl$Variables$Mutation$registerRegularPasswordUser<TRes>
     implements CopyWith$Variables$Mutation$registerRegularPasswordUser<TRes> {
   _CopyWithStubImpl$Variables$Mutation$registerRegularPasswordUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({Input$RegularPasswordUserInput? input}) => _res;
 }
 
@@ -11375,13 +11511,13 @@ class Mutation$registerRegularPasswordUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$registerRegularPasswordUser = registerRegularPasswordUser;
-    _resultData['registerRegularPasswordUser'] =
+    resultData['registerRegularPasswordUser'] =
         l$registerRegularPasswordUser.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -11399,7 +11535,7 @@ class Mutation$registerRegularPasswordUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$registerRegularPasswordUser) ||
+    if (other is! Mutation$registerRegularPasswordUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -11459,6 +11595,7 @@ class _CopyWithImpl$Mutation$registerRegularPasswordUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? registerRegularPasswordUser = _undefined,
     Object? $__typename = _undefined,
@@ -11474,6 +11611,7 @@ class _CopyWithImpl$Mutation$registerRegularPasswordUser<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$registerRegularPasswordUser$registerRegularPasswordUser<
       TRes> get registerRegularPasswordUser {
     final local$registerRegularPasswordUser =
@@ -11488,14 +11626,16 @@ class _CopyWithStubImpl$Mutation$registerRegularPasswordUser<TRes>
     implements CopyWith$Mutation$registerRegularPasswordUser<TRes> {
   _CopyWithStubImpl$Mutation$registerRegularPasswordUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$registerRegularPasswordUser$registerRegularPasswordUser?
         registerRegularPasswordUser,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$registerRegularPasswordUser$registerRegularPasswordUser<
           TRes>
       get registerRegularPasswordUser =>
@@ -11795,11 +11935,11 @@ extension ClientExtension$Mutation$registerRegularPasswordUser
   Future<graphql.QueryResult<Mutation$registerRegularPasswordUser>>
       mutate$registerRegularPasswordUser(
               Options$Mutation$registerRegularPasswordUser options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$registerRegularPasswordUser>
       watchMutation$registerRegularPasswordUser(
               WatchOptions$Mutation$registerRegularPasswordUser options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$registerRegularPasswordUser$HookResult {
@@ -12024,40 +12164,40 @@ class Mutation$registerRegularPasswordUser$registerRegularPasswordUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$roles = roles;
-    _resultData['roles'] = l$roles.map((e) => e.toJson()).toList();
+    resultData['roles'] = l$roles.map((e) => e.toJson()).toList();
     final l$permissions = permissions;
-    _resultData['permissions'] = l$permissions.map((e) => e.toJson()).toList();
+    resultData['permissions'] = l$permissions.map((e) => e.toJson()).toList();
     final l$firstName = firstName;
-    _resultData['firstName'] = l$firstName;
+    resultData['firstName'] = l$firstName;
     final l$lastName = lastName;
-    _resultData['lastName'] = l$lastName;
+    resultData['lastName'] = l$lastName;
     final l$email = email;
-    _resultData['email'] = l$email;
+    resultData['email'] = l$email;
     final l$phone = phone;
-    _resultData['phone'] = l$phone;
+    resultData['phone'] = l$phone;
     final l$password = password;
-    _resultData['password'] = l$password;
+    resultData['password'] = l$password;
     final l$visitCount = visitCount;
-    _resultData['visitCount'] = l$visitCount;
+    resultData['visitCount'] = l$visitCount;
     final l$level = level;
-    _resultData['level'] = l$level;
+    resultData['level'] = l$level;
     final l$birthDate = birthDate;
-    _resultData['birthDate'] = l$birthDate;
+    resultData['birthDate'] = l$birthDate;
     final l$gender = gender;
-    _resultData['gender'] = l$gender;
+    resultData['gender'] = l$gender;
     final l$photo = photo;
-    _resultData['photo'] = l$photo;
+    resultData['photo'] = l$photo;
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -12103,8 +12243,8 @@ class Mutation$registerRegularPasswordUser$registerRegularPasswordUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$registerRegularPasswordUser$registerRegularPasswordUser) ||
+    if (other
+            is! Mutation$registerRegularPasswordUser$registerRegularPasswordUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -12255,13 +12395,13 @@ abstract class CopyWith$Mutation$registerRegularPasswordUser$registerRegularPass
               Iterable<
                   CopyWith$Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles<
                       Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles>>)
-          _fn);
+          fn);
   TRes permissions(
       Iterable<Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissions> Function(
               Iterable<
                   CopyWith$Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissions<
                       Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissions>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Mutation$registerRegularPasswordUser$registerRegularPasswordUser<
@@ -12282,6 +12422,7 @@ class _CopyWithImpl$Mutation$registerRegularPasswordUser$registerRegularPassword
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? roles = _undefined,
@@ -12336,26 +12477,28 @@ class _CopyWithImpl$Mutation$registerRegularPasswordUser$registerRegularPassword
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes roles(
           Iterable<Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles> Function(
                   Iterable<
                       CopyWith$Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles<
                           Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles>>)
-              _fn) =>
+              fn) =>
       call(
-          roles: _fn(_instance.roles.map((e) =>
+          roles: fn(_instance.roles.map((e) =>
               CopyWith$Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles(
                 e,
                 (i) => i,
               ))).toList());
+  @override
   TRes permissions(
           Iterable<Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissions> Function(
                   Iterable<
                       CopyWith$Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissions<
                           Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissions>>)
-              _fn) =>
+              fn) =>
       call(
-          permissions: _fn(_instance.permissions.map((e) =>
+          permissions: fn(_instance.permissions.map((e) =>
               CopyWith$Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissions(
                 e,
                 (i) => i,
@@ -12370,8 +12513,9 @@ class _CopyWithStubImpl$Mutation$registerRegularPasswordUser$registerRegularPass
   _CopyWithStubImpl$Mutation$registerRegularPasswordUser$registerRegularPasswordUser(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     List<Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles>?
@@ -12393,8 +12537,10 @@ class _CopyWithStubImpl$Mutation$registerRegularPasswordUser$registerRegularPass
     String? $__typename,
   }) =>
       _res;
-  roles(_fn) => _res;
-  permissions(_fn) => _res;
+  @override
+  roles(fn) => _res;
+  @override
+  permissions(fn) => _res;
 }
 
 class Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles {
@@ -12423,14 +12569,14 @@ class Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -12450,8 +12596,8 @@ class Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles) ||
+    if (other
+            is! Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -12525,6 +12671,7 @@ class _CopyWithImpl$Mutation$registerRegularPasswordUser$registerRegularPassword
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -12548,8 +12695,9 @@ class _CopyWithStubImpl$Mutation$registerRegularPasswordUser$registerRegularPass
   _CopyWithStubImpl$Mutation$registerRegularPasswordUser$registerRegularPasswordUser$roles(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -12584,14 +12732,14 @@ class Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissio
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -12611,8 +12759,8 @@ class Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissio
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissions) ||
+    if (other
+            is! Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissions ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -12686,6 +12834,7 @@ class _CopyWithImpl$Mutation$registerRegularPasswordUser$registerRegularPassword
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -12709,8 +12858,9 @@ class _CopyWithStubImpl$Mutation$registerRegularPasswordUser$registerRegularPass
   _CopyWithStubImpl$Mutation$registerRegularPasswordUser$registerRegularPasswordUser$permissions(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -12759,7 +12909,7 @@ class Variables$Mutation$requestResetPassword {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$requestResetPassword) ||
+    if (other is! Variables$Mutation$requestResetPassword ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -12803,6 +12953,7 @@ class _CopyWithImpl$Variables$Mutation$requestResetPassword<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? identifier = _undefined}) =>
       _then(Variables$Mutation$requestResetPassword._({
         ..._instance._$data,
@@ -12815,8 +12966,9 @@ class _CopyWithStubImpl$Variables$Mutation$requestResetPassword<TRes>
     implements CopyWith$Variables$Mutation$requestResetPassword<TRes> {
   _CopyWithStubImpl$Variables$Mutation$requestResetPassword(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({Input$UserIdentifierInput? identifier}) => _res;
 }
 
@@ -12840,12 +12992,12 @@ class Mutation$requestResetPassword {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$requestResetPassword = requestResetPassword;
-    _resultData['requestResetPassword'] = l$requestResetPassword;
+    resultData['requestResetPassword'] = l$requestResetPassword;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -12863,7 +13015,7 @@ class Mutation$requestResetPassword {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$requestResetPassword) ||
+    if (other is! Mutation$requestResetPassword ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -12918,6 +13070,7 @@ class _CopyWithImpl$Mutation$requestResetPassword<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? requestResetPassword = _undefined,
     Object? $__typename = _undefined,
@@ -12937,8 +13090,9 @@ class _CopyWithStubImpl$Mutation$requestResetPassword<TRes>
     implements CopyWith$Mutation$requestResetPassword<TRes> {
   _CopyWithStubImpl$Mutation$requestResetPassword(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     bool? requestResetPassword,
     String? $__typename,
@@ -13080,11 +13234,11 @@ extension ClientExtension$Mutation$requestResetPassword
   Future<graphql.QueryResult<Mutation$requestResetPassword>>
       mutate$requestResetPassword(
               Options$Mutation$requestResetPassword options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$requestResetPassword>
       watchMutation$requestResetPassword(
               WatchOptions$Mutation$requestResetPassword options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$requestResetPassword$HookResult {
@@ -13242,7 +13396,7 @@ class Variables$Mutation$resetPassword {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$resetPassword) ||
+    if (other is! Variables$Mutation$resetPassword ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -13286,6 +13440,7 @@ class _CopyWithImpl$Variables$Mutation$resetPassword<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? input = _undefined}) =>
       _then(Variables$Mutation$resetPassword._({
         ..._instance._$data,
@@ -13298,8 +13453,9 @@ class _CopyWithStubImpl$Variables$Mutation$resetPassword<TRes>
     implements CopyWith$Variables$Mutation$resetPassword<TRes> {
   _CopyWithStubImpl$Variables$Mutation$resetPassword(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({Input$UserResetPasswordInput? input}) => _res;
 }
 
@@ -13323,12 +13479,12 @@ class Mutation$resetPassword {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$resetPassword = resetPassword;
-    _resultData['resetPassword'] = l$resetPassword;
+    resultData['resetPassword'] = l$resetPassword;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -13346,8 +13502,7 @@ class Mutation$resetPassword {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$resetPassword) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Mutation$resetPassword || runtimeType != other.runtimeType) {
       return false;
     }
     final l$resetPassword = resetPassword;
@@ -13400,6 +13555,7 @@ class _CopyWithImpl$Mutation$resetPassword<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? resetPassword = _undefined,
     Object? $__typename = _undefined,
@@ -13418,8 +13574,9 @@ class _CopyWithStubImpl$Mutation$resetPassword<TRes>
     implements CopyWith$Mutation$resetPassword<TRes> {
   _CopyWithStubImpl$Mutation$resetPassword(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     bool? resetPassword,
     String? $__typename,
@@ -13557,10 +13714,10 @@ class WatchOptions$Mutation$resetPassword
 extension ClientExtension$Mutation$resetPassword on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$resetPassword>> mutate$resetPassword(
           Options$Mutation$resetPassword options) async =>
-      await this.mutate(options);
+      await mutate(options);
   graphql.ObservableQuery<Mutation$resetPassword> watchMutation$resetPassword(
           WatchOptions$Mutation$resetPassword options) =>
-      this.watchMutation(options);
+      watchMutation(options);
 }
 
 class Mutation$resetPassword$HookResult {
@@ -13722,7 +13879,7 @@ class Variables$Mutation$setSetting {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$setSetting) ||
+    if (other is! Variables$Mutation$setSetting ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -13778,6 +13935,7 @@ class _CopyWithImpl$Variables$Mutation$setSetting<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? key = _undefined,
     Object? value = _undefined,
@@ -13793,8 +13951,9 @@ class _CopyWithStubImpl$Variables$Mutation$setSetting<TRes>
     implements CopyWith$Variables$Mutation$setSetting<TRes> {
   _CopyWithStubImpl$Variables$Mutation$setSetting(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? key,
     String? value,
@@ -13822,12 +13981,12 @@ class Mutation$setSetting {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$setSetting = setSetting;
-    _resultData['setSetting'] = l$setSetting;
+    resultData['setSetting'] = l$setSetting;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -13845,7 +14004,7 @@ class Mutation$setSetting {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$setSetting) || runtimeType != other.runtimeType) {
+    if (other is! Mutation$setSetting || runtimeType != other.runtimeType) {
       return false;
     }
     final l$setSetting = setSetting;
@@ -13898,6 +14057,7 @@ class _CopyWithImpl$Mutation$setSetting<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? setSetting = _undefined,
     Object? $__typename = _undefined,
@@ -13916,8 +14076,9 @@ class _CopyWithStubImpl$Mutation$setSetting<TRes>
     implements CopyWith$Mutation$setSetting<TRes> {
   _CopyWithStubImpl$Mutation$setSetting(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? setSetting,
     String? $__typename,
@@ -14065,10 +14226,10 @@ class WatchOptions$Mutation$setSetting
 extension ClientExtension$Mutation$setSetting on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$setSetting>> mutate$setSetting(
           Options$Mutation$setSetting options) async =>
-      await this.mutate(options);
+      await mutate(options);
   graphql.ObservableQuery<Mutation$setSetting> watchMutation$setSetting(
           WatchOptions$Mutation$setSetting options) =>
-      this.watchMutation(options);
+      watchMutation(options);
 }
 
 class Mutation$setSetting$HookResult {
@@ -14230,7 +14391,7 @@ class Variables$Mutation$switchBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$switchBookingReservation) ||
+    if (other is! Variables$Mutation$switchBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -14286,6 +14447,7 @@ class _CopyWithImpl$Variables$Mutation$switchBookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? firstReservationId = _undefined,
     Object? secondReservationId = _undefined,
@@ -14303,8 +14465,9 @@ class _CopyWithStubImpl$Variables$Mutation$switchBookingReservation<TRes>
     implements CopyWith$Variables$Mutation$switchBookingReservation<TRes> {
   _CopyWithStubImpl$Variables$Mutation$switchBookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? firstReservationId,
     String? secondReservationId,
@@ -14333,12 +14496,12 @@ class Mutation$switchBookingReservation {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$switchBookingReservation = switchBookingReservation;
-    _resultData['switchBookingReservation'] = l$switchBookingReservation;
+    resultData['switchBookingReservation'] = l$switchBookingReservation;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -14356,7 +14519,7 @@ class Mutation$switchBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$switchBookingReservation) ||
+    if (other is! Mutation$switchBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -14411,6 +14574,7 @@ class _CopyWithImpl$Mutation$switchBookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? switchBookingReservation = _undefined,
     Object? $__typename = _undefined,
@@ -14430,8 +14594,9 @@ class _CopyWithStubImpl$Mutation$switchBookingReservation<TRes>
     implements CopyWith$Mutation$switchBookingReservation<TRes> {
   _CopyWithStubImpl$Mutation$switchBookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     bool? switchBookingReservation,
     String? $__typename,
@@ -14586,11 +14751,11 @@ extension ClientExtension$Mutation$switchBookingReservation
   Future<graphql.QueryResult<Mutation$switchBookingReservation>>
       mutate$switchBookingReservation(
               Options$Mutation$switchBookingReservation options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$switchBookingReservation>
       watchMutation$switchBookingReservation(
               WatchOptions$Mutation$switchBookingReservation options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$switchBookingReservation$HookResult {
@@ -14759,7 +14924,7 @@ class Variables$Mutation$updateBookingBranch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$updateBookingBranch) ||
+    if (other is! Variables$Mutation$updateBookingBranch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -14815,6 +14980,7 @@ class _CopyWithImpl$Variables$Mutation$updateBookingBranch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? branchId = _undefined,
     Object? data = _undefined,
@@ -14832,8 +14998,9 @@ class _CopyWithStubImpl$Variables$Mutation$updateBookingBranch<TRes>
     implements CopyWith$Variables$Mutation$updateBookingBranch<TRes> {
   _CopyWithStubImpl$Variables$Mutation$updateBookingBranch(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? branchId,
     Input$BookingBranchModifiableInput? data,
@@ -14863,12 +15030,12 @@ class Mutation$updateBookingBranch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$updateBookingBranch = updateBookingBranch;
-    _resultData['updateBookingBranch'] = l$updateBookingBranch.toJson();
+    resultData['updateBookingBranch'] = l$updateBookingBranch.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -14886,7 +15053,7 @@ class Mutation$updateBookingBranch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingBranch) ||
+    if (other is! Mutation$updateBookingBranch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -14943,6 +15110,7 @@ class _CopyWithImpl$Mutation$updateBookingBranch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? updateBookingBranch = _undefined,
     Object? $__typename = _undefined,
@@ -14957,6 +15125,7 @@ class _CopyWithImpl$Mutation$updateBookingBranch<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$updateBookingBranch$updateBookingBranch<TRes>
       get updateBookingBranch {
     final local$updateBookingBranch = _instance.updateBookingBranch;
@@ -14969,13 +15138,15 @@ class _CopyWithStubImpl$Mutation$updateBookingBranch<TRes>
     implements CopyWith$Mutation$updateBookingBranch<TRes> {
   _CopyWithStubImpl$Mutation$updateBookingBranch(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$updateBookingBranch$updateBookingBranch? updateBookingBranch,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$updateBookingBranch$updateBookingBranch<TRes>
       get updateBookingBranch =>
           CopyWith$Mutation$updateBookingBranch$updateBookingBranch.stub(_res);
@@ -15213,11 +15384,11 @@ extension ClientExtension$Mutation$updateBookingBranch
   Future<graphql.QueryResult<Mutation$updateBookingBranch>>
       mutate$updateBookingBranch(
               Options$Mutation$updateBookingBranch options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$updateBookingBranch>
       watchMutation$updateBookingBranch(
               WatchOptions$Mutation$updateBookingBranch options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$updateBookingBranch$HookResult {
@@ -15401,28 +15572,28 @@ class Mutation$updateBookingBranch$updateBookingBranch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$address = address;
-    _resultData['address'] = l$address;
+    resultData['address'] = l$address;
     final l$phone = phone;
-    _resultData['phone'] = l$phone;
+    resultData['phone'] = l$phone;
     final l$mapURL = mapURL;
-    _resultData['mapURL'] = l$mapURL;
+    resultData['mapURL'] = l$mapURL;
     final l$isActive = isActive;
-    _resultData['isActive'] = l$isActive;
+    resultData['isActive'] = l$isActive;
     final l$services = services;
-    _resultData['services'] = l$services?.map((e) => e.toJson()).toList();
+    resultData['services'] = l$services?.map((e) => e.toJson()).toList();
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -15456,7 +15627,7 @@ class Mutation$updateBookingBranch$updateBookingBranch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingBranch$updateBookingBranch) ||
+    if (other is! Mutation$updateBookingBranch$updateBookingBranch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -15562,7 +15733,7 @@ abstract class CopyWith$Mutation$updateBookingBranch$updateBookingBranch<TRes> {
               Iterable<
                   CopyWith$Mutation$updateBookingBranch$updateBookingBranch$services<
                       Mutation$updateBookingBranch$updateBookingBranch$services>>?)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Mutation$updateBookingBranch$updateBookingBranch<TRes>
@@ -15578,6 +15749,7 @@ class _CopyWithImpl$Mutation$updateBookingBranch$updateBookingBranch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -15614,14 +15786,15 @@ class _CopyWithImpl$Mutation$updateBookingBranch$updateBookingBranch<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes services(
           Iterable<Mutation$updateBookingBranch$updateBookingBranch$services>? Function(
                   Iterable<
                       CopyWith$Mutation$updateBookingBranch$updateBookingBranch$services<
                           Mutation$updateBookingBranch$updateBookingBranch$services>>?)
-              _fn) =>
+              fn) =>
       call(
-          services: _fn(_instance.services?.map((e) =>
+          services: fn(_instance.services?.map((e) =>
               CopyWith$Mutation$updateBookingBranch$updateBookingBranch$services(
                 e,
                 (i) => i,
@@ -15632,8 +15805,9 @@ class _CopyWithStubImpl$Mutation$updateBookingBranch$updateBookingBranch<TRes>
     implements CopyWith$Mutation$updateBookingBranch$updateBookingBranch<TRes> {
   _CopyWithStubImpl$Mutation$updateBookingBranch$updateBookingBranch(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -15647,7 +15821,8 @@ class _CopyWithStubImpl$Mutation$updateBookingBranch$updateBookingBranch<TRes>
     String? $__typename,
   }) =>
       _res;
-  services(_fn) => _res;
+  @override
+  services(fn) => _res;
 }
 
 class Mutation$updateBookingBranch$updateBookingBranch$services {
@@ -15671,12 +15846,12 @@ class Mutation$updateBookingBranch$updateBookingBranch$services {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -15694,7 +15869,7 @@ class Mutation$updateBookingBranch$updateBookingBranch$services {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingBranch$updateBookingBranch$services) ||
+    if (other is! Mutation$updateBookingBranch$updateBookingBranch$services ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -15758,6 +15933,7 @@ class _CopyWithImpl$Mutation$updateBookingBranch$updateBookingBranch$services<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -15778,8 +15954,9 @@ class _CopyWithStubImpl$Mutation$updateBookingBranch$updateBookingBranch$service
   _CopyWithStubImpl$Mutation$updateBookingBranch$updateBookingBranch$services(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -15835,7 +16012,7 @@ class Variables$Mutation$updateBookingNote {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$updateBookingNote) ||
+    if (other is! Variables$Mutation$updateBookingNote ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -15891,6 +16068,7 @@ class _CopyWithImpl$Variables$Mutation$updateBookingNote<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? noteId = _undefined,
     Object? data = _undefined,
@@ -15908,8 +16086,9 @@ class _CopyWithStubImpl$Variables$Mutation$updateBookingNote<TRes>
     implements CopyWith$Variables$Mutation$updateBookingNote<TRes> {
   _CopyWithStubImpl$Variables$Mutation$updateBookingNote(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? noteId,
     Input$BookingNoteModifiableInput? data,
@@ -15938,12 +16117,12 @@ class Mutation$updateBookingNote {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$updateBookingNote = updateBookingNote;
-    _resultData['updateBookingNote'] = l$updateBookingNote.toJson();
+    resultData['updateBookingNote'] = l$updateBookingNote.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -15961,7 +16140,7 @@ class Mutation$updateBookingNote {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingNote) ||
+    if (other is! Mutation$updateBookingNote ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -16018,6 +16197,7 @@ class _CopyWithImpl$Mutation$updateBookingNote<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? updateBookingNote = _undefined,
     Object? $__typename = _undefined,
@@ -16032,6 +16212,7 @@ class _CopyWithImpl$Mutation$updateBookingNote<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$updateBookingNote$updateBookingNote<TRes>
       get updateBookingNote {
     final local$updateBookingNote = _instance.updateBookingNote;
@@ -16044,13 +16225,15 @@ class _CopyWithStubImpl$Mutation$updateBookingNote<TRes>
     implements CopyWith$Mutation$updateBookingNote<TRes> {
   _CopyWithStubImpl$Mutation$updateBookingNote(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$updateBookingNote$updateBookingNote? updateBookingNote,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$updateBookingNote$updateBookingNote<TRes>
       get updateBookingNote =>
           CopyWith$Mutation$updateBookingNote$updateBookingNote.stub(_res);
@@ -16324,11 +16507,11 @@ extension ClientExtension$Mutation$updateBookingNote on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$updateBookingNote>>
       mutate$updateBookingNote(
               Options$Mutation$updateBookingNote options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$updateBookingNote>
       watchMutation$updateBookingNote(
               WatchOptions$Mutation$updateBookingNote options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$updateBookingNote$HookResult {
@@ -16520,30 +16703,30 @@ class Mutation$updateBookingNote$updateBookingNote {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$userId = userId;
-    _resultData['userId'] = l$userId;
+    resultData['userId'] = l$userId;
     final l$user = user;
-    _resultData['user'] = l$user.toJson();
+    resultData['user'] = l$user.toJson();
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch?.toJson();
+    resultData['branch'] = l$branch?.toJson();
     final l$visitId = visitId;
-    _resultData['visitId'] = l$visitId;
+    resultData['visitId'] = l$visitId;
     final l$visit = visit;
-    _resultData['visit'] = l$visit?.toJson();
+    resultData['visit'] = l$visit?.toJson();
     final l$text = text;
-    _resultData['text'] = l$text;
+    resultData['text'] = l$text;
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -16579,7 +16762,7 @@ class Mutation$updateBookingNote$updateBookingNote {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingNote$updateBookingNote) ||
+    if (other is! Mutation$updateBookingNote$updateBookingNote ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -16692,6 +16875,7 @@ class _CopyWithImpl$Mutation$updateBookingNote$updateBookingNote<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? userId = _undefined,
@@ -16732,12 +16916,14 @@ class _CopyWithImpl$Mutation$updateBookingNote$updateBookingNote<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$updateBookingNote$updateBookingNote$user<TRes> get user {
     final local$user = _instance.user;
     return CopyWith$Mutation$updateBookingNote$updateBookingNote$user(
         local$user, (e) => call(user: e));
   }
 
+  @override
   CopyWith$Mutation$updateBookingNote$updateBookingNote$branch<TRes>
       get branch {
     final local$branch = _instance.branch;
@@ -16748,6 +16934,7 @@ class _CopyWithImpl$Mutation$updateBookingNote$updateBookingNote<TRes>
             local$branch, (e) => call(branch: e));
   }
 
+  @override
   CopyWith$Mutation$updateBookingNote$updateBookingNote$visit<TRes> get visit {
     final local$visit = _instance.visit;
     return local$visit == null
@@ -16762,8 +16949,9 @@ class _CopyWithStubImpl$Mutation$updateBookingNote$updateBookingNote<TRes>
     implements CopyWith$Mutation$updateBookingNote$updateBookingNote<TRes> {
   _CopyWithStubImpl$Mutation$updateBookingNote$updateBookingNote(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? userId,
@@ -16778,12 +16966,15 @@ class _CopyWithStubImpl$Mutation$updateBookingNote$updateBookingNote<TRes>
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$updateBookingNote$updateBookingNote$user<TRes> get user =>
       CopyWith$Mutation$updateBookingNote$updateBookingNote$user.stub(_res);
+  @override
   CopyWith$Mutation$updateBookingNote$updateBookingNote$branch<TRes>
       get branch =>
           CopyWith$Mutation$updateBookingNote$updateBookingNote$branch.stub(
               _res);
+  @override
   CopyWith$Mutation$updateBookingNote$updateBookingNote$visit<TRes> get visit =>
       CopyWith$Mutation$updateBookingNote$updateBookingNote$visit.stub(_res);
 }
@@ -16809,12 +17000,12 @@ class Mutation$updateBookingNote$updateBookingNote$user {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -16832,7 +17023,7 @@ class Mutation$updateBookingNote$updateBookingNote$user {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingNote$updateBookingNote$user) ||
+    if (other is! Mutation$updateBookingNote$updateBookingNote$user ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -16892,6 +17083,7 @@ class _CopyWithImpl$Mutation$updateBookingNote$updateBookingNote$user<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -16910,8 +17102,9 @@ class _CopyWithStubImpl$Mutation$updateBookingNote$updateBookingNote$user<TRes>
   _CopyWithStubImpl$Mutation$updateBookingNote$updateBookingNote$user(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -16940,12 +17133,12 @@ class Mutation$updateBookingNote$updateBookingNote$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -16963,7 +17156,7 @@ class Mutation$updateBookingNote$updateBookingNote$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingNote$updateBookingNote$branch) ||
+    if (other is! Mutation$updateBookingNote$updateBookingNote$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -17024,6 +17217,7 @@ class _CopyWithImpl$Mutation$updateBookingNote$updateBookingNote$branch<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -17043,8 +17237,9 @@ class _CopyWithStubImpl$Mutation$updateBookingNote$updateBookingNote$branch<
   _CopyWithStubImpl$Mutation$updateBookingNote$updateBookingNote$branch(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -17073,12 +17268,12 @@ class Mutation$updateBookingNote$updateBookingNote$visit {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -17096,7 +17291,7 @@ class Mutation$updateBookingNote$updateBookingNote$visit {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingNote$updateBookingNote$visit) ||
+    if (other is! Mutation$updateBookingNote$updateBookingNote$visit ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -17156,6 +17351,7 @@ class _CopyWithImpl$Mutation$updateBookingNote$updateBookingNote$visit<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -17174,8 +17370,9 @@ class _CopyWithStubImpl$Mutation$updateBookingNote$updateBookingNote$visit<TRes>
   _CopyWithStubImpl$Mutation$updateBookingNote$updateBookingNote$visit(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -17231,7 +17428,7 @@ class Variables$Mutation$updateBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$updateBookingReservation) ||
+    if (other is! Variables$Mutation$updateBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -17287,6 +17484,7 @@ class _CopyWithImpl$Variables$Mutation$updateBookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? reservationId = _undefined,
     Object? data = _undefined,
@@ -17304,8 +17502,9 @@ class _CopyWithStubImpl$Variables$Mutation$updateBookingReservation<TRes>
     implements CopyWith$Variables$Mutation$updateBookingReservation<TRes> {
   _CopyWithStubImpl$Variables$Mutation$updateBookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? reservationId,
     Input$BookingReservationModifiableInput? data,
@@ -17337,13 +17536,13 @@ class Mutation$updateBookingReservation {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$updateBookingReservation = updateBookingReservation;
-    _resultData['updateBookingReservation'] =
+    resultData['updateBookingReservation'] =
         l$updateBookingReservation.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -17361,7 +17560,7 @@ class Mutation$updateBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingReservation) ||
+    if (other is! Mutation$updateBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -17419,6 +17618,7 @@ class _CopyWithImpl$Mutation$updateBookingReservation<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? updateBookingReservation = _undefined,
     Object? $__typename = _undefined,
@@ -17433,6 +17633,7 @@ class _CopyWithImpl$Mutation$updateBookingReservation<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$updateBookingReservation$updateBookingReservation<TRes>
       get updateBookingReservation {
     final local$updateBookingReservation = _instance.updateBookingReservation;
@@ -17446,14 +17647,16 @@ class _CopyWithStubImpl$Mutation$updateBookingReservation<TRes>
     implements CopyWith$Mutation$updateBookingReservation<TRes> {
   _CopyWithStubImpl$Mutation$updateBookingReservation(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$updateBookingReservation$updateBookingReservation?
         updateBookingReservation,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$updateBookingReservation$updateBookingReservation<TRes>
       get updateBookingReservation =>
           CopyWith$Mutation$updateBookingReservation$updateBookingReservation
@@ -17758,11 +17961,11 @@ extension ClientExtension$Mutation$updateBookingReservation
   Future<graphql.QueryResult<Mutation$updateBookingReservation>>
       mutate$updateBookingReservation(
               Options$Mutation$updateBookingReservation options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$updateBookingReservation>
       watchMutation$updateBookingReservation(
               WatchOptions$Mutation$updateBookingReservation options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$updateBookingReservation$HookResult {
@@ -17975,38 +18178,38 @@ class Mutation$updateBookingReservation$updateBookingReservation {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$userId = userId;
-    _resultData['userId'] = l$userId;
+    resultData['userId'] = l$userId;
     final l$user = user;
-    _resultData['user'] = l$user.toJson();
+    resultData['user'] = l$user.toJson();
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch.toJson();
+    resultData['branch'] = l$branch.toJson();
     final l$serviceId = serviceId;
-    _resultData['serviceId'] = l$serviceId;
+    resultData['serviceId'] = l$serviceId;
     final l$service = service;
-    _resultData['service'] = l$service.toJson();
+    resultData['service'] = l$service.toJson();
     final l$channel = channel;
-    _resultData['channel'] = l$channel;
+    resultData['channel'] = l$channel;
     final l$date = date;
-    _resultData['date'] = l$date;
+    resultData['date'] = l$date;
     final l$time = time;
-    _resultData['time'] = l$time;
+    resultData['time'] = l$time;
     final l$queueNumber = queueNumber;
-    _resultData['queueNumber'] = l$queueNumber;
+    resultData['queueNumber'] = l$queueNumber;
     final l$status = status;
-    _resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
+    resultData['status'] = toJson$Enum$BookingReservationStatus(l$status);
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -18050,8 +18253,7 @@ class Mutation$updateBookingReservation$updateBookingReservation {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$updateBookingReservation$updateBookingReservation) ||
+    if (other is! Mutation$updateBookingReservation$updateBookingReservation ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -18199,6 +18401,7 @@ class _CopyWithImpl$Mutation$updateBookingReservation$updateBookingReservation<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? userId = _undefined,
@@ -18260,6 +18463,7 @@ class _CopyWithImpl$Mutation$updateBookingReservation$updateBookingReservation<
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$updateBookingReservation$updateBookingReservation$user<TRes>
       get user {
     final local$user = _instance.user;
@@ -18267,6 +18471,7 @@ class _CopyWithImpl$Mutation$updateBookingReservation$updateBookingReservation<
         local$user, (e) => call(user: e));
   }
 
+  @override
   CopyWith$Mutation$updateBookingReservation$updateBookingReservation$branch<
       TRes> get branch {
     final local$branch = _instance.branch;
@@ -18274,6 +18479,7 @@ class _CopyWithImpl$Mutation$updateBookingReservation$updateBookingReservation<
         local$branch, (e) => call(branch: e));
   }
 
+  @override
   CopyWith$Mutation$updateBookingReservation$updateBookingReservation$service<
       TRes> get service {
     final local$service = _instance.service;
@@ -18290,8 +18496,9 @@ class _CopyWithStubImpl$Mutation$updateBookingReservation$updateBookingReservati
   _CopyWithStubImpl$Mutation$updateBookingReservation$updateBookingReservation(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? userId,
@@ -18310,15 +18517,18 @@ class _CopyWithStubImpl$Mutation$updateBookingReservation$updateBookingReservati
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$updateBookingReservation$updateBookingReservation$user<TRes>
       get user =>
           CopyWith$Mutation$updateBookingReservation$updateBookingReservation$user
               .stub(_res);
+  @override
   CopyWith$Mutation$updateBookingReservation$updateBookingReservation$branch<
           TRes>
       get branch =>
           CopyWith$Mutation$updateBookingReservation$updateBookingReservation$branch
               .stub(_res);
+  @override
   CopyWith$Mutation$updateBookingReservation$updateBookingReservation$service<
           TRes>
       get service =>
@@ -18347,12 +18557,12 @@ class Mutation$updateBookingReservation$updateBookingReservation$user {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -18370,8 +18580,8 @@ class Mutation$updateBookingReservation$updateBookingReservation$user {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$updateBookingReservation$updateBookingReservation$user) ||
+    if (other
+            is! Mutation$updateBookingReservation$updateBookingReservation$user ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -18437,6 +18647,7 @@ class _CopyWithImpl$Mutation$updateBookingReservation$updateBookingReservation$u
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -18457,8 +18668,9 @@ class _CopyWithStubImpl$Mutation$updateBookingReservation$updateBookingReservati
   _CopyWithStubImpl$Mutation$updateBookingReservation$updateBookingReservation$user(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -18487,12 +18699,12 @@ class Mutation$updateBookingReservation$updateBookingReservation$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -18510,8 +18722,8 @@ class Mutation$updateBookingReservation$updateBookingReservation$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$updateBookingReservation$updateBookingReservation$branch) ||
+    if (other
+            is! Mutation$updateBookingReservation$updateBookingReservation$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -18577,6 +18789,7 @@ class _CopyWithImpl$Mutation$updateBookingReservation$updateBookingReservation$b
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -18597,8 +18810,9 @@ class _CopyWithStubImpl$Mutation$updateBookingReservation$updateBookingReservati
   _CopyWithStubImpl$Mutation$updateBookingReservation$updateBookingReservation$branch(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -18627,12 +18841,12 @@ class Mutation$updateBookingReservation$updateBookingReservation$service {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -18650,8 +18864,8 @@ class Mutation$updateBookingReservation$updateBookingReservation$service {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Mutation$updateBookingReservation$updateBookingReservation$service) ||
+    if (other
+            is! Mutation$updateBookingReservation$updateBookingReservation$service ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -18717,6 +18931,7 @@ class _CopyWithImpl$Mutation$updateBookingReservation$updateBookingReservation$s
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -18737,8 +18952,9 @@ class _CopyWithStubImpl$Mutation$updateBookingReservation$updateBookingReservati
   _CopyWithStubImpl$Mutation$updateBookingReservation$updateBookingReservation$service(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -18794,7 +19010,7 @@ class Variables$Mutation$updateBookingService {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$updateBookingService) ||
+    if (other is! Variables$Mutation$updateBookingService ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -18850,6 +19066,7 @@ class _CopyWithImpl$Variables$Mutation$updateBookingService<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? serviceId = _undefined,
     Object? data = _undefined,
@@ -18867,8 +19084,9 @@ class _CopyWithStubImpl$Variables$Mutation$updateBookingService<TRes>
     implements CopyWith$Variables$Mutation$updateBookingService<TRes> {
   _CopyWithStubImpl$Variables$Mutation$updateBookingService(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? serviceId,
     Input$BookingServiceModifiableInput? data,
@@ -18898,12 +19116,12 @@ class Mutation$updateBookingService {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$updateBookingService = updateBookingService;
-    _resultData['updateBookingService'] = l$updateBookingService.toJson();
+    resultData['updateBookingService'] = l$updateBookingService.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -18921,7 +19139,7 @@ class Mutation$updateBookingService {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingService) ||
+    if (other is! Mutation$updateBookingService ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -18978,6 +19196,7 @@ class _CopyWithImpl$Mutation$updateBookingService<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? updateBookingService = _undefined,
     Object? $__typename = _undefined,
@@ -18992,6 +19211,7 @@ class _CopyWithImpl$Mutation$updateBookingService<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$updateBookingService$updateBookingService<TRes>
       get updateBookingService {
     final local$updateBookingService = _instance.updateBookingService;
@@ -19004,13 +19224,15 @@ class _CopyWithStubImpl$Mutation$updateBookingService<TRes>
     implements CopyWith$Mutation$updateBookingService<TRes> {
   _CopyWithStubImpl$Mutation$updateBookingService(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$updateBookingService$updateBookingService? updateBookingService,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$updateBookingService$updateBookingService<TRes>
       get updateBookingService =>
           CopyWith$Mutation$updateBookingService$updateBookingService.stub(
@@ -19229,11 +19451,11 @@ extension ClientExtension$Mutation$updateBookingService
   Future<graphql.QueryResult<Mutation$updateBookingService>>
       mutate$updateBookingService(
               Options$Mutation$updateBookingService options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$updateBookingService>
       watchMutation$updateBookingService(
               WatchOptions$Mutation$updateBookingService options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$updateBookingService$HookResult {
@@ -19401,22 +19623,22 @@ class Mutation$updateBookingService$updateBookingService {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$branchId = branchId;
-    _resultData['branchId'] = l$branchId;
+    resultData['branchId'] = l$branchId;
     final l$branch = branch;
-    _resultData['branch'] = l$branch.toJson();
+    resultData['branch'] = l$branch.toJson();
     final l$isActive = isActive;
-    _resultData['isActive'] = l$isActive;
+    resultData['isActive'] = l$isActive;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$duration = duration;
-    _resultData['duration'] = l$duration;
+    resultData['duration'] = l$duration;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -19444,7 +19666,7 @@ class Mutation$updateBookingService$updateBookingService {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingService$updateBookingService) ||
+    if (other is! Mutation$updateBookingService$updateBookingService ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -19536,6 +19758,7 @@ class _CopyWithImpl$Mutation$updateBookingService$updateBookingService<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? branchId = _undefined,
@@ -19566,6 +19789,7 @@ class _CopyWithImpl$Mutation$updateBookingService$updateBookingService<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$updateBookingService$updateBookingService$branch<TRes>
       get branch {
     final local$branch = _instance.branch;
@@ -19580,8 +19804,9 @@ class _CopyWithStubImpl$Mutation$updateBookingService$updateBookingService<TRes>
   _CopyWithStubImpl$Mutation$updateBookingService$updateBookingService(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? branchId,
@@ -19592,6 +19817,7 @@ class _CopyWithStubImpl$Mutation$updateBookingService$updateBookingService<TRes>
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$updateBookingService$updateBookingService$branch<TRes>
       get branch =>
           CopyWith$Mutation$updateBookingService$updateBookingService$branch
@@ -19619,12 +19845,12 @@ class Mutation$updateBookingService$updateBookingService$branch {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -19642,7 +19868,7 @@ class Mutation$updateBookingService$updateBookingService$branch {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateBookingService$updateBookingService$branch) ||
+    if (other is! Mutation$updateBookingService$updateBookingService$branch ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -19706,6 +19932,7 @@ class _CopyWithImpl$Mutation$updateBookingService$updateBookingService$branch<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? $__typename = _undefined,
@@ -19726,8 +19953,9 @@ class _CopyWithStubImpl$Mutation$updateBookingService$updateBookingService$branc
   _CopyWithStubImpl$Mutation$updateBookingService$updateBookingService$branch(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? $__typename,
@@ -19775,7 +20003,7 @@ class Variables$Mutation$updateCurrentUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$updateCurrentUser) ||
+    if (other is! Variables$Mutation$updateCurrentUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -19819,6 +20047,7 @@ class _CopyWithImpl$Variables$Mutation$updateCurrentUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? input = _undefined}) =>
       _then(Variables$Mutation$updateCurrentUser._({
         ..._instance._$data,
@@ -19831,8 +20060,9 @@ class _CopyWithStubImpl$Variables$Mutation$updateCurrentUser<TRes>
     implements CopyWith$Variables$Mutation$updateCurrentUser<TRes> {
   _CopyWithStubImpl$Variables$Mutation$updateCurrentUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({Input$ModifiableRegularUserInput? input}) => _res;
 }
 
@@ -19857,12 +20087,12 @@ class Mutation$updateCurrentUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$updateCurrentUser = updateCurrentUser;
-    _resultData['updateCurrentUser'] = l$updateCurrentUser.toJson();
+    resultData['updateCurrentUser'] = l$updateCurrentUser.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -19880,7 +20110,7 @@ class Mutation$updateCurrentUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateCurrentUser) ||
+    if (other is! Mutation$updateCurrentUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -19937,6 +20167,7 @@ class _CopyWithImpl$Mutation$updateCurrentUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? updateCurrentUser = _undefined,
     Object? $__typename = _undefined,
@@ -19951,6 +20182,7 @@ class _CopyWithImpl$Mutation$updateCurrentUser<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$updateCurrentUser$updateCurrentUser<TRes>
       get updateCurrentUser {
     final local$updateCurrentUser = _instance.updateCurrentUser;
@@ -19963,13 +20195,15 @@ class _CopyWithStubImpl$Mutation$updateCurrentUser<TRes>
     implements CopyWith$Mutation$updateCurrentUser<TRes> {
   _CopyWithStubImpl$Mutation$updateCurrentUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$updateCurrentUser$updateCurrentUser? updateCurrentUser,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$updateCurrentUser$updateCurrentUser<TRes>
       get updateCurrentUser =>
           CopyWith$Mutation$updateCurrentUser$updateCurrentUser.stub(_res);
@@ -20264,11 +20498,11 @@ extension ClientExtension$Mutation$updateCurrentUser on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$updateCurrentUser>>
       mutate$updateCurrentUser(
               Options$Mutation$updateCurrentUser options) async =>
-          await this.mutate(options);
+          await mutate(options);
   graphql.ObservableQuery<Mutation$updateCurrentUser>
       watchMutation$updateCurrentUser(
               WatchOptions$Mutation$updateCurrentUser options) =>
-          this.watchMutation(options);
+          watchMutation(options);
 }
 
 class Mutation$updateCurrentUser$HookResult {
@@ -20487,40 +20721,40 @@ class Mutation$updateCurrentUser$updateCurrentUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$roles = roles;
-    _resultData['roles'] = l$roles.map((e) => e.toJson()).toList();
+    resultData['roles'] = l$roles.map((e) => e.toJson()).toList();
     final l$permissions = permissions;
-    _resultData['permissions'] = l$permissions.map((e) => e.toJson()).toList();
+    resultData['permissions'] = l$permissions.map((e) => e.toJson()).toList();
     final l$firstName = firstName;
-    _resultData['firstName'] = l$firstName;
+    resultData['firstName'] = l$firstName;
     final l$lastName = lastName;
-    _resultData['lastName'] = l$lastName;
+    resultData['lastName'] = l$lastName;
     final l$email = email;
-    _resultData['email'] = l$email;
+    resultData['email'] = l$email;
     final l$phone = phone;
-    _resultData['phone'] = l$phone;
+    resultData['phone'] = l$phone;
     final l$password = password;
-    _resultData['password'] = l$password;
+    resultData['password'] = l$password;
     final l$visitCount = visitCount;
-    _resultData['visitCount'] = l$visitCount;
+    resultData['visitCount'] = l$visitCount;
     final l$level = level;
-    _resultData['level'] = l$level;
+    resultData['level'] = l$level;
     final l$birthDate = birthDate;
-    _resultData['birthDate'] = l$birthDate;
+    resultData['birthDate'] = l$birthDate;
     final l$gender = gender;
-    _resultData['gender'] = l$gender;
+    resultData['gender'] = l$gender;
     final l$photo = photo;
-    _resultData['photo'] = l$photo;
+    resultData['photo'] = l$photo;
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -20566,7 +20800,7 @@ class Mutation$updateCurrentUser$updateCurrentUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateCurrentUser$updateCurrentUser) ||
+    if (other is! Mutation$updateCurrentUser$updateCurrentUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -20710,13 +20944,13 @@ abstract class CopyWith$Mutation$updateCurrentUser$updateCurrentUser<TRes> {
               Iterable<
                   CopyWith$Mutation$updateCurrentUser$updateCurrentUser$roles<
                       Mutation$updateCurrentUser$updateCurrentUser$roles>>)
-          _fn);
+          fn);
   TRes permissions(
       Iterable<Mutation$updateCurrentUser$updateCurrentUser$permissions> Function(
               Iterable<
                   CopyWith$Mutation$updateCurrentUser$updateCurrentUser$permissions<
                       Mutation$updateCurrentUser$updateCurrentUser$permissions>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Mutation$updateCurrentUser$updateCurrentUser<TRes>
@@ -20732,6 +20966,7 @@ class _CopyWithImpl$Mutation$updateCurrentUser$updateCurrentUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? roles = _undefined,
@@ -20786,26 +21021,28 @@ class _CopyWithImpl$Mutation$updateCurrentUser$updateCurrentUser<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes roles(
           Iterable<Mutation$updateCurrentUser$updateCurrentUser$roles> Function(
                   Iterable<
                       CopyWith$Mutation$updateCurrentUser$updateCurrentUser$roles<
                           Mutation$updateCurrentUser$updateCurrentUser$roles>>)
-              _fn) =>
+              fn) =>
       call(
-          roles: _fn(_instance.roles.map((e) =>
+          roles: fn(_instance.roles.map((e) =>
               CopyWith$Mutation$updateCurrentUser$updateCurrentUser$roles(
                 e,
                 (i) => i,
               ))).toList());
+  @override
   TRes permissions(
           Iterable<Mutation$updateCurrentUser$updateCurrentUser$permissions> Function(
                   Iterable<
                       CopyWith$Mutation$updateCurrentUser$updateCurrentUser$permissions<
                           Mutation$updateCurrentUser$updateCurrentUser$permissions>>)
-              _fn) =>
+              fn) =>
       call(
-          permissions: _fn(_instance.permissions.map((e) =>
+          permissions: fn(_instance.permissions.map((e) =>
               CopyWith$Mutation$updateCurrentUser$updateCurrentUser$permissions(
                 e,
                 (i) => i,
@@ -20816,8 +21053,9 @@ class _CopyWithStubImpl$Mutation$updateCurrentUser$updateCurrentUser<TRes>
     implements CopyWith$Mutation$updateCurrentUser$updateCurrentUser<TRes> {
   _CopyWithStubImpl$Mutation$updateCurrentUser$updateCurrentUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     List<Mutation$updateCurrentUser$updateCurrentUser$roles>? roles,
@@ -20837,8 +21075,10 @@ class _CopyWithStubImpl$Mutation$updateCurrentUser$updateCurrentUser<TRes>
     String? $__typename,
   }) =>
       _res;
-  roles(_fn) => _res;
-  permissions(_fn) => _res;
+  @override
+  roles(fn) => _res;
+  @override
+  permissions(fn) => _res;
 }
 
 class Mutation$updateCurrentUser$updateCurrentUser$roles {
@@ -20867,14 +21107,14 @@ class Mutation$updateCurrentUser$updateCurrentUser$roles {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -20894,7 +21134,7 @@ class Mutation$updateCurrentUser$updateCurrentUser$roles {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateCurrentUser$updateCurrentUser$roles) ||
+    if (other is! Mutation$updateCurrentUser$updateCurrentUser$roles ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -20960,6 +21200,7 @@ class _CopyWithImpl$Mutation$updateCurrentUser$updateCurrentUser$roles<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -20980,8 +21221,9 @@ class _CopyWithStubImpl$Mutation$updateCurrentUser$updateCurrentUser$roles<TRes>
   _CopyWithStubImpl$Mutation$updateCurrentUser$updateCurrentUser$roles(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -21016,14 +21258,14 @@ class Mutation$updateCurrentUser$updateCurrentUser$permissions {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -21043,7 +21285,7 @@ class Mutation$updateCurrentUser$updateCurrentUser$permissions {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateCurrentUser$updateCurrentUser$permissions) ||
+    if (other is! Mutation$updateCurrentUser$updateCurrentUser$permissions ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -21113,6 +21355,7 @@ class _CopyWithImpl$Mutation$updateCurrentUser$updateCurrentUser$permissions<
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -21135,8 +21378,9 @@ class _CopyWithStubImpl$Mutation$updateCurrentUser$updateCurrentUser$permissions
   _CopyWithStubImpl$Mutation$updateCurrentUser$updateCurrentUser$permissions(
       this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -21191,7 +21435,7 @@ class Variables$Mutation$updateUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$updateUser) ||
+    if (other is! Variables$Mutation$updateUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -21247,6 +21491,7 @@ class _CopyWithImpl$Variables$Mutation$updateUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? userId = _undefined,
     Object? data = _undefined,
@@ -21264,8 +21509,9 @@ class _CopyWithStubImpl$Variables$Mutation$updateUser<TRes>
     implements CopyWith$Variables$Mutation$updateUser<TRes> {
   _CopyWithStubImpl$Variables$Mutation$updateUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? userId,
     Input$ModifiableRegularUserInput? data,
@@ -21294,12 +21540,12 @@ class Mutation$updateUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$updateUser = updateUser;
-    _resultData['updateUser'] = l$updateUser.toJson();
+    resultData['updateUser'] = l$updateUser.toJson();
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -21317,7 +21563,7 @@ class Mutation$updateUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateUser) || runtimeType != other.runtimeType) {
+    if (other is! Mutation$updateUser || runtimeType != other.runtimeType) {
       return false;
     }
     final l$updateUser = updateUser;
@@ -21371,6 +21617,7 @@ class _CopyWithImpl$Mutation$updateUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? updateUser = _undefined,
     Object? $__typename = _undefined,
@@ -21383,6 +21630,7 @@ class _CopyWithImpl$Mutation$updateUser<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   CopyWith$Mutation$updateUser$updateUser<TRes> get updateUser {
     final local$updateUser = _instance.updateUser;
     return CopyWith$Mutation$updateUser$updateUser(
@@ -21394,13 +21642,15 @@ class _CopyWithStubImpl$Mutation$updateUser<TRes>
     implements CopyWith$Mutation$updateUser<TRes> {
   _CopyWithStubImpl$Mutation$updateUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     Mutation$updateUser$updateUser? updateUser,
     String? $__typename,
   }) =>
       _res;
+  @override
   CopyWith$Mutation$updateUser$updateUser<TRes> get updateUser =>
       CopyWith$Mutation$updateUser$updateUser.stub(_res);
 }
@@ -21702,10 +21952,10 @@ class WatchOptions$Mutation$updateUser
 extension ClientExtension$Mutation$updateUser on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$updateUser>> mutate$updateUser(
           Options$Mutation$updateUser options) async =>
-      await this.mutate(options);
+      await mutate(options);
   graphql.ObservableQuery<Mutation$updateUser> watchMutation$updateUser(
           WatchOptions$Mutation$updateUser options) =>
-      this.watchMutation(options);
+      watchMutation(options);
 }
 
 class Mutation$updateUser$HookResult {
@@ -21917,40 +22167,40 @@ class Mutation$updateUser$updateUser {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$roles = roles;
-    _resultData['roles'] = l$roles.map((e) => e.toJson()).toList();
+    resultData['roles'] = l$roles.map((e) => e.toJson()).toList();
     final l$permissions = permissions;
-    _resultData['permissions'] = l$permissions.map((e) => e.toJson()).toList();
+    resultData['permissions'] = l$permissions.map((e) => e.toJson()).toList();
     final l$firstName = firstName;
-    _resultData['firstName'] = l$firstName;
+    resultData['firstName'] = l$firstName;
     final l$lastName = lastName;
-    _resultData['lastName'] = l$lastName;
+    resultData['lastName'] = l$lastName;
     final l$email = email;
-    _resultData['email'] = l$email;
+    resultData['email'] = l$email;
     final l$phone = phone;
-    _resultData['phone'] = l$phone;
+    resultData['phone'] = l$phone;
     final l$password = password;
-    _resultData['password'] = l$password;
+    resultData['password'] = l$password;
     final l$visitCount = visitCount;
-    _resultData['visitCount'] = l$visitCount;
+    resultData['visitCount'] = l$visitCount;
     final l$level = level;
-    _resultData['level'] = l$level;
+    resultData['level'] = l$level;
     final l$birthDate = birthDate;
-    _resultData['birthDate'] = l$birthDate;
+    resultData['birthDate'] = l$birthDate;
     final l$gender = gender;
-    _resultData['gender'] = l$gender;
+    resultData['gender'] = l$gender;
     final l$photo = photo;
-    _resultData['photo'] = l$photo;
+    resultData['photo'] = l$photo;
     final l$createdAt = createdAt;
-    _resultData['createdAt'] = l$createdAt;
+    resultData['createdAt'] = l$createdAt;
     final l$updatedAt = updatedAt;
-    _resultData['updatedAt'] = l$updatedAt;
+    resultData['updatedAt'] = l$updatedAt;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -21996,7 +22246,7 @@ class Mutation$updateUser$updateUser {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateUser$updateUser) ||
+    if (other is! Mutation$updateUser$updateUser ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -22139,13 +22389,13 @@ abstract class CopyWith$Mutation$updateUser$updateUser<TRes> {
               Iterable<
                   CopyWith$Mutation$updateUser$updateUser$roles<
                       Mutation$updateUser$updateUser$roles>>)
-          _fn);
+          fn);
   TRes permissions(
       Iterable<Mutation$updateUser$updateUser$permissions> Function(
               Iterable<
                   CopyWith$Mutation$updateUser$updateUser$permissions<
                       Mutation$updateUser$updateUser$permissions>>)
-          _fn);
+          fn);
 }
 
 class _CopyWithImpl$Mutation$updateUser$updateUser<TRes>
@@ -22161,6 +22411,7 @@ class _CopyWithImpl$Mutation$updateUser$updateUser<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? roles = _undefined,
@@ -22213,26 +22464,28 @@ class _CopyWithImpl$Mutation$updateUser$updateUser<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+  @override
   TRes roles(
           Iterable<Mutation$updateUser$updateUser$roles> Function(
                   Iterable<
                       CopyWith$Mutation$updateUser$updateUser$roles<
                           Mutation$updateUser$updateUser$roles>>)
-              _fn) =>
+              fn) =>
       call(
-          roles: _fn(_instance.roles
+          roles: fn(_instance.roles
               .map((e) => CopyWith$Mutation$updateUser$updateUser$roles(
                     e,
                     (i) => i,
                   ))).toList());
+  @override
   TRes permissions(
           Iterable<Mutation$updateUser$updateUser$permissions> Function(
                   Iterable<
                       CopyWith$Mutation$updateUser$updateUser$permissions<
                           Mutation$updateUser$updateUser$permissions>>)
-              _fn) =>
+              fn) =>
       call(
-          permissions: _fn(_instance.permissions
+          permissions: fn(_instance.permissions
               .map((e) => CopyWith$Mutation$updateUser$updateUser$permissions(
                     e,
                     (i) => i,
@@ -22243,8 +22496,9 @@ class _CopyWithStubImpl$Mutation$updateUser$updateUser<TRes>
     implements CopyWith$Mutation$updateUser$updateUser<TRes> {
   _CopyWithStubImpl$Mutation$updateUser$updateUser(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     List<Mutation$updateUser$updateUser$roles>? roles,
@@ -22264,8 +22518,10 @@ class _CopyWithStubImpl$Mutation$updateUser$updateUser<TRes>
     String? $__typename,
   }) =>
       _res;
-  roles(_fn) => _res;
-  permissions(_fn) => _res;
+  @override
+  roles(fn) => _res;
+  @override
+  permissions(fn) => _res;
 }
 
 class Mutation$updateUser$updateUser$roles {
@@ -22294,14 +22550,14 @@ class Mutation$updateUser$updateUser$roles {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -22321,7 +22577,7 @@ class Mutation$updateUser$updateUser$roles {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateUser$updateUser$roles) ||
+    if (other is! Mutation$updateUser$updateUser$roles ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -22383,6 +22639,7 @@ class _CopyWithImpl$Mutation$updateUser$updateUser$roles<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -22401,8 +22658,9 @@ class _CopyWithStubImpl$Mutation$updateUser$updateUser$roles<TRes>
     implements CopyWith$Mutation$updateUser$updateUser$roles<TRes> {
   _CopyWithStubImpl$Mutation$updateUser$updateUser$roles(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
@@ -22437,14 +22695,14 @@ class Mutation$updateUser$updateUser$permissions {
   final String $__typename;
 
   Map<String, dynamic> toJson() {
-    final _resultData = <String, dynamic>{};
+    final resultData = <String, dynamic>{};
     final l$id = id;
-    _resultData['id'] = l$id;
+    resultData['id'] = l$id;
     final l$name = name;
-    _resultData['name'] = l$name;
+    resultData['name'] = l$name;
     final l$$__typename = $__typename;
-    _resultData['__typename'] = l$$__typename;
-    return _resultData;
+    resultData['__typename'] = l$$__typename;
+    return resultData;
   }
 
   @override
@@ -22464,7 +22722,7 @@ class Mutation$updateUser$updateUser$permissions {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$updateUser$updateUser$permissions) ||
+    if (other is! Mutation$updateUser$updateUser$permissions ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -22526,6 +22784,7 @@ class _CopyWithImpl$Mutation$updateUser$updateUser$permissions<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
@@ -22544,8 +22803,9 @@ class _CopyWithStubImpl$Mutation$updateUser$updateUser$permissions<TRes>
     implements CopyWith$Mutation$updateUser$updateUser$permissions<TRes> {
   _CopyWithStubImpl$Mutation$updateUser$updateUser$permissions(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? id,
     String? name,
