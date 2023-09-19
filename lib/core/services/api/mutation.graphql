@@ -1,0 +1,387 @@
+mutation cancelBookingReservation($reservationIds: [ID!]!) {
+  cancelBookingReservation(reservationIds: $reservationIds)
+}
+
+mutation createBookingBranch($input: BookingBranchInput!) {
+  createBookingBranch(input: $input) {
+    id
+    name
+    address
+    phone
+    mapURL
+    isActive
+    services {
+      id
+    }
+    createdAt
+    updatedAt
+  }
+}
+
+mutation createBookingNote($input: BookingNoteInput!) {
+  createBookingNote(input: $input) {
+    id
+    userId
+    user {
+      id
+    }    branchId
+    branch {
+      id
+    }
+    visitId
+    visit {
+      id
+    }
+    text
+    createdAt
+    updatedAt
+  }
+}
+
+mutation createBookingReservation(
+  $userId: ID!,
+  $input: BookingReservationInput!
+) {
+  createBookingReservation(
+    userId: $userId,
+    input: $input
+  ) {
+    id
+    userId
+    user {
+      id
+    }
+    branchId
+    branch {
+      id
+    }
+    serviceId
+    service {
+      id
+    }
+    channel
+    date
+    time
+    queueNumber
+    status
+    createdAt
+    updatedAt
+  }
+}
+
+mutation createBookingService($input: BookingServiceInput!) {
+  createBookingService(input: $input) {
+    id
+    branchId
+    branch {
+      id
+    }
+    isActive
+    name
+    duration
+  }
+}
+
+mutation createRegularUser($input: RegularUserInput!) {
+  createRegularUser(input: $input) {
+    id
+    roles {
+      id
+      name
+    }
+    permissions {
+      id
+      name
+    }
+    firstName
+    lastName
+    email
+    phone
+    password
+    visitCount
+    level
+    birthDate
+    gender
+    photo
+    createdAt
+    updatedAt
+  }
+}
+
+mutation customerBooking($input: BookingReservationInput!) {
+  customerBooking(input: $input) {
+    id
+    userId
+    user {
+      id
+    }
+    branchId
+    branch {
+      id
+    }
+    serviceId
+    service {
+      id
+    }
+    channel
+    date
+    time
+    queueNumber
+    status
+    createdAt
+    updatedAt
+  }
+}
+
+mutation customerCancelBooking($reservationId: ID!) {
+  customerCancelBooking(reservationId: $reservationId)
+}
+
+mutation customerUpdateBooking(
+  $reservationId: ID!,
+  $data: BookingReservationModifiableInput!
+) {
+  customerUpdateBooking(
+    reservationId: $reservationId,
+    data: $data
+  ) {
+    id
+    userId
+    user {
+      id
+    }
+    branchId
+    branch {
+      id
+    }
+    serviceId
+    service {
+      id
+    }
+    channel
+    date
+    time
+    queueNumber
+    status
+    createdAt
+    updatedAt
+  }
+}
+
+mutation endBookingReservation($reservationIds: [ID!]!) {
+  endBookingReservation(reservationIds: $reservationIds)
+}
+
+mutation loginUser($input: UserCredentialsInput!) {
+  loginUser(input: $input)
+}
+
+mutation registerRegularPasswordUser($input: RegularPasswordUserInput!) {
+  registerRegularPasswordUser(input: $input) {
+    id
+    roles {
+      id
+      name
+    }
+    permissions {
+      id
+      name
+    }
+    firstName
+    lastName
+    email
+    phone
+    password
+    visitCount
+    level
+    birthDate
+    gender
+    photo
+    createdAt
+    updatedAt
+  }
+}
+mutation requestResetPassword($identifier: UserIdentifierInput!) {
+  requestResetPassword(identifier: $identifier)
+}
+
+mutation resetPassword($input: UserResetPasswordInput!) {
+  resetPassword(input: $input)
+}
+
+mutation setSetting(
+  $key: String!,
+  $value: String!
+) {
+  setSetting(
+    key: $key,
+    value: $value
+  )
+}
+
+mutation switchBookingReservation(
+  $firstReservationId: ID!,
+  $secondReservationId: ID!
+) {
+  switchBookingReservation(
+    firstReservationId: $firstReservationId,
+    secondReservationId: $secondReservationId
+  )
+}
+
+mutation updateBookingBranch(
+  $branchId: ID!,
+  $data: BookingBranchModifiableInput!
+) {
+  updateBookingBranch(
+    branchId: $branchId,
+    data: $data
+  ) {
+    id
+    name
+    address
+    phone
+    mapURL
+    isActive
+    services {
+      id
+    }
+    createdAt
+    updatedAt
+  }
+}
+
+mutation updateBookingNote(
+  $noteId: ID!,
+  $data: BookingNoteModifiableInput!
+) {
+  updateBookingNote(
+    noteId: $noteId,
+    data: $data
+  ) {
+    id
+    userId
+    user {
+      id
+    }
+    branchId
+    branch {
+      id
+    }
+    visitId
+    visit {
+      id
+    }
+    text
+    createdAt
+    updatedAt
+  }
+}
+
+mutation updateBookingReservation(
+  $reservationId: ID!,
+  $data: BookingReservationModifiableInput!
+) {
+  updateBookingReservation(
+    reservationId: $reservationId,
+    data: $data
+  ) {
+    id
+    userId
+    user {
+      id
+    }
+    branchId
+    branch {
+      id
+    }
+    serviceId
+    service {
+      id
+    }
+    channel
+    date
+    time
+    queueNumber
+    status
+    createdAt
+    updatedAt
+  }
+}
+
+mutation updateBookingService(
+  $serviceId: ID!,
+  $data: BookingServiceModifiableInput!
+) {
+  updateBookingService(
+    serviceId: $serviceId,
+    data: $data
+  ) {
+    id
+    branchId
+    branch {
+      id
+    }
+    isActive
+    name
+    duration
+  }
+}
+
+mutation updateCurrentUser($input: ModifiableRegularUserInput!) {
+  updateCurrentUser(input: $input) {
+    id
+    roles {
+      id
+      name
+    }
+    permissions {
+      id
+      name
+    }
+    firstName
+    lastName
+    email
+    phone
+    password
+    visitCount
+    level
+    birthDate
+    gender
+    photo
+    createdAt
+    updatedAt
+  }
+}
+
+mutation updateUser(
+  $userId: ID!,
+  $data: ModifiableRegularUserInput!
+) {
+  updateUser(
+    userId: $userId,
+    data: $data
+  ) {
+    id
+    roles {
+      id
+      name
+    }
+    permissions {
+      id
+      name
+    }
+    firstName
+    lastName
+    email
+    phone
+    password
+    visitCount
+    level
+    birthDate
+    gender
+    photo
+    createdAt
+    updatedAt
+  }
+}

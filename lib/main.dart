@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/core/services/api/api_service.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/features/intro/presentation/views/splash_view.dart';
@@ -6,9 +7,11 @@ import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  final APIService apiService = APIService();
   runApp(
     MultiProvider(
       providers: [
+        Provider(create: (context) => apiService),
         ChangeNotifierProvider(create: (_) => PreferenceService()),
       ],
       child: const DoctorManagementSystem(),

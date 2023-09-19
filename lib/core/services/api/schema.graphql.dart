@@ -1,165 +1,3 @@
-class Input$BookingReservationInput {
-  factory Input$BookingReservationInput({
-    required String branchId,
-    required String serviceId,
-    required int date,
-    required int time,
-  }) =>
-      Input$BookingReservationInput._({
-        r'branchId': branchId,
-        r'serviceId': serviceId,
-        r'date': date,
-        r'time': time,
-      });
-
-  Input$BookingReservationInput._(this._$data);
-
-  factory Input$BookingReservationInput.fromJson(Map<String, dynamic> data) {
-    final result$data = <String, dynamic>{};
-    final l$branchId = data['branchId'];
-    result$data['branchId'] = (l$branchId as String);
-    final l$serviceId = data['serviceId'];
-    result$data['serviceId'] = (l$serviceId as String);
-    final l$date = data['date'];
-    result$data['date'] = (l$date as int);
-    final l$time = data['time'];
-    result$data['time'] = (l$time as int);
-    return Input$BookingReservationInput._(result$data);
-  }
-
-  Map<String, dynamic> _$data;
-
-  String get branchId => (_$data['branchId'] as String);
-  String get serviceId => (_$data['serviceId'] as String);
-  int get date => (_$data['date'] as int);
-  int get time => (_$data['time'] as int);
-  Map<String, dynamic> toJson() {
-    final result$data = <String, dynamic>{};
-    final l$branchId = branchId;
-    result$data['branchId'] = l$branchId;
-    final l$serviceId = serviceId;
-    result$data['serviceId'] = l$serviceId;
-    final l$date = date;
-    result$data['date'] = l$date;
-    final l$time = time;
-    result$data['time'] = l$time;
-    return result$data;
-  }
-
-  CopyWith$Input$BookingReservationInput<Input$BookingReservationInput>
-      get copyWith => CopyWith$Input$BookingReservationInput(
-            this,
-            (i) => i,
-          );
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) {
-      return true;
-    }
-    if (!(other is Input$BookingReservationInput) ||
-        runtimeType != other.runtimeType) {
-      return false;
-    }
-    final l$branchId = branchId;
-    final lOther$branchId = other.branchId;
-    if (l$branchId != lOther$branchId) {
-      return false;
-    }
-    final l$serviceId = serviceId;
-    final lOther$serviceId = other.serviceId;
-    if (l$serviceId != lOther$serviceId) {
-      return false;
-    }
-    final l$date = date;
-    final lOther$date = other.date;
-    if (l$date != lOther$date) {
-      return false;
-    }
-    final l$time = time;
-    final lOther$time = other.time;
-    if (l$time != lOther$time) {
-      return false;
-    }
-    return true;
-  }
-
-  @override
-  int get hashCode {
-    final l$branchId = branchId;
-    final l$serviceId = serviceId;
-    final l$date = date;
-    final l$time = time;
-    return Object.hashAll([
-      l$branchId,
-      l$serviceId,
-      l$date,
-      l$time,
-    ]);
-  }
-}
-
-abstract class CopyWith$Input$BookingReservationInput<TRes> {
-  factory CopyWith$Input$BookingReservationInput(
-    Input$BookingReservationInput instance,
-    TRes Function(Input$BookingReservationInput) then,
-  ) = _CopyWithImpl$Input$BookingReservationInput;
-
-  factory CopyWith$Input$BookingReservationInput.stub(TRes res) =
-      _CopyWithStubImpl$Input$BookingReservationInput;
-
-  TRes call({
-    String? branchId,
-    String? serviceId,
-    int? date,
-    int? time,
-  });
-}
-
-class _CopyWithImpl$Input$BookingReservationInput<TRes>
-    implements CopyWith$Input$BookingReservationInput<TRes> {
-  _CopyWithImpl$Input$BookingReservationInput(
-    this._instance,
-    this._then,
-  );
-
-  final Input$BookingReservationInput _instance;
-
-  final TRes Function(Input$BookingReservationInput) _then;
-
-  static const _undefined = <dynamic, dynamic>{};
-
-  TRes call({
-    Object? branchId = _undefined,
-    Object? serviceId = _undefined,
-    Object? date = _undefined,
-    Object? time = _undefined,
-  }) =>
-      _then(Input$BookingReservationInput._({
-        ..._instance._$data,
-        if (branchId != _undefined && branchId != null)
-          'branchId': (branchId as String),
-        if (serviceId != _undefined && serviceId != null)
-          'serviceId': (serviceId as String),
-        if (date != _undefined && date != null) 'date': (date as int),
-        if (time != _undefined && time != null) 'time': (time as int),
-      }));
-}
-
-class _CopyWithStubImpl$Input$BookingReservationInput<TRes>
-    implements CopyWith$Input$BookingReservationInput<TRes> {
-  _CopyWithStubImpl$Input$BookingReservationInput(this._res);
-
-  TRes _res;
-
-  call({
-    String? branchId,
-    String? serviceId,
-    int? date,
-    int? time,
-  }) =>
-      _res;
-}
-
 class Input$BookingBranchInput {
   factory Input$BookingBranchInput({
     String? name,
@@ -234,7 +72,7 @@ class Input$BookingBranchInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingBranchInput) ||
+    if (other is! Input$BookingBranchInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -318,6 +156,7 @@ class _CopyWithImpl$Input$BookingBranchInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? name = _undefined,
     Object? address = _undefined,
@@ -337,506 +176,14 @@ class _CopyWithStubImpl$Input$BookingBranchInput<TRes>
     implements CopyWith$Input$BookingBranchInput<TRes> {
   _CopyWithStubImpl$Input$BookingBranchInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? name,
     String? address,
     String? phone,
     String? mapURL,
-  }) =>
-      _res;
-}
-
-class Input$BookingNoteInput {
-  factory Input$BookingNoteInput({
-    required String userId,
-    String? branchId,
-    String? visitId,
-    String? text,
-  }) =>
-      Input$BookingNoteInput._({
-        r'userId': userId,
-        if (branchId != null) r'branchId': branchId,
-        if (visitId != null) r'visitId': visitId,
-        if (text != null) r'text': text,
-      });
-
-  Input$BookingNoteInput._(this._$data);
-
-  factory Input$BookingNoteInput.fromJson(Map<String, dynamic> data) {
-    final result$data = <String, dynamic>{};
-    final l$userId = data['userId'];
-    result$data['userId'] = (l$userId as String);
-    if (data.containsKey('branchId')) {
-      final l$branchId = data['branchId'];
-      result$data['branchId'] = (l$branchId as String?);
-    }
-    if (data.containsKey('visitId')) {
-      final l$visitId = data['visitId'];
-      result$data['visitId'] = (l$visitId as String?);
-    }
-    if (data.containsKey('text')) {
-      final l$text = data['text'];
-      result$data['text'] = (l$text as String?);
-    }
-    return Input$BookingNoteInput._(result$data);
-  }
-
-  Map<String, dynamic> _$data;
-
-  String get userId => (_$data['userId'] as String);
-  String? get branchId => (_$data['branchId'] as String?);
-  String? get visitId => (_$data['visitId'] as String?);
-  String? get text => (_$data['text'] as String?);
-  Map<String, dynamic> toJson() {
-    final result$data = <String, dynamic>{};
-    final l$userId = userId;
-    result$data['userId'] = l$userId;
-    if (_$data.containsKey('branchId')) {
-      final l$branchId = branchId;
-      result$data['branchId'] = l$branchId;
-    }
-    if (_$data.containsKey('visitId')) {
-      final l$visitId = visitId;
-      result$data['visitId'] = l$visitId;
-    }
-    if (_$data.containsKey('text')) {
-      final l$text = text;
-      result$data['text'] = l$text;
-    }
-    return result$data;
-  }
-
-  CopyWith$Input$BookingNoteInput<Input$BookingNoteInput> get copyWith =>
-      CopyWith$Input$BookingNoteInput(
-        this,
-        (i) => i,
-      );
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) {
-      return true;
-    }
-    if (!(other is Input$BookingNoteInput) ||
-        runtimeType != other.runtimeType) {
-      return false;
-    }
-    final l$userId = userId;
-    final lOther$userId = other.userId;
-    if (l$userId != lOther$userId) {
-      return false;
-    }
-    final l$branchId = branchId;
-    final lOther$branchId = other.branchId;
-    if (_$data.containsKey('branchId') !=
-        other._$data.containsKey('branchId')) {
-      return false;
-    }
-    if (l$branchId != lOther$branchId) {
-      return false;
-    }
-    final l$visitId = visitId;
-    final lOther$visitId = other.visitId;
-    if (_$data.containsKey('visitId') != other._$data.containsKey('visitId')) {
-      return false;
-    }
-    if (l$visitId != lOther$visitId) {
-      return false;
-    }
-    final l$text = text;
-    final lOther$text = other.text;
-    if (_$data.containsKey('text') != other._$data.containsKey('text')) {
-      return false;
-    }
-    if (l$text != lOther$text) {
-      return false;
-    }
-    return true;
-  }
-
-  @override
-  int get hashCode {
-    final l$userId = userId;
-    final l$branchId = branchId;
-    final l$visitId = visitId;
-    final l$text = text;
-    return Object.hashAll([
-      l$userId,
-      _$data.containsKey('branchId') ? l$branchId : const {},
-      _$data.containsKey('visitId') ? l$visitId : const {},
-      _$data.containsKey('text') ? l$text : const {},
-    ]);
-  }
-}
-
-abstract class CopyWith$Input$BookingNoteInput<TRes> {
-  factory CopyWith$Input$BookingNoteInput(
-    Input$BookingNoteInput instance,
-    TRes Function(Input$BookingNoteInput) then,
-  ) = _CopyWithImpl$Input$BookingNoteInput;
-
-  factory CopyWith$Input$BookingNoteInput.stub(TRes res) =
-      _CopyWithStubImpl$Input$BookingNoteInput;
-
-  TRes call({
-    String? userId,
-    String? branchId,
-    String? visitId,
-    String? text,
-  });
-}
-
-class _CopyWithImpl$Input$BookingNoteInput<TRes>
-    implements CopyWith$Input$BookingNoteInput<TRes> {
-  _CopyWithImpl$Input$BookingNoteInput(
-    this._instance,
-    this._then,
-  );
-
-  final Input$BookingNoteInput _instance;
-
-  final TRes Function(Input$BookingNoteInput) _then;
-
-  static const _undefined = <dynamic, dynamic>{};
-
-  TRes call({
-    Object? userId = _undefined,
-    Object? branchId = _undefined,
-    Object? visitId = _undefined,
-    Object? text = _undefined,
-  }) =>
-      _then(Input$BookingNoteInput._({
-        ..._instance._$data,
-        if (userId != _undefined && userId != null)
-          'userId': (userId as String),
-        if (branchId != _undefined) 'branchId': (branchId as String?),
-        if (visitId != _undefined) 'visitId': (visitId as String?),
-        if (text != _undefined) 'text': (text as String?),
-      }));
-}
-
-class _CopyWithStubImpl$Input$BookingNoteInput<TRes>
-    implements CopyWith$Input$BookingNoteInput<TRes> {
-  _CopyWithStubImpl$Input$BookingNoteInput(this._res);
-
-  TRes _res;
-
-  call({
-    String? userId,
-    String? branchId,
-    String? visitId,
-    String? text,
-  }) =>
-      _res;
-}
-
-class Input$BookingServiceInput {
-  factory Input$BookingServiceInput({
-    required String branchId,
-    required String name,
-    required int duration,
-  }) =>
-      Input$BookingServiceInput._({
-        r'branchId': branchId,
-        r'name': name,
-        r'duration': duration,
-      });
-
-  Input$BookingServiceInput._(this._$data);
-
-  factory Input$BookingServiceInput.fromJson(Map<String, dynamic> data) {
-    final result$data = <String, dynamic>{};
-    final l$branchId = data['branchId'];
-    result$data['branchId'] = (l$branchId as String);
-    final l$name = data['name'];
-    result$data['name'] = (l$name as String);
-    final l$duration = data['duration'];
-    result$data['duration'] = (l$duration as int);
-    return Input$BookingServiceInput._(result$data);
-  }
-
-  Map<String, dynamic> _$data;
-
-  String get branchId => (_$data['branchId'] as String);
-  String get name => (_$data['name'] as String);
-  int get duration => (_$data['duration'] as int);
-  Map<String, dynamic> toJson() {
-    final result$data = <String, dynamic>{};
-    final l$branchId = branchId;
-    result$data['branchId'] = l$branchId;
-    final l$name = name;
-    result$data['name'] = l$name;
-    final l$duration = duration;
-    result$data['duration'] = l$duration;
-    return result$data;
-  }
-
-  CopyWith$Input$BookingServiceInput<Input$BookingServiceInput> get copyWith =>
-      CopyWith$Input$BookingServiceInput(
-        this,
-        (i) => i,
-      );
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) {
-      return true;
-    }
-    if (!(other is Input$BookingServiceInput) ||
-        runtimeType != other.runtimeType) {
-      return false;
-    }
-    final l$branchId = branchId;
-    final lOther$branchId = other.branchId;
-    if (l$branchId != lOther$branchId) {
-      return false;
-    }
-    final l$name = name;
-    final lOther$name = other.name;
-    if (l$name != lOther$name) {
-      return false;
-    }
-    final l$duration = duration;
-    final lOther$duration = other.duration;
-    if (l$duration != lOther$duration) {
-      return false;
-    }
-    return true;
-  }
-
-  @override
-  int get hashCode {
-    final l$branchId = branchId;
-    final l$name = name;
-    final l$duration = duration;
-    return Object.hashAll([
-      l$branchId,
-      l$name,
-      l$duration,
-    ]);
-  }
-}
-
-abstract class CopyWith$Input$BookingServiceInput<TRes> {
-  factory CopyWith$Input$BookingServiceInput(
-    Input$BookingServiceInput instance,
-    TRes Function(Input$BookingServiceInput) then,
-  ) = _CopyWithImpl$Input$BookingServiceInput;
-
-  factory CopyWith$Input$BookingServiceInput.stub(TRes res) =
-      _CopyWithStubImpl$Input$BookingServiceInput;
-
-  TRes call({
-    String? branchId,
-    String? name,
-    int? duration,
-  });
-}
-
-class _CopyWithImpl$Input$BookingServiceInput<TRes>
-    implements CopyWith$Input$BookingServiceInput<TRes> {
-  _CopyWithImpl$Input$BookingServiceInput(
-    this._instance,
-    this._then,
-  );
-
-  final Input$BookingServiceInput _instance;
-
-  final TRes Function(Input$BookingServiceInput) _then;
-
-  static const _undefined = <dynamic, dynamic>{};
-
-  TRes call({
-    Object? branchId = _undefined,
-    Object? name = _undefined,
-    Object? duration = _undefined,
-  }) =>
-      _then(Input$BookingServiceInput._({
-        ..._instance._$data,
-        if (branchId != _undefined && branchId != null)
-          'branchId': (branchId as String),
-        if (name != _undefined && name != null) 'name': (name as String),
-        if (duration != _undefined && duration != null)
-          'duration': (duration as int),
-      }));
-}
-
-class _CopyWithStubImpl$Input$BookingServiceInput<TRes>
-    implements CopyWith$Input$BookingServiceInput<TRes> {
-  _CopyWithStubImpl$Input$BookingServiceInput(this._res);
-
-  TRes _res;
-
-  call({
-    String? branchId,
-    String? name,
-    int? duration,
-  }) =>
-      _res;
-}
-
-class Input$BookingReservationModifiableInput {
-  factory Input$BookingReservationModifiableInput({
-    String? branchId,
-    int? date,
-    int? time,
-  }) =>
-      Input$BookingReservationModifiableInput._({
-        if (branchId != null) r'branchId': branchId,
-        if (date != null) r'date': date,
-        if (time != null) r'time': time,
-      });
-
-  Input$BookingReservationModifiableInput._(this._$data);
-
-  factory Input$BookingReservationModifiableInput.fromJson(
-      Map<String, dynamic> data) {
-    final result$data = <String, dynamic>{};
-    if (data.containsKey('branchId')) {
-      final l$branchId = data['branchId'];
-      result$data['branchId'] = (l$branchId as String?);
-    }
-    if (data.containsKey('date')) {
-      final l$date = data['date'];
-      result$data['date'] = (l$date as int?);
-    }
-    if (data.containsKey('time')) {
-      final l$time = data['time'];
-      result$data['time'] = (l$time as int?);
-    }
-    return Input$BookingReservationModifiableInput._(result$data);
-  }
-
-  Map<String, dynamic> _$data;
-
-  String? get branchId => (_$data['branchId'] as String?);
-  int? get date => (_$data['date'] as int?);
-  int? get time => (_$data['time'] as int?);
-  Map<String, dynamic> toJson() {
-    final result$data = <String, dynamic>{};
-    if (_$data.containsKey('branchId')) {
-      final l$branchId = branchId;
-      result$data['branchId'] = l$branchId;
-    }
-    if (_$data.containsKey('date')) {
-      final l$date = date;
-      result$data['date'] = l$date;
-    }
-    if (_$data.containsKey('time')) {
-      final l$time = time;
-      result$data['time'] = l$time;
-    }
-    return result$data;
-  }
-
-  CopyWith$Input$BookingReservationModifiableInput<
-          Input$BookingReservationModifiableInput>
-      get copyWith => CopyWith$Input$BookingReservationModifiableInput(
-            this,
-            (i) => i,
-          );
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) {
-      return true;
-    }
-    if (!(other is Input$BookingReservationModifiableInput) ||
-        runtimeType != other.runtimeType) {
-      return false;
-    }
-    final l$branchId = branchId;
-    final lOther$branchId = other.branchId;
-    if (_$data.containsKey('branchId') !=
-        other._$data.containsKey('branchId')) {
-      return false;
-    }
-    if (l$branchId != lOther$branchId) {
-      return false;
-    }
-    final l$date = date;
-    final lOther$date = other.date;
-    if (_$data.containsKey('date') != other._$data.containsKey('date')) {
-      return false;
-    }
-    if (l$date != lOther$date) {
-      return false;
-    }
-    final l$time = time;
-    final lOther$time = other.time;
-    if (_$data.containsKey('time') != other._$data.containsKey('time')) {
-      return false;
-    }
-    if (l$time != lOther$time) {
-      return false;
-    }
-    return true;
-  }
-
-  @override
-  int get hashCode {
-    final l$branchId = branchId;
-    final l$date = date;
-    final l$time = time;
-    return Object.hashAll([
-      _$data.containsKey('branchId') ? l$branchId : const {},
-      _$data.containsKey('date') ? l$date : const {},
-      _$data.containsKey('time') ? l$time : const {},
-    ]);
-  }
-}
-
-abstract class CopyWith$Input$BookingReservationModifiableInput<TRes> {
-  factory CopyWith$Input$BookingReservationModifiableInput(
-    Input$BookingReservationModifiableInput instance,
-    TRes Function(Input$BookingReservationModifiableInput) then,
-  ) = _CopyWithImpl$Input$BookingReservationModifiableInput;
-
-  factory CopyWith$Input$BookingReservationModifiableInput.stub(TRes res) =
-      _CopyWithStubImpl$Input$BookingReservationModifiableInput;
-
-  TRes call({
-    String? branchId,
-    int? date,
-    int? time,
-  });
-}
-
-class _CopyWithImpl$Input$BookingReservationModifiableInput<TRes>
-    implements CopyWith$Input$BookingReservationModifiableInput<TRes> {
-  _CopyWithImpl$Input$BookingReservationModifiableInput(
-    this._instance,
-    this._then,
-  );
-
-  final Input$BookingReservationModifiableInput _instance;
-
-  final TRes Function(Input$BookingReservationModifiableInput) _then;
-
-  static const _undefined = <dynamic, dynamic>{};
-
-  TRes call({
-    Object? branchId = _undefined,
-    Object? date = _undefined,
-    Object? time = _undefined,
-  }) =>
-      _then(Input$BookingReservationModifiableInput._({
-        ..._instance._$data,
-        if (branchId != _undefined) 'branchId': (branchId as String?),
-        if (date != _undefined) 'date': (date as int?),
-        if (time != _undefined) 'time': (time as int?),
-      }));
-}
-
-class _CopyWithStubImpl$Input$BookingReservationModifiableInput<TRes>
-    implements CopyWith$Input$BookingReservationModifiableInput<TRes> {
-  _CopyWithStubImpl$Input$BookingReservationModifiableInput(this._res);
-
-  TRes _res;
-
-  call({
-    String? branchId,
-    int? date,
-    int? time,
   }) =>
       _res;
 }
@@ -928,7 +275,7 @@ class Input$BookingBranchModifiableInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingBranchModifiableInput) ||
+    if (other is! Input$BookingBranchModifiableInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1024,6 +371,7 @@ class _CopyWithImpl$Input$BookingBranchModifiableInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? name = _undefined,
     Object? address = _undefined,
@@ -1045,14 +393,199 @@ class _CopyWithStubImpl$Input$BookingBranchModifiableInput<TRes>
     implements CopyWith$Input$BookingBranchModifiableInput<TRes> {
   _CopyWithStubImpl$Input$BookingBranchModifiableInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? name,
     String? address,
     String? phone,
     String? mapURL,
     bool? isActive,
+  }) =>
+      _res;
+}
+
+class Input$BookingNoteInput {
+  factory Input$BookingNoteInput({
+    required String userId,
+    String? branchId,
+    String? visitId,
+    String? text,
+  }) =>
+      Input$BookingNoteInput._({
+        r'userId': userId,
+        if (branchId != null) r'branchId': branchId,
+        if (visitId != null) r'visitId': visitId,
+        if (text != null) r'text': text,
+      });
+
+  Input$BookingNoteInput._(this._$data);
+
+  factory Input$BookingNoteInput.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$userId = data['userId'];
+    result$data['userId'] = (l$userId as String);
+    if (data.containsKey('branchId')) {
+      final l$branchId = data['branchId'];
+      result$data['branchId'] = (l$branchId as String?);
+    }
+    if (data.containsKey('visitId')) {
+      final l$visitId = data['visitId'];
+      result$data['visitId'] = (l$visitId as String?);
+    }
+    if (data.containsKey('text')) {
+      final l$text = data['text'];
+      result$data['text'] = (l$text as String?);
+    }
+    return Input$BookingNoteInput._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String get userId => (_$data['userId'] as String);
+  String? get branchId => (_$data['branchId'] as String?);
+  String? get visitId => (_$data['visitId'] as String?);
+  String? get text => (_$data['text'] as String?);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$userId = userId;
+    result$data['userId'] = l$userId;
+    if (_$data.containsKey('branchId')) {
+      final l$branchId = branchId;
+      result$data['branchId'] = l$branchId;
+    }
+    if (_$data.containsKey('visitId')) {
+      final l$visitId = visitId;
+      result$data['visitId'] = l$visitId;
+    }
+    if (_$data.containsKey('text')) {
+      final l$text = text;
+      result$data['text'] = l$text;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$BookingNoteInput<Input$BookingNoteInput> get copyWith =>
+      CopyWith$Input$BookingNoteInput(
+        this,
+        (i) => i,
+      );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other is! Input$BookingNoteInput || runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$userId = userId;
+    final lOther$userId = other.userId;
+    if (l$userId != lOther$userId) {
+      return false;
+    }
+    final l$branchId = branchId;
+    final lOther$branchId = other.branchId;
+    if (_$data.containsKey('branchId') !=
+        other._$data.containsKey('branchId')) {
+      return false;
+    }
+    if (l$branchId != lOther$branchId) {
+      return false;
+    }
+    final l$visitId = visitId;
+    final lOther$visitId = other.visitId;
+    if (_$data.containsKey('visitId') != other._$data.containsKey('visitId')) {
+      return false;
+    }
+    if (l$visitId != lOther$visitId) {
+      return false;
+    }
+    final l$text = text;
+    final lOther$text = other.text;
+    if (_$data.containsKey('text') != other._$data.containsKey('text')) {
+      return false;
+    }
+    if (l$text != lOther$text) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$userId = userId;
+    final l$branchId = branchId;
+    final l$visitId = visitId;
+    final l$text = text;
+    return Object.hashAll([
+      l$userId,
+      _$data.containsKey('branchId') ? l$branchId : const {},
+      _$data.containsKey('visitId') ? l$visitId : const {},
+      _$data.containsKey('text') ? l$text : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$BookingNoteInput<TRes> {
+  factory CopyWith$Input$BookingNoteInput(
+    Input$BookingNoteInput instance,
+    TRes Function(Input$BookingNoteInput) then,
+  ) = _CopyWithImpl$Input$BookingNoteInput;
+
+  factory CopyWith$Input$BookingNoteInput.stub(TRes res) =
+      _CopyWithStubImpl$Input$BookingNoteInput;
+
+  TRes call({
+    String? userId,
+    String? branchId,
+    String? visitId,
+    String? text,
+  });
+}
+
+class _CopyWithImpl$Input$BookingNoteInput<TRes>
+    implements CopyWith$Input$BookingNoteInput<TRes> {
+  _CopyWithImpl$Input$BookingNoteInput(
+    this._instance,
+    this._then,
+  );
+
+  final Input$BookingNoteInput _instance;
+
+  final TRes Function(Input$BookingNoteInput) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  @override
+  TRes call({
+    Object? userId = _undefined,
+    Object? branchId = _undefined,
+    Object? visitId = _undefined,
+    Object? text = _undefined,
+  }) =>
+      _then(Input$BookingNoteInput._({
+        ..._instance._$data,
+        if (userId != _undefined && userId != null)
+          'userId': (userId as String),
+        if (branchId != _undefined) 'branchId': (branchId as String?),
+        if (visitId != _undefined) 'visitId': (visitId as String?),
+        if (text != _undefined) 'text': (text as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$BookingNoteInput<TRes>
+    implements CopyWith$Input$BookingNoteInput<TRes> {
+  _CopyWithStubImpl$Input$BookingNoteInput(this._res);
+
+  final TRes _res;
+
+  @override
+  call({
+    String? userId,
+    String? branchId,
+    String? visitId,
+    String? text,
   }) =>
       _res;
 }
@@ -1096,7 +629,7 @@ class Input$BookingNoteModifiableInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingNoteModifiableInput) ||
+    if (other is! Input$BookingNoteModifiableInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1143,6 +676,7 @@ class _CopyWithImpl$Input$BookingNoteModifiableInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({Object? text = _undefined}) =>
       _then(Input$BookingNoteModifiableInput._({
         ..._instance._$data,
@@ -1154,9 +688,488 @@ class _CopyWithStubImpl$Input$BookingNoteModifiableInput<TRes>
     implements CopyWith$Input$BookingNoteModifiableInput<TRes> {
   _CopyWithStubImpl$Input$BookingNoteModifiableInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({String? text}) => _res;
+}
+
+class Input$BookingReservationInput {
+  factory Input$BookingReservationInput({
+    required String branchId,
+    required String serviceId,
+    required int date,
+    required int time,
+  }) =>
+      Input$BookingReservationInput._({
+        r'branchId': branchId,
+        r'serviceId': serviceId,
+        r'date': date,
+        r'time': time,
+      });
+
+  Input$BookingReservationInput._(this._$data);
+
+  factory Input$BookingReservationInput.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$branchId = data['branchId'];
+    result$data['branchId'] = (l$branchId as String);
+    final l$serviceId = data['serviceId'];
+    result$data['serviceId'] = (l$serviceId as String);
+    final l$date = data['date'];
+    result$data['date'] = (l$date as int);
+    final l$time = data['time'];
+    result$data['time'] = (l$time as int);
+    return Input$BookingReservationInput._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String get branchId => (_$data['branchId'] as String);
+  String get serviceId => (_$data['serviceId'] as String);
+  int get date => (_$data['date'] as int);
+  int get time => (_$data['time'] as int);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$branchId = branchId;
+    result$data['branchId'] = l$branchId;
+    final l$serviceId = serviceId;
+    result$data['serviceId'] = l$serviceId;
+    final l$date = date;
+    result$data['date'] = l$date;
+    final l$time = time;
+    result$data['time'] = l$time;
+    return result$data;
+  }
+
+  CopyWith$Input$BookingReservationInput<Input$BookingReservationInput>
+      get copyWith => CopyWith$Input$BookingReservationInput(
+            this,
+            (i) => i,
+          );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other is! Input$BookingReservationInput ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$branchId = branchId;
+    final lOther$branchId = other.branchId;
+    if (l$branchId != lOther$branchId) {
+      return false;
+    }
+    final l$serviceId = serviceId;
+    final lOther$serviceId = other.serviceId;
+    if (l$serviceId != lOther$serviceId) {
+      return false;
+    }
+    final l$date = date;
+    final lOther$date = other.date;
+    if (l$date != lOther$date) {
+      return false;
+    }
+    final l$time = time;
+    final lOther$time = other.time;
+    if (l$time != lOther$time) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$branchId = branchId;
+    final l$serviceId = serviceId;
+    final l$date = date;
+    final l$time = time;
+    return Object.hashAll([
+      l$branchId,
+      l$serviceId,
+      l$date,
+      l$time,
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$BookingReservationInput<TRes> {
+  factory CopyWith$Input$BookingReservationInput(
+    Input$BookingReservationInput instance,
+    TRes Function(Input$BookingReservationInput) then,
+  ) = _CopyWithImpl$Input$BookingReservationInput;
+
+  factory CopyWith$Input$BookingReservationInput.stub(TRes res) =
+      _CopyWithStubImpl$Input$BookingReservationInput;
+
+  TRes call({
+    String? branchId,
+    String? serviceId,
+    int? date,
+    int? time,
+  });
+}
+
+class _CopyWithImpl$Input$BookingReservationInput<TRes>
+    implements CopyWith$Input$BookingReservationInput<TRes> {
+  _CopyWithImpl$Input$BookingReservationInput(
+    this._instance,
+    this._then,
+  );
+
+  final Input$BookingReservationInput _instance;
+
+  final TRes Function(Input$BookingReservationInput) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  @override
+  TRes call({
+    Object? branchId = _undefined,
+    Object? serviceId = _undefined,
+    Object? date = _undefined,
+    Object? time = _undefined,
+  }) =>
+      _then(Input$BookingReservationInput._({
+        ..._instance._$data,
+        if (branchId != _undefined && branchId != null)
+          'branchId': (branchId as String),
+        if (serviceId != _undefined && serviceId != null)
+          'serviceId': (serviceId as String),
+        if (date != _undefined && date != null) 'date': (date as int),
+        if (time != _undefined && time != null) 'time': (time as int),
+      }));
+}
+
+class _CopyWithStubImpl$Input$BookingReservationInput<TRes>
+    implements CopyWith$Input$BookingReservationInput<TRes> {
+  _CopyWithStubImpl$Input$BookingReservationInput(this._res);
+
+  final TRes _res;
+
+  @override
+  call({
+    String? branchId,
+    String? serviceId,
+    int? date,
+    int? time,
+  }) =>
+      _res;
+}
+
+class Input$BookingReservationModifiableInput {
+  factory Input$BookingReservationModifiableInput({
+    String? branchId,
+    int? date,
+    int? time,
+  }) =>
+      Input$BookingReservationModifiableInput._({
+        if (branchId != null) r'branchId': branchId,
+        if (date != null) r'date': date,
+        if (time != null) r'time': time,
+      });
+
+  Input$BookingReservationModifiableInput._(this._$data);
+
+  factory Input$BookingReservationModifiableInput.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('branchId')) {
+      final l$branchId = data['branchId'];
+      result$data['branchId'] = (l$branchId as String?);
+    }
+    if (data.containsKey('date')) {
+      final l$date = data['date'];
+      result$data['date'] = (l$date as int?);
+    }
+    if (data.containsKey('time')) {
+      final l$time = data['time'];
+      result$data['time'] = (l$time as int?);
+    }
+    return Input$BookingReservationModifiableInput._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get branchId => (_$data['branchId'] as String?);
+  int? get date => (_$data['date'] as int?);
+  int? get time => (_$data['time'] as int?);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('branchId')) {
+      final l$branchId = branchId;
+      result$data['branchId'] = l$branchId;
+    }
+    if (_$data.containsKey('date')) {
+      final l$date = date;
+      result$data['date'] = l$date;
+    }
+    if (_$data.containsKey('time')) {
+      final l$time = time;
+      result$data['time'] = l$time;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$BookingReservationModifiableInput<
+          Input$BookingReservationModifiableInput>
+      get copyWith => CopyWith$Input$BookingReservationModifiableInput(
+            this,
+            (i) => i,
+          );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other is! Input$BookingReservationModifiableInput ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$branchId = branchId;
+    final lOther$branchId = other.branchId;
+    if (_$data.containsKey('branchId') !=
+        other._$data.containsKey('branchId')) {
+      return false;
+    }
+    if (l$branchId != lOther$branchId) {
+      return false;
+    }
+    final l$date = date;
+    final lOther$date = other.date;
+    if (_$data.containsKey('date') != other._$data.containsKey('date')) {
+      return false;
+    }
+    if (l$date != lOther$date) {
+      return false;
+    }
+    final l$time = time;
+    final lOther$time = other.time;
+    if (_$data.containsKey('time') != other._$data.containsKey('time')) {
+      return false;
+    }
+    if (l$time != lOther$time) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$branchId = branchId;
+    final l$date = date;
+    final l$time = time;
+    return Object.hashAll([
+      _$data.containsKey('branchId') ? l$branchId : const {},
+      _$data.containsKey('date') ? l$date : const {},
+      _$data.containsKey('time') ? l$time : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$BookingReservationModifiableInput<TRes> {
+  factory CopyWith$Input$BookingReservationModifiableInput(
+    Input$BookingReservationModifiableInput instance,
+    TRes Function(Input$BookingReservationModifiableInput) then,
+  ) = _CopyWithImpl$Input$BookingReservationModifiableInput;
+
+  factory CopyWith$Input$BookingReservationModifiableInput.stub(TRes res) =
+      _CopyWithStubImpl$Input$BookingReservationModifiableInput;
+
+  TRes call({
+    String? branchId,
+    int? date,
+    int? time,
+  });
+}
+
+class _CopyWithImpl$Input$BookingReservationModifiableInput<TRes>
+    implements CopyWith$Input$BookingReservationModifiableInput<TRes> {
+  _CopyWithImpl$Input$BookingReservationModifiableInput(
+    this._instance,
+    this._then,
+  );
+
+  final Input$BookingReservationModifiableInput _instance;
+
+  final TRes Function(Input$BookingReservationModifiableInput) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  @override
+  TRes call({
+    Object? branchId = _undefined,
+    Object? date = _undefined,
+    Object? time = _undefined,
+  }) =>
+      _then(Input$BookingReservationModifiableInput._({
+        ..._instance._$data,
+        if (branchId != _undefined) 'branchId': (branchId as String?),
+        if (date != _undefined) 'date': (date as int?),
+        if (time != _undefined) 'time': (time as int?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$BookingReservationModifiableInput<TRes>
+    implements CopyWith$Input$BookingReservationModifiableInput<TRes> {
+  _CopyWithStubImpl$Input$BookingReservationModifiableInput(this._res);
+
+  final TRes _res;
+
+  @override
+  call({
+    String? branchId,
+    int? date,
+    int? time,
+  }) =>
+      _res;
+}
+
+class Input$BookingServiceInput {
+  factory Input$BookingServiceInput({
+    required String branchId,
+    required String name,
+    required int duration,
+  }) =>
+      Input$BookingServiceInput._({
+        r'branchId': branchId,
+        r'name': name,
+        r'duration': duration,
+      });
+
+  Input$BookingServiceInput._(this._$data);
+
+  factory Input$BookingServiceInput.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$branchId = data['branchId'];
+    result$data['branchId'] = (l$branchId as String);
+    final l$name = data['name'];
+    result$data['name'] = (l$name as String);
+    final l$duration = data['duration'];
+    result$data['duration'] = (l$duration as int);
+    return Input$BookingServiceInput._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String get branchId => (_$data['branchId'] as String);
+  String get name => (_$data['name'] as String);
+  int get duration => (_$data['duration'] as int);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$branchId = branchId;
+    result$data['branchId'] = l$branchId;
+    final l$name = name;
+    result$data['name'] = l$name;
+    final l$duration = duration;
+    result$data['duration'] = l$duration;
+    return result$data;
+  }
+
+  CopyWith$Input$BookingServiceInput<Input$BookingServiceInput> get copyWith =>
+      CopyWith$Input$BookingServiceInput(
+        this,
+        (i) => i,
+      );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other is! Input$BookingServiceInput ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$branchId = branchId;
+    final lOther$branchId = other.branchId;
+    if (l$branchId != lOther$branchId) {
+      return false;
+    }
+    final l$name = name;
+    final lOther$name = other.name;
+    if (l$name != lOther$name) {
+      return false;
+    }
+    final l$duration = duration;
+    final lOther$duration = other.duration;
+    if (l$duration != lOther$duration) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$branchId = branchId;
+    final l$name = name;
+    final l$duration = duration;
+    return Object.hashAll([
+      l$branchId,
+      l$name,
+      l$duration,
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$BookingServiceInput<TRes> {
+  factory CopyWith$Input$BookingServiceInput(
+    Input$BookingServiceInput instance,
+    TRes Function(Input$BookingServiceInput) then,
+  ) = _CopyWithImpl$Input$BookingServiceInput;
+
+  factory CopyWith$Input$BookingServiceInput.stub(TRes res) =
+      _CopyWithStubImpl$Input$BookingServiceInput;
+
+  TRes call({
+    String? branchId,
+    String? name,
+    int? duration,
+  });
+}
+
+class _CopyWithImpl$Input$BookingServiceInput<TRes>
+    implements CopyWith$Input$BookingServiceInput<TRes> {
+  _CopyWithImpl$Input$BookingServiceInput(
+    this._instance,
+    this._then,
+  );
+
+  final Input$BookingServiceInput _instance;
+
+  final TRes Function(Input$BookingServiceInput) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  @override
+  TRes call({
+    Object? branchId = _undefined,
+    Object? name = _undefined,
+    Object? duration = _undefined,
+  }) =>
+      _then(Input$BookingServiceInput._({
+        ..._instance._$data,
+        if (branchId != _undefined && branchId != null)
+          'branchId': (branchId as String),
+        if (name != _undefined && name != null) 'name': (name as String),
+        if (duration != _undefined && duration != null)
+          'duration': (duration as int),
+      }));
+}
+
+class _CopyWithStubImpl$Input$BookingServiceInput<TRes>
+    implements CopyWith$Input$BookingServiceInput<TRes> {
+  _CopyWithStubImpl$Input$BookingServiceInput(this._res);
+
+  final TRes _res;
+
+  @override
+  call({
+    String? branchId,
+    String? name,
+    int? duration,
+  }) =>
+      _res;
 }
 
 class Input$BookingServiceModifiableInput {
@@ -1224,7 +1237,7 @@ class Input$BookingServiceModifiableInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BookingServiceModifiableInput) ||
+    if (other is! Input$BookingServiceModifiableInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1299,6 +1312,7 @@ class _CopyWithImpl$Input$BookingServiceModifiableInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? name = _undefined,
     Object? duration = _undefined,
@@ -1316,8 +1330,9 @@ class _CopyWithStubImpl$Input$BookingServiceModifiableInput<TRes>
     implements CopyWith$Input$BookingServiceModifiableInput<TRes> {
   _CopyWithStubImpl$Input$BookingServiceModifiableInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? name,
     int? duration,
@@ -1370,7 +1385,7 @@ class Input$DateRangeInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$DateRangeInput) || runtimeType != other.runtimeType) {
+    if (other is! Input$DateRangeInput || runtimeType != other.runtimeType) {
       return false;
     }
     final l$startDate = startDate;
@@ -1425,6 +1440,7 @@ class _CopyWithImpl$Input$DateRangeInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? startDate = _undefined,
     Object? endDate = _undefined,
@@ -1442,11 +1458,280 @@ class _CopyWithStubImpl$Input$DateRangeInput<TRes>
     implements CopyWith$Input$DateRangeInput<TRes> {
   _CopyWithStubImpl$Input$DateRangeInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     int? startDate,
     int? endDate,
+  }) =>
+      _res;
+}
+
+class Input$ModifiableRegularUserInput {
+  factory Input$ModifiableRegularUserInput({
+    String? firstName,
+    String? lastName,
+    String? email,
+    int? birthDate,
+    String? gender,
+    String? photo,
+    String? phone,
+  }) =>
+      Input$ModifiableRegularUserInput._({
+        if (firstName != null) r'firstName': firstName,
+        if (lastName != null) r'lastName': lastName,
+        if (email != null) r'email': email,
+        if (birthDate != null) r'birthDate': birthDate,
+        if (gender != null) r'gender': gender,
+        if (photo != null) r'photo': photo,
+        if (phone != null) r'phone': phone,
+      });
+
+  Input$ModifiableRegularUserInput._(this._$data);
+
+  factory Input$ModifiableRegularUserInput.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('firstName')) {
+      final l$firstName = data['firstName'];
+      result$data['firstName'] = (l$firstName as String?);
+    }
+    if (data.containsKey('lastName')) {
+      final l$lastName = data['lastName'];
+      result$data['lastName'] = (l$lastName as String?);
+    }
+    if (data.containsKey('email')) {
+      final l$email = data['email'];
+      result$data['email'] = (l$email as String?);
+    }
+    if (data.containsKey('birthDate')) {
+      final l$birthDate = data['birthDate'];
+      result$data['birthDate'] = (l$birthDate as int?);
+    }
+    if (data.containsKey('gender')) {
+      final l$gender = data['gender'];
+      result$data['gender'] = (l$gender as String?);
+    }
+    if (data.containsKey('photo')) {
+      final l$photo = data['photo'];
+      result$data['photo'] = (l$photo as String?);
+    }
+    if (data.containsKey('phone')) {
+      final l$phone = data['phone'];
+      result$data['phone'] = (l$phone as String?);
+    }
+    return Input$ModifiableRegularUserInput._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get firstName => (_$data['firstName'] as String?);
+  String? get lastName => (_$data['lastName'] as String?);
+  String? get email => (_$data['email'] as String?);
+  int? get birthDate => (_$data['birthDate'] as int?);
+  String? get gender => (_$data['gender'] as String?);
+  String? get photo => (_$data['photo'] as String?);
+  String? get phone => (_$data['phone'] as String?);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('firstName')) {
+      final l$firstName = firstName;
+      result$data['firstName'] = l$firstName;
+    }
+    if (_$data.containsKey('lastName')) {
+      final l$lastName = lastName;
+      result$data['lastName'] = l$lastName;
+    }
+    if (_$data.containsKey('email')) {
+      final l$email = email;
+      result$data['email'] = l$email;
+    }
+    if (_$data.containsKey('birthDate')) {
+      final l$birthDate = birthDate;
+      result$data['birthDate'] = l$birthDate;
+    }
+    if (_$data.containsKey('gender')) {
+      final l$gender = gender;
+      result$data['gender'] = l$gender;
+    }
+    if (_$data.containsKey('photo')) {
+      final l$photo = photo;
+      result$data['photo'] = l$photo;
+    }
+    if (_$data.containsKey('phone')) {
+      final l$phone = phone;
+      result$data['phone'] = l$phone;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$ModifiableRegularUserInput<Input$ModifiableRegularUserInput>
+      get copyWith => CopyWith$Input$ModifiableRegularUserInput(
+            this,
+            (i) => i,
+          );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other is! Input$ModifiableRegularUserInput ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$firstName = firstName;
+    final lOther$firstName = other.firstName;
+    if (_$data.containsKey('firstName') !=
+        other._$data.containsKey('firstName')) {
+      return false;
+    }
+    if (l$firstName != lOther$firstName) {
+      return false;
+    }
+    final l$lastName = lastName;
+    final lOther$lastName = other.lastName;
+    if (_$data.containsKey('lastName') !=
+        other._$data.containsKey('lastName')) {
+      return false;
+    }
+    if (l$lastName != lOther$lastName) {
+      return false;
+    }
+    final l$email = email;
+    final lOther$email = other.email;
+    if (_$data.containsKey('email') != other._$data.containsKey('email')) {
+      return false;
+    }
+    if (l$email != lOther$email) {
+      return false;
+    }
+    final l$birthDate = birthDate;
+    final lOther$birthDate = other.birthDate;
+    if (_$data.containsKey('birthDate') !=
+        other._$data.containsKey('birthDate')) {
+      return false;
+    }
+    if (l$birthDate != lOther$birthDate) {
+      return false;
+    }
+    final l$gender = gender;
+    final lOther$gender = other.gender;
+    if (_$data.containsKey('gender') != other._$data.containsKey('gender')) {
+      return false;
+    }
+    if (l$gender != lOther$gender) {
+      return false;
+    }
+    final l$photo = photo;
+    final lOther$photo = other.photo;
+    if (_$data.containsKey('photo') != other._$data.containsKey('photo')) {
+      return false;
+    }
+    if (l$photo != lOther$photo) {
+      return false;
+    }
+    final l$phone = phone;
+    final lOther$phone = other.phone;
+    if (_$data.containsKey('phone') != other._$data.containsKey('phone')) {
+      return false;
+    }
+    if (l$phone != lOther$phone) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$firstName = firstName;
+    final l$lastName = lastName;
+    final l$email = email;
+    final l$birthDate = birthDate;
+    final l$gender = gender;
+    final l$photo = photo;
+    final l$phone = phone;
+    return Object.hashAll([
+      _$data.containsKey('firstName') ? l$firstName : const {},
+      _$data.containsKey('lastName') ? l$lastName : const {},
+      _$data.containsKey('email') ? l$email : const {},
+      _$data.containsKey('birthDate') ? l$birthDate : const {},
+      _$data.containsKey('gender') ? l$gender : const {},
+      _$data.containsKey('photo') ? l$photo : const {},
+      _$data.containsKey('phone') ? l$phone : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$ModifiableRegularUserInput<TRes> {
+  factory CopyWith$Input$ModifiableRegularUserInput(
+    Input$ModifiableRegularUserInput instance,
+    TRes Function(Input$ModifiableRegularUserInput) then,
+  ) = _CopyWithImpl$Input$ModifiableRegularUserInput;
+
+  factory CopyWith$Input$ModifiableRegularUserInput.stub(TRes res) =
+      _CopyWithStubImpl$Input$ModifiableRegularUserInput;
+
+  TRes call({
+    String? firstName,
+    String? lastName,
+    String? email,
+    int? birthDate,
+    String? gender,
+    String? photo,
+    String? phone,
+  });
+}
+
+class _CopyWithImpl$Input$ModifiableRegularUserInput<TRes>
+    implements CopyWith$Input$ModifiableRegularUserInput<TRes> {
+  _CopyWithImpl$Input$ModifiableRegularUserInput(
+    this._instance,
+    this._then,
+  );
+
+  final Input$ModifiableRegularUserInput _instance;
+
+  final TRes Function(Input$ModifiableRegularUserInput) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  @override
+  TRes call({
+    Object? firstName = _undefined,
+    Object? lastName = _undefined,
+    Object? email = _undefined,
+    Object? birthDate = _undefined,
+    Object? gender = _undefined,
+    Object? photo = _undefined,
+    Object? phone = _undefined,
+  }) =>
+      _then(Input$ModifiableRegularUserInput._({
+        ..._instance._$data,
+        if (firstName != _undefined) 'firstName': (firstName as String?),
+        if (lastName != _undefined) 'lastName': (lastName as String?),
+        if (email != _undefined) 'email': (email as String?),
+        if (birthDate != _undefined) 'birthDate': (birthDate as int?),
+        if (gender != _undefined) 'gender': (gender as String?),
+        if (photo != _undefined) 'photo': (photo as String?),
+        if (phone != _undefined) 'phone': (phone as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$ModifiableRegularUserInput<TRes>
+    implements CopyWith$Input$ModifiableRegularUserInput<TRes> {
+  _CopyWithStubImpl$Input$ModifiableRegularUserInput(this._res);
+
+  final TRes _res;
+
+  @override
+  call({
+    String? firstName,
+    String? lastName,
+    String? email,
+    int? birthDate,
+    String? gender,
+    String? photo,
+    String? phone,
   }) =>
       _res;
 }
@@ -1557,7 +1842,7 @@ class Input$RegularPasswordUserInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RegularPasswordUserInput) ||
+    if (other is! Input$RegularPasswordUserInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1677,6 +1962,7 @@ class _CopyWithImpl$Input$RegularPasswordUserInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? firstName = _undefined,
     Object? lastName = _undefined,
@@ -1707,8 +1993,9 @@ class _CopyWithStubImpl$Input$RegularPasswordUserInput<TRes>
     implements CopyWith$Input$RegularPasswordUserInput<TRes> {
   _CopyWithStubImpl$Input$RegularPasswordUserInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? firstName,
     String? lastName,
@@ -1832,8 +2119,7 @@ class Input$RegularUserInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RegularUserInput) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$RegularUserInput || runtimeType != other.runtimeType) {
       return false;
     }
     final l$firstName = firstName;
@@ -1955,6 +2241,7 @@ class _CopyWithImpl$Input$RegularUserInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? firstName = _undefined,
     Object? lastName = _undefined,
@@ -1984,8 +2271,9 @@ class _CopyWithStubImpl$Input$RegularUserInput<TRes>
     implements CopyWith$Input$RegularUserInput<TRes> {
   _CopyWithStubImpl$Input$RegularUserInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? firstName,
     String? lastName,
@@ -1995,272 +2283,6 @@ class _CopyWithStubImpl$Input$RegularUserInput<TRes>
     String? gender,
     String? photo,
     int? level,
-  }) =>
-      _res;
-}
-
-class Input$ModifiableRegularUserInput {
-  factory Input$ModifiableRegularUserInput({
-    String? firstName,
-    String? lastName,
-    String? email,
-    int? birthDate,
-    String? gender,
-    String? photo,
-    String? phone,
-  }) =>
-      Input$ModifiableRegularUserInput._({
-        if (firstName != null) r'firstName': firstName,
-        if (lastName != null) r'lastName': lastName,
-        if (email != null) r'email': email,
-        if (birthDate != null) r'birthDate': birthDate,
-        if (gender != null) r'gender': gender,
-        if (photo != null) r'photo': photo,
-        if (phone != null) r'phone': phone,
-      });
-
-  Input$ModifiableRegularUserInput._(this._$data);
-
-  factory Input$ModifiableRegularUserInput.fromJson(Map<String, dynamic> data) {
-    final result$data = <String, dynamic>{};
-    if (data.containsKey('firstName')) {
-      final l$firstName = data['firstName'];
-      result$data['firstName'] = (l$firstName as String?);
-    }
-    if (data.containsKey('lastName')) {
-      final l$lastName = data['lastName'];
-      result$data['lastName'] = (l$lastName as String?);
-    }
-    if (data.containsKey('email')) {
-      final l$email = data['email'];
-      result$data['email'] = (l$email as String?);
-    }
-    if (data.containsKey('birthDate')) {
-      final l$birthDate = data['birthDate'];
-      result$data['birthDate'] = (l$birthDate as int?);
-    }
-    if (data.containsKey('gender')) {
-      final l$gender = data['gender'];
-      result$data['gender'] = (l$gender as String?);
-    }
-    if (data.containsKey('photo')) {
-      final l$photo = data['photo'];
-      result$data['photo'] = (l$photo as String?);
-    }
-    if (data.containsKey('phone')) {
-      final l$phone = data['phone'];
-      result$data['phone'] = (l$phone as String?);
-    }
-    return Input$ModifiableRegularUserInput._(result$data);
-  }
-
-  Map<String, dynamic> _$data;
-
-  String? get firstName => (_$data['firstName'] as String?);
-  String? get lastName => (_$data['lastName'] as String?);
-  String? get email => (_$data['email'] as String?);
-  int? get birthDate => (_$data['birthDate'] as int?);
-  String? get gender => (_$data['gender'] as String?);
-  String? get photo => (_$data['photo'] as String?);
-  String? get phone => (_$data['phone'] as String?);
-  Map<String, dynamic> toJson() {
-    final result$data = <String, dynamic>{};
-    if (_$data.containsKey('firstName')) {
-      final l$firstName = firstName;
-      result$data['firstName'] = l$firstName;
-    }
-    if (_$data.containsKey('lastName')) {
-      final l$lastName = lastName;
-      result$data['lastName'] = l$lastName;
-    }
-    if (_$data.containsKey('email')) {
-      final l$email = email;
-      result$data['email'] = l$email;
-    }
-    if (_$data.containsKey('birthDate')) {
-      final l$birthDate = birthDate;
-      result$data['birthDate'] = l$birthDate;
-    }
-    if (_$data.containsKey('gender')) {
-      final l$gender = gender;
-      result$data['gender'] = l$gender;
-    }
-    if (_$data.containsKey('photo')) {
-      final l$photo = photo;
-      result$data['photo'] = l$photo;
-    }
-    if (_$data.containsKey('phone')) {
-      final l$phone = phone;
-      result$data['phone'] = l$phone;
-    }
-    return result$data;
-  }
-
-  CopyWith$Input$ModifiableRegularUserInput<Input$ModifiableRegularUserInput>
-      get copyWith => CopyWith$Input$ModifiableRegularUserInput(
-            this,
-            (i) => i,
-          );
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) {
-      return true;
-    }
-    if (!(other is Input$ModifiableRegularUserInput) ||
-        runtimeType != other.runtimeType) {
-      return false;
-    }
-    final l$firstName = firstName;
-    final lOther$firstName = other.firstName;
-    if (_$data.containsKey('firstName') !=
-        other._$data.containsKey('firstName')) {
-      return false;
-    }
-    if (l$firstName != lOther$firstName) {
-      return false;
-    }
-    final l$lastName = lastName;
-    final lOther$lastName = other.lastName;
-    if (_$data.containsKey('lastName') !=
-        other._$data.containsKey('lastName')) {
-      return false;
-    }
-    if (l$lastName != lOther$lastName) {
-      return false;
-    }
-    final l$email = email;
-    final lOther$email = other.email;
-    if (_$data.containsKey('email') != other._$data.containsKey('email')) {
-      return false;
-    }
-    if (l$email != lOther$email) {
-      return false;
-    }
-    final l$birthDate = birthDate;
-    final lOther$birthDate = other.birthDate;
-    if (_$data.containsKey('birthDate') !=
-        other._$data.containsKey('birthDate')) {
-      return false;
-    }
-    if (l$birthDate != lOther$birthDate) {
-      return false;
-    }
-    final l$gender = gender;
-    final lOther$gender = other.gender;
-    if (_$data.containsKey('gender') != other._$data.containsKey('gender')) {
-      return false;
-    }
-    if (l$gender != lOther$gender) {
-      return false;
-    }
-    final l$photo = photo;
-    final lOther$photo = other.photo;
-    if (_$data.containsKey('photo') != other._$data.containsKey('photo')) {
-      return false;
-    }
-    if (l$photo != lOther$photo) {
-      return false;
-    }
-    final l$phone = phone;
-    final lOther$phone = other.phone;
-    if (_$data.containsKey('phone') != other._$data.containsKey('phone')) {
-      return false;
-    }
-    if (l$phone != lOther$phone) {
-      return false;
-    }
-    return true;
-  }
-
-  @override
-  int get hashCode {
-    final l$firstName = firstName;
-    final l$lastName = lastName;
-    final l$email = email;
-    final l$birthDate = birthDate;
-    final l$gender = gender;
-    final l$photo = photo;
-    final l$phone = phone;
-    return Object.hashAll([
-      _$data.containsKey('firstName') ? l$firstName : const {},
-      _$data.containsKey('lastName') ? l$lastName : const {},
-      _$data.containsKey('email') ? l$email : const {},
-      _$data.containsKey('birthDate') ? l$birthDate : const {},
-      _$data.containsKey('gender') ? l$gender : const {},
-      _$data.containsKey('photo') ? l$photo : const {},
-      _$data.containsKey('phone') ? l$phone : const {},
-    ]);
-  }
-}
-
-abstract class CopyWith$Input$ModifiableRegularUserInput<TRes> {
-  factory CopyWith$Input$ModifiableRegularUserInput(
-    Input$ModifiableRegularUserInput instance,
-    TRes Function(Input$ModifiableRegularUserInput) then,
-  ) = _CopyWithImpl$Input$ModifiableRegularUserInput;
-
-  factory CopyWith$Input$ModifiableRegularUserInput.stub(TRes res) =
-      _CopyWithStubImpl$Input$ModifiableRegularUserInput;
-
-  TRes call({
-    String? firstName,
-    String? lastName,
-    String? email,
-    int? birthDate,
-    String? gender,
-    String? photo,
-    String? phone,
-  });
-}
-
-class _CopyWithImpl$Input$ModifiableRegularUserInput<TRes>
-    implements CopyWith$Input$ModifiableRegularUserInput<TRes> {
-  _CopyWithImpl$Input$ModifiableRegularUserInput(
-    this._instance,
-    this._then,
-  );
-
-  final Input$ModifiableRegularUserInput _instance;
-
-  final TRes Function(Input$ModifiableRegularUserInput) _then;
-
-  static const _undefined = <dynamic, dynamic>{};
-
-  TRes call({
-    Object? firstName = _undefined,
-    Object? lastName = _undefined,
-    Object? email = _undefined,
-    Object? birthDate = _undefined,
-    Object? gender = _undefined,
-    Object? photo = _undefined,
-    Object? phone = _undefined,
-  }) =>
-      _then(Input$ModifiableRegularUserInput._({
-        ..._instance._$data,
-        if (firstName != _undefined) 'firstName': (firstName as String?),
-        if (lastName != _undefined) 'lastName': (lastName as String?),
-        if (email != _undefined) 'email': (email as String?),
-        if (birthDate != _undefined) 'birthDate': (birthDate as int?),
-        if (gender != _undefined) 'gender': (gender as String?),
-        if (photo != _undefined) 'photo': (photo as String?),
-        if (phone != _undefined) 'phone': (phone as String?),
-      }));
-}
-
-class _CopyWithStubImpl$Input$ModifiableRegularUserInput<TRes>
-    implements CopyWith$Input$ModifiableRegularUserInput<TRes> {
-  _CopyWithStubImpl$Input$ModifiableRegularUserInput(this._res);
-
-  TRes _res;
-
-  call({
-    String? firstName,
-    String? lastName,
-    String? email,
-    int? birthDate,
-    String? gender,
-    String? photo,
-    String? phone,
   }) =>
       _res;
 }
@@ -2309,7 +2331,7 @@ class Input$UserCredentialsInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UserCredentialsInput) ||
+    if (other is! Input$UserCredentialsInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2365,6 +2387,7 @@ class _CopyWithImpl$Input$UserCredentialsInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? identifier = _undefined,
     Object? password = _undefined,
@@ -2382,8 +2405,9 @@ class _CopyWithStubImpl$Input$UserCredentialsInput<TRes>
     implements CopyWith$Input$UserCredentialsInput<TRes> {
   _CopyWithStubImpl$Input$UserCredentialsInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? identifier,
     String? password,
@@ -2443,7 +2467,7 @@ class Input$UserIdentifierInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UserIdentifierInput) ||
+    if (other is! Input$UserIdentifierInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2505,6 +2529,7 @@ class _CopyWithImpl$Input$UserIdentifierInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? email = _undefined,
     Object? phone = _undefined,
@@ -2520,8 +2545,9 @@ class _CopyWithStubImpl$Input$UserIdentifierInput<TRes>
     implements CopyWith$Input$UserIdentifierInput<TRes> {
   _CopyWithStubImpl$Input$UserIdentifierInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? email,
     String? phone,
@@ -2573,7 +2599,7 @@ class Input$UserResetPasswordInput {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UserResetPasswordInput) ||
+    if (other is! Input$UserResetPasswordInput ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2629,6 +2655,7 @@ class _CopyWithImpl$Input$UserResetPasswordInput<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
+  @override
   TRes call({
     Object? token = _undefined,
     Object? password = _undefined,
@@ -2645,8 +2672,9 @@ class _CopyWithStubImpl$Input$UserResetPasswordInput<TRes>
     implements CopyWith$Input$UserResetPasswordInput<TRes> {
   _CopyWithStubImpl$Input$UserResetPasswordInput(this._res);
 
-  TRes _res;
+  final TRes _res;
 
+  @override
   call({
     String? token,
     String? password,
