@@ -21,7 +21,7 @@ class AppointmentBooking extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = getL10n(context) ;
+    final locale = getL10n(context);
     return Container(
       decoration:
           BoxDecoration(border: Border.all(color: Colors.grey.shade300)),
@@ -37,7 +37,7 @@ class AppointmentBooking extends StatelessWidget {
                   name,
                   style: GoogleFonts.cairo(
                     color: AppColors.blueNames,
-                    fontSize: 3.h,
+                    fontSize: 2.5.h,
                   ),
                 ),
                 if (isNext == true)

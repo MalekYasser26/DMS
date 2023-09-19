@@ -19,7 +19,7 @@ class MyDatesView extends StatefulWidget {
 class _MyDatesViewState extends State<MyDatesView> {
   @override
   Widget build(BuildContext context) {
-    final locale = getL10n(context) ;
+    final locale = getL10n(context);
     return DefaultTabController(
       initialIndex: 1,
       length: 2,
@@ -52,15 +52,13 @@ class _MyDatesViewState extends State<MyDatesView> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(
-                                width: 20.w
-                            ),
+                            SizedBox(width: 20.w),
                             InkWell(
                               onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                  const BookingIntroView(),
+                                      const BookingIntroView(),
                                 ),
                               ),
                               child: Container(
@@ -103,12 +101,10 @@ class _MyDatesViewState extends State<MyDatesView> {
                       fontSize: 2.5.h,
                     ),
                   ),
-                  leading:SvgPicture.asset(
-                      AssetsIcons.searchIcon
-                  ),
+                  leading: SvgPicture.asset(AssetsIcons.searchIcon),
                   hintText: locale.search,
-                  shape: const MaterialStatePropertyAll(
-                      RoundedRectangleBorder()),
+                  shape:
+                      const MaterialStatePropertyAll(RoundedRectangleBorder()),
                   elevation: const MaterialStatePropertyAll(0),
                   backgroundColor: MaterialStatePropertyAll(
                       AppColors.blueGrey.withOpacity(0.4)),
@@ -123,21 +119,17 @@ class _MyDatesViewState extends State<MyDatesView> {
                     child: TabBar(
                         indicatorColor: AppColors.green,
                         unselectedLabelStyle: GoogleFonts.cairo(
-                            color: AppColors.green, fontSize: 3.h),
+                            color: AppColors.green, fontSize: 2.5.h),
                         labelColor: AppColors.green,
                         unselectedLabelColor: Colors.black,
                         labelStyle: GoogleFonts.cairo(
                           color: AppColors.green,
-                          fontSize: 3.h,
+                          fontSize: 2.5.h,
                           fontWeight: FontWeight.bold,
                         ),
-                        tabs:  [
-                          Tab(
-                              text: locale.previous
-                          ),
-                          Tab(
-                              text:locale.next
-                          )
+                        tabs: [
+                          Tab(text: locale.previous),
+                          Tab(text: locale.next)
                         ]),
                   ),
                 ),
@@ -152,13 +144,13 @@ class _MyDatesViewState extends State<MyDatesView> {
                               physics: const BouncingScrollPhysics(),
                               itemBuilder: (context, index) =>
                                   AppointmentBooking(
-                                    name: names[index],
-                                    address: "147 النزهة, ش المطار",
-                                    date: "21 Aug, Mon - 09:20 am",
-                                    firstTime: locale.check,
-                                    isAbsent: absentPresentMyDates[index],
-                                    isNext: true,
-                                  ),
+                                name: names[index],
+                                address: "147 النزهة, ش المطار",
+                                date: "21 Aug, Mon - 09:20 am",
+                                firstTime: locale.check,
+                                isAbsent: absentPresentMyDates[index],
+                                isNext: true,
+                              ),
                               separatorBuilder: (context, index) =>
                                   SizedBox(height: 1.h),
                               itemCount: names.length,
@@ -174,13 +166,13 @@ class _MyDatesViewState extends State<MyDatesView> {
                               physics: const BouncingScrollPhysics(),
                               itemBuilder: (context, index) =>
                                   AppointmentBooking(
-                                    name: names[index],
-                                    address: "147 النزهة, ش المطار",
-                                    date: "21 Aug, Mon - 09:20 am",
-                                    firstTime: locale.check,
-                                    isAbsent: absentPresentMyDates[index],
-                                    isNext: false,
-                                  ),
+                                name: names[index],
+                                address: "147 النزهة, ش المطار",
+                                date: "21 Aug, Mon - 09:20 am",
+                                firstTime: locale.check,
+                                isAbsent: absentPresentMyDates[index],
+                                isNext: false,
+                              ),
                               separatorBuilder: (context, index) =>
                                   SizedBox(height: 1.h),
                               itemCount: names.length,
