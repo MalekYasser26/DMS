@@ -3,9 +3,9 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:provider/provider.dart';
 
 class APIService {
-  final String baseUrl = 'https://rasha-clinic.offer4us.com/graphql';
-  late GraphQLClient qlClient = GraphQLClient(
-    link: HttpLink(baseUrl),
+  static const String _baseUrl = 'https://rasha-clinic.offer4us.com/graphql';
+  GraphQLClient qlClient = GraphQLClient(
+    link: HttpLink(_baseUrl),
     cache: GraphQLCache(),
   );
 }
