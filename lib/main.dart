@@ -21,19 +21,18 @@ class DoctorManagementSystem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<PreferenceService>(
-      builder: (context, preference, _) => Sizer(
-        builder: (context, orientation, deviceType) {
-          return MaterialApp(
-            title: preference.isEn() ? "DMS" : "نظام إدارة للأطباء",
-            locale: preference.locale,
-            supportedLocales: L10n.supportedLocales,
-            localizationsDelegates: L10n.localizationsDelegates,
-            debugShowCheckedModeBanner: false,
-            home: const SplashView(),
-          );
-        },
-      ),
+    final preferenceService = getPreferenceService(context);
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MaterialApp(
+          title: preferenceService.isEn() ? "DMS" : "نظام إدارة للأطباء",
+          locale: preferenceService.locale,
+          supportedLocales: L10n.supportedLocales,
+          localizationsDelegates: L10n.localizationsDelegates,
+          debugShowCheckedModeBanner: false,
+          home: const SplashView(),
+        );
+      },
     );
   }
 }

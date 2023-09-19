@@ -19,6 +19,8 @@ class RateSeviceView extends StatelessWidget {
   Widget build(BuildContext context) {
     final locale = getL10n(context);
     final TextEditingController basicController = TextEditingController();
+    final preferenceService = getPreferenceService(context, listen: false);
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -155,7 +157,7 @@ class RateSeviceView extends StatelessWidget {
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.shade300),
                   ),
-                  contentPadding: !context.watch<PreferenceService>().isEn()
+                  contentPadding: !preferenceService.isEn()
                       ? EdgeInsets.only(bottom: 18.h, right: 2.h, top: 1.h)
                       : EdgeInsets.only(bottom: 18.h, left: 2.h, top: 1.h),
                   isDense: true,

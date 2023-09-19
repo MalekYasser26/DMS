@@ -26,7 +26,7 @@ class _BookingIntroViewState extends State<BookingIntroView> {
   @override
   Widget build(BuildContext context) {
     final locale = getL10n(context);
-    final preferenceService = getPreferenceService(context);
+    final preferenceService = getPreferenceService(context, listen: false);
 
     return Scaffold(
       body: SafeArea(
