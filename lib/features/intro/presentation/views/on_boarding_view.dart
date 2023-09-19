@@ -1,3 +1,4 @@
+import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/features/intro/presentation/views/widgets/auto_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,6 +17,7 @@ class _OnboardingViewState extends State<OnboardingView> {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context) ;
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -29,7 +31,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 children: [
                   SizedBox(height: 6.h),
                   Text(
-                    "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
+                    locale.onBoardingText,
                     style: GoogleFonts.cairo(
                         color: Colors.white,
                         fontSize: 4.h,

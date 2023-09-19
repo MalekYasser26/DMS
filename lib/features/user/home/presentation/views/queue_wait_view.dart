@@ -1,4 +1,5 @@
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
+import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/features/user/dates/presentation/views/my_dates_view.dart';
@@ -12,6 +13,7 @@ class QueueWaitView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -56,7 +58,7 @@ class QueueWaitView extends StatelessWidget {
                       ),
                       SizedBox(width: 4.w),
                       Text(
-                        "قائمة الانتظار",
+                        locale.queueWait,
                         style: GoogleFonts.cairo(
                           color: Colors.black,
                           fontSize: 3.h,
@@ -72,7 +74,7 @@ class QueueWaitView extends StatelessWidget {
                 height: 1.h,
               ),
               Text(
-                "أهلاً بك في قائمة الانتظار خاصتنا",
+                locale.welcomeToQueue,
                 style: GoogleFonts.cairo(
                   color: Colors.black,
                   fontSize: 2.h,
@@ -92,7 +94,7 @@ class QueueWaitView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "أمامك عدد:",
+                        locale.ahead,
                         style: GoogleFonts.cairo(fontSize: 3.h),
                       ),
                       SizedBox(height: 2.h),
@@ -108,7 +110,7 @@ class QueueWaitView extends StatelessWidget {
                               ),
                             ),
                             TextSpan(
-                              text: "مرضى",
+                              text: locale.patients,
                               style: GoogleFonts.cairo(
                                 fontSize: 4.h,
                                 color: Colors.black,
@@ -121,13 +123,18 @@ class QueueWaitView extends StatelessWidget {
                   ),
                 ),
               ),
-              const Spacer(),
-              BasicButtonRoute(
-                route: (context) => const MyDatesView(),
-                color: Colors.white,
-                textColor: AppColors.lightBlue,
-                text: "العودة الى الصفحة الرئيسية",
-                borderColor: AppColors.lightBlue,
+              const Expanded(
+                child: SizedBox(),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 1.h),
+                child: BasicButtonRoute(
+                  route: (context) => const MyDatesView(),
+                  color: Colors.white,
+                  textColor: AppColors.lightBlue,
+                  text: locale.returnHome,
+                  borderColor: AppColors.lightBlue,
+                ),
               ),
             ],
           ),

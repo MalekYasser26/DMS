@@ -1,5 +1,6 @@
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
+import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
 import 'package:doctor_management_system/core/widgets/navigator_box.dart';
 import 'package:doctor_management_system/features/auth/presentation/views/login_view.dart';
@@ -16,6 +17,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context);
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -33,7 +35,7 @@ class HomeView extends StatelessWidget {
                   children: [
                     SizedBox(height: 1.h),
                     Text(
-                      "تقدم العيادة العديد \nمن التخصصات في كثير \nمن المجالاتا",
+                      locale.onBoardingText,
                       style: GoogleFonts.cairo(
                           color: Colors.white,
                           fontSize: 4.h,
@@ -41,17 +43,17 @@ class HomeView extends StatelessWidget {
                       textDirection: TextDirection.ltr,
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 42.h),
+                    const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
                           child: NavigatorBox(
-                            text: "قائمة الانتظار",
+                            toggle: () {},
+                            boxNum: 3,
+                            text: locale.queueWait,
                             height: 15.h,
                             fontSize: 2.8.h,
-                            borderColor: Colors.white,
-                            textColor: Colors.white,
                             route: (context) => LoginView(
                               route: (context) => const QueueWaitView(),
                             ),
@@ -60,11 +62,11 @@ class HomeView extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Expanded(
                           child: NavigatorBox(
-                            text: "تقييم الخدمة",
+                            toggle: () {},
+                            boxNum: 4,
+                            text: locale.rateService,
                             height: 15.h,
                             fontSize: 2.8.h,
-                            borderColor: Colors.white,
-                            textColor: Colors.white,
                             route: (context) => LoginView(
                               route: (context) => const RateSeviceView(),
                             ),
@@ -79,19 +81,20 @@ class HomeView extends StatelessWidget {
                       ),
                       color: AppColors.lightBlue,
                       textColor: Colors.white,
-                      text: "تسجيل دخول",
+                      text: locale.login,
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),
-                    SizedBox(height: 2.h),
+                    SizedBox(height: 1.h),
                     BasicButtonRoute(
                       route: (context) => const BookingIntroView(),
                       color: Colors.white,
                       textColor: AppColors.lightBlue,
-                      text: "حجز سريع",
+                      text: locale.quickBooking,
                       borderColor: Colors.transparent,
                       textSize: 2.h,
                     ),
+                    SizedBox(height: 2.h),
                   ],
                 ),
               ),

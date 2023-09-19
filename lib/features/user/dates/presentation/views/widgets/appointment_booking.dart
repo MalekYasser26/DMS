@@ -1,5 +1,6 @@
-import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/core/Widgets/absent_or_present.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
+import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -20,6 +21,7 @@ class AppointmentBooking extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context);
     return Container(
       decoration:
           BoxDecoration(border: Border.all(color: Colors.grey.shade300)),
@@ -35,7 +37,7 @@ class AppointmentBooking extends StatelessWidget {
                   name,
                   style: GoogleFonts.cairo(
                     color: AppColors.blueNames,
-                    fontSize: 3.h,
+                    fontSize: 2.5.h,
                   ),
                 ),
                 if (isNext == true)
@@ -50,7 +52,7 @@ class AppointmentBooking extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: " اول مرة ؟   ",
+                    text: " ${locale.firstTime}   ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
@@ -71,7 +73,7 @@ class AppointmentBooking extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "التاريخ  ",
+                    text: "${locale.date}  ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,
@@ -92,7 +94,7 @@ class AppointmentBooking extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "عنوان العيادة   ",
+                    text: "${locale.clinicAddress}   ",
                     style: GoogleFonts.cairo(
                       color: Colors.grey,
                       fontSize: 2.h,

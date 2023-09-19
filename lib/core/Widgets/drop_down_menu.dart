@@ -16,13 +16,15 @@ class DropDownMenu extends StatefulWidget {
   @override
   State<DropDownMenu> createState() => _DropDownMenuState();
 }
+
 class _DropDownMenuState extends State<DropDownMenu> {
-  String dropdownValue = "";
+  late String dropdownValue;
   @override
   void initState() {
     super.initState();
     dropdownValue = widget.dropList.first;
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(

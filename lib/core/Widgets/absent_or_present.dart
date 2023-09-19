@@ -1,4 +1,5 @@
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/localization/l10n.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -13,6 +14,7 @@ class AbsentOrPresent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = getL10n(context);
     return isAbsent
         ? Container(
             decoration: BoxDecoration(
@@ -22,7 +24,7 @@ class AbsentOrPresent extends StatelessWidget {
             width: w,
             child: Center(
               child: Text(
-                "حاضر",
+                locale.present,
                 style: GoogleFonts.cairo(
                   color: AppColors.golden,
                   fontSize: 2.3.h,
@@ -38,7 +40,7 @@ class AbsentOrPresent extends StatelessWidget {
             width: 8.h,
             child: Center(
               child: Text(
-                "غائب",
+                locale.absent,
                 style: GoogleFonts.cairo(
                   color: AppColors.red,
                   fontSize: 2.3.h,

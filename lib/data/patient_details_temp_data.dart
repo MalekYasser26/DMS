@@ -1,9 +1,6 @@
 import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 
-List<String>gender = [
-  "ذكر",
-  "أنثى"
-];
+
 List<String>mdHistory = [
   "مرض مزمن",
   "تعطيل حالات الطوارئ",
