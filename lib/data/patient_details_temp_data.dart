@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/assets_data.dart';
+import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 
 List<String>gender = [
   "ذكر",
@@ -32,9 +32,9 @@ List<String>timesADay = [
   "3 مرات في اليوم"
 ];
 List<String> drugImgs = [
-  AssetsData.drug1,
-  AssetsData.drug2,
-  AssetsData.drug3,
+  AssetsImages.drug1,
+  AssetsImages.drug2,
+  AssetsImages.drug3,
 ];
 List<String>notes = [
   "تتبع أسماء وجرعات وتكرار الأدوية الخاصة بك.",
