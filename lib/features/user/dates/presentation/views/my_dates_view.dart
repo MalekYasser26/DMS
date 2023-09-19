@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/data/my_dates_view_temp_data.dart';

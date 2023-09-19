@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/two_buttons_confirm_view.dart';
 import 'package:doctor_management_system/features/doctor/patient_list/presentation/views/patient_list_view.dart';
 import 'package:flutter/material.dart';

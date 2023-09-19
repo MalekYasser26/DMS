@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = getL10n(context) ;
+    final locale = getL10n(context);
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -49,7 +49,7 @@ class HomeView extends StatelessWidget {
                       children: [
                         Expanded(
                           child: NavigatorBox(
-                            toggle: (){},
+                            toggle: () {},
                             boxNum: 3,
                             text: locale.queueWait,
                             height: 15.h,
@@ -62,7 +62,7 @@ class HomeView extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Expanded(
                           child: NavigatorBox(
-                            toggle: (){},
+                            toggle: () {},
                             boxNum: 4,
                             text: locale.rateService,
                             height: 15.h,
@@ -95,7 +95,6 @@ class HomeView extends StatelessWidget {
                       textSize: 2.h,
                     ),
                     SizedBox(height: 2.h),
-
                   ],
                 ),
               ),

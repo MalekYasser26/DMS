@@ -1,5 +1,5 @@
 import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
@@ -22,10 +22,10 @@ class BookingIntroView extends StatefulWidget {
 }
 
 class _BookingIntroViewState extends State<BookingIntroView> {
-  bool isCheck = true ;
+  bool isCheck = true;
   @override
   Widget build(BuildContext context) {
-    final locale = getL10n(context) ;
+    final locale = getL10n(context);
     final preferenceService = getPreferenceService(context);
     return Scaffold(
       body: SafeArea(
@@ -111,9 +111,12 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                     ],
                   ),
                   const Spacer(),
-                  IconButton(onPressed: () {
-                    preferenceService.changeLocale(preferenceService.isEn()?'ar':'en') ;
-                  }, icon: const Icon(Icons.public))
+                  IconButton(
+                      onPressed: () {
+                        preferenceService.changeLocale(
+                            preferenceService.isEn() ? 'ar' : 'en');
+                      },
+                      icon: const Icon(Icons.public))
                 ],
               ),
               SizedBox(height: 1.h),
@@ -121,30 +124,28 @@ class _BookingIntroViewState extends State<BookingIntroView> {
                 children: [
                   Expanded(
                     child: NavigatorBox(
-                      toggle: (){
-                        isCheck = true ;
-                        setState(() {
-                        });
+                      toggle: () {
+                        isCheck = true;
+                        setState(() {});
                       },
                       route: (context) => const HomeView(),
                       text: locale.check,
                       height: 15.h,
                       fontSize: 2.8.h,
                       isRouteRequired: false,
-                      boxNum : 1,
-                      isPressed : isCheck,
+                      boxNum: 1,
+                      isPressed: isCheck,
                     ),
                   ),
                   SizedBox(width: 2.h),
                   Expanded(
                     child: NavigatorBox(
-                      toggle: (){
-                        isCheck = false ;
-                        setState(() {
-                        });
+                      toggle: () {
+                        isCheck = false;
+                        setState(() {});
                       },
-                      isPressed : !isCheck ,
-                      boxNum : 2 ,
+                      isPressed: !isCheck,
+                      boxNum: 2,
                       isRouteRequired: false,
                       route: (context) => const HomeView(),
                       text: locale.consult,

@@ -1,5 +1,5 @@
-import 'package:doctor_management_system/core/constants/app_colors.dart';
 import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/data/patient_details_temp_data.dart';
 import 'package:doctor_management_system/core/constants/assets/assets_images.dart';
 import 'package:doctor_management_system/features/doctor/patient_details/presentation/views/widgets/add_note_alert.dart';

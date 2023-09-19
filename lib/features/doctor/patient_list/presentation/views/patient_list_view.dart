@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
 import 'package:doctor_management_system/data/patient_list_view_temp_data.dart';
 import 'package:doctor_management_system/features/confirmation/presentation/views/one_button_confirm_view.dart';
@@ -109,12 +109,10 @@ class _PatientListViewState extends State<PatientListView> {
                             ],
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child:SvgPicture.asset(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SvgPicture.asset(
                                 AssetsIcons.guidanceIcon,
-                            )
-
-                          ),
+                              )),
                         ),
                       ),
                     ],
@@ -131,12 +129,12 @@ class _PatientListViewState extends State<PatientListView> {
                         ),
                         child: Row(
                           children: [
-                             Padding(
-                              padding: const EdgeInsets.only(right: 5.0, left: 5),
-                              child: SvgPicture.asset(
-                                AssetsIcons.searchIcon,
-                              )
-                            ),
+                            Padding(
+                                padding:
+                                    const EdgeInsets.only(right: 5.0, left: 5),
+                                child: SvgPicture.asset(
+                                  AssetsIcons.searchIcon,
+                                )),
                             Text(
                               " ابحث",
                               style: GoogleFonts.cairo(
@@ -159,15 +157,14 @@ class _PatientListViewState extends State<PatientListView> {
                           );
                         },
                         child: Container(
-                          padding: const EdgeInsets.all(12),
-                          height: 7.h,
-                          width: 16.w,
-                          decoration:
-                              const BoxDecoration(color: Color(0xff159BAD)),
-                          child:SvgPicture.asset(
-                            AssetsIcons.sliderIcon,
-                          )
-                        ),
+                            padding: const EdgeInsets.all(12),
+                            height: 7.h,
+                            width: 16.w,
+                            decoration:
+                                const BoxDecoration(color: Color(0xff159BAD)),
+                            child: SvgPicture.asset(
+                              AssetsIcons.sliderIcon,
+                            )),
                       ),
                     ],
                   ),

@@ -1,5 +1,5 @@
 import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
@@ -17,7 +17,7 @@ class RateSeviceView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = getL10n(context) ;
+    final locale = getL10n(context);
     final TextEditingController basicController = TextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -169,7 +169,7 @@ class RateSeviceView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 1.h),
                 child: BasicButtonRoute(
-                  route: (context) =>  OneButtonConfirmView(
+                  route: (context) => OneButtonConfirmView(
                     route: const MyDatesView(),
                     text: locale.ratingDone,
                     subText: locale.thxRating,

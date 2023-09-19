@@ -1,5 +1,5 @@
 import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart';
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
@@ -24,7 +24,9 @@ class BookingPatientDetailsView extends StatefulWidget {
 class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
   int selectedOption = 1;
   List<PatientDetails> patientsNumList = [
-    PatientDetails(removePatient: () {},),
+    PatientDetails(
+      removePatient: () {},
+    ),
     PatientDetails(removePatient: () {}),
   ];
 
@@ -114,14 +116,14 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                               TextSpan(
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => LoginView(
-                                        route: (context) =>
-                                        const MyDatesView(),
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => LoginView(
+                                            route: (context) =>
+                                                const MyDatesView(),
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ),
                                 text: locale.skip,
                                 style: GoogleFonts.cairo(
                                   color: AppColors.lightBlue,
@@ -191,7 +193,11 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                     ),
                   ],
                 ),
-                if (selectedOption == 1) PatientDetails(removePatient: () {},isSingle: true,),
+                if (selectedOption == 1)
+                  PatientDetails(
+                    removePatient: () {},
+                    isSingle: true,
+                  ),
                 if (selectedOption == 2)
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -202,7 +208,8 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                         child: ListView.separated(
                           physics: const ClampingScrollPhysics(),
                           shrinkWrap: true,
-                          itemBuilder: (context, index) => patientsNumList[index],
+                          itemBuilder: (context, index) =>
+                              patientsNumList[index],
                           separatorBuilder: (context, index) =>
                               SizedBox(height: 3.h),
                           itemCount: patientsNumList.length,
@@ -243,7 +250,8 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                         ),
                       ),
                       SizedBox(height: 3.h),
-                      BasicTextFormField(text: locale.phoneNum, isNumbers: true),
+                      BasicTextFormField(
+                          text: locale.phoneNum, isNumbers: true),
                     ],
                   ),
                 SizedBox(height: 3.h),

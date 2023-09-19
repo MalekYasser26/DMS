@@ -1,4 +1,4 @@
-import 'package:doctor_management_system/core/constants/app_colors.dart';
+import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/core/widgets/basic_button_route.dart';
@@ -13,7 +13,7 @@ class QueueWaitView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = getL10n(context) ;
+    final locale = getL10n(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -123,9 +123,11 @@ class QueueWaitView extends StatelessWidget {
                   ),
                 ),
               ),
-              const Expanded(child: SizedBox(),),
+              const Expanded(
+                child: SizedBox(),
+              ),
               Padding(
-                padding: EdgeInsets.only(bottom : 1.h),
+                padding: EdgeInsets.only(bottom: 1.h),
                 child: BasicButtonRoute(
                   route: (context) => const MyDatesView(),
                   color: Colors.white,
