@@ -1,7 +1,7 @@
 import 'package:doctor_management_system/core/Widgets/basic_text_form_field.dart';
 import 'package:doctor_management_system/core/Widgets/drop_down_menu.dart';
 import 'package:doctor_management_system/core/theme/app_colors.dart';
-import 'package:doctor_management_system/core/constants/permanent_data.dart';
+import 'package:doctor_management_system/core/constants/features/user/booking_data.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:flutter/material.dart';
