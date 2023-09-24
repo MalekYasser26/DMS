@@ -110,9 +110,9 @@ class LoginViewBody extends StatelessWidget {
                         locale.login,
                         style: GoogleFonts.cairo(
                             textStyle: const TextStyle(
-                          color: Color(0xffFFFFFF),
-                          fontSize: 16,
-                        )),
+                              color: Color(0xffFFFFFF),
+                              fontSize: 16,
+                            )),
                       ),
                     ),
                   ),

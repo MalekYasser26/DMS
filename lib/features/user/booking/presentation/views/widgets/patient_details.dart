@@ -50,29 +50,29 @@ class _PatientDetailsState extends State<PatientDetails> {
       if (widget.isSingle == false)
         preferenceService.isEn()
             ? Positioned(
-                top: 0,
-                right: 0,
-                child: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      widget.removePatient();
-                    });
-                  },
-                  icon: const Icon(Icons.remove_circle_outline),
-                ),
-              )
+          top: 0,
+          right: 0,
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                widget.removePatient();
+              });
+            },
+            icon: const Icon(Icons.remove_circle_outline),
+          ),
+        )
             : Positioned(
-                top: 0,
-                left: 0,
-                child: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      widget.removePatient();
-                    });
-                  },
-                  icon: const Icon(Icons.remove_circle_outline),
-                ),
-              ),
+          top: 0,
+          left: 0,
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                widget.removePatient();
+              });
+            },
+            icon: const Icon(Icons.remove_circle_outline),
+          ),
+        ),
     ]);
   }
 }

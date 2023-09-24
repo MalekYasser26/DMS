@@ -2,6 +2,7 @@ import 'package:doctor_management_system/core/services/api/api_service.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/core/services/preference/preference_service.dart';
 import 'package:doctor_management_system/features/intro/presentation/views/splash_view.dart';
+import 'package:doctor_management_system/features/user/dates/manager/booking_customer_reservations_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,8 @@ void main() {
       providers: [
         Provider(create: (context) => apiService),
         ChangeNotifierProvider(create: (_) => PreferenceService()),
+        ChangeNotifierProvider(create: (_) => BookingCustomerReservationsProvider(apiService)),
+        ChangeNotifierProvider(create: (_) => BookingReservationProvider(apiService)),
       ],
       child: const DoctorManagementSystem(),
     ),

@@ -1,8 +1,10 @@
+import 'package:doctor_management_system/core/services/api/api_service.dart';
 import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
 import 'package:doctor_management_system/data/my_dates_view_temp_data.dart';
 import 'package:doctor_management_system/features/user/booking/presentation/views/booking_intro_view.dart';
+import 'package:doctor_management_system/features/user/dates/manager/booking_customer_reservations_provider.dart';
 import 'package:doctor_management_system/features/user/dates/presentation/views/widgets/appointment_booking.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,6 +20,8 @@ class MyDatesView extends StatefulWidget {
 
 class _MyDatesViewState extends State<MyDatesView> {
   @override
+
+
   Widget build(BuildContext context) {
     final locale = getL10n(context);
     return DefaultTabController(
@@ -54,13 +58,16 @@ class _MyDatesViewState extends State<MyDatesView> {
                             ),
                             SizedBox(width: 20.w),
                             InkWell(
-                              onTap: () => Navigator.push(
+                              onTap: () {
+                                BookingReservationProvider(APIService()).getReservations();
+                                Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
                                       const BookingIntroView(),
                                 ),
-                              ),
+                              );
+                              },
                               child: Container(
                                 decoration: const BoxDecoration(
                                   color: AppColors.lightBlue,

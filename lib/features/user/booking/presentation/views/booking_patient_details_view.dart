@@ -116,14 +116,14 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                               TextSpan(
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () => Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => LoginView(
-                                            route: (context) =>
-                                                const MyDatesView(),
-                                          ),
-                                        ),
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => LoginView(
+                                        route: (context) =>
+                                        const MyDatesView(),
                                       ),
+                                    ),
+                                  ),
                                 text: locale.skip,
                                 style: GoogleFonts.cairo(
                                   color: AppColors.lightBlue,
@@ -209,7 +209,7 @@ class _BookingPatientDetailsViewState extends State<BookingPatientDetailsView> {
                           physics: const ClampingScrollPhysics(),
                           shrinkWrap: true,
                           itemBuilder: (context, index) =>
-                              patientsNumList[index],
+                          patientsNumList[index],
                           separatorBuilder: (context, index) =>
                               SizedBox(height: 3.h),
                           itemCount: patientsNumList.length,
