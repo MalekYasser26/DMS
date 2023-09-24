@@ -6,29 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:graphql/client.dart';
 import 'package:provider/provider.dart';
 
-class BookingCustomerReservationsProvider extends ChangeNotifier {
-  final apiService;
-  late var result;
 
-  BookingCustomerReservationsProvider(this.apiService);
-
-  // Future<void> getCustomerReservations({required String customerId}) async {
-  //   try {
-  //     final query = Options$Query$bookingCustomerVisits(
-  //         variables:
-  //             Variables$Query$bookingCustomerVisits(customerId: customerId));
-  //     result = await apiService.qlClient.query$bookingCustomerVisits(query);
-  //     if (result.hasException) {
-  //       debugPrint("exception : ${result.exception.toString()}");
-  //     } else {
-  //       debugPrint(
-  //           "result is  ${result.parsedData?.bookingCustomerVisits[0].userId}");
-  //     }
-  //   } catch (e) {
-  //     debugPrint("error : ${e.toString()}");
-  //   }
-  // }
-}
 
 class BookingReservationProvider extends ChangeNotifier {
   final APIService apiService;
@@ -36,23 +14,22 @@ class BookingReservationProvider extends ChangeNotifier {
 
   BookingReservationProvider(this.apiService);
 
+// This method works fine
   Future<void> getReservations() async {
     try {
-      final query = Options$Query$bookingReservation(
-          variables: Variables$Query$bookingReservation(
-            reservationId: 1.toString(),
-          ),
-      );
-      result = await apiService.qlClient.query$bookingReservation(query);
+      result = await apiService.qlClient.query$bookingReservations();
 
       if (result.hasException) {
         debugPrint("exception : ${result}");
       } else {
-        final data = result.data?['bookingReservation'];
+        final data = result.data?['bookingReservations'];
         if (data != null) {
           final page = data['page'];
+          final rows = data['rows'];
+          debugPrint(result.toString());
           debugPrint("page is  $page");
           debugPrint("data is  $data");
+          debugPrint("rows is  $rows");
         } else {
           debugPrint("bookingReservation is null");
         }
@@ -61,9 +38,23 @@ class BookingReservationProvider extends ChangeNotifier {
       debugPrint("error : ${e.toString()}");
     }
   }
-}
 
-BookingCustomerReservationsProvider getBookingCustomerReservations(
-        BuildContext context,
-        {bool listen = true}) =>
-    Provider.of<BookingCustomerReservationsProvider>(context, listen: listen);
+  // This returns an exception
+  Future<void> getReservation() async {
+    try {
+      result = await apiService.qlClient.query$bookingReservation(
+          Options$Query$bookingReservation(
+              variables: Variables$Query$bookingReservation(reservationId: '1'))
+      );
+
+      if (result.hasException) {
+        debugPrint("exception : ${result}");
+      } else {
+        debugPrint(result);
+      }
+    } catch (e) {
+      debugPrint("error : ${e.toString()}");
+    }
+  }
+
+}

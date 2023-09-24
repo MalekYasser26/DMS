@@ -59,7 +59,7 @@ class _MyDatesViewState extends State<MyDatesView> {
                             SizedBox(width: 20.w),
                             InkWell(
                               onTap: () {
-                                BookingReservationProvider(APIService()).getReservations();
+                                BookingReservationProvider(APIService()).getReservation();
                                 Navigator.push(
                                 context,
                                 MaterialPageRoute(
