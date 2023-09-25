@@ -15,11 +15,13 @@ class BookingReservationProvider extends ChangeNotifier {
   final APIService apiService;
   dynamic result;
   late String formattedDate,formattedTime ;
-
-  List pastList = [];
+   late int visitId ;
+  List pastListDate = [];
+  List pastListVisitType = [];
+  List pastAddressList = [];
   List upcomingList = [];
-  Set address = {};
-  Set visitType = {};
+  List upcomingListVisitType = [];
+  List upcomingAddressList = [];
   void _changeBookingState(BookingStates bookingState) {
     this.bookingState = bookingState;
     notifyListeners();
@@ -43,16 +45,21 @@ class BookingReservationProvider extends ChangeNotifier {
           DateTime time = DateTime.fromMillisecondsSinceEpoch(timeStampsTime * 1000);
           formattedDate = DateFormat('yyyy-MM-dd').format(date.toLocal());
           formattedTime = DateFormat('h:mma').format(time.toLocal());
-          address.add(baseResult[c]['branch']['name']);
-          visitType.add(baseResult[c]['service']['name']);
+          visitId = baseResult[c]['service']['id'];
           if (date.isBefore(DateTime.now())){
-            pastList.add("$formattedDate $formattedTime");
+            pastListDate.add("$formattedDate $formattedTime");
+            pastListVisitType.add(baseResult[c]['service']['name']);
+            pastAddressList.add(baseResult[c]['branch']['name']);
+
           } else {
             upcomingList.add("$formattedDate $formattedTime");
+            upcomingAddressList.add(baseResult[c]['branch']['name']);
+            upcomingListVisitType.add(baseResult[c]['service']['name']);
+
+
           }
         }
-        debugPrint(visitType.toString());
-        debugPrint(pastList.toString());
+        debugPrint(pastListDate.toString());
         debugPrint(upcomingList.toString());
         _changeBookingState(BookingStates.successState);
       }

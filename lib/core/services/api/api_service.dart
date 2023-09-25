@@ -9,7 +9,7 @@ class APIService {
 
   GraphQLClient get qlClient => GraphQLClient(
     link: AuthLink(
-      getToken: () async => "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJ1c2VybmFtZSI6Iktlcm9sbG9zIExpa2FuZGVyIiwicGhvbmUiOiIwMTIyMjIyMjIyMiIsImVtYWlsIjoibGlrYW5kZXJAeWFob28uY29tIiwiZXhwIjoxNjk4MjI4Mzk3fQ.x5GNopOX7ivYAuYFeKZsJ_TmYRaUu8TJM-nCcyRM_Po",
+      getToken: () async => "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJ1c2VybmFtZSI6Ik1hbGVrIFlhc3NlciIsImVtYWlsIjoibWFsZWt5YXNzZXIxMEBnbWFpbC5jb20iLCJleHAiOjE2OTgyNjg2MTl9.XkO9mJpej4ooCARxjRyzXrwxCJDn-FQWl3t7LCAe4GA",
     ).concat(HttpLink(baseUrl)),
     cache: GraphQLCache(),
   );

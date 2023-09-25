@@ -163,16 +163,16 @@ class _MyDatesViewState extends State<MyDatesView> {
                                     physics: const BouncingScrollPhysics(),
                                     itemBuilder: (context, index) =>
                                         AppointmentBooking(
-                                          name: names[index],
-                                          address: bookingProv.address.toList()[index],
-                                          date: bookingProv.pastList[index],
-                                          firstTime: bookingProv.visitType.toList()[index],
+                                          name: "Adaih",
+                                          address: bookingProv.pastAddressList.toList()[index],
+                                          date: bookingProv.pastListDate[index],
+                                          firstTime: bookingProv.pastListVisitType.toList()[index],
                                           isAbsent: absentPresentMyDates[index],
                                           isNext: true,
                                         ),
                                     separatorBuilder: (context, index) =>
                                         SizedBox(height: 1.h),
-                                    itemCount: bookingProv.pastList.length,
+                                    itemCount: bookingProv.pastListDate.length,
                                   ),
                                 )
                               ],
@@ -185,16 +185,16 @@ class _MyDatesViewState extends State<MyDatesView> {
                                     physics: const BouncingScrollPhysics(),
                                     itemBuilder: (context, index) =>
                                         AppointmentBooking(
-                                          name: names[index],
-                                          address: bookingProv.address.toList()[index],
+                                          name: "asfh",
+                                          address: bookingProv.upcomingAddressList.toList()[index],
                                           date: bookingProv.upcomingList[index],
-                                          firstTime: bookingProv.visitType.toList()[index],
+                                          firstTime: bookingProv.upcomingListVisitType.toList()[index],
                                           isAbsent: absentPresentMyDates[index],
                                           isNext: false,
                                         ),
                                     separatorBuilder: (context, index) =>
                                         SizedBox(height: 1.h),
-                                    itemCount: bookingProv.upcomingList.length,
+                                    itemCount: bookingProv.upcomingAddressList.length,
                                   ),
                                 )
                               ],
