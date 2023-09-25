@@ -14,7 +14,6 @@ void main() {
       providers: [
         Provider(create: (context) => apiService),
         ChangeNotifierProvider(create: (_) => PreferenceService()),
-        ChangeNotifierProvider(create: (_) => BookingCustomerReservationsProvider(apiService)),
         ChangeNotifierProvider(create: (_) => BookingReservationProvider(apiService)),
       ],
       child: const DoctorManagementSystem(),

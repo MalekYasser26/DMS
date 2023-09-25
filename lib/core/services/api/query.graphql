@@ -163,14 +163,24 @@ query bookingCurrentReservations {
   bookingCurrentReservations {
     id
     userId
-    user
     branchId
     branch {
       id
+      name
+      address
+      phone
+      mapURL
+      isActive
+      createdAt
+      updatedAt
     }
     serviceId
     service {
       id
+      name
+      duration
+      isActive
+
     }
     channel
     date

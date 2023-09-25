@@ -1,4 +1,3 @@
-import 'package:doctor_management_system/core/services/api/api_service.dart';
 import 'package:doctor_management_system/core/theme/app_colors.dart';
 import 'package:doctor_management_system/core/constants/assets/assets_icons.dart';
 import 'package:doctor_management_system/core/localization/l10n.dart';
@@ -9,6 +8,7 @@ import 'package:doctor_management_system/features/user/dates/presentation/views/
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 class MyDatesView extends StatefulWidget {
@@ -20,8 +20,14 @@ class MyDatesView extends StatefulWidget {
 
 class _MyDatesViewState extends State<MyDatesView> {
   @override
+  void initState(){
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_){
+    getBookingReservationProvider(context).getReservations();
+  });
+        }
 
-
+  @override
   Widget build(BuildContext context) {
     final locale = getL10n(context);
     return DefaultTabController(
@@ -59,7 +65,6 @@ class _MyDatesViewState extends State<MyDatesView> {
                             SizedBox(width: 20.w),
                             InkWell(
                               onTap: () {
-                                BookingReservationProvider(APIService()).getReservation();
                                 Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -140,55 +145,66 @@ class _MyDatesViewState extends State<MyDatesView> {
                         ]),
                   ),
                 ),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Flexible(
-                            child: ListView.separated(
-                              physics: const BouncingScrollPhysics(),
-                              itemBuilder: (context, index) =>
-                                  AppointmentBooking(
-                                name: names[index],
-                                address: "147 النزهة, ش المطار",
-                                date: "21 Aug, Mon - 09:20 am",
-                                firstTime: locale.check,
-                                isAbsent: absentPresentMyDates[index],
-                                isNext: true,
-                              ),
-                              separatorBuilder: (context, index) =>
-                                  SizedBox(height: 1.h),
-                              itemCount: names.length,
+                Consumer<BookingReservationProvider>(
+                  builder: (context, bookingProv, _) {
+                    if (bookingProv.bookingState==BookingStates.loadingState){
+                      return const Center(child: CircularProgressIndicator(
+                        color: AppColors.lightBlue,
+                      ));
+                    } else if (bookingProv.bookingState==BookingStates.successState) {
+                      return Expanded(
+                        child: TabBarView(
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Flexible(
+                                  child: ListView.separated(
+                                    physics: const BouncingScrollPhysics(),
+                                    itemBuilder: (context, index) =>
+                                        AppointmentBooking(
+                                          name: names[index],
+                                          address: bookingProv.address.toList()[index],
+                                          date: bookingProv.pastList[index],
+                                          firstTime: bookingProv.visitType.toList()[index],
+                                          isAbsent: absentPresentMyDates[index],
+                                          isNext: true,
+                                        ),
+                                    separatorBuilder: (context, index) =>
+                                        SizedBox(height: 1.h),
+                                    itemCount: bookingProv.pastList.length,
+                                  ),
+                                )
+                              ],
                             ),
-                          )
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Flexible(
-                            child: ListView.separated(
-                              physics: const BouncingScrollPhysics(),
-                              itemBuilder: (context, index) =>
-                                  AppointmentBooking(
-                                name: names[index],
-                                address: "147 النزهة, ش المطار",
-                                date: "21 Aug, Mon - 09:20 am",
-                                firstTime: locale.check,
-                                isAbsent: absentPresentMyDates[index],
-                                isNext: false,
-                              ),
-                              separatorBuilder: (context, index) =>
-                                  SizedBox(height: 1.h),
-                              itemCount: names.length,
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Flexible(
+                                  child: ListView.separated(
+                                    physics: const BouncingScrollPhysics(),
+                                    itemBuilder: (context, index) =>
+                                        AppointmentBooking(
+                                          name: names[index],
+                                          address: bookingProv.address.toList()[index],
+                                          date: bookingProv.upcomingList[index],
+                                          firstTime: bookingProv.visitType.toList()[index],
+                                          isAbsent: absentPresentMyDates[index],
+                                          isNext: false,
+                                        ),
+                                    separatorBuilder: (context, index) =>
+                                        SizedBox(height: 1.h),
+                                    itemCount: bookingProv.upcomingList.length,
+                                  ),
+                                )
+                              ],
                             ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
+                          ],
+                        ),
+                      );
+                    }
+                    return const SizedBox.shrink() ;
+                  },
                 ),
               ],
             ),
